@@ -53,7 +53,8 @@ class Binary:
         self.build = build
         with open(exe_path, "rb") as f:
             self.data = f.read()
-        self.db = sqlite3.connect(db_path)
+        # read-only so a missing db errors instead of silently creating an empty file
+        self.db = sqlite3.connect(f"file:{db_path}?mode=ro", uri=True)
         self.sections = self._parse_sections()
 
     def _parse_sections(self):

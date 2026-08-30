@@ -24,6 +24,7 @@ THRESHOLD = 0.90
 def check(build: str) -> bool:
     try:
         b = Binary(build)
+        b.db.execute("SELECT 1 FROM decompilations LIMIT 1")
     except Exception as e:
         print(f"{build}: SKIP ({e})")
         return True
