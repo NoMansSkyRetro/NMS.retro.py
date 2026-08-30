@@ -1481,19 +1481,22 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only hint is imm64 0x9DDFEA08EB382D69, which is a generic constant present in 50+ functions per build; caller SetCharacterState is unmapped - no anchor"
     },
     "cGcPlayerCharacterComponent::Update": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "modern strings JEMMC_%d_%d / CamoEffectMaterial_%d are post-launch (camo/JEMMC features); MusicVolume has 3 generic owners; the no-string children of the mapped cGcPlayer::Update cannot be told apart - no unique start"
     },
     "cGcPlayerCommunicator::Update": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings; not a resolvable direct callee of the mapped cGcPlayer::Update in legacy, and its interaction/engine callees (FindFirstTypedComponent, GetInteraction, RequestRemoveNode, ...) are unmapped - no unique start"
     },
     "cGcPlayerCreatureOwnership::cGcPlayerCreatureOwnership": {
       "_note": "Creature adoption arrived in Companions (3.2).",
@@ -1506,25 +1509,28 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "416-byte helper whose distinctive callees (cGcPlanetGenerator::GetCreatureInfoFromDiscoveryData, cGcPlayerState::GetStatValue) are unmapped; too many mid-size callees of the mapped cGcBinoculars::PopulateDiscoveryInfo to isolate a unique start"
     },
     "cGcPlayerEnvironment::IsOnPlanet": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "16-byte accessor reading the nearest-planet field; ICF-folded/inlined and its only mapped caller (RenderWeaponPanel) shares just generic STL helpers - no unique start"
     },
     "cGcPlayerEnvironment::IsOnboardOwnFreighter": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "69-byte freighter-state accessor; inlined/ICF-folded - intersecting the callees of its mapped callers (TriggerAction, InteractionComponent::Interact, FrontendPageInteractions::DoInteraction) yields only __security_check_cookie"
     },
     "cGcPlayerEnvironment::Update": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140940B70",
+      "1.13": "0x140A95AF0",
+      "1.24": "0x140C08450",
+      "1.38": "0x140D8A8E0"
     },
     "cGcPlayerFleetManager::cGcPlayerFleetManager": {
       "_note": "Frigates and fleets arrived in NEXT (1.5).",
@@ -1550,34 +1556,35 @@
       "_unresolved": "1.13-1.38; no strings/imm; ctor call-graph indistinct from sibling ownership ctors"
     },
     "cGcPlayerHUD::RenderCrosshair": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14048CE20",
+      "1.13": "0x1405BBF40",
+      "1.24": "0x14076AA90",
+      "1.38": "0x1408D8910"
     },
     "cGcPlayerHUD::RenderIndicatorPanel": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.13": "0x1405BE0A0",
+      "1.24": "0x14076C980",
+      "1.38": "0x1408DB110"
     },
     "cGcPlayerHUD::RenderWeaponPanel": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14048EA50",
+      "1.13": "0x1405BF3F0",
+      "1.24": "0x14076DDC0",
+      "1.38": "0x1408DC720"
     },
     "cGcPlayerHUD::Update": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.13": "0x1409C9E00",
+      "1.24": "0x140B38490",
+      "1.38": "0x140CA93C0"
     },
     "cGcPlayerHUD::cGcPlayerHUD": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "constructor; its callees (cGcHUD::cGcHUD, cGcHUDMarker/TrackArrow ctors, cGcNGui::cGcNGui, cGcNGuiLayer::cGcNGuiLayer) and its sole caller cGcHUDManager::cGcHUDManager are all unmapped - no anchor"
     },
     "cGcPlayerMultitoolOwnership::cGcPlayerMultitoolOwnership": {
       "_note": "Multiple multi-tool ownership arrived in NEXT (1.5).",
@@ -1692,19 +1699,22 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "debug strings LAST KNOWN PLAYER POS / LAST KNOWN DRONE CRIME POS are absent; cGcDroneComponentData is non-distinctive (~20 owners); the closest witness/drone candidate (1.38 0x140EC3280) is NOT called by cGcPlayer::Update, so it is likely cGcWitness::Update or a sub-helper, not Wanted::Update - unconfirmed"
     },
     "cGcPlayerWeapon::GetChargeFactor": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "65-byte wrapper whose only callee is the (also unresolved) GetChargeTime; many such tiny wrapper pairs exist - no way to isolate a unique start"
     },
     "cGcPlayerWeapon::GetChargeTime": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "147-byte stat accessor calling the unresolved cGcPlayerState::GetStatValue; callers (GetChargeFactor, cGcPlayerWeapon::Update) unmapped - no unique anchor"
     },
     "cGcPositionMarker::Render": {
       "1.09.1": "NOT_YET_FOUND",
