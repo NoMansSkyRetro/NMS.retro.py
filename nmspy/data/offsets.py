@@ -47,12 +47,21 @@ def global_offset_for(name: str) -> Optional[int]:
     return int(address, 16) - STATIC_BASE if address else None
 
 
+_warned: set = set()
+
+
+def _warn_once(key: str, message: str):
+    if key not in _warned:
+        _warned.add(key)
+        logger.warning(message)
+
+
 class DisabledHook:
     """Stand-in for a hook whose address is unknown in the running build.
 
-    Keeps the FunctionHook API shape so mods import and load cleanly; their detours
+    Keeps the FunctionHook API shape so mods import and load cleanly: their detours
     just never fire (with a warning at load time), and calling the game function
-    raises with a clear message.
+    warns once and returns None instead of raising, so mods degrade gracefully.
     """
 
     def __init__(self, name: str):
@@ -69,8 +78,17 @@ class DisabledHook:
     before = _warn
     after = _warn
 
+    def __get__(self, instance, owner=None):
+        # Also stand in for bound method calls on struct instances.
+        return self
+
     def __call__(self, *args, **kwargs):
-        raise RuntimeError(f"{self._name} has no known address in this game build.")
+        version = CURRENT_VERSION.value if CURRENT_VERSION else "<unknown build>"
+        _warn_once(
+            f"call:{self._name}",
+            f"{self._name} has no known address in {version}; call ignored (returning None).",
+        )
+        return None
 
 
 def legacy_hook(name: str, static: bool = False):
@@ -85,3 +103,45 @@ def legacy_hook(name: str, static: bool = False):
     if static:
         return static_function_hook(offset=offset)
     return function_hook(offset=offset)
+
+
+def versioned_struct(cls):
+    """Build a partial struct from per-version field specs.
+
+    The class declares ``_vfields_`` as ``name -> (ctype, offset_spec)`` where
+    ``offset_spec`` is either an int (same offset in every build) or a
+    ``{version: offset}`` dict. Fields with an offset in the running build become
+    real ctypes fields (via pyMHF's partial_struct); the rest read as None with a
+    one-time warning, so a mod touching a field that does not exist in this build
+    degrades instead of crashing.
+    """
+    from typing import Annotated
+
+    from pymhf.core.structs import Field, partial_struct
+
+    version = CURRENT_VERSION.value if CURRENT_VERSION else None
+    available = []
+    missing = set()
+    for name, (ctype, spec) in getattr(cls, "_vfields_", {}).items():
+        offset = spec if isinstance(spec, int) else (spec.get(version) if version else None)
+        if offset is None:
+            missing.add(name)
+        else:
+            available.append((offset, name, ctype))
+    for offset, name, ctype in sorted(available):
+        cls.__annotations__[name] = Annotated[ctype, Field(ctype, offset)]
+    cls = partial_struct(cls)
+    cls._missing_fields_ = frozenset(missing) | frozenset(getattr(cls, "_missing_fields_", ()))
+
+    def __getattr__(self, name):
+        if name in type(self)._missing_fields_:
+            version_ = CURRENT_VERSION.value if CURRENT_VERSION else "<unknown build>"
+            _warn_once(
+                f"field:{type(self).__name__}.{name}",
+                f"{type(self).__name__}.{name} is not mapped in {version_}; returning None.",
+            )
+            return None
+        raise AttributeError(f"{type(self).__name__!r} object has no attribute {name!r}")
+
+    cls.__getattr__ = __getattr__
+    return cls

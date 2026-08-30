@@ -106,6 +106,12 @@
       "1.24": "0x140646CA0",
       "1.38": "0x1407621D0"
     },
+    "cGcGameState::OnSaveProgressCompleted": {
+      "_comment": "Alias: legacy has no distinct save-completed callback; these are WriteStateToStorage, whose .after is the closest equivalent.",
+      "1.13": "0x140536830",
+      "1.24": "0x140646CA0",
+      "1.38": "0x1407621D0"
+    },
     "cGcGraphicsManager::Prepare": {
       "1.13": "0x140586640",
       "1.24": "0x140695E50",

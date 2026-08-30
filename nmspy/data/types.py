@@ -3,29 +3,40 @@
 Rebuilt from scratch for the four legacy builds this fork targets. The modern (4.x)
 definitions this file replaced live in upstream NMS.py and in git history.
 
-Hooks resolve to per-build static addresses from ``offsets.json`` (derived with the
-scripts in ``tools/legacy_re/``). A hook with no address for the running build is
-disabled with a warning instead of failing, so coverage can grow build by build.
+Design: this module declares the FULL API surface mods use (classes, hooks, fields),
+so a mod written against nmspy imports and loads unmodified on every build. Whether
+each piece actually works on the running build is data-driven:
+
+- Hooks resolve to per-build static addresses from ``offsets.json`` (derived with the
+  scripts in ``tools/legacy_re/``). A hook with no address for the running build is
+  disabled: detours never fire (warning at load), and calling the game function
+  returns None with a one-time warning.
+- Struct fields are declared per-version via ``_vfields_``; a field not mapped in the
+  running build reads as None with a one-time warning.
 
 Pointer arguments are annotated as raw ``c_uint64`` addresses until each struct's
 legacy layout is verified; see tools/legacy_re/findings.md for what is known so far.
 """
 
-from ctypes import c_bool, c_char, c_float, c_uint64
-from typing import Annotated
+from ctypes import c_bool, c_char, c_float, c_int32, c_uint64
+from logging import getLogger
 
 from pymhf.core.hooking import Structure
-from pymhf.core.structs import Field, partial_struct
 
-from nmspy.data.offsets import legacy_hook
+from nmspy.data.offsets import _warn_once, legacy_hook, versioned_struct
+
+logger = getLogger(__name__)
 
 
-@partial_struct
+@versioned_struct
 class cTkFSM(Structure):
-    #: The active cTkFSMState*.
-    mpCurrState: Annotated[int, Field(c_uint64, 0x10)]
-    #: The requested next state ID; FSM_NoState when no transition is pending.
-    macPendingStateID: Annotated[bytes, Field(c_char * 0x10, 0x18)]
+    # Layout notes in tools/legacy_re/findings.md; fields added as they are verified.
+    _vfields_ = {
+        # The active cTkFSMState*.
+        "mpCurrState": (c_uint64, 0x10),
+        # The requested next state ID; FSM_NoState when no transition is pending.
+        "macPendingStateID": (c_char * 0x10, 0x18),
+    }
 
     @legacy_hook("cTkFSM::Update")
     def Update(self, this: c_uint64, lfTimestep: c_float): ...
@@ -65,9 +76,188 @@ class cTkFSMState(Structure):
         ...
 
 
-@partial_struct
+@versioned_struct
 class cGcApplication(cTkFSM):
     """The static application singleton (a cTkFSM whose states are the App* states)."""
 
+    _vfields_ = {
+        "mbPaused": (c_bool, {}),
+        "muPlayerSaveSlot": (c_int32, {}),
+    }
+
     @legacy_hook("cGcApplication::Update")
     def Update(self, this: c_uint64): ...
+
+
+class cGcApplicationLocalLoadState(Structure):
+    @legacy_hook("cGcApplicationLocalLoadState::GetRespawnReason")
+    def GetRespawnReason(self, this: c_uint64) -> c_int32: ...
+
+
+@versioned_struct
+class cGcSimulation(Structure):
+    _vfields_ = {}
+
+    @legacy_hook("cGcSimulation::Construct")
+    def Construct(self, this: c_uint64): ...
+
+    @legacy_hook("cGcSimulation::Destruct")
+    def Destruct(self, this: c_uint64): ...
+
+
+@versioned_struct
+class cGcGameState(Structure):
+    _vfields_ = {}
+
+    @legacy_hook("cGcGameState::LoadFromPersistentStorage")
+    def LoadFromPersistentStorage(self, this: c_uint64, *args): ...
+
+    # Legacy has no distinct save-completed callback; this is cGcGameState::
+    # WriteStateToStorage, whose .after is the closest equivalent.
+    @legacy_hook("cGcGameState::OnSaveProgressCompleted")
+    def OnSaveProgressCompleted(self, this: c_uint64, *args): ...
+
+
+@versioned_struct
+class cGcPlanet(Structure):
+    _vfields_ = {
+        "miPlanetIndex": (c_int32, {}),
+        "mPosition": (c_uint64, {}),
+        "mNode": (c_uint64, {}),
+        "mRegionMap": (c_uint64, {}),
+        "mpEnvProperties": (c_uint64, {}),
+        "mPlanetDiscoveryData": (c_uint64, {}),
+        "mPlanetGenerationInputData": (c_uint64, {}),
+    }
+
+    @legacy_hook("cGcPlanet::SetupRegionMap")
+    def SetupRegionMap(self, this: c_uint64): ...
+
+    @legacy_hook("cGcPlanet::Generate")
+    def Generate(self, this: c_uint64, *args): ...
+
+
+@versioned_struct
+class cGcSolarSystem(Structure):
+    _vfields_ = {
+        "maPlanets": (c_uint64, {}),
+    }
+
+    @legacy_hook("cGcSolarSystem::OnEnterPlanetOrbit")
+    def OnEnterPlanetOrbit(self, this: c_uint64, *args): ...
+
+    @legacy_hook("cGcSolarSystem::OnLeavePlanetOrbit")
+    def OnLeavePlanetOrbit(self, this: c_uint64, lbAnnounceOSD: c_bool): ...
+
+
+@versioned_struct
+class cGcShipHUD(Structure):
+    _vfields_ = {
+        "mHeadsUpGUI": (c_uint64, {}),
+        "miSelectedPlanet": (c_int32, {}),
+        "mbSelectedPlanetPanelVisible": (c_bool, {}),
+    }
+
+    @legacy_hook("cGcShipHUD::LoadData")
+    def LoadData(self, this: c_uint64): ...
+
+    @legacy_hook("cGcShipHUD::RenderHeadsUp")
+    def RenderHeadsUp(self, this: c_uint64): ...
+
+    @legacy_hook("cGcShipHUD::UpdateSelectedPlanetPanel")
+    def UpdateSelectedPlanetPanel(self, this: c_uint64): ...
+
+
+class cGcNGuiLayer(Structure):
+    @legacy_hook("cGcNGuiLayer::FindTextRecursive")
+    def FindTextRecursive(self, this: c_uint64, lTextID: c_uint64) -> c_uint64: ...
+
+    @legacy_hook("cGcNGuiLayer::FindElementRecursive")
+    def FindElementRecursive(self, this: c_uint64, lID: c_uint64, leType: c_int32) -> c_uint64: ...
+
+
+@versioned_struct
+class cGcNGuiText(Structure):
+    _vfields_ = {
+        "mpTextData": (c_uint64, {}),
+    }
+
+
+@versioned_struct
+class cGcMarkerPoint(Structure):
+    _vfields_ = {
+        "mCustomName": (c_uint64, {}),
+    }
+
+    @legacy_hook("cGcMarkerPoint::IsEqual")
+    def IsEqual(self, this: c_uint64, other: c_uint64, *args) -> c_bool: ...
+
+
+@versioned_struct
+class cTkDynamicGravityControl(Structure):
+    _vfields_ = {
+        "maGravityPoints": (c_uint64, {}),
+    }
+
+    @legacy_hook("cTkDynamicGravityControl::Construct")
+    def Construct(self, this: c_uint64): ...
+
+    @legacy_hook("cTkDynamicGravityControl::cTkDynamicGravityControl")
+    def cTkDynamicGravityControl(self, this: c_uint64): ...
+
+    @legacy_hook("cTkDynamicGravityControl::GetGravity")
+    def GetGravity(self, this: c_uint64, *args): ...
+
+
+class cTkStopwatch(Structure):
+    @legacy_hook("cTkStopwatch::GetDurationInSeconds")
+    def GetDurationInSeconds(self, this: c_uint64) -> c_float: ...
+
+
+class cGcPlayerBasePersistentBuffer(Structure):
+    """Base-building persistence. 1.09.1 predates base building entirely."""
+
+    @legacy_hook("cGcPlayerBasePersistentBuffer::LoadGalacticAddress")
+    def LoadGalacticAddress(self, this: c_uint64, *args): ...
+
+
+class cGcRewardManager(Structure):
+    @legacy_hook("cGcRewardManager::GiveGenericReward")
+    def GiveGenericReward(self, this: c_uint64, lRewardID: c_uint64, *args): ...
+
+
+class cGcInteractionComponent(Structure):
+    @legacy_hook("cGcInteractionComponent::GetPuzzle")
+    def GetPuzzle(self, this: c_uint64) -> c_uint64: ...
+
+
+@versioned_struct
+class cGcAlienPuzzleEntry(Structure):
+    _vfields_ = {
+        "Id": (c_uint64, {}),
+        "Options": (c_uint64, {}),
+    }
+
+
+class Engine:
+    """Engine functions that are called directly (not hooked)."""
+
+    @legacy_hook("Engine::ShiftAllTransformsForNode", static=True)
+    def ShiftAllTransformsForNode(node: c_uint64, shift: c_uint64): ...
+
+    @legacy_hook("Engine::GetNodeAbsoluteTransMatrix", static=True)
+    def GetNodeAbsoluteTransMatrix(node: c_uint64, matrix: c_uint64): ...
+
+
+class _EngineModules:
+    """Placeholder for the modern engine-module registry; nothing is mapped yet."""
+
+    def __getattr__(self, name):
+        _warn_once(
+            f"engine_modules.{name}",
+            f"engine_modules.{name} is not mapped in this build; returning None.",
+        )
+        return None
+
+
+engine_modules = _EngineModules()

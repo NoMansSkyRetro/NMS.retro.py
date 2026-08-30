@@ -4,7 +4,7 @@ from logging import getLogger
 from pymhf import Mod
 from pymhf.core._internal import BASE_ADDRESS
 from pymhf.core._types import DetourTime
-from pymhf.core.hooking import hook_manager
+from pymhf.core.hooking import hook_manager, one_shot
 from pymhf.core.memutils import map_struct
 from pymhf.gui.decorators import no_gui
 
@@ -49,6 +49,12 @@ class _INTERNAL_LoadSingletons(Mod):
     @nms.cGcApplication.Update.after
     def _main_loop_after(self, this):
         hook_manager.call_custom_callbacks("MAIN_LOOP", DetourTime.AFTER)
+
+    @one_shot
+    @nms.cGcSimulation.Construct.after
+    def _capture_simulation(self, this):
+        logger.debug(f"cGcSimulation found at 0x{this:X}")
+        gameData.Simulation = map_struct(this, nms.cGcSimulation)
 
     @nms.cTkFSM.StateChange.after
     def _state_change(self, this, lNewStateID, lpUserData, lbForceRestart):

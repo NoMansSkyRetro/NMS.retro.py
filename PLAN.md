@@ -164,9 +164,25 @@ simulation / game state / player environment), cGcPlayerEnvironment
 mbSelectedPlanetPanelVisible), cGcNGuiText (mpTextData.Text), cGcMarkerPoint
 (mCustomName), basic Vector3f/TkHandle (already build-independent).
 
-Newton itself will need a small retro fork on top of this (per-build guards for the
-BBO path, dt sourced from cTkFSM::Update, legacy save-slot handling), but the aim is
-to keep its core untouched.
+### Compatibility gating lives in the framework, not in mods
+
+Mods like Newton should run unmodified; NMS.retro.py absorbs the per-build
+differences. The rules:
+
+- `types.py` declares the FULL API surface mods use, on every build, so mods always
+  import and load. Availability is data-driven from `offsets.json`.
+- A hook with no address in the running build is disabled: its detours never fire
+  (one warning at mod load).
+- Calling an unmapped game function warns once and returns None instead of raising.
+- Struct fields are declared with per-version offsets (`_vfields_` +
+  `versioned_struct`); a field not mapped in the running build reads as None with a
+  one-time warning. Fields for features a build predates (e.g. base building before
+  1.13) simply have no offset there.
+- `gameData` accessors return None whenever their chain is unavailable, matching the
+  `if x is not None` guards mods already write.
+- Where legacy lacks a modern function but has an equivalent, `offsets.json` aliases
+  it (e.g. `cGcGameState::OnSaveProgressCompleted` -> `WriteStateToStorage`) so the
+  modern hook name keeps working.
 
 ## Phases
 
