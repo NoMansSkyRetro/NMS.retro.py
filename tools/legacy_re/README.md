@@ -47,6 +47,10 @@ database was rebuilt from scratch.
   window using 4.13 source-file adjacency (functions from one .cpp compile
   contiguously). Emits `out/source_ranges.json` leads and auto-locks the rare
   single-function window.
+- `ghidra_live.py` — opens a legacy build's analyzed Ghidra project read-only
+  (pyghidra) for the queries the static decomp can't do: the real reference graph
+  (data / computed / indirect / vtable refs) and the decompiler on demand. For manual
+  RE of the anchor-starved remainder.
 - `find_boot_set.py` — automates the boot-set identification chain (FSM cluster,
   application globals, main loop) for one build and merges into offsets.json.
 - `harvest_name_literals.py` — maps profiler string literals (functions that

@@ -184,6 +184,29 @@ than the NEXT-era `JETPACK`/`STAMINA` the later builds show. The same tool confi
 The windows tighten automatically as coverage grows, so re-running this after future
 rounds will surface more single-function locks.
 
+## Live Ghidra (ghidra_live.py)
+
+`ghidra_live.py` opens a legacy build's already-analyzed Ghidra project read-only via
+pyghidra (the mechanism OpenNMS uses) and exposes the queries the static SQLite decomp
+cannot: the real ReferenceManager (data, computed, and indirect/vtable refs, not just
+E8/E9 direct calls) and the decompiler on demand.
+
+    python ghidra_live.py smoke 1.38
+    python ghidra_live.py xrefs 1.38 0x140680550
+    python ghidra_live.py decompile 1.38 0x140f81250
+
+Proven value: it finds a DATA reference to cGcApplication::Update from 0x1424f32e8 (a
+function pointer stored in a data structure) that the E8/E9 call-edge scan misses.
+
+First use, the marker cluster: driving real callees of the mapped
+cGcScanEvent::UpdateInteraction showed that in this legacy build it does NOT call the
+marker-list add/remove functions the way 4.13 does (its similar-looking callees are a
+scan-state update pair, not TryAddMarker/RemoveMarker). So cGcMarkerPoint::IsEqual is
+still not reachable from current anchors even with live Ghidra: the scan-event/marker
+code was restructured between these builds and 4.13. The cluster needs a fresh anchor
+(e.g. the marker vector's element size 0x30 seen in the reset loop at 0x1406C27A0 in
+1.38) or manual RTTI/vtable work, not anchor-chasing from what is mapped now.
+
 ## The 4.13 OpenNMS project as a resource
 
 `E:\OpenNMS` is the 4.13 matching-decompilation pipeline (byte-perfect C++
