@@ -163,6 +163,39 @@ Off-surface anchor located for future rounds (not one of the 331):
 `cGcSpaceshipWeapons::Update` via `ShipShootShake`+`ShipLaserShake`+`OSD_OVERHEAT_SWITCH`
 (1.13 0x140C48360, 1.24 0x140DCBC50, 1.38 0x140F81250).
 
+## Source-file adjacency (locate_by_source.py)
+
+The 4.13 PDB records a source path for 81.5k/85.4k functions
+(`reference_symbol_db.json`), and MSVC emits one .cpp's functions contiguously in
+source-line order. So an unmapped target's nearest already-mapped same-file neighbours
+bracket a small legacy address window it must fall inside. `locate_by_source.py` emits
+those windows (`out/source_ranges.json`) as leads and auto-commits the rare case where
+the window holds exactly one function.
+
+At current coverage the reach is limited (most targets have no mapped same-file anchor
+on both sides), but it produced a clean win: **cGcPlayerHUD::RenderIndicatorPanel in
+1.09.1 = 0x14048DBF0**, which round 2 had called absent. Three signals agreed: it is
+the sole function between the mapped RenderCrosshair and RenderWeaponPanel in
+gcplayerhud.cpp, it shares RenderWeaponPanel's caller (the HUD render dispatcher
+0x14048c440), and it renders indicator icons (`ICON%d`/`ICONS`/`TECH1` loop) rather
+than the NEXT-era `JETPACK`/`STAMINA` the later builds show. The same tool confirmed
+`Engine::GetNodeParent` is inlined in all four builds (its bracket window is empty).
+
+The windows tighten automatically as coverage grows, so re-running this after future
+rounds will surface more single-function locks.
+
+## The 4.13 OpenNMS project as a resource
+
+`E:\OpenNMS` is the 4.13 matching-decompilation pipeline (byte-perfect C++
+reconstruction). It is a different goal from ours (locate vs reconstruct), but its data
+is useful here: `NMS413_GHIDRA_ANALYSIS\symbol_db.json` and `decomp\decomp.db` carry
+the 4.13 call graph, source paths, types, and `/OPT:ICF` fold groups — richer than
+`reference_symbol_db.json`. The clear next lever for the anchor-starved remainder is
+**live Ghidra on the legacy projects** (`E:\NMSLegacy_Decomp\NMS*_GHIDRA_PROJ`) via the
+Ghidra MCP bridge: real data xrefs and the decompiler, which the static SQLite decomp
+databases (and our E8/E9 call-edge scan) cannot provide. That is a manual RE session,
+not an automated sweep.
+
 ## Struct layout so far
 
 - `cTkFSM`: `+0x10` current `cTkFSMState*`; `+0x18` pending-state

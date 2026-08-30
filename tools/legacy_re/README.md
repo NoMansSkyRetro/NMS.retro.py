@@ -43,6 +43,10 @@ database was rebuilt from scratch.
 - `generate_hook_stubs.py` — regenerates `nmspy/data/generated_hooks.py`, the full
   gated hook surface (prototypes from the 4.13 PDB). Rerun after changing the
   upstream list; offsets.json changes alone need no regeneration.
+- `locate_by_source.py` — narrows anchor-starved targets to a small legacy address
+  window using 4.13 source-file adjacency (functions from one .cpp compile
+  contiguously). Emits `out/source_ranges.json` leads and auto-locks the rare
+  single-function window.
 - `find_boot_set.py` — automates the boot-set identification chain (FSM cluster,
   application globals, main loop) for one build and merges into offsets.json.
 - `harvest_name_literals.py` — maps profiler string literals (functions that
