@@ -237,20 +237,240 @@
     },
     "cGcFrontendPageClaimBase::DoBaseClaimOptions": {
       "1.24": "0x14073F460",
-      "1.38": "0x140832A60"
+      "1.38": "0x140832A60",
+      "1.13": "0x1406517B0"
     },
     "cGcQuickActionMenu::TriggerAction": {
       "1.24": "0x140CBEDF0",
-      "1.38": "0x140E98880"
+      "1.38": "0x140E98880",
+      "1.13": "0x140B42C80"
     },
     "cGcBinoculars::PopulateDiscoveryInfo": {
-      "1.38": "0x140DD3780"
+      "1.38": "0x140DD3780",
+      "1.24": "0x140C3CC90",
+      "1.13": "0x140AC7720"
     },
     "cGcFrontendPagePortalRunes::DoInteraction": {
       "1.38": "0x140873740"
     },
     "cGcRealityManager::Construct": {
-      "1.38": "0x140C81640"
+      "1.38": "0x140C81640",
+      "1.24": "0x140B0E4A0",
+      "1.13": "0x1409A2A20"
+    },
+    "Engine::GetModelNode": {
+      "1.38": "0x141128870",
+      "1.24": "0x140F70D90",
+      "1.13": "0x140DA6C10"
+    },
+    "Engine::Initialise": {
+      "1.38": "0x141123A10",
+      "1.24": "0x140F6BFC0",
+      "1.13": "0x140DA2330"
+    },
+    "cGcApplicationGameModeSelectorState::Update": {
+      "1.38": "0x14068E870",
+      "1.24": "0x140578B80",
+      "1.13": "0x1404BE970"
+    },
+    "cGcNGuiLayer::LoadFromMetadata": {
+      "1.38": "0x14092CAE0",
+      "1.24": "0x140559080",
+      "1.13": "0x1404A73E0"
+    },
+    "cGcPlanet::UpdateWeather": {
+      "1.38": "0x140DEDBC0",
+      "1.24": "0x140C5A670",
+      "1.13": "0x140AE4B80"
+    },
+    "cGcPlayer::Update": {
+      "1.38": "0x140E59230",
+      "1.24": "0x140CADA90",
+      "1.13": "0x140B330E0"
+    },
+    "cGcPlayerExperienceDirector::Update": {
+      "1.38": "0x140E68670",
+      "1.24": "0x140CC6B30",
+      "1.13": "0x140B497C0"
+    },
+    "cGcPlayerNotifications::AddTimedMessage": {
+      "1.38": "0x14070D500",
+      "1.24": "0x1405F7820",
+      "1.13": "0x1404FBB40"
+    },
+    "cGcSimulation::Update": {
+      "1.38": "0x140C973E0",
+      "1.24": "0x140B1EF20",
+      "1.13": "0x1409B1E80"
+    },
+    "cTkAudioManager::Play": {
+      "1.38": "0x141220A20",
+      "1.24": "0x141065E00",
+      "1.13": "0x140E91460"
+    },
+    "cTkFileSystem::GetInstance": {
+      "1.38": "0x1410A2550",
+      "1.24": "0x140EF4F70",
+      "1.13": "0x140D37490"
+    },
+    "cTkLanguageManager::GetInstance": {
+      "1.38": "0x141328550",
+      "1.24": "0x14116D900",
+      "1.13": "0x140F94E10"
+    },
+    "cTkLanguageManagerBase::Translate": {
+      "1.38": "0x1410D5210",
+      "1.24": "0x140F19610",
+      "1.13": "0x140D56770"
+    },
+    "cTkMemoryManager::Free": {
+      "1.38": "0x141327B40",
+      "1.24": "0x14116CEF0",
+      "1.13": "0x140F94400"
+    },
+    "cTkResourceManager::FindResourceA": {
+      "1.38": "0x141124EE0",
+      "1.24": "0x140F6D460",
+      "1.13": "0x140DA35B0"
+    },
+    "cTkResourceManager::GetDefaultResource": {
+      "1.38": "0x141010290",
+      "1.24": "0x140E55F90",
+      "1.13": "0x140C9CDE0"
+    },
+    "cTkSystem::GetInstance": {
+      "1.38": "0x140668DD0",
+      "1.24": "0x140553890",
+      "1.13": "0x1404A0510"
+    },
+    "Engine::AddGroupNode": {
+      "1.38": "0x141129560",
+      "1.24": "0x140F71A70",
+      "1.13": "0x140DA7850"
+    },
+    "Engine::GetNodeAbsoluteTransMatrix": {
+      "1.38": "0x1410D1790",
+      "1.24": "0x140F0FEB0",
+      "1.13": "0x140D4D2E0"
+    },
+    "Engine::SetUniformArrayDefaultMultipleShaders": {
+      "1.38": "0x141127A60",
+      "1.24": "0x140F6FFB0",
+      "1.13": "0x140DA6040"
+    },
+    "cTkEngineUtils::LoadResourcesFromDisk": {
+      "1.38": "0x14110C770",
+      "1.24": "0x140F54BB0",
+      "1.13": "0x140D8E4E0"
+    },
+    "cEgGeometryResource::CloneInternal": {
+      "1.38": "0x14117BEA0",
+      "1.24": "0x140FC05D0",
+      "1.13": "0x140DF2A20"
+    },
+    "cEgModules::Initialise": {
+      "1.38": "0x1411478F0",
+      "1.24": "0x140F8A8C0",
+      "1.13": "0x140DBE650"
+    },
+    "cEgResource::Load": {
+      "1.38": "0x1411A68D0",
+      "1.24": "0x140FEA640",
+      "1.13": "0x140DC4540"
+    },
+    "cEgTextureResource::Load": {
+      "1.38": "0x14112D530",
+      "1.24": "0x140F75510",
+      "1.13": "0x140DAFA70"
+    },
+    "cGcBaseBuildingManager::Update": {
+      "1.38": "0x140737530",
+      "1.24": "0x14061E970"
+    },
+    "cGcBeamEffect::Prepare": {
+      "1.38": "0x140EA9910",
+      "1.24": "0x140D0D2E0",
+      "1.13": "0x140B89850"
+    },
+    "cGcBinoculars::UpdateTarget": {
+      "1.38": "0x140DD15E0"
+    },
+    "cGcCreatureComponent::Prepare": {
+      "1.38": "0x140D41AD0",
+      "1.24": "0x140BBE590",
+      "1.13": "0x140A4CBC0"
+    },
+    "cGcEcosystem::Update": {
+      "1.38": "0x140D1CC50",
+      "1.24": "0x140B99660",
+      "1.13": "0x140A28320"
+    },
+    "cGcGameState::Update": {
+      "1.38": "0x14075B7C0",
+      "1.24": "0x140641870",
+      "1.13": "0x140531F20"
+    },
+    "cGcInteractionComponent::DoInteractionEvent": {
+      "1.38": "0x140CA2820",
+      "1.24": "0x140B32480",
+      "1.13": "0x1409C4C90"
+    },
+    "cGcLaserBeam::Fire": {
+      "1.38": "0x140EAA560",
+      "1.24": "0x140D0DF30",
+      "1.13": "0x140B8A510"
+    },
+    "cGcNGuiText::EditElement": {
+      "1.38": "0x140923A30"
+    },
+    "cGcNameGenerator::GenerateGalacticRegionName": {
+      "1.38": "0x140C78A20",
+      "1.24": "0x140B06A30",
+      "1.13": "0x14099B280"
+    },
+    "cGcPlanet::SetupRegionMap": {
+      "1.38": "0x140F03E10",
+      "1.24": "0x140D53EB0",
+      "1.13": "0x140BCE070"
+    },
+    "cGcPlanet::cGcPlanet": {
+      "1.38": "0x140C94B80",
+      "1.24": "0x140B1C640",
+      "1.13": "0x1409AFC80"
+    },
+    "cGcPlayer::RenderNGui": {
+      "1.38": "0x140FBE0D0",
+      "1.24": "0x140E05B20"
+    },
+    "cGcSolarSystem::Construct": {
+      "1.38": "0x140EE4380",
+      "1.24": "0x140D2C6D0",
+      "1.13": "0x140BA7660"
+    },
+    "cGcSolarSystem::Generate": {
+      "1.38": "0x140EE7250",
+      "1.24": "0x140D2F470",
+      "1.13": "0x140BAA2B0"
+    },
+    "cGcSpaceshipComponent::Update": {
+      "1.38": "0x140F61A80",
+      "1.24": "0x140D8B380",
+      "1.13": "0x140C00950"
+    },
+    "cGcTerrainRegionMap::Construct": {
+      "1.38": "0x140DA1450",
+      "1.24": "0x140C4C390",
+      "1.13": "0x140AD6A80"
+    },
+    "cTkMemoryManager::Malloc": {
+      "1.38": "0x1410AF960",
+      "1.24": "0x140EEE310",
+      "1.13": "0x140D30D20"
+    },
+    "cTkResourceManager::AddResource": {
+      "1.38": "0x141124FE0",
+      "1.24": "0x140F6D560",
+      "1.13": "0x140DA36B0"
     }
   },
   "globals": {
