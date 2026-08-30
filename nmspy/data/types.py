@@ -1,4 +1,4 @@
-"""Legacy game types and hooked functions.
+﻿"""Legacy game types and hooked functions.
 
 Rebuilt from scratch for the four legacy builds this fork targets. The modern (4.x)
 definitions this file replaced live in upstream NMS.py and in git history.
@@ -23,13 +23,18 @@ from logging import getLogger
 
 from pymhf.core.hooking import Structure
 
+# The auto-generated full upstream hook surface (see tools/legacy_re/
+# generate_hook_stubs.py). Everything it defines is importable from this module;
+# the hand-written classes below inherit from it and refine what they need.
+from nmspy.data.generated_hooks import *  # noqa: F401,F403
+import nmspy.data.generated_hooks as gen
 from nmspy.data.offsets import _warn_once, legacy_hook, versioned_struct
 
 logger = getLogger(__name__)
 
 
 @versioned_struct
-class cTkFSM(Structure):
+class cTkFSM(gen.cTkFSM, Structure):
     # Layout notes in tools/legacy_re/findings.md; fields added as they are verified.
     _vfields_ = {
         # The active cTkFSMState*.
@@ -59,7 +64,7 @@ class cTkFSM(Structure):
         ...
 
 
-class cTkFSMState(Structure):
+class cTkFSMState(gen.cTkFSMState, Structure):
     @legacy_hook("cTkFSMState::StateChange")
     def StateChange(
         self,
@@ -77,7 +82,7 @@ class cTkFSMState(Structure):
 
 
 @versioned_struct
-class cGcApplication(cTkFSM):
+class cGcApplication(gen.cGcApplication, cTkFSM):
     """The static application singleton (a cTkFSM whose states are the App* states)."""
 
     _vfields_ = {
@@ -89,13 +94,13 @@ class cGcApplication(cTkFSM):
     def Update(self, this: c_uint64): ...
 
 
-class cGcApplicationLocalLoadState(Structure):
+class cGcApplicationLocalLoadState(gen.cGcApplicationLocalLoadState, Structure):
     @legacy_hook("cGcApplicationLocalLoadState::GetRespawnReason")
     def GetRespawnReason(self, this: c_uint64) -> c_int32: ...
 
 
 @versioned_struct
-class cGcSimulation(Structure):
+class cGcSimulation(gen.cGcSimulation, Structure):
     _vfields_ = {}
 
     @legacy_hook("cGcSimulation::Construct")
@@ -106,7 +111,7 @@ class cGcSimulation(Structure):
 
 
 @versioned_struct
-class cGcGameState(Structure):
+class cGcGameState(gen.cGcGameState, Structure):
     _vfields_ = {}
 
     @legacy_hook("cGcGameState::LoadFromPersistentStorage")
@@ -119,7 +124,7 @@ class cGcGameState(Structure):
 
 
 @versioned_struct
-class cGcPlanet(Structure):
+class cGcPlanet(gen.cGcPlanet, Structure):
     _vfields_ = {
         "miPlanetIndex": (c_int32, {}),
         "mPosition": (c_uint64, {}),
@@ -138,7 +143,7 @@ class cGcPlanet(Structure):
 
 
 @versioned_struct
-class cGcSolarSystem(Structure):
+class cGcSolarSystem(gen.cGcSolarSystem, Structure):
     _vfields_ = {
         "maPlanets": (c_uint64, {}),
     }
@@ -151,7 +156,7 @@ class cGcSolarSystem(Structure):
 
 
 @versioned_struct
-class cGcShipHUD(Structure):
+class cGcShipHUD(gen.cGcShipHUD, Structure):
     _vfields_ = {
         "mHeadsUpGUI": (c_uint64, {}),
         "miSelectedPlanet": (c_int32, {}),
@@ -168,7 +173,7 @@ class cGcShipHUD(Structure):
     def RenderFlightHUD(self, this: c_uint64): ...
 
 
-class cGcNGuiLayer(Structure):
+class cGcNGuiLayer(gen.cGcNGuiLayer, Structure):
     @legacy_hook("cGcNGuiLayer::FindTextRecursive")
     def FindTextRecursive(self, this: c_uint64, lTextID: c_uint64) -> c_uint64: ...
 
@@ -184,7 +189,7 @@ class cGcNGuiText(Structure):
 
 
 @versioned_struct
-class cGcMarkerPoint(Structure):
+class cGcMarkerPoint(gen.cGcMarkerPoint, Structure):
     _vfields_ = {
         "mCustomName": (c_uint64, {}),
     }
@@ -194,7 +199,7 @@ class cGcMarkerPoint(Structure):
 
 
 @versioned_struct
-class cTkDynamicGravityControl(Structure):
+class cTkDynamicGravityControl(gen.cTkDynamicGravityControl, Structure):
     _vfields_ = {
         "maGravityPoints": (c_uint64, {}),
     }
@@ -209,24 +214,24 @@ class cTkDynamicGravityControl(Structure):
     def GetGravity(self, this: c_uint64, *args): ...
 
 
-class cTkStopwatch(Structure):
+class cTkStopwatch(gen.cTkStopwatch, Structure):
     @legacy_hook("cTkStopwatch::GetDurationInSeconds")
     def GetDurationInSeconds(self, this: c_uint64) -> c_float: ...
 
 
-class cGcPlayerBasePersistentBuffer(Structure):
+class cGcPlayerBasePersistentBuffer(gen.cGcPlayerBasePersistentBuffer, Structure):
     """Base-building persistence. 1.09.1 predates base building entirely."""
 
     @legacy_hook("cGcPlayerBasePersistentBuffer::LoadGalacticAddress")
     def LoadGalacticAddress(self, this: c_uint64, *args): ...
 
 
-class cGcRewardManager(Structure):
+class cGcRewardManager(gen.cGcRewardManager, Structure):
     @legacy_hook("cGcRewardManager::GiveGenericReward")
     def GiveGenericReward(self, this: c_uint64, lRewardID: c_uint64, *args): ...
 
 
-class cGcInteractionComponent(Structure):
+class cGcInteractionComponent(gen.cGcInteractionComponent, Structure):
     @legacy_hook("cGcInteractionComponent::GetPuzzle")
     def GetPuzzle(self, this: c_uint64) -> c_uint64: ...
 
@@ -239,7 +244,7 @@ class cGcAlienPuzzleEntry(Structure):
     }
 
 
-class Engine:
+class Engine(gen.Engine):
     """Engine functions that are called directly (not hooked)."""
 
     @legacy_hook("Engine::ShiftAllTransformsForNode", static=True)

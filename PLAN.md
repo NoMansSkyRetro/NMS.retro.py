@@ -171,8 +171,12 @@ differences. The rules:
 
 - `types.py` declares the FULL API surface mods use, on every build, so mods always
   import and load. Availability is data-driven from `offsets.json`.
+- Every function upstream NMS.py supported has a row in `offsets.json`; a slot
+  without an address carries a flag: `NOT_YET_FOUND` (exists, nobody has located it)
+  or `NOT_IN_THIS_VERSION` (the feature postdates the build, with a `_note` giving
+  the release history). `nmspy.data.offsets.availability(name)` exposes this to code.
 - A hook with no address in the running build is disabled: its detours never fire
-  (one warning at mod load).
+  (one warning at mod load, worded from the flag and note).
 - Calling an unmapped game function warns once and returns None instead of raising.
 - Struct fields are declared with per-version offsets (`_vfields_` +
   `versioned_struct`); a field not mapped in the running build reads as None with a

@@ -30,13 +30,41 @@ with open(Path(__file__).parent / "offsets.json") as _f:
 FUNCTIONS: dict = _DATA["functions"]
 GLOBALS: dict = _DATA["globals"]
 
+#: The function exists in this build but nobody has located its address yet.
+NOT_YET_FOUND = "NOT_YET_FOUND"
+#: The feature this function belongs to postdates this build entirely.
+NOT_IN_THIS_VERSION = "NOT_IN_THIS_VERSION"
+FOUND = "FOUND"
+
+
+def _is_address(value) -> bool:
+    return isinstance(value, str) and value.startswith("0x")
+
+
+def availability(name: str):
+    """(status, note) for a named function in the running build.
+
+    status is FOUND, NOT_YET_FOUND, or NOT_IN_THIS_VERSION; note carries the
+    version-history explanation when the data has one.
+    """
+    entry = FUNCTIONS.get(name) or {}
+    note = entry.get("_note")
+    if CURRENT_VERSION is None:
+        return NOT_YET_FOUND, note
+    value = entry.get(CURRENT_VERSION.value)
+    if _is_address(value):
+        return FOUND, note
+    if value == NOT_IN_THIS_VERSION:
+        return NOT_IN_THIS_VERSION, note
+    return NOT_YET_FOUND, note
+
 
 def offset_for(name: str) -> Optional[int]:
     """The module-relative offset of a named function in the running build, or None."""
     if CURRENT_VERSION is None:
         return None
     address = (FUNCTIONS.get(name) or {}).get(CURRENT_VERSION.value)
-    return int(address, 16) - STATIC_BASE if address else None
+    return int(address, 16) - STATIC_BASE if _is_address(address) else None
 
 
 def global_offset_for(name: str) -> Optional[int]:
@@ -44,7 +72,7 @@ def global_offset_for(name: str) -> Optional[int]:
     if CURRENT_VERSION is None:
         return None
     address = (GLOBALS.get(name) or {}).get(CURRENT_VERSION.value)
-    return int(address, 16) - STATIC_BASE if address else None
+    return int(address, 16) - STATIC_BASE if _is_address(address) else None
 
 
 _warned: set = set()
@@ -57,22 +85,34 @@ def _warn_once(key: str, message: str):
 
 
 class DisabledHook:
-    """Stand-in for a hook whose address is unknown in the running build.
+    """Stand-in for a hook that cannot resolve in the running build.
 
     Keeps the FunctionHook API shape so mods import and load cleanly: their detours
     just never fire (with a warning at load time), and calling the game function
     warns once and returns None instead of raising, so mods degrade gracefully.
+    The status distinguishes a function nobody has located yet (NOT_YET_FOUND) from
+    one whose feature postdates this build entirely (NOT_IN_THIS_VERSION).
     """
 
-    def __init__(self, name: str):
+    def __init__(self, name: str, status: str = NOT_YET_FOUND, note: Optional[str] = None):
         self._name = name
+        self._status = status
+        self._note = note
+
+    @property
+    def status(self) -> str:
+        return self._status
+
+    def _reason(self) -> str:
+        version = CURRENT_VERSION.value if CURRENT_VERSION else "<unknown build>"
+        if self._status == NOT_IN_THIS_VERSION:
+            reason = f"{self._name} does not exist in {version}"
+        else:
+            reason = f"{self._name} has not been located in {version} yet"
+        return f"{reason} ({self._note})" if self._note else reason
 
     def _warn(self, detour):
-        version = CURRENT_VERSION.value if CURRENT_VERSION else "<unknown build>"
-        logger.warning(
-            f"{self._name} has no known address in {version}; "
-            f"{detour.__qualname__} will never be called."
-        )
+        logger.warning(f"{self._reason()}; {detour.__qualname__} will never be called.")
         return detour
 
     before = _warn
@@ -83,11 +123,7 @@ class DisabledHook:
         return self
 
     def __call__(self, *args, **kwargs):
-        version = CURRENT_VERSION.value if CURRENT_VERSION else "<unknown build>"
-        _warn_once(
-            f"call:{self._name}",
-            f"{self._name} has no known address in {version}; call ignored (returning None).",
-        )
+        _warn_once(f"call:{self._name}", f"{self._reason()}; call ignored (returning None).")
         return None
 
 
@@ -99,7 +135,8 @@ def legacy_hook(name: str, static: bool = False):
     """
     offset = offset_for(name)
     if offset is None:
-        return lambda func: DisabledHook(name)
+        status, note = availability(name)
+        return lambda func: DisabledHook(name, status, note)
     if static:
         return static_function_hook(offset=offset)
     return function_hook(offset=offset)

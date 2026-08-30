@@ -36,6 +36,13 @@ database was rebuilt from scratch.
     units cluster, so neighbours of a known function are often related).
   - `vtable <build> <address> [n]` — read n pointer slots at a data address and name
     the functions they point to.
+- `build_full_surface.py` — ensures every upstream-supported function has a row in
+  offsets.json, flagging unlocated slots NOT_YET_FOUND and feature-postdates-build
+  slots NOT_IN_THIS_VERSION (rule table with release-history notes, cross-checked
+  against string probes of the exes).
+- `generate_hook_stubs.py` — regenerates `nmspy/data/generated_hooks.py`, the full
+  gated hook surface (prototypes from the 4.13 PDB). Rerun after changing the
+  upstream list; offsets.json changes alone need no regeneration.
 - `find_boot_set.py` — automates the boot-set identification chain (FSM cluster,
   application globals, main loop) for one build and merges into offsets.json.
 - `harvest_name_literals.py` — maps profiler string literals (functions that

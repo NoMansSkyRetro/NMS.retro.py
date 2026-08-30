@@ -49,6 +49,8 @@ def main():
         for name, addr in found.items():
             entry = data["functions"].setdefault(name, {})
             existing = entry.get(build)
+            if existing and not str(existing).startswith("0x"):
+                existing = None  # a NOT_YET_FOUND / NOT_IN_THIS_VERSION flag
             if existing and int(existing, 16) != addr:
                 sys.exit(f"{build}: MISMATCH {name}: json {existing} vs found 0x{addr:X}")
             entry[build] = f"0x{addr:X}"

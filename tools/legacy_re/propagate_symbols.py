@@ -330,7 +330,7 @@ def main():
         seed = {}
         for name, entry in data["functions"].items():
             addr = entry.get(build) if isinstance(entry, dict) else None
-            if not addr or name.startswith("_"):
+            if not addr or not str(addr).startswith("0x") or name.startswith("_"):
                 continue
             va = targets.get(name)
             if va is None and len(vas_by_name.get(name, ())) == 1:
@@ -379,6 +379,8 @@ def main():
             on_surface += 1
             entry = data["functions"].setdefault(target_name, {})
             existing = entry.get(build)
+            if existing and not str(existing).startswith("0x"):
+                existing = None  # a NOT_YET_FOUND / NOT_IN_THIS_VERSION flag
             if existing and int(existing, 16) != addr:
                 print(f"{build}: KEEPING curated {target_name} {existing} over matched 0x{addr:X}")
                 conflicts += 1

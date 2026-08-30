@@ -106,6 +106,8 @@ def main():
         table = data["globals"] if name.startswith("global ") else data["functions"]
         key = name.removeprefix("global ")
         existing = table.setdefault(key, {}).get(build)
+        if existing and not str(existing).startswith("0x"):
+            existing = None  # a NOT_YET_FOUND / NOT_IN_THIS_VERSION flag
         if existing and int(existing, 16) != addr:
             mismatches.append(f"{key}: json has {existing}, found 0x{addr:X}")
         table[key][build] = f"0x{addr:X}"

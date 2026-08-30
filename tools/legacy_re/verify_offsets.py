@@ -28,7 +28,7 @@ def main() -> int:
         checked = 0
         for name, per_version in data["functions"].items():
             address = per_version.get(build)
-            if not address:
+            if not address or not str(address).startswith("0x"):
                 continue
             checked += 1
             if b.function_at(int(address, 16)) is None:
@@ -36,7 +36,7 @@ def main() -> int:
                 failures += 1
         for name, per_version in data["globals"].items():
             address = per_version.get(build)
-            if not address:
+            if not address or not str(address).startswith("0x"):
                 continue
             checked += 1
             rva = int(address, 16) - STATIC_BASE
