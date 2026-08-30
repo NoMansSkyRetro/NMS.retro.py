@@ -603,13 +603,14 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "0x140DA7400",
       "1.24": "0x140F71620",
-      "1.38": "0x141129110"
+      "1.38": "0x141129110",
+      "_unresolved": "1.13/1.24/1.38 already resolved; 1.09.1 slot only. In 1.09.1 the node name is not a direct field read (as in 1.38, node+0x20 SSO string) - it goes through a vtable getter with no distinctive string, could not be isolated with two signals"
     },
     "Engine::GetNodeNumChildren": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.24": "0x140F70F60",
+      "1.38": "0x141128A40",
       "_unresolved": "no standalone single-handle getter matches; inlined at call sites in these builds"
     },
     "Engine::GetNodeParent": {
@@ -667,9 +668,9 @@
     },
     "Engine::ShiftAllTransformsForNode": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.13": "0x140DA7210",
+      "1.24": "0x140F713F0",
+      "1.38": "0x141128EE0",
       "_unresolved": "MarkSelfOrAncestorTransformDirtyRecurse/MarkSelfOrDescendentsAABBDirty callees unmapped in legacy; not isolated with two signals"
     },
     "GenerateModdedFilepath": {
@@ -951,7 +952,8 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "0x140A9A770",
       "1.24": "0x140C0D1C0",
-      "1.38": "0x140D8F760"
+      "1.38": "0x140D8F760",
+      "_unresolved": "1.09.1 only: absent -- its uniform strings (gLightOriginVec4/ProbeReflections) do not exist in 1.09.1 and it is not among the callees of the derived cGcSimulation::UpdateRender (0x14086CB40); the probe-reflection render path was inlined/added after 1.09.1."
     },
     "cGcFishLaser::OnModeChanged": {
       "_note": "Fishing arrived in Aquarius (5.1).",
@@ -1272,10 +1274,10 @@
       "_unresolved": "header-inline thin wrapper around FindElementRecursive; FindElementRecursive has ~94 callers/build and no candidate carries the modern TkID hash, so it cannot be isolated."
     },
     "cGcNGuiLayer::GetGraphic": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x140443740",
+      "1.13": "0x1404A6A80",
+      "1.24": "0x1405586B0",
+      "1.38": "0x14066BD50",
       "_unresolved": "one of four byte-identical templated accessor siblings next to the known cGcNGuiLayer::GetText; no structural feature distinguishes GetGraphic from its peers."
     },
     "cGcNGuiLayer::cGcNGuiLayer": {
@@ -1492,10 +1494,10 @@
       "_unresolved": "modern strings JEMMC_%d_%d / CamoEffectMaterial_%d are post-launch (camo/JEMMC features); MusicVolume has 3 generic owners; the no-string children of the mapped cGcPlayer::Update cannot be told apart - no unique start"
     },
     "cGcPlayerCommunicator::Update": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x14087D5A0",
+      "1.13": "0x1409C72A0",
+      "1.24": "0x140B34DC0",
+      "1.38": "0x140CA59D0",
       "_unresolved": "no strings; not a resolvable direct callee of the mapped cGcPlayer::Update in legacy, and its interaction/engine callees (FindFirstTypedComponent, GetInteraction, RequestRemoveNode, ...) are unmapped - no unique start"
     },
     "cGcPlayerCreatureOwnership::cGcPlayerCreatureOwnership": {
@@ -1773,8 +1775,8 @@
       "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcScanEvent::CalculateMarkerPosition": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
+      "1.09.1": "0x140969A20",
+      "1.13": "0x140AC0B20",
       "1.24": "0x140C358E0",
       "1.38": "0x140DE1B60",
       "_unresolved": "reached only via ScanEvent::Update, which is itself unlocatable in 1.09.1/1.13."
@@ -1787,16 +1789,16 @@
       "_unresolved": "only generic strings (\"list too long\") and a generic reciprocal-divide immediate; the one detectable caller of CalculateMarkerPosition is Update, so Construct cannot be reached via the call graph; callers (ScanEventManager::AddEvent*) are unmapped."
     },
     "cGcScanEvent::Update": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
+      "1.09.1": "0x140968A30",
+      "1.13": "0x140ABF910",
       "1.24": "0x140C33FA0",
       "1.38": "0x140DDF9C0",
       "_unresolved": "TIMED_GOTO/%d:%.2d timed-goto display strings are absent before 1.24; no mapped scanevent-runtime caller in 1.09.1/1.13 to anchor on."
     },
     "cGcScanEvent::UpdateInteraction": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
+      "1.09.1": "0x140969350",
+      "1.13": "0x140AC03C0",
+      "1.24": "0x140C35270",
       "1.38": "0x140DE0DC0",
       "_unresolved": "cGcMaintenanceComponentData class-name string is only emitted in the 1.38 exe."
     },
@@ -1855,10 +1857,10 @@
       "1.38": "0x140DEDBC0"
     },
     "cGcSky::UpdateSunPosition": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x1409883D0",
+      "1.13": "0x140AE6530",
+      "1.24": "0x140C5C0C0",
+      "1.38": "0x140DEF770",
       "_unresolved": "same Sky sun sub-chain: its markers (Cos/Sin/GetSolarSunAngle) are unmapped and non-distinctive; multiple Sky-window candidates of similar size, no clear winner."
     },
     "cGcSolarSystem::OnEnterPlanetOrbit": {

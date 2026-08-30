@@ -134,6 +134,35 @@ agents surfaced and I verified before fixing:
 whose string/call hints are inherently ambiguous (e.g. `cGcSpaceshipWarp::UpdatePulseDrive`
 folds with `cGcPlayerExperienceDirector::UpdatePulseEncounters`).
 
+## Fleet round 2 (2026-08-30, with handles.py)
+
+A second wave of 8 agents worked the anchor-rich batches using the new `handles.py`
+cross-version toolkit (cached string/imm/call-graph indices; `by_string`, `port`,
+`port_candidates`, `callers`/`callees`/`neighbours`). Net **+24 addresses**, raising
+coverage to 112 / 120 / 124 / 130 for 1.09.1 / 1.13 / 1.24 / 1.38.
+
+The round-2 win was searching *legacy* strings directly (not only porting the modern
+4.13 hint set), which reached functions round 1 could not:
+- `cGcPlayerCommunicator::Update` (all builds) via the drone anim strings `ATTRACT_OUT`.
+- `cGcScanEvent::Update`/`CalculateMarkerPosition`/`UpdateInteraction` back-filled in
+  1.09.1/1.13 via the version-stable `SIGNAL_COMPLETE` anchor.
+- `Engine::ShiftAllTransformsForNode` (1.13/1.24/1.38) — an NMS-Newton engine call.
+- `Engine::GetNodeNumChildren`, `cGcSky::UpdateSunPosition`, `cGcNGuiLayer::GetGraphic`.
+
+Verified negatives (well-established, not forceable):
+- `cGcMarkerPoint::IsEqual` and the whole marker cluster: the struct diverged too far
+  from 4.13 for any body fingerprint, and nothing in the marker unit is anchored.
+- The solar-system generator sub-functions, orbit enter/leave, weather/clouds/gravity
+  split, and terrain-editor Flatten/Stroke split are all inlined or postdate 1.38.
+
+Reusable struct intel from this round: the scene-node manager holds tree structure in
+a struct-of-arrays at `mgr+0x78` (stride 0x14): +0 numChildren (`& 0x7fffffff`),
++4 parent TkHandle, +8 first-child index, +0x10 next-sibling index.
+
+Off-surface anchor located for future rounds (not one of the 331):
+`cGcSpaceshipWeapons::Update` via `ShipShootShake`+`ShipLaserShake`+`OSD_OVERHEAT_SWITCH`
+(1.13 0x140C48360, 1.24 0x140DCBC50, 1.38 0x140F81250).
+
 ## Struct layout so far
 
 - `cTkFSM`: `+0x10` current `cTkFSMState*`; `+0x18` pending-state
