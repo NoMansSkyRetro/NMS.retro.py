@@ -26,6 +26,12 @@
     },
     "cTkFSM::StateChange": {
       "1.09.1": null,
+      "1.13": "0x140D4B4F0",
+      "1.24": "0x140F0DE50",
+      "1.38": "0x1410D4170"
+    },
+    "cTkFSMState::StateChange": {
+      "1.09.1": null,
       "1.13": "0x140D4B2D0",
       "1.24": "0x140F0DBE0",
       "1.38": "0x1410D3F00"

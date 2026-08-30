@@ -76,6 +76,22 @@ def cmd_vtable(b: Binary, addr: str, n: str = "16"):
         print(f"[{i}] 0x{ptr:X}  {desc}")
 
 
+def cmd_dumpstr(b: Binary, start: str, end: str):
+    """Print every NUL-terminated printable ASCII string in a virtual address range."""
+    lo, hi = int(start, 16), int(end, 16)
+    off = b.va_to_file_offset(lo)
+    data = b.data[off : off + (hi - lo)]
+    pos = 0
+    while pos < len(data):
+        end_pos = data.find(b"\0", pos)
+        if end_pos == -1:
+            break
+        chunk = data[pos:end_pos]
+        if len(chunk) >= 2 and all(0x20 <= c < 0x7F for c in chunk):
+            print(f"0x{lo + pos:X}  {chunk.decode()}")
+        pos = end_pos + 1
+
+
 def cmd_sections(b: Binary):
     for s in b.sections:
         print(

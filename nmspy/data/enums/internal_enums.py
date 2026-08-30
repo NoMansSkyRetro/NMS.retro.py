@@ -37,18 +37,18 @@ class RespawnReason(IntEnum):
 
 
 class StateEnum(str, Enum):
-    TkFSMNoState = b"FSM_NOSTATE"
-    ApplicationScratchpadState = b"SCRATCHPAD"
-    ApplicationGameModeSelectorState = b"MODESELECTOR"
-    ApplicationGalacticMapState = b"GALAXYMAP"
-    ApplicationAmbientGameState = b"AMBIENT"
-    ApplicationGlobalLoadState = b"APPGLOBALLOAD"
-    ApplicationLocalLoadState = b"APPLOCALLOAD"
-    ApplicationSimulationState = b"APPVIEW"
-    ApplicationShutdownState = b"APPSHUTDOWN"
-    ApplicationBootState = b"APPBOOT"
-    ApplicationCoreServicesState = b"APPCORESERVICES"
-    ApplicationDeathState_0 = b"YOUAREDEAD"
+    # Legacy (1.x) application FSM state IDs. These are MixedCase, unlike the
+    # all-caps modern equivalents; see tools/legacy_re/findings.md.
+    # ModeSelector only exists from 1.13 (Foundation) on; 1.09.1 has no game modes.
+    TkFSMNoState = "FSM_NoState"
+    ApplicationGameModeSelectorState = "ModeSelector"
+    ApplicationGlobalLoadState = "AppGlobalLoad"
+    ApplicationLocalLoadState = "AppLocalLoad"
+    ApplicationSimulationState = "AppView"
+    ApplicationShutdownState = "AppShutdown"
+    ApplicationBootState = "AppBoot"
+    ApplicationCoreServicesState = "AppCoreServices"
+    ApplicationDeathState = "YouAreDead"
 
 
 class eStormState(IntEnum):

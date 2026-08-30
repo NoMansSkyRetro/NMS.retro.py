@@ -19,10 +19,10 @@ Chain of identification, per build:
    `"\n - FSM IGNORED REQUEST : -> [%s], already transitioning to [%s]\n"` appears in
    every function that requests a state transition. Most call sites inline the
    request, but one hit is a tiny standalone function (74 bytes in 1.09/1.13, 72 in
-   1.24/1.38): **`cTkFSM::StateChange`**. Its body writes the requested state ID into
-   the pending-state slot (`this->mpData[0x18..0x30]`) after checking it currently
-   holds `FSM_NoState`. In 1.24+ it gains the `lpUserData`/`lbForceRestart` parameters
-   that the modern signature also has.
+   1.24/1.38): **`cTkFSMState::StateChange`** (`this` is a *state*, `this+0x18` its
+   parent FSM). Its body writes the requested state ID into the FSM's pending-state
+   slot (`fsm+0x18..0x30`) after checking it currently holds `FSM_NoState`. In 1.24+
+   it gains the `lpUserData`/`lbForceRestart` parameters the modern signature has.
 2. The 274-byte function immediately after it is **`cTkFSM::Construct`** (confirmed:
    takes the FSM, a state table, and the initial state ID `AppBoot`).
 3. `grep` for the Construct address — its one external caller is
@@ -38,6 +38,12 @@ Chain of identification, per build:
    **`cGcApplication::Update`**, the per-frame main loop tick:
    `QueryPerformanceCounter`, two virtual queries, `cTkFSM::Update(&app, dt)`, then a
    virtual render call. Identical shape in every build.
+6. `cTkFSM::Update`'s body reveals the FSM core: when the pending state ID differs
+   from `FSM_NoState` it calls a 164-byte transition performer —
+   **`cTkFSM::StateChange`**`(this, lNewStateID, lpUserData, lbForceRestart)` — which
+   exits the current state (vtbl+0x28), swaps `this+0x10`, and enters the new one
+   (vtbl+0x20). Every transition passes through it exactly once, so it is the hook
+   for state-change notifications (the request path is inlined at most sites).
 
 ## Resulting addresses
 
@@ -47,18 +53,21 @@ Chain of identification, per build:
 | cGcApplication::Update | 0x1404B5BA0 | 0x14056B950 | 0x140680550 |
 | cTkFSM::Construct | 0x140D4B320 | 0x140F0DC30 | 0x1410D3F50 |
 | cTkFSM::Update | 0x140D4B460 | 0x140F0DDC0 | 0x1410D40E0 |
-| cTkFSM::StateChange | 0x140D4B2D0 | 0x140F0DBE0 | 0x1410D3F00 |
+| cTkFSM::StateChange | 0x140D4B4F0 | 0x140F0DE50 | 0x1410D4170 |
+| cTkFSMState::StateChange | 0x140D4B2D0 | 0x140F0DBE0 | 0x1410D3F00 |
 | cGcApplication (global) | 0x1417F6C80 | 0x141A433F0 | 0x142033690 |
 | cGcApplicationData* (global) | 0x1417F6CB8 | 0x141A43428 | 0x1420336C8 |
 
-## Notes for later phases
+## Struct layout so far
 
-- State-change notification: most `StateChange` call sites are inlined, so hooking
-  `cTkFSM::StateChange` misses transitions. Hook `cTkFSM::Update` and watch the FSM's
-  current/pending state strings instead.
-- `cTkFSM` layout (from the StateChange body): `this+0x18` points at a data block
-  whose `+0x18` is the pending-state `cTkFixedString<0x10>`, `+0x28` user data,
-  `+0x30` force-restart flag.
+- `cTkFSM`: `+0x10` current `cTkFSMState*`; `+0x18` pending-state
+  `cTkFixedString<0x10>` (holds `FSM_NoState` when idle); `+0x28` pending user data;
+  `+0x30` force-restart flag. State objects store the timestamp they were entered at
+  `+0x20` and their parent FSM at `+0x18`.
+- The app state IDs (`dumpstr` around the `AppBoot` string): `AppBoot`,
+  `AppCoreServices`, `AppGlobalLoad`, `AppLocalLoad`, `AppView`, `AppShutdown`,
+  `YouAreDead`, and from 1.13 on `ModeSelector`. MixedCase, one-to-one with the
+  modern all-caps IDs.
 - The app data block (`cGcApplicationData*` global) is the legacy analogue of the
   modern `cGcApplication::mpData`; sub-objects live at fixed offsets inside it
   (e.g. `+0x30` referenced in every build's Construct).
