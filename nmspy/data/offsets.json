@@ -1102,10 +1102,10 @@
       "1.38": "0x140E2FBF0"
     },
     "cGcGameState::ComputeWarpCapability": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x14041D070",
+      "1.13": "0x1405320D0",
+      "1.24": "0x140641DF0",
+      "1.38": "0x14075BD50",
       "_unresolved": "Only mapped anchor is callee cGcPlayerState::GetPrimaryItemForStat (shared by many functions); its callers (cGcGalaxyMap::Data solar fns) are unmapped, so no unique intersection. No distinctive strings/imm64."
     },
     "cGcGameState::cGcGameState": {

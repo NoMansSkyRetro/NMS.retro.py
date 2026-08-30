@@ -207,6 +207,34 @@ code was restructured between these builds and 4.13. The cluster needs a fresh a
 (e.g. the marker vector's element size 0x30 seen in the reset loop at 0x1406C27A0 in
 1.38) or manual RTTI/vtable work, not anchor-chasing from what is mapped now.
 
+## Hand-golf with live Ghidra (decompiler-in-the-loop)
+
+Combining the source-adjacency range hints with `ghidra_live.py` (decompile + real
+xrefs) is the productive manual workflow: the ranges narrow a target to a handful of
+candidates, then the decompiler confirms one.
+
+- **cGcGameState::ComputeWarpCapability** — mapped in all four builds
+  (1.09.1 0x14041D070, 1.13 0x1405320D0, 1.24 0x140641DF0, 1.38 0x14075BD50). The
+  source-file bracket gave 4-6 candidates per build; the winner in 1.38 is called by
+  the mapped cGcGalaxyMap::Data::DoSolarPopup AND references "Hyperdrive"; 1.13/1.24
+  confirmed by the same "Hyperdrive" idiom; 1.09.1 (where that debug string is
+  stripped) confirmed by the matching `WarpCapabilityResult*(this, result*, float, ...)`
+  struct-return signature, size, and caller count.
+
+Its callees (GetHyperdriveFuelUse, QueryAmountInAllInventories, GetPrimaryItemForStat,
+ComputeWarpEngineJumpDistanceInLightyears) turned out NOT to be in upstream's 331, and
+the one that is (cGcPlayerEnvironment::IsOnboardOwnFreighter) is inlined here, so the
+cascade stopped at one function.
+
+### Renames are rare; naming was stable 2016-2017
+
+`harvest_version_names.py` broadened the profiler-literal harvest (any namespace) and
+compared each located function's actual name across builds. Result: essentially no
+renames among our surface. The one alias is `cGcGameState::OnSaveProgressCompleted`,
+which is really `WriteStateToStorage` in every legacy build (modern split a distinct
+save-completed callback out later). offsets.json now carries this as an `_aliases`
+entry, and `_names` documents per-version names where they differ from the key.
+
 ## The 4.13 OpenNMS project as a resource
 
 `E:\OpenNMS` is the 4.13 matching-decompilation pipeline (byte-perfect C++
