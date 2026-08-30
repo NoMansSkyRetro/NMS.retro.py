@@ -25,7 +25,14 @@ VERSIONS = ["1.09.1", "1.13", "1.24", "1.38"]
 def main():
     side, ref_names, ref_mangled = load_side_413()
     targets = load_targets(ref_mangled)
-    ref_db = {f["name"]: f for f in json.load(open(REF_413))["functions"]}
+    ref_functions = json.load(open(REF_413))["functions"]
+    ref_db = {f["name"]: f for f in ref_functions}
+    # Identical-COMDAT-folding: several distinct functions can share one VA in 4.13.
+    # Their string/call hints are then ambiguous, so flag it rather than mislead.
+    from collections import defaultdict
+    names_at_va = defaultdict(list)
+    for f in ref_functions:
+        names_at_va[f["rva"]].append(f.get("undecorated_name") or f["name"])
 
     offsets = json.loads(OFFSETS.read_text())["functions"]
     upstream = json.loads((Path(__file__).parent / "upstream_data_413.json").read_text())
@@ -52,8 +59,10 @@ def main():
         callers = sorted(
             {ref_names[c] for c in side.callers.get(va, ()) if not ref_names.get(c, "").startswith("FUN_")}
         )[:20] if va else []
+        folded = [n for n in names_at_va.get((pdb or {}).get("rva"), []) if n != name]
         hints[name] = {
             "missing_in": missing,
+            "icf_folded_with": folded,  # if non-empty, strings/callees are AMBIGUOUS
             "modern_signature": (pdb or {}).get("signature"),
             "source_file": (pdb or {}).get("source_file"),
             "modern_length": (pdb or {}).get("length"),

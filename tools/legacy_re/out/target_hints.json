@@ -1,81 +1,9 @@
 {
- "cEgTextureResource::LoadFromDds": {
-  "missing_in": [
-   "1.09.1"
-  ],
-  "modern_signature": "bool cEgTextureResource::LoadFromDds(char const *, char const *, int, int, int, unsigned int *, int, int)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egtexture.cpp",
-  "modern_length": 2753,
-  "strings": [
-   "Invalid DDS header",
-   "Unsupported DDS texture type",
-   "Texture resource '%s': %s",
-   "Unsupported DDS pixel format"
-  ],
-  "imm64": [],
-  "modern_callees": [
-   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
-   "??$_Allocate@$0BA@U_Default_allocate_traits@std@@$0A@@std@@YAPEAX_K@Z",
-   "??3@YAXPEAX_K@Z",
-   "_Init_thread_footer",
-   "_Init_thread_header",
-   "atexit",
-   "cEgEngineLog::WriteError",
-   "cTkEngineSettings::GetInstance",
-   "cTkEngineSettings::GetSettingBool",
-   "cTkEngineSettings::GetSettingInt",
-   "cTkEngineSettings::cTkEngineSettings",
-   "cTkSystem::GetInstance",
-   "cTkTexture::GetStoreFreeSpace",
-   "cTkTextureBase::CalculateTextureSize",
-   "cTkTextureBase::LoadDDS"
-  ],
-  "modern_callers": [
-   "cEgTextureResource::Load",
-   "cEgTextureResource::SearchCache"
-  ]
- },
- "cTkLanguageManagerBase::Load": {
-  "missing_in": [
-   "1.09.1",
-   "1.38"
-  ],
-  "modern_signature": "void cTkLanguageManagerBase::Load()",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\utilities\\language\\tklanguagemanager.cpp",
-  "modern_length": 748,
-  "strings": [
-   "POLISH",
-   "KOREAN",
-   "FRENCH",
-   "GERMAN",
-   "ENGLISH",
-   "ITALIAN",
-   "RUSSIAN",
-   "SPANISH",
-   "JAPANESE",
-   "USENGLISH",
-   "PORTUGUESE",
-   "TENCENTCHINESE",
-   "SIMPLIFIEDCHINESE",
-   "TRADITIONALCHINESE",
-   "LANGUAGE\\%s_%s.MBIN",
-   "BRAZILIANPORTUGUESE",
-   "LATINAMERAICANSPANISH"
-  ],
-  "imm64": [],
-  "modern_callees": [
-   "??$Format@D$0A@@?$cTkFixedString@$0BAA@D@@QEAAHPEBDZZ",
-   "??$ReadFromFile@VcTkLocalisationTable@@@cTkMetaData@@SAPEAVcTkLocalisationTable@@PEBDPEAH_N2@Z",
-   "cTkMemoryManager::Free"
-  ],
-  "modern_callers": [
-   "cGcApplicationBootState::Update"
-  ]
- },
  "cGcFrontendPageClaimBase::DoBaseClaimOptions": {
   "missing_in": [
    "1.09.1"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcFrontendPageClaimBase::DoBaseClaimOptions(cGcFrontendPage *, std::array<cGcNGuiLayer *,5>, ePersistentBaseTypes, bool, BaseIndex)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\frontend\\pages\\decorators\\gcfrontendpageclaimbase.cpp",
   "modern_length": 4203,
@@ -89,11 +17,11 @@
    "key not found",
    "BASE_UPLOADING",
    "ALL_REQUEST_LEAVE",
-   "BASE_BUILDING_DELETE_TEXT",
    "BASE_BUILDING_UPLOAD_TEXT",
+   "BASE_BUILDING_DELETE_TEXT",
    "BASE_BUILDING_NO_UPLOAD_TEXT",
-   "BASE_BUILDING_UPLOAD_COOLDOWN",
-   "BASE_BUILDING_NO_UPLOAD_SMALL"
+   "BASE_BUILDING_NO_UPLOAD_SMALL",
+   "BASE_BUILDING_UPLOAD_COOLDOWN"
   ],
   "imm64": [
    "0xA3784A062B2E43DB",
@@ -130,33 +58,34 @@
   "missing_in": [
    "1.09.1"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcQuickActionMenu::TriggerAction(MenuAction const&, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcquickactionmenu.cpp",
   "modern_length": 28236,
   "strings": [
-   "UI_NO_SUMMON_POD",
    "UI_SUMMON_SELECT",
-   "QUICK_MENU_NO_FUEL",
+   "UI_NO_SUMMON_POD",
    "QUICK_MENU_NO_BAIT",
+   "QUICK_MENU_NO_FUEL",
    "QUICK_MENU_NO_TORCH",
-   "QUICK_MENU_NO_COMMS",
    "ECON_SCANNER_FAILED",
+   "QUICK_MENU_NO_COMMS",
    "QUICK_MENU_NO_GALMAP",
    "UI_SCAN_BLOCKER_FAIL",
-   "UI_NO_THROW_BAIT_HERE",
    "UI_SCAN_BLOCKER_ERROR",
-   "QUICK_MENU_CANT_REPAIR",
-   "QUICK_MENU_NO_EXOCRAFT",
-   "QUICK_MENU_CANT_CHARGE",
-   "QUICK_MENU_CHARGE_FULL",
+   "UI_NO_THROW_BAIT_HERE",
    "QUICK_MENU_NO_SQUADRON",
-   "UI_QUICK_MENU_NO_ROCKET",
+   "QUICK_MENU_NO_EXOCRAFT",
+   "QUICK_MENU_CHARGE_FULL",
+   "QUICK_MENU_CANT_CHARGE",
+   "QUICK_MENU_CANT_REPAIR",
    "QUICK_MENU_ONLY_ONE_GUN",
-   "UI_ENABLE_MECH_AI_ERROR",
-   "QUICK_MENU_COMMS_COMBAT",
    "UI_SCAN_BLOCKER_SUCCESS",
-   "QUICK_MENU_SUM_PET_ERROR",
+   "QUICK_MENU_COMMS_COMBAT",
+   "UI_QUICK_MENU_NO_ROCKET",
+   "UI_ENABLE_MECH_AI_ERROR",
    "QUICK_MENU_NO_BAIT_BASIC",
+   "QUICK_MENU_SUM_PET_ERROR",
    "QUICK_MENU_NO_EXO_SCANNER",
    "QUICK_MENU_SUM_NO_FREIGHT"
   ],
@@ -191,10 +120,79 @@
    "cGcQuickMenu::Update"
   ]
  },
+ "cGcPlanet::UpdateWeather": {
+  "missing_in": [
+   "1.09.1",
+   "1.13",
+   "1.24",
+   "1.38"
+  ],
+  "icf_folded_with": [],
+  "modern_signature": "void cGcPlanet::UpdateWeather(float)",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanet.cpp",
+  "modern_length": 1952,
+  "strings": [],
+  "imm64": [],
+  "modern_callees": [
+   "??$SmoothCD@MM@cTkCurveFunction@@SAMPEAMAEBM1MM@Z",
+   "??$_Emplace_reallocate@AEA_KH@?$vector@UsStorm@cGcSky@@V?$TkSTLAllocatorShim@UsStorm@cGcSky@@$07$0?0@@@std@@AEAAPEAUsStorm@cGcSky@@QEAU23@AEA_K$$QEAH@Z",
+   "cGcPlanet::GetUA",
+   "cGcPlanet::UpdateClouds",
+   "cGcPlanet::UpdateGravity",
+   "cGcPlanet::UpdateTargetGravityMultiplier",
+   "cGcSky::GetStorms",
+   "cGcSky::SetStormState",
+   "cTkMemoryManager::Free"
+  ],
+  "modern_callers": [
+   "cGcPlanet::UpdatePhase2"
+  ]
+ },
+ "cTkFileSystem::GetInstance": {
+  "missing_in": [
+   "1.09.1",
+   "1.13",
+   "1.24",
+   "1.38"
+  ],
+  "icf_folded_with": [],
+  "modern_signature": "cTkFileSystem & cTkFileSystem::GetInstance()",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\System\\Filesystem\\FIOS2\\TkFileSystemFIOS2.h",
+  "modern_length": 90,
+  "strings": [],
+  "imm64": [],
+  "modern_callees": [
+   "_Init_thread_footer",
+   "_Init_thread_header"
+  ],
+  "modern_callers": [
+   "??$Read@VcTkGameSettings@@@TkSettingsReader@@SAPEAVcTkGameSettings@@PEBDAEA_N0@Z",
+   "??$Read@VcTkGraphicsSettings@@@TkSettingsReader@@SAPEAVcTkGraphicsSettings@@PEBDAEA_N0@Z",
+   "??$ReadFromFile@VcGcAISpaceshipManagerData@@@cTkMetaData@@SAPEAVcGcAISpaceshipManagerData@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcActionSets@@@cTkMetaData@@SAPEAVcGcActionSets@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcAlienPuzzleTable@@@cTkMetaData@@SAPEAVcGcAlienPuzzleTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcAlienSpeechTable@@@cTkMetaData@@SAPEAVcGcAlienSpeechTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcAmbientModeCameras@@@cTkMetaData@@SAPEAVcGcAmbientModeCameras@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcAreaDamageDataTable@@@cTkMetaData@@SAPEAVcGcAreaDamageDataTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcAudioPulseDemo@@@cTkMetaData@@SAPEAVcGcAudioPulseDemo@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBaseBuildingPartAudioLocationTable@@@cTkMetaData@@SAPEAVcGcBaseBuildingPartAudioLocationTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBaseBuildingPartsDataTable@@@cTkMetaData@@SAPEAVcGcBaseBuildingPartsDataTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBaseBuildingPartsNavDataTable@@@cTkMetaData@@SAPEAVcGcBaseBuildingPartsNavDataTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBaseBuildingPartsTable@@@cTkMetaData@@SAPEAVcGcBaseBuildingPartsTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBaseBuildingTable@@@cTkMetaData@@SAPEAVcGcBaseBuildingTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBiomeData@@@cTkMetaData@@SAPEAVcGcBiomeData@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBiomeFileList@@@cTkMetaData@@SAPEAVcGcBiomeFileList@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBiomeListPerStarType@@@cTkMetaData@@SAPEAVcGcBiomeListPerStarType@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBootLogoData@@@cTkMetaData@@SAPEAVcGcBootLogoData@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcBuildingDefinitionTable@@@cTkMetaData@@SAPEAVcGcBuildingDefinitionTable@@PEBDPEAH_N2@Z",
+   "??$ReadFromFile@VcGcByteBeatIcons@@@cTkMetaData@@SAPEAVcGcByteBeatIcons@@PEBDPEAH_N2@Z"
+  ]
+ },
  "cGcBaseBuildingManager::Update": {
   "missing_in": [
    "1.13"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcBaseBuildingManager::Update(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\basebuilding\\gcbasebuildingmanager.cpp",
   "modern_length": 2453,
@@ -238,6 +236,7 @@
    "1.13",
    "1.24"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcBinoculars::UpdateTarget(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcbinoculars.cpp",
   "modern_length": 3713,
@@ -273,54 +272,12 @@
    "cGcBinoculars::Update"
   ]
  },
- "cGcNGuiText::EditElement": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24"
-  ],
-  "modern_signature": "void cGcNGuiText::EditElement()",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\ngui\\gcnguigenerator.cpp",
-  "modern_length": 1405,
-  "strings": [
-   "Copying",
-   "Copy Formatting",
-   "Paste Formatting",
-   "Graphic",
-   "Refresh"
-  ],
-  "imm64": [],
-  "modern_callees": [
-   "??0?$_Associated_state@H@std@@QEAA@PEAU?$_Deleter_base@H@1@@Z",
-   "??2@YAPEAX_K@Z",
-   "??2@YAPEAX_KPEBDH1@Z",
-   "??4cTkNGuiAlignment@@QEAAAEAV0@AEBV0@@Z",
-   "??4cTkNGuiTextStyle@@QEAAAEAV0@AEBV0@@Z",
-   "cGcNGuiElement::EditElement",
-   "cGcNGuiTextData::cGcNGuiTextData",
-   "cGcUndoableNGuiElementOperation::CreateDescription",
-   "cTkJobManager::CreateJob",
-   "cTkNGuiEditor::BeginUndo",
-   "cTkNGuiEditor::DoButton",
-   "cTkNGuiEditor::DoEditFile",
-   "cTkNGuiEditor::DoEditText",
-   "cTkNGuiEditor::DoIconListItem",
-   "cTkNGuiEditor::DoTreeNodeBegin",
-   "cTkNGuiEditor::DoTreeNodeEnd",
-   "cTkNGuiEditor::EndUndo",
-   "cTkNGuiStyles::EditGraphicStyle",
-   "cTkNGuiStyles::EditTextStyle",
-   "std::_Throw_future_error2"
-  ],
-  "modern_callers": [
-   "cGcNGuiTextSpecial::EditElement"
-  ]
- },
  "cGcPlayer::RenderNGui": {
   "missing_in": [
    "1.09.1",
    "1.13"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayer::RenderNGui()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 9864,
@@ -333,21 +290,21 @@
    "Randomize",
    "Spaceship",
    "Learn Word",
-   "Damage Type",
-   "RECORD STAT",
    "Not Leveled",
    "+1 standing",
    "-1 standing",
-   "Smoothed Pos",
-   "PLAYER STATS",
+   "RECORD STAT",
+   "Damage Type",
    "Set Wind Dir",
-   "Customisation",
+   "PLAYER STATS",
+   "Smoothed Pos",
    "Specific Seed",
    "Employ Farmer",
-   "Track Type: %s",
-   "Type:       %s",
+   "Customisation",
    "Value:      %s",
    "Level:      %s",
+   "Track Type: %s",
+   "Type:       %s",
    "Level Name: %s",
    "Employ Armourer"
   ],
@@ -389,6 +346,9 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [
+   "?RenderAsync@cEgInstancedMeshNode@EgInstancedModelExtension@@CAXAEAVcEgRenderQueueBuffer@@AEBT?$TkID@$0IA@@@H_NW4List@RenderingOrder@@22PEBVcEgFrustum@@PEAVcEgThreadableRenderCall@@@Z"
+  ],
   "modern_signature": "void EgInstancedModelExtension::cEgInstancedMeshNode::RenderAsync(cEgRenderQueueBuffer &, union TkID<128> const&, int, bool, RenderingOrder::List, bool, bool, cEgFrustum const *, cEgThreadableRenderCall *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\extensions\\instancedmodel\\eginstancedmodelnode.cpp",
   "modern_length": 6004,
@@ -424,45 +384,6 @@
    "?RenderStereo@cEgInstancedMeshNode@EgInstancedModelExtension@@SAXAEAVcEgRenderQueueBuffer@@AEBT?$TkID@$0IA@@@H_NW4List@RenderingOrder@@22AEBVcEgFrustum@@PEAVcEgThreadableRenderCall@@@Z"
   ]
  },
- "Engine::AddNodes": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "TkHandle Engine::AddNodes(TkHandle, TkStrongType<int,TkStrongTypeIDs::TkResHandleID>)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
-  "modern_length": 291,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cEgSceneManager::AddNodes",
-   "cTkResourceManager::GetDefaultResource"
-  ],
-  "modern_callers": [
-   "?Construct@Data@cGcGalaxyMap@@QEAAXXZ",
-   "?UpdateMeshRefresh@sAccessoryInfo@cGcCreatureComponent@@QEAAXPEAVcGcOwnerConcept@@@Z",
-   "`cGcMechControl::Prepare'::`2'::<lambda_1>::operator()",
-   "`cGcNetworkReplicatedEntityManager::HandleEntityCreationRequests'::`2'::<lambda_1>::operator()",
-   "cGcAbandonedFreighterComponent::Update",
-   "cGcBaseBuildingEffectsManager::CloneNode",
-   "cGcBaseBuildingGenerator::PollToLoadTemplatesTable",
-   "cGcBaseBuildingGenerator::SpawnDecorations",
-   "cGcBaseBuildingManager::GeneratePartData",
-   "cGcBaseBuildingObject::UpdatePart",
-   "cGcBaseBuildingPlayerPlacement::AddGhostHeartToObject",
-   "cGcBaseBuildingPlayerPlacement::Update",
-   "cGcBaseBuildingPlayerPlacement::UpdateLoadPlaceholder",
-   "cGcCameraBehaviourAerialView::Update",
-   "cGcCreatureMovementCrystal::Prepare",
-   "cGcCreatureMovementFlock::Prepare",
-   "cGcCustomiserCharacterComponent::SpawnWeapon",
-   "cGcEcosystem::GetCreatureStats",
-   "cGcEcosystem::SpawnIndividual",
-   "cGcEncounterComponent::SpawnGuard"
-  ]
- },
  "Engine::AddResource": {
   "missing_in": [
    "1.09.1",
@@ -470,6 +391,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -480,11 +402,9 @@
  },
  "Engine::GetNodeName": {
   "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
+   "1.09.1"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -500,6 +420,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "int Engine::GetNodeNumChildren(TkHandle)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
   "modern_length": 125,
@@ -528,6 +449,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "TkHandle Engine::GetNodeParent(TkHandle)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
   "modern_length": 246,
@@ -557,42 +479,6 @@
    "cGcAISpaceshipManager::SpawnShip"
   ]
  },
- "Engine::GetNodeType": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "int Engine::GetNodeType(TkHandle)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
-  "modern_length": 121,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [],
-  "modern_callers": [
-   "?TrackAnimatedNodeAndParents@@YAHAEAV?$vector@UcTrackedNode@@V?$TkSTLAllocatorShim@UcTrackedNode@@$0BA@$0A@@@@std@@VTkHandle@@@Z",
-   "Engine::ClearNodeMotion",
-   "`ModelPlacementRule::CacheSnapSocket'::`2'::<lambda_1>::operator()",
-   "`cGcAISpaceshipComponent::Prepare'::`2'::<lambda_3>::operator()",
-   "`cGcBaseBuildingManager::CreateObjectTemplate'::`5'::<lambda_1>::operator()",
-   "`cGcDroneBehaviourTree::Prepare'::`2'::<lambda_1>::operator()",
-   "`cGcDroneSummon::Run'::`89'::<lambda_1>::operator()",
-   "`cGcMapLayout::Parse'::`2'::<lambda_1>::operator()",
-   "`cGcShipSalvageInteraction::Explode'::`2'::<lambda_2>::operator()",
-   "`cGcShipSalvageInteraction::Explode'::`2'::<lambda_3>::operator()",
-   "`cGcSpaceshipComponent::Prepare'::`2'::<lambda_2>::operator()",
-   "`cGcTriggerActionComponent::HandleNodeActivationTrigger'::`2'::<lambda_1>::operator()",
-   "`cGcTurretComponent::Prepare'::`3'::<lambda_1>::operator()",
-   "`cGcWFCScene::ParseScene'::`2'::<lambda_1>::operator()",
-   "`cTkModelResourceRenderer::Update'::`91'::<lambda_4>::operator()",
-   "`cTkSketchComponent::Prepare'::`3'::<lambda_1>::operator()",
-   "cGcBaseBuildingEffectsManager::CloneNode",
-   "cGcBaseBuildingEffectsManager::RemoveLightsTransparentDecalsAndShadowBoxNodes",
-   "cGcBaseBuildingManager::CreateSnapPointTemplate",
-   "cGcDebugEditor::Update"
-  ]
- },
  "Engine::GetRenderBufferTexture": {
   "missing_in": [
    "1.09.1",
@@ -600,6 +486,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void * Engine::GetRenderBufferTexture(TkStrongType<int,TkStrongTypeIDs::TkResHandleID>, int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
   "modern_length": 137,
@@ -631,6 +518,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "TkStrongType<int,TkStrongTypeIDs::TkResHandleID> Engine::GetResourceHandleForNode(TkHandle)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
   "modern_length": 111,
@@ -642,69 +530,6 @@
    "cGcShipAILandNextToPlayer::Run"
   ]
  },
- "Engine::GetTexture": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void * Engine::GetTexture(TkStrongType<int,TkStrongTypeIDs::TkResHandleID>)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
-  "modern_length": 111,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cTkResourceManager::GetDefaultResource"
-  ],
-  "modern_callers": [
-   "?RenderNVG@Data@cGcGalaxyMap@@QEAAXXZ",
-   "?Update@Data@cGcGalaxyMap@@QEAAXM@Z",
-   "cGcApplicationBaseLoadingState::Render",
-   "cGcApplicationCoreServicesState::Update",
-   "cGcDiscoveryPagePlanetTask::Update",
-   "cGcFrontendPageInteractions::DoTeleperporterNexusDescriptionPage",
-   "cGcGraphicsManager::EnqueueMultiDxt5Compression",
-   "cGcGraphicsManager::EnqueuePipelinedDxt5Compression",
-   "cGcHUDTrackArrow::Render",
-   "cGcInWorldUIManager::RenderNGui",
-   "cGcLogoSequence::Render",
-   "cGcNetworkBaseImageManager::LoadPendingTextures",
-   "cGcPositionMarker::Render",
-   "cGcTerrainTextureData::CopyStatusToTexture",
-   "cGcTerrainTextureData::CreateTextures",
-   "cGcTerrainTextureData::DebugRenderTextures",
-   "cGcTerrainTextureData::TextureBeginProbeFunc",
-   "cGcTerrainTextureData::TextureCompleteProbeFunc",
-   "cGcTerrainTextureData::TextureGatherProbeFunc",
-   "cTk2dImageEx::Construct"
-  ]
- },
- "Engine::SetMaterialSampler": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "bool Engine::SetMaterialSampler(TkStrongType<int,TkStrongTypeIDs::TkResHandleID>, char const *, TkStrongType<int,TkStrongTypeIDs::TkResHandleID>)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
-  "modern_length": 245,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cEgMaterialResource::SetSampler",
-   "cTkResourceManager::GetDefaultResource"
-  ],
-  "modern_callers": [
-   "cGcApplicationScratchpadState::Prepare",
-   "cGcFullscreenEffectManager::UpdateScreenFilter",
-   "cGcPlanet::SetTerrainSamplers",
-   "cGcPlayerHUD::UpdateRender",
-   "cGcPresetTerrainTexture::Apply",
-   "cGcProceduralTextureManager::Update"
-  ]
- },
  "Engine::SetMaterialUniformArray": {
   "missing_in": [
    "1.09.1",
@@ -712,6 +537,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool Engine::SetMaterialUniformArray(TkStrongType<int,TkStrongTypeIDs::TkResHandleID>, char const *, float const *, int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
   "modern_length": 174,
@@ -733,6 +559,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool Engine::SetOption(EgOptions::List, float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
   "modern_length": 664,
@@ -755,6 +582,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void Engine::ShiftAllTransformsForNode(TkHandle, cTkVector3 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmain.cpp",
   "modern_length": 239,
@@ -775,6 +603,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -790,6 +619,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -805,6 +635,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -819,6 +650,9 @@
    "1.13",
    "1.24",
    "1.38"
+  ],
+  "icf_folded_with": [
+   "?OnBufferLoadFinish@cEgGeometryStreamer@GeometryStreaming@@CAXPEAX@Z"
   ],
   "modern_signature": "void GeometryStreaming::cEgGeometryStreamer::OnBufferLoadFinish(void *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\eggeometry.cpp",
@@ -843,6 +677,9 @@
    "1.13",
    "1.24",
    "1.38"
+  ],
+  "icf_folded_with": [
+   "?RequestStream@cEgGeometryStreamer@GeometryStreaming@@QEAAXPEBVcTkResourceDescriptor@@@Z"
   ],
   "modern_signature": "void GeometryStreaming::cEgGeometryStreamer::RequestStream(cTkResourceDescriptor const *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\eggeometry.cpp",
@@ -884,6 +721,9 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [
+   "?ProcessOnlyStreamRequests@cEgStreamRequests@GeometryStreaming@@QEAAXN@Z"
+  ],
   "modern_signature": "void GeometryStreaming::cEgStreamRequests::ProcessOnlyStreamRequests(double)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\eggeometry.cpp",
   "modern_length": 255,
@@ -903,21 +743,6 @@
    "cGcApplicationSimulationState::Prepare"
   ]
  },
- "MiniDumpFunction": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": null,
-  "source_file": null,
-  "modern_length": null,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [],
-  "modern_callers": []
- },
  "SolarQueryResult::ComputeLightyearDistanceBetweenSolarSystems": {
   "missing_in": [
    "1.09.1",
@@ -925,6 +750,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float SolarQueryResult::ComputeLightyearDistanceBetweenSolarSystems(SolarQueryResult const&, SolarQueryResult const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxytypes.cpp",
   "modern_length": 542,
@@ -950,6 +776,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "XMLError XMLNode::writeToFile(char const *, char const *, char)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\shared\\utxmlparser.cpp",
   "modern_length": 594,
@@ -996,6 +823,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cEgDrawGeometry::Draw(void *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\threadedrenderer\\egthreadedrenderer.cpp",
   "modern_length": 522,
@@ -1018,6 +846,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cEgGeometryResource::CloneOriginalVertDataToIndex(int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egGeometry.h",
   "modern_length": 339,
@@ -1039,6 +868,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cEgGeometryResource::CreateVertexInfoForHash(unsigned __int64)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egGeometry.h",
   "modern_length": 692,
@@ -1068,6 +898,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cEgGeometryResource::Load(char const *, int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\eggeometry.cpp",
   "modern_length": 252,
@@ -1089,6 +920,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cEgGeometryResource::ParseData(cTkGeometryData &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\eggeometry.cpp",
   "modern_length": 3067,
@@ -1129,6 +961,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cEgGeometryResource::cEgGeometryResource(std::basic_string<char,std::char_traits<char>,TkSTLAllocatorShim<char,1,-1> > const&, int, cTkResourceDescriptor const *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\eggeometry.cpp",
   "modern_length": 1666,
@@ -1157,6 +990,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cEgSceneNodeTemplate * cEgMeshNode::ParsingFunc(cTkDynamicArray<cTkSceneNodeAttributeData> const&, cTkResourceDescriptor *, int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\eganimatables.cpp",
   "modern_length": 399,
@@ -1178,6 +1012,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cEgModelNode::Animate()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmodel.cpp",
   "modern_length": 909,
@@ -1204,6 +1039,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cEgModelNode::UpdateGeometry()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egmodel.cpp",
   "modern_length": 3177,
@@ -1238,6 +1074,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cEgRenderer::DrawMeshes(cEgRenderQueueBuffer &, union TkID<128> const&, int, bool, RenderingOrder::List, bool, bool, cEgFrustum const&, cEgThreadableRenderCall *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egrenderer.cpp",
   "modern_length": 2622,
@@ -1266,6 +1103,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cEgRenderer::DrawRenderables(cEgRenderQueue &, cEgFrustum const&, union TkID<128> const&, std::basic_string<char,std::char_traits<char>,std::allocator<char> > const&, union TkID<128> const&, int, bool, RenderingOrder::List, bool, int, int, cEgThreadableRenderCall *, bool, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egrenderer.cpp",
   "modern_length": 1462,
@@ -1290,6 +1128,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cEgRenderer::SetupMeshGeometry(cEgMeshNode *, cEgGeometryResource *, unsigned int &, cTkVertexLayoutRT const * &, bool, cTkRenderStateCache *, cEgThreadableRenderCall *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egrenderer.cpp",
   "modern_length": 509,
@@ -1316,6 +1155,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cEgRenderer::SetupMeshMaterial(cEgMeshNode *, cEgMaterialResource *, TkIDHashed<128> const&, int, cTkMatrix34 const&, cTkMatrix34 const&, cTkMatrix44 const&, cTkMatrix44 const&, cTkMatrix44 const&, float, int, cTkVector4 *, cTkVector4 *, int, bool, cEgThreadableRenderCall *, bool, cEgShaderUniformBufferBinding *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egrenderer.cpp",
   "modern_length": 3315,
@@ -1339,6 +1179,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cEgRendererBase::ApplyVertexLayout(cTkVertexLayoutRT const&, cTkShader const&, cEgThreadableRenderCall *, int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egrendererbasedx12.cpp",
   "modern_length": 1071,
@@ -1382,6 +1223,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cEgSceneNodeData::SetRelativeTransform(TkHandle, cTkMatrix34 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\engine\\source\\engine\\egscenenodedata.cpp",
   "modern_length": 243,
@@ -1406,6 +1248,9 @@
    "1.13",
    "1.24",
    "1.38"
+  ],
+  "icf_folded_with": [
+   "??0Data@cGcApplication@@QEAA@XZ"
   ],
   "modern_signature": "cGcApplication::Data::Data()",
   "source_file": "",
@@ -1437,11 +1282,9 @@
  },
  "cGcApplicationLocalLoadState::GetRespawnReason": {
   "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
+   "1.09.1"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcPlayerRespawn::RespawnReason cGcApplicationLocalLoadState::GetRespawnReason()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\application\\states\\gcapplicationlocalloadstate.cpp",
   "modern_length": 518,
@@ -1461,6 +1304,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcBaseBuildingManager::AddHUDMarker(cGcMarkerPoint::eType, cTkPhysRelMat34 const&, int, char const *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\basebuilding\\gcbasebuildingmanager.cpp",
   "modern_length": 418,
@@ -1481,6 +1325,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkPhysRelMat34 cGcBaseBuildingManager::GetBaseBuildingRootMatrix(BaseIndex, unsigned __int64)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\basebuilding\\gcbasebuildingmanager.cpp",
   "modern_length": 517,
@@ -1507,6 +1352,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "TkHandle cGcBaseBuildingManager::GetBaseRootNode(BaseIndex, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\basebuilding\\gcbasebuildingmanager.cpp",
   "modern_length": 656,
@@ -1547,6 +1393,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "BaseIndex cGcBaseSearch::FindNearestBaseInCurrentSystem(cTkVector3 const&, ePersistentBaseTypes)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\basebuilding\\gcbasesearch.cpp",
   "modern_length": 930,
@@ -1586,6 +1433,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cGcBinoculars::GetRange()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcbinoculars.cpp",
   "modern_length": 182,
@@ -1608,6 +1456,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcBinoculars::SetMarker()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcbinoculars.cpp",
   "modern_length": 2186,
@@ -1648,6 +1497,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcBinoculars::UpdateRayCasts(cTkContactPoint &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcbinoculars.cpp",
   "modern_length": 3611,
@@ -1689,6 +1539,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcBinoculars::UpdateScanBarProgress(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcbinoculars.cpp",
   "modern_length": 67,
@@ -1708,6 +1559,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcBuilding::DestroyIntersectingVolcanoes()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\buildings\\gcbuilding.cpp",
   "modern_length": 808,
@@ -1731,38 +1583,6 @@
    "cGcScanEvent::Construct"
   ]
  },
- "cGcBuilding::Visited": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcBuilding::Visited(bool)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\buildings\\gcbuilding.cpp",
-  "modern_length": 386,
-  "strings": [
-   "DISC_WAYPOINTS"
-  ],
-  "imm64": [],
-  "modern_callees": [
-   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z",
-   "cGcBuilding::Visited",
-   "cGcBuildingList::FindBuilding",
-   "cGcInteractionData::SetDefaults",
-   "cGcPersistentInteractionBuffer::SaveInteraction"
-  ],
-  "modern_callers": [
-   "cGcBuilding::Visited",
-   "cGcBuildingList::SortByDistance",
-   "cGcDestructableComponent::Destroy",
-   "cGcInteractionComponent::DoInteractionEvent",
-   "cGcRegionDecoratorBuildings::TryToAddBuildingCluster",
-   "cGcSimpleInteractionComponent::ActivateOnPrepare",
-   "cGcSimpleInteractionComponent::Interact",
-   "cGcWaypointComponent::Interact"
-  ]
- },
  "cGcDestructableComponent::Destroy": {
   "missing_in": [
    "1.09.1",
@@ -1770,6 +1590,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcDestructableComponent::Destroy(eDestroyedBy, cTkUserIdBase<cTkFixedString<64,char> > const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\projectiles\\gcdestructablecomponent.cpp",
   "modern_length": 11682,
@@ -1818,6 +1639,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcDiscoveryManager::SubmitDiscoveryData(cGcDiscoveryData const&, bool *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcdiscoverymanager.cpp",
   "modern_length": 62,
@@ -1838,6 +1660,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -1848,11 +1671,9 @@
  },
  "cGcEnvironment::UpdateRender": {
   "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
+   "1.09.1"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcEnvironment::UpdateRender()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\gcenvironment.cpp",
   "modern_length": 2698,
@@ -1894,6 +1715,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcFrontendManager::QueueFrontendPage(eFrontendPage, float, cGcInteractionComponent *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\Graphics\\GcFrontendManager.h",
   "modern_length": 114,
@@ -1921,6 +1743,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcFrontendManager::cGcFrontendManager()",
   "source_file": "",
   "modern_length": 1967,
@@ -1945,9 +1768,9 @@
   "missing_in": [
    "1.09.1",
    "1.13",
-   "1.24",
-   "1.38"
+   "1.24"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcFrontendPageDiscovery::DoDiscoveryView(cGcFrontendPage *, cGcDiscoveryPageData &, cGcFrontendTextInput &, cGcFrontendModelRenderer &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\frontend\\pages\\decorators\\gcfrontendpagediscovery.cpp",
   "modern_length": 19904,
@@ -1956,8 +1779,8 @@
    "DFAUNA",
    "DMINERAL",
    "BINOC_FLORA",
-   "<IMG>%s<>  %s",
    "DISCOVERY%01d",
+   "<IMG>%s<>  %s",
    "UI_CREATURE_EXTINCT",
    "DISC_FLORA_DISCOVERED",
    "DISC_MISS_BONUS_BUTTON",
@@ -1965,8 +1788,8 @@
    "DISC_MINERALS_DISCOVERED",
    "%UNITS%",
    "%TOTAL%",
-   "%AMOUNT%",
    "FRONTEND",
+   "%AMOUNT%",
    "DISC_NO_FAUNA",
    "BINOC_MINERAL",
    "UI_DISC_MINERALS",
@@ -2009,6 +1832,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkFixedString<64,char> cGcFrontendPageDiscovery::GetDiscoveryHintString(eTileType, eCreatureType, eRarity, eCreatureActiveTime, eCreatureHemiSphere)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\frontend\\pages\\decorators\\gcfrontendpagediscovery.cpp",
   "modern_length": 812,
@@ -2016,15 +1840,15 @@
    "%s / %s / %s",
    "%s / %s / %s / %s",
    "UI_CRE_ACTIVE_DAY",
-   "UI_CRE_TERRAIN_BASE",
-   "UI_CRE_TERRAIN_ROCK",
-   "UI_CRE_ACTIVE_NIGHT",
-   "UI_CRE_TERRAIN_DIRT",
    "UI_CRE_TERRAIN_CAVE",
+   "UI_CRE_TERRAIN_DIRT",
+   "UI_CRE_ACTIVE_NIGHT",
+   "UI_CRE_TERRAIN_ROCK",
+   "UI_CRE_TERRAIN_BASE",
    "UI_CRE_TERRAIN_WATER",
-   "UI_CRE_TERRAIN_LIQUID",
    "UI_CRE_HEMISPHERE_ANY",
    "UI_CRE_ACTIVE_ANYTIME",
+   "UI_CRE_TERRAIN_LIQUID",
    "UI_CRE_TERRAIN_MOUNTAIN",
    "UI_CRE_HEMISPHERE_NORTH",
    "UI_CRE_ACTIVE_MOSTLY_DAY",
@@ -2051,6 +1875,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcFrontendPageFunctions::SetEmptySlotBackground(cGcFrontendPage *, cGcNGuiLayer *, InventoryChoice, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\frontend\\pages\\gcfrontendpagefunctions.cpp",
   "modern_length": 2363,
@@ -2070,61 +1895,11 @@
    "cGcInventorySlotAction::Render"
   ]
  },
- "cGcFrontendPageFunctions::SetPopupBasics": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "cGcNGuiLayer * cGcFrontendPageFunctions::SetPopupBasics(cGcNGuiLayer *, char const *, cTkColour const&, char const *, char const *, char const *, char const *, char const *, bool, int, union TkID<128> const&)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\frontend\\pages\\gcfrontendpagefunctions.cpp",
-  "modern_length": 3781,
-  "strings": [],
-  "imm64": [
-   "0x9DDFEA08EB382D69"
-  ],
-  "modern_callees": [
-   "??$Format@D$0A@@?$cTkFixedString@$0CA@D@@QEAAHPEBDZZ",
-   "??$FormatNumberLocalised@H@?$cTkStringUtilities@D@@SAPEADHPEADHPEBD1@Z",
-   "?CopyIntoBuffer@?$cTkStringUtilities@D@@SAPEADPEADPEBDH@Z",
-   "cGcFrontendPageFunctions::SetColour",
-   "cGcFrontendPageFunctions::SetInventoryIcon",
-   "cGcNGuiLayer::FindElementRecursive",
-   "cGcNGuiLayer::GetGraphic",
-   "cGcNGuiLayer::GetLayer",
-   "cGcNGuiLayer::GetText",
-   "cGcNGuiLayer::GetTextSpecial",
-   "cTkLanguageManager::GetInstance",
-   "cTkLanguageManagerBase::Translate"
-  ],
-  "modern_callers": [
-   "cGcFrontendPageByteBeat::UpdateTreeNode",
-   "cGcFrontendPageCreaturePet::Render",
-   "cGcFrontendPageFunctions::DoBuildInfoPopup",
-   "cGcFrontendPageFunctions::DoBuildPopup",
-   "cGcFrontendPageFunctions::DoCreatureEggPopup",
-   "cGcFrontendPageFunctions::DoEmptySlotPopup",
-   "cGcFrontendPageFunctions::DoRepairSlotPopup",
-   "cGcFrontendPageFunctions::DoTransferSendPopup",
-   "cGcFrontendPageFunctions::SetPopupChemical",
-   "cGcFrontendPageFunctions::SetPopupIcon",
-   "cGcFrontendPageFunctions::SetPopupTransfer",
-   "cGcFrontendPageInteractions::DoNewProduct",
-   "cGcFrontendPageInteractions::DoNewTech",
-   "cGcFrontendPageManageFleet::DoExpeditionDetails",
-   "cGcFrontendPageShop::DoShopItem",
-   "cGcFrontendPageSquadronPilots::Render",
-   "cGcFrontendPageUnlockableTree::DoPopUp",
-   "cGcFrontendPageWiki::DoCustomWonderPopup",
-   "cGcFrontendPageWiki::DoGridItem",
-   "cGcPlayerByteBeatLibrary::RenderFrontEnd"
-  ]
- },
  "cGcFrontendPagePortalRunes::CheckUAIsValid": {
   "missing_in": [
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcFrontendPagePortalRunes::CheckUAIsValid(unsigned __int64, unsigned __int64 &, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\frontend\\pages\\decorators\\gcfrontendpageportalrunes.cpp",
   "modern_length": 2396,
@@ -2148,129 +1923,14 @@
    "cGcScanEventManager::FindWeekendInterstellarEvent"
   ]
  },
- "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes(cTkParallelRNG &, unsigned short, cGcGalaxyVoxelAttributesData &, cGcGalaxyAttributeGenerator::StarSystemKeyAttributes &, unsigned __int64)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxyattributegenerator.cpp",
-  "modern_length": 1847,
-  "strings": [
-   "FSM_NOSTATE",
-   "APPGLOBALLOAD"
-  ],
-  "imm64": [
-   "0x1BD11BDAA9FC1A22",
-   "0xFFFFFFFFFFFFF"
-  ],
-  "modern_callees": [],
-  "modern_callers": [
-   "`cGcGalaxyVoxelGenerator::Populate'::`2'::<lambda_1>::operator()",
-   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes"
-  ]
- },
- "cGcGalaxyAttributeGenerator::ClassifyStarSystem": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyAttributeGenerator::ClassifyStarSystem(unsigned __int64, cGcGalaxyStarAttributesData &)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxyattributegenerator.cpp",
-  "modern_length": 1441,
-  "strings": [],
-  "imm64": [
-   "0x64DD81482CBD31D7",
-   "0xE36AA5C613612997"
-  ],
-  "modern_callees": [
-   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes",
-   "cGcGalaxyStarAttributesData::SetDefaults"
-  ],
-  "modern_callers": [
-   "?ApplyMapFilterToVoxel@Data@cGcGalaxyMap@@QEAAXVcGcGalacticVoxelCoordinate@@W4MapFilter@2@@Z",
-   "?DoSolarPopup@Data@cGcGalaxyMap@@QEAAXAEBUSolarQueryResult@@@Z",
-   "?DoSolarSelection@Data@cGcGalaxyMap@@QEAAXAEBUSolarQueryResult@@_NM@Z",
-   "?RenderSolarSystem@Data@cGcGalaxyMap@@QEAAXPEAVcGcGalaxySolarSelection@@AEBVcTkVector2@@MM@Z",
-   "cGcBinoculars::SetSystemScanData",
-   "cGcDiscoveryPageData::PopulateFromDiscoveryExport",
-   "cGcFrontendPageDiscovery::DoSystemIcons",
-   "cGcFrontendPageDiscovery::DoSystemPopup",
-   "cGcFrontendPageInteractions::UpdateSystemInfo",
-   "cGcFrontendPageInteractions::UpdateTeleporterNexusElementIconsAndSubtitle",
-   "cGcFrontendPagePortalRunes::CheckUAIsValid",
-   "cGcGalaxyAttributesAtAddress::Classify",
-   "cGcGameKnowledge::LoadPersistent",
-   "cGcGenericSectionConditionEventRequiresRGB::IsConditionTrue",
-   "cGcGenericSectionConditionInSeasonalUA::FormatConditionText",
-   "cGcGenericSectionConditionIsPartyPlanetUnlocked::FormatConditionText",
-   "cGcGenericSectionConditionMissionCompleted::FormatConditionText",
-   "cGcGenericSectionConditionPlanetStatLevel::FormatConditionText",
-   "cGcHUDManager::RenderMissionDetailMessage",
-   "cGcNotificationSequenceExplorationLogSpecial::GenerateStarClassText"
-  ]
- },
- "cGcGalaxyAttributeGenerator::ClassifyVoxel": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyAttributeGenerator::ClassifyVoxel(cGcGalacticVoxelCoordinate const&, cGcGalaxyVoxelAttributesData &)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxyattributegenerator.cpp",
-  "modern_length": 649,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "Wombat::Value3D"
-  ],
-  "modern_callers": [
-   "?InstigateFocusPullOutForPending@Data@cGcGalaxyMap@@QEAAXXZ",
-   "?Update@Data@cGcGalaxyMap@@QEAAXM@Z",
-   "cGcFirstBootContext::Update",
-   "cGcFrontendPagePortalRunes::CheckUAIsValid",
-   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes",
-   "cGcGalaxyAttributesAtAddress::Classify",
-   "cGcGalaxyVoxelGenerator::Populate",
-   "cGcGameState::SetFreshStartSpwanData"
-  ]
- },
- "cGcGalaxyAttributesAtAddress::Classify": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyAttributesAtAddress::Classify(unsigned __int64)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxyattributegenerator.cpp",
-  "modern_length": 874,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cGcGalaxyAttributeGenerator::ClassifyStarSystem",
-   "cGcGalaxyAttributeGenerator::ClassifyVoxel"
-  ],
-  "modern_callers": [
-   "cGcPlanetGenerator::GetSubBiomeForDiscoveryData",
-   "cGcPlanetGenerator::GetSystemFlagsForDiscoveryData",
-   "cGcSolarSystem::PollToPrepare",
-   "cGcSolarSystemGenerator::GeneratePlanetPositionsFromUA",
-   "cGcSolarSystemQuery::Run",
-   "cGcWonderUtils::GenerateSystemDataFromDiscovery"
-  ]
- },
  "cGcGalaxyMap::Data::DoSolarPopup": {
   "missing_in": [
    "1.09.1",
    "1.13",
-   "1.24",
-   "1.38"
+   "1.24"
+  ],
+  "icf_folded_with": [
+   "?DoSolarPopup@Data@cGcGalaxyMap@@QEAAXAEBUSolarQueryResult@@@Z"
   ],
   "modern_signature": "void cGcGalaxyMap::Data::DoSolarPopup(SolarQueryResult const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxymap.cpp",
@@ -2299,165 +1959,6 @@
    "cGcNetworkPlayerFullSim::OnServerUpdate"
   ]
  },
- "cGcGalaxyMap::Data::RenderNVG": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyMap::Data::RenderNVG()",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxymap.cpp",
-  "modern_length": 13428,
-  "strings": [
-   "UI_SELECT_STAR",
-   "UI_SELECT_GALAXY_CENTRE",
-   "gameFont",
-   "Engine::SetRenderTarget"
-  ],
-  "imm64": [
-   "0x10000000000",
-   "0xAAAAAAAAAAAAAAAB",
-   "0xF3202474894C01B5",
-   "0xFF3CA5C0FF301B5",
-   "0xFFFFFFFFFFFFF"
-  ],
-  "modern_callees": [
-   "??$_Sort_unchecked@PEAVMarkerSortIndex@@P6A_NAEBV1@0@Z@std@@YAXPEAVMarkerSortIndex@@0_JP6A_NAEBV1@2@Z@Z",
-   "??0ScopedScaleChange@cGcNGuiManager@@QEAA@AEBVcTkVector2@@@Z",
-   "??1ScopedScaleChange@cGcNGuiManager@@QEAA@XZ",
-   "?GetScreenSpacePosition@Data@cGcGalaxyMap@@QEBA?AVcTkVector2@@AEBVcTkPhysRelVec3@@AEA_N@Z",
-   "?RenderSolarSelection@Data@cGcGalaxyMap@@QEAAXPEAVcGcGalaxySolarSelection@@_N@Z",
-   "Engine::GetTexture",
-   "GcGalaxyFx::nvgMultiEdgeRadial",
-   "GcGalaxyFx::nvgPulse",
-   "TkNGuiEffectTools::nvgFilledBusyRadial",
-   "TkNGuiEffectTools::nvgFilledProgressRadial",
-   "__chkstk",
-   "__dyn_tls_on_demand_init",
-   "cEgRendererBase::SetRenderBuffer",
-   "cGcCameraManager::ApplyCameraEvent",
-   "cGcGalaxyMapUI::Render",
-   "cGcGalaxyMapUI::RenderTextLabel",
-   "cGcHUDTrackArrow::GetBorderPos",
-   "cGcInWorldUIManager::ActivateScreenAndClear",
-   "cGcInWorldUIManager::BeginGameGui",
-   "cGcInWorldUIManager::DeactivateScreen"
-  ],
-  "modern_callers": [
-   "cGcApplicationGalacticMapState::Render",
-   "cGcApplicationLocalLoadState::Render"
-  ]
- },
- "cGcGalaxyMapUI::SolarInfoPanel::UpdatePanelUI": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyMapUI::SolarInfoPanel::UpdatePanelUI()",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxymapui.cpp",
-  "modern_length": 11579,
-  "strings": [
-   "%SELL%",
-   "%ECONOMY%",
-   "GLXY_REGION",
-   "UI_GALMAP_WATER",
-   " <GAL_TITLE_YOU>",
-   "UI_ABANDONED_INFO",
-   " <GAL_TITLE_VISIT>",
-   "UI_GALMAP_TIP_WARP",
-   "UI_GALMAP_BUY_SELL",
-   "UI_GALAXYMAP_SELECT",
-   "UI_GALMAP_WORM_LABEL",
-   "UI_GALMAP_PREV_VISITED",
-   "UI_GALMAP_TIP_MINIMISE",
-   "UI_GALAXYMAP_MOVEVIEWVR",
-   "%RACE%",
-   "%s%s%s",
-   "%DIST%",
-   "%WEALTH%",
-   "MISSION%02d",
-   "UI_GALMAP_TIP_EXPAND",
-   "UI_GALMAP_CURRENT_LOC",
-   "UI_GALAXYMAP_NO_ECON_INFO",
-   "UI_GALAXYMAP_PATH_DISTANCE",
-   "UI_GALAXYMAP_NO_CONFLICT_INFO"
-  ],
-  "imm64": [
-   "0x64DD81482CBD31D7",
-   "0x80FE03F80FE03F81",
-   "0x9DDFEA08EB382D69",
-   "0xE36AA5C613612997"
-  ],
-  "modern_callees": [
-   "??$Format@D$0A@@?$cTkFixedString@$0CA@D@@QEAAHPEBDZZ",
-   "??$Format@D$0A@@?$cTkFixedString@$0CAA@D@@QEAAHPEBDZZ",
-   "?CopyIntoBuffer@?$cTkStringUtilities@D@@SAPEADPEADPEBDH@Z",
-   "?FormatNumberLocalised@?$cTkStringUtilities@D@@SAPEADMPEADHHPEBD1_N@Z",
-   "?GatherMissionTooltips@SolarInfoPanel@cGcGalaxyMapUI@@QEAA?AV?$vector@UMissionTooltip@SolarInfoPanel@cGcGalaxyMapUI@@V?$TkSTLAllocatorShim@UMissionTooltip@SolarInfoPanel@cGcGalaxyMapUI@@$03$0?0@@@std@@XZ",
-   "?InsertPrefix@?$cTkStringUtilities@D@@SAPEADPEADHPEBD@Z",
-   "?SetFromFormat@?$TkID@$0IA@@@QEAAXPEBDZZ",
-   "?ShiftLeft@?$cTkStringUtilities@D@@CAXPEADH@Z",
-   "?UpdateWarpLabel@SolarInfoPanel@cGcGalaxyMapUI@@QEAAXPEAVcGcNGuiTextSpecial@@@Z",
-   "cGcNGuiGraphic::SetTexture",
-   "cGcNGuiLayer::FindElementRecursive",
-   "cGcNGuiLayer::FindGraphicRecursive",
-   "cGcNGuiLayer::GetGraphic",
-   "cGcNGuiLayer::GetLayer",
-   "cGcNGuiLayer::GetText",
-   "cGcNGuiLayer::GetTextSpecial",
-   "cGcPlayerState::GetPrimaryItemForStat",
-   "cGcPlayerState::IsUAInSameSystemAsPlayer",
-   "cGcSolarSystemGenerator::GenerateAttributeStrings",
-   "cGcSolarSystemGenerator::GenerateProceduralStarClass"
-  ],
-  "modern_callers": [
-   "?Update@SolarInfoPanel@cGcGalaxyMapUI@@QEAAXM@Z"
-  ]
- },
- "cGcGalaxyStarAttributesData::SetDefaults": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyStarAttributesData::SetDefaults()",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\build\\metadata\\source\\metadata\\simulation\\galaxy\\gcgalaxystarattributesdata.meta.cpp",
-  "modern_length": 334,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cGcAlienRace::SetDefaults",
-   "cGcBaseDefenceStatusType::SetDefaults",
-   "cGcBreakTechOnDamageDifficultyOption::SetDefaults",
-   "cGcPlanetTradingData::SetDefaults"
-  ],
-  "modern_callers": [
-   "??0SolarSelectionData@cGcGalaxyMapUI@@QEAA@XZ",
-   "?ApplyMapFilterToVoxel@Data@cGcGalaxyMap@@QEAAXVcGcGalacticVoxelCoordinate@@W4MapFilter@2@@Z",
-   "?RenderSolarSystem@Data@cGcGalaxyMap@@QEAAXPEAVcGcGalaxySolarSelection@@AEBVcTkVector2@@MM@Z",
-   "cGcBinoculars::SetSystemScanData",
-   "cGcDiscoveryPageData::PopulateFromDiscoveryExport",
-   "cGcFrontendPageDiscovery::DoSystemIcons",
-   "cGcFrontendPageDiscovery::DoSystemPopup",
-   "cGcFrontendPageInteractions::UpdateSystemInfo",
-   "cGcFrontendPageInteractions::UpdateTeleporterNexusElementIconsAndSubtitle",
-   "cGcFrontendPagePortalRunes::CheckUAIsValid",
-   "cGcGalaxyAttributeGenerator::ClassifyStarSystem",
-   "cGcGalaxyAttributesAtAddress::cGcGalaxyAttributesAtAddress",
-   "cGcGalaxyStarAttributesData::ClassPointerCopy",
-   "cGcGalaxyStarAttributesData::ClassPointerCreate",
-   "cGcGalaxyStarAttributesData::ClassPointerCreateDefault",
-   "cGcGalaxyStarAttributesData::ClassPointerRead",
-   "cGcGalaxyStarAttributesData::WriteToXMLNode",
-   "cGcGameKnowledge::LoadPersistent",
-   "cGcGenericSectionConditionEventRequiresRGB::IsConditionTrue",
-   "cGcGenericSectionConditionInSeasonalUA::FormatConditionText"
-  ]
- },
  "cGcGalaxyVoxelAttributesData::SetDefaults": {
   "missing_in": [
    "1.09.1",
@@ -2465,6 +1966,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcGalaxyVoxelAttributesData::SetDefaults()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\build\\metadata\\source\\metadata\\simulation\\galaxy\\gcgalaxyvoxelattributesdata.meta.cpp",
   "modern_length": 76,
@@ -2487,48 +1989,6 @@
    "cGcWonderManager::ProcessDiscoveryExport"
   ]
  },
- "cGcGalaxyVoxelGenerator::Populate": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcGalaxyVoxelGenerator::Populate(unsigned __int64, cGcGalaxyVoxelData &, cTkVector3 const&)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\galaxy\\gcgalaxyvoxelgenerator.cpp",
-  "modern_length": 9286,
-  "strings": [],
-  "imm64": [
-   "0x1BD11BDAA9FC1A22"
-  ],
-  "modern_callees": [
-   "??$?Y$00@?$Splatter@$0A@@VecIntrinsics@@QEAAAEAU01@AEBU?$Splatter@$00@1@@Z",
-   "??$?Y$01@?$Splatter@$0A@@VecIntrinsics@@QEAAAEAU01@AEBU?$Splatter@$01@1@@Z",
-   "??$_Emplace_one_at_back@AEBUParticleInstanceData@TkGalactic@@@?$vector@UParticleInstanceData@TkGalactic@@V?$TkSTLAllocatorShim@UParticleInstanceData@TkGalactic@@$03$0BH@@@@std@@AEAAAEAUParticleInstanceData@TkGalactic@@AEBU23@@Z",
-   "??0?$Table@$00$0FA@IXU?$hash@IX@robin_hood@@U?$equal_to@I@std@@$0BH@@detail@robin_hood@@QEAA@XZ",
-   "??0ParticleInstanceData@TkGalactic@@QEAA@XZ",
-   "?Cos@?$cTkTrig@M@@SAMM@Z",
-   "?Sin@?$cTkTrig@M@@SAMM@Z",
-   "?destroy@?$Table@$00$0FA@IXU?$hash@IX@robin_hood@@U?$equal_to@I@std@@$0BH@@detail@robin_hood@@AEAAXXZ",
-   "Wombat::Cellular3D_Deriv",
-   "`cGcGalaxyVoxelGenerator::Populate'::`11'::<lambda_2>::operator()",
-   "`cGcGalaxyVoxelGenerator::Populate'::`2'::<lambda_1>::operator()",
-   "cGcGalaxyAttributeGenerator::ClassifyVoxel",
-   "cGcGalaxyAttributeGenerator::GetPrimaryVoxelColour",
-   "cGcGalaxyAttributeGenerator::GetSecondaryVoxelColour",
-   "cGcGalaxyGenerationSetupData::Interpolate",
-   "cGcGalaxyGenerationSetupData::cGcGalaxyGenerationSetupData",
-   "cGcGalaxyVoxelAttributesData::SetDefaults",
-   "cGcGalaxyVoxelTransitMesh::Generate",
-   "cGcUniverseAddressCoderU64::Decode",
-   "cTkColour::cTkColour"
-  ],
-  "modern_callers": [
-   "cGcFrontendPagePortalRunes::CheckUAIsValid",
-   "cGcGalaxyVoxelCache::RunVoxelGenerationJob",
-   "cGcGameState::SetFreshStartSpwanData"
-  ]
- },
  "cGcGameState::ComputeWarpCapability": {
   "missing_in": [
    "1.09.1",
@@ -2536,6 +1996,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "WarpCapabilityResult cGcGameState::ComputeWarpCapability(float, bool, unsigned __int64, cGcGalaxyAttributeGenerator::StarSystemKeyAttributes const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcgamestate.cpp",
   "modern_length": 1835,
@@ -2564,6 +2025,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcGameState::cGcGameState()",
   "source_file": "",
   "modern_length": 3210,
@@ -2604,6 +2066,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcHUD::cGcHUD()",
   "source_file": "",
   "modern_length": 259,
@@ -2624,6 +2087,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -2639,6 +2103,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcHUDManager::cGcHUDManager()",
   "source_file": "",
   "modern_length": 626,
@@ -2666,6 +2131,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcHUDMarker::cGcHUDMarker()",
   "source_file": "",
   "modern_length": 482,
@@ -2687,6 +2153,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcInteractionComponent * cGcInteractionComponent::FindFirstTypedComponent(TkHandle, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\Simulation\\Components\\Gameplay\\GcInteractionComponent.h",
   "modern_length": 173,
@@ -2720,6 +2187,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcInteractionData const * cGcInteractionComponent::GetInteractionData()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\components\\gameplay\\gcinteractioncomponent.cpp",
   "modern_length": 547,
@@ -2753,6 +2221,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcAlienPuzzleEntry const * cGcInteractionComponent::GetPuzzle()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\Simulation\\Components\\Gameplay\\GcInteractionComponent.h",
   "modern_length": 138,
@@ -2791,6 +2260,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcInteractionComponent::GiveReward(cGcAlienPuzzleOption const&, bool, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\components\\gameplay\\gcinteractioncomponent.cpp",
   "modern_length": 1075,
@@ -2821,6 +2291,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcInteractionData::SetDefaults()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\build\\metadata\\source\\metadata\\gamestate\\interactions\\gcinteractiondata.meta.cpp",
   "modern_length": 21,
@@ -2857,6 +2328,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcInventoryIndex cGcInventoryStore::Add(cGcInventoryElement const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcinventorystore.cpp",
   "modern_length": 1141,
@@ -2905,6 +2377,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -2920,6 +2393,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcInventoryStore::Remove(cGcInventoryIndex, int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcinventorystore.cpp",
   "modern_length": 558,
@@ -2964,6 +2438,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcInventoryStore::cGcInventoryStore()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcinventorystore.cpp",
   "modern_length": 360,
@@ -3001,6 +2476,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcMarkerList::RemoveMarker(cGcMarkerPoint &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcmarkerpoint.cpp",
   "modern_length": 219,
@@ -3042,6 +2518,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcMarkerList::TryAddMarker(cGcMarkerPoint const&, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcmarkerpoint.cpp",
   "modern_length": 818,
@@ -3085,6 +2562,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcMarkerPoint::Reset()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcmarkerpoint.cpp",
   "modern_length": 750,
@@ -3123,6 +2601,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcMarkerPoint::cGcMarkerPoint()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcmarkerpoint.cpp",
   "modern_length": 138,
@@ -3161,6 +2640,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkVector2 cGcNGuiElement::GetPosition(cGcNGuiElement::PositionType)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\ngui\\gcnguigenerator.cpp",
   "modern_length": 219,
@@ -3197,6 +2677,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcNGuiElement::Render()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\ngui\\gcnguigenerator.cpp",
   "modern_length": 1217,
@@ -3223,6 +2704,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcNGuiElement::SetPosition(cTkVector2 const&, cGcNGuiElement::PositionType)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\ngui\\gcnguigenerator.cpp",
   "modern_length": 173,
@@ -3252,6 +2734,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcNGuiElement * cGcNGuiLayer::AddElement(cGcNGuiElement *, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Graphics\\NGui\\GcNGuiGenerator.h",
   "modern_length": 155,
@@ -3273,45 +2756,6 @@
    "cGcOptionListHeader::Initialize"
   ]
  },
- "cGcNGuiLayer::FindElementRecursive": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "cGcNGuiElement * cGcNGuiLayer::FindElementRecursive(cTkHashedNGuiElement const&, eNGuiGameElementType)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Graphics\\NGui\\GcNGuiGenerator.h",
-  "modern_length": 279,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "?insert@?$cTkLinearHashTable@VcTkHashedNGuiElement@@PEAVcGcNGuiElement@@$0?0$0A@V1@@@QEAAXAEBVcTkHashedNGuiElement@@AEBQEAVcGcNGuiElement@@@Z",
-   "cGcNGuiLayer::FindElementRecursive"
-  ],
-  "modern_callers": [
-   "?CreateElement@?$cGcListOption@H@@MEAAXXZ",
-   "?CreateElement@?$cGcListOption@V?$cTkIntTuple2@H$0A@@@@@MEAAXXZ",
-   "?DoBottomBanner@@YAXPEAVcGcFrontendPage@@@Z",
-   "?DoDescriptionString@@YAXPEBVcGcFrontendPage@@PEAVcGcNGuiLayer@@PEAVcGcNGuiTextSpecial@@AEBT?$TkID@$0IA@@@W4eInventoryType@@AEBV?$cTkFixedString@$0BAA@D@@AEAV6@@Z",
-   "?DoPriceString@@YAXPEBVcGcFrontendPage@@PEAVcGcNGuiLayer@@AEBUTradeInventoryItem@@_NHH3@Z",
-   "?DoPriceStringMaps@@YAXPEBVcGcFrontendPage@@PEAVcGcNGuiLayer@@AEBUTradeInventoryItem@@H@Z",
-   "?DoPriceStringScrap@@YAXPEBVcGcFrontendPage@@PEAVcGcNGuiLayer@@AEBUTradeInventoryItem@@H@Z",
-   "?Resolve@SlotComponents@cGcApplicationGameModeSelectorState@@QEAA_NW4Selecting@2@@Z",
-   "?Resolve@SlotComponents@cGcApplicationUGCBaseViewerState@@QEAA_NXZ",
-   "?Resolve@WarningDlgComponents@cGcApplicationGameModeSelectorState@@QEAA_NXZ",
-   "?SetupDiscoveryBlob@SolarInfoPanel@cGcGalaxyMapUI@@QEAAX_N@Z",
-   "?Update@SolarInfoPanel@cGcGalaxyMapUI@@QEAAXM@Z",
-   "?Update@cGcErrorMessageHandler@cGcFrontendPageDifficultySettings@@QEAAXAEAVcGcDifficultySettingsPageContext@@@Z",
-   "?UpdatePanelUI@SolarInfoPanel@cGcGalaxyMapUI@@QEAAXXZ",
-   "`cGcBinoculars::UpdateScanBarProgress'::`2'::<lambda_1>::operator()",
-   "`cGcFrontendPageCreaturePet::Render'::`2'::<lambda_1>::operator()",
-   "`cGcFrontendPageFunctions::DoItemPopup'::`64'::<lambda_1>::operator()",
-   "`cGcFrontendPageInteractions::DoIntermediateInteractionPage'::`36'::<lambda_3>::operator()",
-   "`cGcFrontendPageShop::DoSquadronRecruitment'::`35'::<lambda_1>::operator()",
-   "`cGcInWorldUIManager::RenderWeaponMenu'::`2'::<lambda_1>::operator()"
-  ]
- },
  "cGcNGuiLayer::FindTextRecursive": {
   "missing_in": [
    "1.09.1",
@@ -3319,6 +2763,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcNGuiText * cGcNGuiLayer::FindTextRecursive(union TkID<128> const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Graphics\\NGui\\GcNGuiGenerator.h",
   "modern_length": 250,
@@ -3359,6 +2804,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcNGuiGraphic * cGcNGuiLayer::GetGraphic(union TkID<128>, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Graphics\\NGui\\GcNGuiGenerator.h",
   "modern_length": 345,
@@ -3390,97 +2836,6 @@
    "cGcFrontendModelRenderer::GetGraphicForPage"
   ]
  },
- "cGcNGuiLayer::cGcNGuiLayer": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "cGcNGuiLayer::cGcNGuiLayer()",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Graphics\\NGui\\GcNGuiGenerator.h",
-  "modern_length": 527,
-  "strings": [],
-  "imm64": [
-   "0xBF41BFE8CE8B4801"
-  ],
-  "modern_callees": [
-   "??2@YAPEAX_KPEBDH1@Z",
-   "cGcNGuiElementData::SetDefaults",
-   "cGcNGuiLayerData::SetDefaults",
-   "cGcNGuiLayoutData::SetDefaults",
-   "cTkNGuiGraphicStyle::SetDefaults",
-   "cTkNGuiGraphicStyleData::SetDefaults"
-  ],
-  "modern_callers": [
-   "?CreateElement@?$cGcListOption@H@@MEAAXXZ",
-   "?CreateElement@?$cGcListOption@V?$cTkIntTuple2@H$0A@@@@@MEAAXXZ",
-   "`dynamic initializer for 'cGcNGuiLayer::mgDefaultLayer''",
-   "`dynamic initializer for 'cGcNGuiLayer::mgpPopupLayer''",
-   "`dynamic initializer for 'gGuiRoot''",
-   "cGcApplicationGameModeSelectorState::LoadAndSetupUI",
-   "cGcApplicationGameModeSelectorState::SetupRemapControlsUI",
-   "cGcApplicationTitleScreenState::LoadAndSetupUI",
-   "cGcApplicationUGCBaseViewerState::DoPageDots",
-   "cGcApplicationUGCBaseViewerState::LoadAndSetupUI",
-   "cGcBooleanOption::CreateElement",
-   "cGcButtonOption::Initialize",
-   "cGcFloatOption::CreateElement",
-   "cGcFrontendManager::PreloadDirectory",
-   "cGcFrontendManager::cGcFrontendManager",
-   "cGcFrontendPage::cGcFrontendPage",
-   "cGcFrontendPageByteBeat::BuildGraphicalTree",
-   "cGcFrontendPageCraftingTree::BuildTreeItem",
-   "cGcFrontendPageFunctions::DoScrollDots",
-   "cGcFrontendPageInteractions::DoScrollControls"
-  ]
- },
- "cGcNameGenerator::GeneratePlanetName": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcNameGenerator::GeneratePlanetName(unsigned __int64, cTkFixedString<127,char> &, cTkFixedString<127,char> *)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\reality\\gcnamegenerator.cpp",
-  "modern_length": 3601,
-  "strings": [
-   "%d/%c%d",
-   "%ADORN%",
-   "%PROCNORM%",
-   "%PROCLONG%",
-   "%LONGCODE%",
-   "%SHORTCODE%",
-   "%PROCSHORT%",
-   "NAMEGEN_PLANET_ADORN_%i",
-   "NAMEGEN_PLANET_STYLE_10",
-   "NAMEGEN_PLANET_STYLE_%i",
-   "%NUMERAL%"
-  ],
-  "imm64": [],
-  "modern_callees": [
-   "??$Format@D$0A@@?$cTkFixedString@$0CA@D@@QEAAHPEBDZZ",
-   "??$Format@D$0A@@?$cTkFixedString@$0HP@D@@QEAAHPEBDZZ",
-   "?CopyIntoBuffer@?$cTkStringUtilities@D@@SAPEADPEADPEBDH@Z",
-   "?GcAppendConvertedToJapanese@@YAXAEBV?$cTkFixedString@$0HP@D@@AEAV1@_N@Z",
-   "?InsertPrefix@?$cTkStringUtilities@D@@SAPEADPEADHPEBD@Z",
-   "cGcMarkovAssembler::Assemble",
-   "cTkLanguageManager::GetInstance",
-   "cTkLanguageManagerBase::Translate",
-   "cpToUTF8"
-  ],
-  "modern_callers": [
-   "DiscoveryResolver::ComputeDisplayNameAndOwnerForDiscovery",
-   "`cGcNameGenerator::GenerateAbandonedFreighterLogFragment'::`2'::<lambda_1>::operator()",
-   "cGcFrontendPageInteractions::SubstituteSpacePOIDetailsIntoString",
-   "cGcNameGenerator::GenerateAbandonedFreighterResearchNote",
-   "cGcPlanetGenerator::Generate",
-   "cGcPlanetGenerator::GenerateQueryInfo",
-   "cGcPlanetGenerator::GenerateWonderQueryData",
-   "cGcRealityManager::GenerateProceduralProduct"
-  ]
- },
  "cGcNotificationSequenceStartEvent::DeepInterstellarSearch": {
   "missing_in": [
    "1.09.1",
@@ -3488,6 +2843,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcNotificationSequenceStartEvent::DeepInterstellarSearch(cGcNotificationSequenceStage *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\notifications\\gcnotificationsequencestage.cpp",
   "modern_length": 203,
@@ -3506,6 +2862,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -3521,6 +2878,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -3536,6 +2894,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -3551,6 +2910,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPersistentInteractionBuffer::LoadGalacticAddressBuffers(unsigned __int64 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcpersistentinteractionbuffer.cpp",
   "modern_length": 727,
@@ -3580,6 +2940,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPersistentInteractionBuffer::PopulateBufferData(cGcInteractionBuffer &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcpersistentinteractionbuffer.cpp",
   "modern_length": 99,
@@ -3601,6 +2962,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPersistentInteractionBuffer::SaveInteraction(cTkVector3 const&, cGcInteractionData const&, bool, float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcpersistentinteractionbuffer.cpp",
   "modern_length": 472,
@@ -3638,6 +3000,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPersistentInteractionsManager::LoadGalacticAddressBuffers(unsigned __int64 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcpersistentinteractionsmanager.cpp",
   "modern_length": 712,
@@ -3671,6 +3034,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPersistentInteractionsManager::PopulateArrays(cTkFixedArray<cGcInteractionBuffer,11> &, cTkDynamicArray<cGcPersistentBase> &, cTkDynamicArray<cGcMaintenanceContainer> &, cTkDynamicArray<cGcMaintenanceContainer> &, cTkDynamicArray<unsigned __int64> &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcpersistentinteractionsmanager.cpp",
   "modern_length": 1678,
@@ -3703,6 +3067,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPhotoModeUI::OnRenderScreenshotFinished(void *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\gcphotomodeui.cpp",
   "modern_length": 3366,
@@ -3728,32 +3093,6 @@
   ],
   "modern_callers": []
  },
- "cGcPlanet::Construct": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcPlanet::Construct(int)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanet.cpp",
-  "modern_length": 974,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
-   "??2@YAPEAX_KPEBDH1@Z",
-   "??3@YAXPEAX_K@Z",
-   "cGcPlanetControls::Construct",
-   "cGcPlanetGenerationInputData::SetDefaults",
-   "cTkPersonalRNG::cTkPersonalRNG",
-   "cTkSmartResHandle::DecRef",
-   "cTkSmartResHandle::IncRef"
-  ],
-  "modern_callers": [
-   "cGcSolarSystem::Construct"
-  ]
- },
  "cGcPlanet::UpdateClouds": {
   "missing_in": [
    "1.09.1",
@@ -3761,6 +3100,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlanet::UpdateClouds(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanet.cpp",
   "modern_length": 784,
@@ -3782,6 +3122,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlanet::UpdateGravity(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanet.cpp",
   "modern_length": 171,
@@ -3797,42 +3138,13 @@
    "cGcPlanet::UpdateWeather"
   ]
  },
- "cGcPlanetGenerationInputData::SetDefaults": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcPlanetGenerationInputData::SetDefaults()",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\build\\metadata\\source\\metadata\\simulation\\solarsystem\\planet\\gcplanetgenerationinputdata.meta.cpp",
-  "modern_length": 114,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cGcAISpaceshipRoles::SetDefaults",
-   "cGcBaseDefenceStatusType::SetDefaults"
-  ],
-  "modern_callers": [
-   "??$WriteToXMLFile@$$CBVcGcPlanetGenerationInputData@@@cTkMetaDataXML@@SA_NPEBVcGcPlanetGenerationInputData@@PEBD1_N222@Z",
-   "??0?$cTkFixedArray@VcGcPlanetGenerationInputData@@$07@@QEAA@XZ",
-   "cGcPlanet::Construct",
-   "cGcPlanet::cGcPlanet",
-   "cGcPlanetGenerationInputData::ClassPointerCopy",
-   "cGcPlanetGenerationInputData::ClassPointerCreate",
-   "cGcPlanetGenerationInputData::ClassPointerCreateDefault",
-   "cGcPlanetGenerationInputData::ClassPointerRead",
-   "cGcPlanetGenerationInputData::WriteToXMLNode",
-   "cGcSolarSystemData::SetDefaults"
-  ]
- },
  "cGcPlanetGenerator::FillCreatureSpawnDataFromDescription": {
   "missing_in": [
    "1.09.1",
    "1.13",
-   "1.24",
-   "1.38"
+   "1.24"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlanetGenerator::FillCreatureSpawnDataFromDescription(cGcCreatureRoleData const&, cGcCreatureSpawnData &, cGcPlanetData &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanetgenerator.cpp",
   "modern_length": 1704,
@@ -3847,103 +3159,13 @@
    "cGcPlanetGenerator::GenerateCreatureSpawnData"
   ]
  },
- "cGcPlanetGenerator::GenerateCreatureInfo": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcPlanetGenerator::GenerateCreatureInfo(cGcPlanetData &, cGcCreatureRoleData &)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanetgenerator.cpp",
-  "modern_length": 5407,
-  "strings": [
-   "%s / %s",
-   "UI_ROBOT_GENDER_",
-   "UI_CREATURE_NOTE_",
-   "UI_CREA_DESC_ROBOT_",
-   "UI_CREA_ROBOT_DIET_",
-   "UI_CREA_ROBOT_NOTE_",
-   "UI_CREA_ROBOT_BEHAVE_",
-   "UI_CREA_DESC_NOTE_%i_",
-   ".?AVPlayFabException@PlayFab@@",
-   "%0.1fm",
-   "%0.1fkg",
-   "%BIOME_MEAT%",
-   "%BIOME_PLANT%"
-  ],
-  "imm64": [],
-  "modern_callees": [
-   "??$?0$0BA@@?$cTkFixedString@$0CA@D@@QEAA@AEAY0BA@D@Z",
-   "??$Format@D$0A@@?$cTkFixedString@$0CA@D@@QEAAHPEBDZZ",
-   "??$Format@D$0A@@?$cTkFixedString@$0IA@D@@QEAAHPEBDZZ",
-   "?InsertPrefix@?$cTkStringUtilities@D@@SAPEADPEADHPEBD@Z",
-   "cGcEcosystem::GetCreatureData",
-   "cGcPlanetGenerator::GetLocString",
-   "cTkLanguageManager::GetInstance",
-   "cTkLanguageManagerBase::Translate"
-  ],
-  "modern_callers": [
-   "cGcPlanetGenerator::GenerateCreatureRoles"
-  ]
- },
- "cGcPlanetGenerator::GenerateCreatureRoles": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcPlanetGenerator::GenerateCreatureRoles(cGcPlanetData &, unsigned __int64 const&)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanetgenerator.cpp",
-  "modern_length": 7887,
-  "strings": [
-   "DEFAULT"
-  ],
-  "imm64": [
-   "0x64DD81482CBD31D7",
-   "0x8A4472FEA18A4473",
-   "0xE36AA5C613612997",
-   "0xFFFFFFFFFFFFF"
-  ],
-  "modern_callees": [
-   "??$_Emplace_one_at_back@AEAUcGcByteBeatTokenInfo@@@?$vector@UcGcByteBeatTokenInfo@@V?$TkSTLAllocatorShim@UcGcByteBeatTokenInfo@@$03$0?0@@@std@@AEAAAEAUcGcByteBeatTokenInfo@@AEAU2@@Z",
-   "??$_Emplace_reallocate@AEBVcGcCreatureRoleData@@@?$vector@VcGcCreatureRoleData@@V?$TkSTLAllocatorShim@VcGcCreatureRoleData@@$07$0?0@@@std@@AEAAPEAVcGcCreatureRoleData@@QEAV2@AEBV2@@Z",
-   "??4cGcAISpaceshipRoles@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcCreatureRoleData@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcCreatureRoleDescription@@QEAAAEAV0@AEBV0@@Z",
-   "?Allocate@?$cTkDynamicArray@VcGcCreatureRoleData@@@@QEAAXH@Z",
-   "?Deallocate@?$cTkDynamicArray@V?$cTkFixedString@$0IA@D@@@@QEAAXXZ",
-   "?reserve@?$vector@VcTkPersonalRNG@@V?$TkSTLAllocatorShim@VcTkPersonalRNG@@$03$0?0@@@std@@QEAAX_K@Z",
-   "`cGcPlanetGenerator::GenerateCreatureRoles'::`2'::<lambda_1>::operator()",
-   "`cGcPlanetGenerator::GenerateCreatureRoles'::`2'::<lambda_3>::operator()",
-   "`cGcPlanetGenerator::GenerateCreatureRoles'::`30'::<lambda_2>::operator()",
-   "cGcCreatureInfo::SetDefaults",
-   "cGcCreatureRoleData::SetDefaults",
-   "cGcCreatureRoleData::cGcCreatureRoleData",
-   "cGcCreatureRoleDescription::SetDefaults",
-   "cGcEcosystem::GetNumCreatures",
-   "cGcEcosystem::GetSpawnData",
-   "cGcPlanetGenerator::GenerateCreatureInfo",
-   "cGcSeasonalData::IsSeasonActive",
-   "cTkHeirarchicalRNG::Push"
-  ],
-  "modern_callers": [
-   "cGcPlanetControls::FulfillGenerationRequests",
-   "cGcPlanetGenerator::Generate",
-   "cGcPlanetGenerator::GenerateCreatureRolesForPlanet",
-   "cGcPlanetGenerator::GenerateQueryInfo",
-   "cGcPlanetGenerator::GenerateWonderQueryData",
-   "cGcPlanetGenerator::GetPlanetInfoFromDiscoveryData"
-  ]
- },
  "cGcPlanetGenerator::GenerateCreatureSpawnData": {
   "missing_in": [
    "1.09.1",
    "1.13",
-   "1.24",
-   "1.38"
+   "1.24"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlanetGenerator::GenerateCreatureSpawnData(cGcPlanetData &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanetgenerator.cpp",
   "modern_length": 676,
@@ -3968,6 +3190,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlanetGenerator::GenerateQueryInfo(PlanetGenerationQuery &, cGcPlanetGenerationInputData const&, unsigned __int64, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\planet\\gcplanetgenerator.cpp",
   "modern_length": 4097,
@@ -4009,6 +3232,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayer::CheckFallenThroughFloor()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 3857,
@@ -4051,6 +3275,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "eHand cGcPlayer::GetDominantHand()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 44,
@@ -4068,6 +3293,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayer::OnEnteredCockpit()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 373,
@@ -4096,6 +3322,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayer::RenderInventoryEditor()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 7660,
@@ -4106,13 +3333,13 @@
    "Trash Non Core",
    "Tech Box Product",
    "Remove all Units",
-   "Remove all Nanites",
    "Add Suit Tech Slot",
    "Give Int Max Units",
-   "Remove all Specials",
+   "Remove all Nanites",
    "Add Suit Cargo Slot",
-   "Give 1000000 Nanites",
+   "Remove all Specials",
    "Give Int Max Nanites",
+   "Give 1000000 Nanites",
    "Give Int Max Specials",
    "Give 1000000 Specials",
    "Add %s to %s inventory",
@@ -4120,8 +3347,8 @@
    "Add %d %s to %s inventory",
    "Damage ALL none core tech in %s inventory",
    "Trash %s inventory (what happens to it when you die)",
-   "Filter",
    "Amount",
+   "Filter",
    "Product",
    "PARTNAME",
    "Substance"
@@ -4164,6 +3391,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayer::SetToPosition(cTkPhysRelVec3 const&, cTkVector3 const&, cTkVector3 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 186,
@@ -4198,6 +3426,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayer::TakeDamage(float, eDamageType, union TkID<128> const&, cTkVector3 const&, cGcOwnerConcept *, std::vector<cGcCombatEffectDamageMultiplier,TkSTLAllocatorShim<cGcCombatEffectDamageMultiplier,4,-1> > const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 6645,
@@ -4247,6 +3476,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayer::UpdateGraphics(bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayer.cpp",
   "modern_length": 1336,
@@ -4282,6 +3512,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerBasePersistentBuffer::LoadGalacticAddress(unsigned __int64 const&, BaseIndex)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerbasepersistentbuffer.cpp",
   "modern_length": 563,
@@ -4307,6 +3538,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerCharacterComponent::SetDeathState()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\components\\utils\\gcplayercharactercomponent.cpp",
   "modern_length": 1021,
@@ -4334,6 +3566,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerCharacterComponent::Update(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\components\\utils\\gcplayercharactercomponent.cpp",
   "modern_length": 7261,
@@ -4374,6 +3607,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerCommunicator::Update(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\attachments\\gcplayercommunicator.cpp",
   "modern_length": 2508,
@@ -4412,6 +3646,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "int cGcPlayerDiscoveryHelper::GetDiscoveryWorth(cGcDiscoveryData const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerdiscoveryhelper.cpp",
   "modern_length": 416,
@@ -4433,6 +3668,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcPlayerEnvironment::IsOnPlanet()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Simulation\\Environment\\GcEnvironment.h",
   "modern_length": 16,
@@ -4451,6 +3687,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcPlayerEnvironment::IsOnboardOwnFreighter()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\gcenvironment.cpp",
   "modern_length": 69,
@@ -4476,6 +3713,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -4490,6 +3728,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcPlayerFreighterOwnership::ResetPlayerFreighterBase()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerfreighterownership.cpp",
   "modern_length": 1024,
@@ -4522,6 +3761,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -4537,14 +3777,15 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerHUD::RenderCrosshair()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\gcplayerhud.cpp",
   "modern_length": 7660,
   "strings": [
    "HUD_LOW_AMMO",
    "HUD_COOLDOWN",
-   "HUD_RELOADING",
    "HUD_HIGH_HEAT",
+   "HUD_RELOADING",
    "UI_TERRAIN_EDIT_SIZE_TIP",
    "UI_TERRAIN_EDIT_ROTATE_TIP",
    "OVERHEAT"
@@ -4583,6 +3824,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerHUD::RenderIndicatorPanel()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\gcplayerhud.cpp",
   "modern_length": 6482,
@@ -4621,6 +3863,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerHUD::RenderWeaponPanel()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\gcplayerhud.cpp",
   "modern_length": 11143,
@@ -4628,12 +3871,12 @@
    "%2.2fs",
    "UI_PERCENTAGE",
    "UI_HEAT_LEVEL",
-   "UI_SENTINEL_BLOCKED",
    "UI_TERRAINMODE_UNDO",
+   "UI_SENTINEL_BLOCKED",
    "UI_SENTINEL_HUNT_OSD",
+   "UI_TERRAINMODE_DELETE",
    "UI_TERRAINMODE_CREATE",
    "UI_MELEEMODE_SUBTITLE",
-   "UI_TERRAINMODE_DELETE",
    "UI_SENTINEL_ARRIVE_OSD",
    "UI_TERRAINMODE_FLATTEN",
    "UI_SENTINEL_SPOTTED_OSD",
@@ -4677,6 +3920,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerHUD::Update(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\gcplayerhud.cpp",
   "modern_length": 18220,
@@ -4687,18 +3931,18 @@
    "UI_ABAND_OLD_AREA",
    "INTRCT_CLAIM_BASE",
    "UI_ABAND_AREA_MAPPED",
-   "UI_SETTLEMENT_APPROACH",
    "UI_BUILDING_DISCOVERED",
+   "UI_SETTLEMENT_APPROACH",
    "UI_SETTLEMENT_DISCOVERY",
    "UI_PIRATE_STATION_LABEL",
-   "%RACE%",
    "%NAME%",
+   "%RACE%",
    "%BUILDING%",
    "BUILDING_BASE",
    "CAPITAL_SHIP_NAME_L",
    "UI_SETTLEMENT_PAGE_SUB",
-   "BUILDING_SPACESTATION_L",
    "FeetShiftOnTurnMaxSpeed",
+   "BUILDING_SPACESTATION_L",
    "UI_ABAND_FREIGHT_POI_LABEL"
   ],
   "imm64": [],
@@ -4736,6 +3980,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcPlayerHUD::cGcPlayerHUD()",
   "source_file": "",
   "modern_length": 1014,
@@ -4758,6 +4003,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcPlayerShipOwnership::DestroyShip(int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayershipownership.cpp",
   "modern_length": 217,
@@ -4785,6 +4031,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcSpaceshipComponent const * cGcPlayerShipOwnership::GetShipComponent(int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayershipownership.cpp",
   "modern_length": 54,
@@ -4815,6 +4062,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcPlayerShipOwnership::SpawnNewShip(cTkMatrix34 const&, cGcPlayerShipOwnership::ShipSpawnLandingGearState, int, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayershipownership.cpp",
   "modern_length": 1193,
@@ -4864,6 +4112,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerShipOwnership::Update(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayershipownership.cpp",
   "modern_length": 3560,
@@ -4900,6 +4149,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerShipOwnership::UpdateMeshRefresh()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayershipownership.cpp",
   "modern_length": 974,
@@ -4932,6 +4182,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcPlayerShipOwnership::cGcPlayerShipOwnership()",
   "source_file": "",
   "modern_length": 968,
@@ -4957,6 +4208,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "unsigned int cGcPlayerState::AwardNanites(int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerstate.cpp",
   "modern_length": 300,
@@ -4983,31 +4235,6 @@
    "cGcRewardManager::GiveRewardStatDiff"
   ]
  },
- "cGcPlayerState::AwardUnits": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "unsigned int cGcPlayerState::AwardUnits(int)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerstate.cpp",
-  "modern_length": 283,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z"
-  ],
-  "modern_callers": [
-   "cGcFrontendPageShop::DoRocketLockerTransfer",
-   "cGcFrontendPageShop::DoTrade",
-   "cGcPlayer::RenderInventoryEditor",
-   "cGcPlayerDiscoveryHelper::DiscoveryUnitReward",
-   "cGcRewardManager::GiveCargoReward",
-   "cGcRewardManager::GiveRewardMoney",
-   "cGcRewardManager::GiveRewardStatDiff"
-  ]
- },
  "cGcPlayerState::GetStatValue": {
   "missing_in": [
    "1.09.1",
@@ -5015,6 +4242,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cGcPlayerState::GetStatValue(eStatsType, ItemLookupType, eStatsType, bool, bool, cGcInventoryStore const *, cGcInventoryStore const *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerstate.cpp",
   "modern_length": 648,
@@ -5048,111 +4276,6 @@
    "cGcPlayer::AddRecoil"
   ]
  },
- "cGcPlayerState::LoadFromData": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcPlayerState::LoadFromData(cGcPlayerStateData const&, bool, bool)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerstate.cpp",
-  "modern_length": 18944,
-  "strings": [
-   "W_COMMUNITY_02_PORTAL_WAIT",
-   "W_COMMUNITY_01_PORTAL_WAIT",
-   "APPLOCALLOAD"
-  ],
-  "imm64": [
-   "0x20000000000",
-   "0x28F5C28F5C28F5C",
-   "0x45BC5C505280F01",
-   "0x47AE147AE147AE15",
-   "0x808E8D49D78B4901",
-   "0x8E8D4918578D4901",
-   "0xA40087100F4101",
-   "0xAAAAAAAAAAAAAAAB",
-   "0xBD38978D4901",
-   "0xBD7887B60F4101",
-   "0xCCCCCCCCCCCCCCCD",
-   "0xEEEEEEEEEEEEEEEF"
-  ],
-  "modern_callees": [
-   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
-   "??$LoadBuffer@$0A@@cGcSynchronisedStateManager@@QEAA_NAEBVcGcSyncBufferSaveData@@QEBUsMaintenanceSaveKey@@QEBVcGcMaintenanceContainer@@@Z",
-   "??$ReadFromFile@VcGcDefaultSaveData@@@cTkMetaData@@SAPEAVcGcDefaultSaveData@@PEBDPEAH_N2@Z",
-   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z",
-   "??$_Assign_counted_range@VInternalConstIterator@?$cTkArraySTLIterator@VcGcRepairTechData@@@@@?$vector@VcGcRepairTechData@@V?$TkSTLAllocatorShim@VcGcRepairTechData@@$07$0?0@@@std@@AEAAXVInternalConstIterator@?$cTkArraySTLIterator@VcGcRepairTechData@@@@_K@Z",
-   "??$_Emplace_one_at_back@AEBT?$TkID@$0IA@@@@?$vector@T?$TkID@$0IA@@@V?$TkSTLAllocatorShim@T?$TkID@$0IA@@@$07$0?0@@@std@@AEAAAEAT?$TkID@$0IA@@@AEBT2@@Z",
-   "??$_Emplace_one_at_back@AEBVcTkVector3@@W4eLocation@?$cGcVariablePersistentInteractionBuffer@VcGcMaintenanceContainer@@@@@?$vector@UsMaintenanceSaveKey@@V?$TkSTLAllocatorShim@UsMaintenanceSaveKey@@$0BA@$0?0@@@std@@AEAAAEAUsMaintenanceSaveKey@@AEBVcTkVector3@@$$QEAW4eLocation@?$cGcVariablePersistentInteractionBuffer@VcGcMaintenanceContainer@@@@@Z",
-   "??$_Emplace_reallocate@AEAVcGcInventoryElement@@@?$vector@VcGcInventoryElement@@V?$TkSTLAllocatorShim@VcGcInventoryElement@@$07$0?0@@@std@@AEAAPEAVcGcInventoryElement@@QEAV2@AEAV2@@Z",
-   "??$_Emplace_reallocate@AEBT?$TkID@$0BAA@@@@?$vector@T?$TkID@$0BAA@@@V?$TkSTLAllocatorShim@T?$TkID@$0BAA@@@$07$0?0@@@std@@AEAAPEAT?$TkID@$0BAA@@@QEAT2@AEBT2@@Z",
-   "??$_Emplace_reallocate@AEBVcGcSettlementPerkUsefulData@@@?$vector@VcGcSettlementPerkUsefulData@@V?$TkSTLAllocatorShim@VcGcSettlementPerkUsefulData@@$07$0?0@@@std@@AEAAPEAVcGcSettlementPerkUsefulData@@QEAV2@AEBV2@@Z",
-   "??$_Emplace_reallocate@AEBVcGcTeleportEndpoint@@@?$vector@VcGcTeleportEndpoint@@V?$TkSTLAllocatorShim@VcGcTeleportEndpoint@@$0BA@$0?0@@@std@@AEAAPEAVcGcTeleportEndpoint@@QEAV2@AEBV2@@Z",
-   "??$_Emplace_reallocate@AEBVcGcUniverseAddressData@@@?$vector@VcGcUniverseAddressData@@V?$TkSTLAllocatorShim@VcGcUniverseAddressData@@$03$0?0@@@std@@AEAAPEAVcGcUniverseAddressData@@QEAV2@AEBV2@@Z",
-   "??$_Resize@U_Value_init_tag@std@@@?$vector@VcTkVector3@@V?$TkSTLAllocatorShim@VcTkVector3@@$0BA@$0?0@@@std@@AEAAX_KAEBU_Value_init_tag@1@@Z",
-   "??$doThrow@Vbad_alloc@stdext@@$$V@detail@robin_hood@@YAXXZ",
-   "??$emplace@AEAT?$TkID@$0IA@@@AEAPEAVcGcProductData@@@?$_Hash@V?$_Umap_traits@T?$TkID@$0IA@@@PEAVcGcProductData@@V?$_Uhash_compare@T?$TkID@$0IA@@@UHash128@TkIDUnorderedMap@@U?$equal_to@T?$TkID@$0IA@@@@std@@@std@@V?$TkSTLAllocatorShim@U?$pair@$$CBT?$TkID@$0IA@@@PEAVcGcProductData@@@std@@$07$0?0@@$0A@@std@@@std@@QEAA?AU?$pair@V?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBT?$TkID@$0IA@@@PEAVcGcProductData@@@std@@@std@@@std@@@std@@_N@1@AEAT?$TkID@$0IA@@@AEAPEAVcGcProductData@@@Z",
-   "??$emplace_back@AEAT?$TkID@$0IA@@@@?$vector@T?$TkID@$0IA@@@V?$TkSTLAllocatorShim@T?$TkID@$0IA@@@$07$0?0@@@std@@QEAA?A_TAEAT?$TkID@$0IA@@@@Z",
-   "??$findIdx@T?$TkID@$0IA@@@@?$Table@$00$0FA@T?$TkID@$0IA@@@XU?$hash@T?$TkID@$0IA@@@X@robin_hood@@U?$equal_to@T?$TkID@$0IA@@@@std@@$0?0@detail@robin_hood@@AEBA_KAEBT?$TkID@$0IA@@@@Z",
-   "??$insertKeyPrepareEmptySpot@AEBT?$TkID@$0IA@@@@?$Table@$00$0FA@T?$TkID@$0IA@@@XU?$hash@T?$TkID@$0IA@@@X@robin_hood@@U?$equal_to@T?$TkID@$0IA@@@@std@@$0?0@detail@robin_hood@@AEAA?AU?$pair@_KW4InsertionState@?$Table@$00$0FA@T?$TkID@$0IA@@@XU?$hash@T?$TkID@$0IA@@@X@robin_hood@@U?$equal_to@T?$TkID@$0IA@@@@std@@$0?0@detail@robin_hood@@@std@@AEBT?$TkID@$0IA@@@@Z",
-   "??0?$pair@T?$TkID@$0IA@@@VcTkSeed@@@std@@QEAA@AEBU01@@Z",
-   "??3@YAXPEAX@Z"
-  ],
-  "modern_callers": [
-   "cGcApplicationDeathState::Update",
-   "cGcGameState::LoadFromPersistentStorage",
-   "cGcGameState::LoadState"
-  ]
- },
- "cGcPlayerState::SaveToData": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcPlayerState::SaveToData(cGcPlayerStateData &)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerstate.cpp",
-  "modern_length": 13720,
-  "strings": [
-   "cGcPlayerState::SaveToData"
-  ],
-  "imm64": [
-   "0x21CFB2B78C13521D",
-   "0x6DB6DB6DB6DB6DB7",
-   "0x8E38E38E38E38E39",
-   "0xAAAAAAAAAAAAAAAB",
-   "0xCCCCCCCCCCCCCCCD",
-   "0xEEEEEEEEEEEEEEEF",
-   "0xFAFAFAFAFAFAFAFB"
-  ],
-  "modern_callees": [
-   "??$_Emplace_reallocate@$$V@?$vector@VcGcSyncBufferSaveData@@V?$TkSTLAllocatorShim@VcGcSyncBufferSaveData@@$07$0?0@@@std@@AEAAPEAVcGcSyncBufferSaveData@@QEAV2@@Z",
-   "??0?$pair@T?$TkID@$0IA@@@VcTkSeed@@@std@@QEAA@AEBU01@@Z",
-   "??2@YAPEAX_KPEBDH1@Z",
-   "??3@YAXPEAX@Z",
-   "??3@YAXPEAX_K@Z",
-   "??4?$cTkFixedArray@VcGcSavedInteractionRaceData@@$0ID@@@QEAAAEAV0@AEBV0@@Z",
-   "??4?$cTkFixedArray@VcGcStoryPageSeenDataArray@@$07@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcByteBeatLibraryData@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcDifficultyStateData@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcExactResource@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcInteractionData@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcInventoryElement@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcInventoryLayout@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcMaintenanceContainer@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcPhotoModeSettings@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcRepairTechData@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcResourceElement@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcSavedEntitlement@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcSeasonalGameModeData@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcSettlementState@@QEAAAEAV0@AEBV0@@Z"
-  ],
-  "modern_callers": [
-   "cGcGameState::SaveProgress"
-  ]
- },
  "cGcPlayerState::StoreCurrentSystemSpaceStationEndpoint": {
   "missing_in": [
    "1.09.1",
@@ -5160,6 +4283,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerState::StoreCurrentSystemSpaceStationEndpoint()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcplayerstate.cpp",
   "modern_length": 104,
@@ -5183,6 +4307,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcPlayerState::cGcPlayerState()",
   "source_file": "",
   "modern_length": 2380,
@@ -5218,6 +4343,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcPlayerVehicleOwnership::cGcPlayerVehicleOwnership()",
   "source_file": "",
   "modern_length": 461,
@@ -5241,6 +4367,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPlayerWanted::Update(cTkVector3 const&, float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayerwanted.cpp",
   "modern_length": 4983,
@@ -5283,6 +4410,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cGcPlayerWeapon::GetChargeFactor()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Simulation\\Player\\Attachments\\GcPlayerWeapon.h",
   "modern_length": 65,
@@ -5300,6 +4428,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cGcPlayerWeapon::GetChargeTime()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\attachments\\gcplayerweapon.cpp",
   "modern_length": 147,
@@ -5320,6 +4449,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPositionMarker::Render()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\gcplayerhud.cpp",
   "modern_length": 1846,
@@ -5358,6 +4488,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcPurchaseableItem::Update(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\frontend\\pages\\gcfrontendpage.cpp",
   "modern_length": 13532,
@@ -5365,8 +4496,8 @@
    "UI_SUIT_SLOTS_OSD",
    "UI_REWARD_SHIP_OSD",
    "UI_WEAPON_SLOTS_OSD",
-   "UI_FREIGHT_SLOTS_OSD",
    "UI_SALVAGE_SLOTS_OSD",
+   "UI_FREIGHT_SLOTS_OSD",
    "%NAME%",
    "cGcCustomInventoryComponentData"
   ],
@@ -5403,6 +4534,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcQuickMenu::cGcQuickMenu()",
   "source_file": "",
   "modern_length": 1080,
@@ -5427,14 +4559,15 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcProductData const * cGcRealityManager::GenerateProceduralProduct(union TkID<128> const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\reality\\gcrealitymanager.cpp",
   "modern_length": 12060,
   "strings": [
    "%DIET%",
    "%METAL%",
-   "%HEIGHT%",
    "%GENDER%",
+   "%HEIGHT%",
    "%WEIGHT%",
    "%DETAILS%",
    "%BEHAVIOUR%",
@@ -5442,20 +4575,20 @@
    "FTH_EXOTIC%d_NAME",
    "ITEMGEN_FORMAT_DATA",
    "UI_CREATURE_NOTE_%d",
-   "ITEMGEN_FORMAT_FREI_CAPT",
    "ITEMGEN_FORMAT_FREI_CREW",
-   "ITEMGEN_FORMAT_DATA_ROCK",
    "ITEMGEN_FORMAT_FREI_PASS",
-   "ITEMGEN_FORMAT_DATA_TYPE_CREA",
+   "ITEMGEN_FORMAT_FREI_CAPT",
+   "ITEMGEN_FORMAT_DATA_ROCK",
    "ITEMGEN_FORMAT_DATA_TYPE_ROCK",
    "ITEMGEN_FORMAT_DATA_DESC_CREA",
    "ITEMGEN_FORMAT_DATA_DESC_ROCK",
+   "ITEMGEN_FORMAT_DATA_TYPE_CREA",
    "ITEMGEN_FORMAT_DATA_DESC_PLANT",
-   "%RACE%",
    "%NAME%",
    "%TYPE%",
    "%NOTE%",
-   "%0.1fm"
+   "%0.1fm",
+   "%RACE%"
   ],
   "imm64": [
    "0x64DD81482CBD31D7",
@@ -5496,61 +4629,6 @@
    "cGcWonderManager::OnProcProductReceived"
   ]
  },
- "cGcRealityManager::GenerateProceduralTechnology": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "cGcTechnology const * cGcRealityManager::GenerateProceduralTechnology(union TkID<128> const&, bool)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\reality\\gcrealitymanager.cpp",
-  "modern_length": 5409,
-  "strings": [
-   "UI_WIKI_PROC_TECH_SUB",
-   "%NAME%"
-  ],
-  "imm64": [
-   "0x1FFFFFFFFFFFFFFF",
-   "0x64DD81482CBD31D7",
-   "0x9DDFEA08EB382D69",
-   "0xE36AA5C613612997"
-  ],
-  "modern_callees": [
-   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
-   "??$Format@D$0A@@?$cTkFixedString@$0CA@D@@QEAAHPEBDZZ",
-   "??$SplitString@$0CA@D@cTkStringFunctions@@SA?AV?$vector@V?$cTkFixedString@$0CA@D@@V?$TkSTLAllocatorShim@V?$cTkFixedString@$0CA@D@@$00$0?0@@@std@@PEBDD@Z",
-   "??$_Emplace_one_at_back@AEAPEAVcGcCreatureComponent@@@?$vector@PEAVcGcCreatureComponent@@V?$TkSTLAllocatorShim@PEAVcGcCreatureComponent@@$07$0?0@@@std@@AEAAAEAPEAVcGcCreatureComponent@@AEAPEAV2@@Z",
-   "??2@YAPEAX_KPEBDH1@Z",
-   "??4cGcTechnology@@QEAAAEAV0@AEBV0@@Z",
-   "?Allocate@?$cTkDynamicArray@D@@QEAAXH@Z",
-   "?Allocate@?$cTkDynamicArray@VcGcStatsBonus@@@@QEAAXH@Z",
-   "?InsertPrefix@?$cTkStringUtilities@D@@SAPEADPEADHPEBD@Z",
-   "?_Xlength@?$vector@CV?$StackAllocator@C$0CAA@$0?0@@@std@@CAXXZ",
-   "?push_back@?$vector@PEAVPCParam@@V?$TkSTLAllocatorShim@PEAVPCParam@@$07$0?0@@@std@@QEAAX$$QEAPEAVPCParam@@@Z",
-   "cGcNameGenerator::GenerateAbandonedFreighterName",
-   "cGcNameGenerator::GenerateProcTechName",
-   "cGcRealityManager::GenerateProcTechDescription",
-   "cGcRealityManager::LookupTechnologyByID",
-   "cGcTechnology::SetDefaults",
-   "cTkCurveFunction::Calculate",
-   "cTkLanguageManager::GetInstance",
-   "cTkLanguageManagerBase::Translate",
-   "cTkMaterialResource::SetDefaults"
-  ],
-  "modern_callers": [
-   "cGcFrontendPageFunctions::DoTechnologySlot",
-   "cGcFrontendPageWiki::GetWikiGridItemsData",
-   "cGcInventoryStore::GenerateProceduralTechnology",
-   "cGcPlayerState::LoadFromData",
-   "cGcPlayerState::ValidateSavedTechItem",
-   "cGcPurchaseableItem::SetupSpecific",
-   "cGcRealityManager::GenerateTechPackProduct",
-   "cGcRealityManager::LookupDeployTechnologyFromProcTechID",
-   "cGcRealityManager::LookupDeployTechnologyFromProduct",
-   "cGcRewardManager::GiveRewardProceduralTechnology"
-  ]
- },
  "cGcRealityManager::cGcRealityManager": {
   "missing_in": [
    "1.09.1",
@@ -5558,6 +4636,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcRealityManager::cGcRealityManager()",
   "source_file": "",
   "modern_length": 4238,
@@ -5584,6 +4663,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcProceduralTextureManager::TaskContext * cGcResourceCustomisation::CreateGenerationTask(cTkSmartResHandle *, char const *, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\customisation\\gcresourcecustomisation.cpp",
   "modern_length": 452,
@@ -5620,6 +4700,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcRewardManager::GiveGenericReward(union TkID<128> const&, union TkID<128> const&, cTkSeed const&, bool, bool, int &, bool, InventoryChoice, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\reality\\gcrewardmanager.cpp",
   "modern_length": 339,
@@ -5644,10 +4725,9 @@
  "cGcScanEvent::CalculateMarkerPosition": {
   "missing_in": [
    "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
+   "1.13"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcScanEvent::CalculateMarkerPosition()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcscanevent.cpp",
   "modern_length": 4908,
@@ -5695,6 +4775,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcScanEvent::Construct(eScanTable, cGcScanEventData *, cGcBuilding *, float, bool, std::pair<union TkID<128>,cTkSeed> *, union TkID<128>)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcscanevent.cpp",
   "modern_length": 1843,
@@ -5726,10 +4807,9 @@
  "cGcScanEvent::Update": {
   "missing_in": [
    "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
+   "1.13"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcScanEvent::Update(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcscanevent.cpp",
   "modern_length": 1890,
@@ -5769,9 +4849,9 @@
   "missing_in": [
    "1.09.1",
    "1.13",
-   "1.24",
-   "1.38"
+   "1.24"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcScanEvent::UpdateInteraction()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcscanevent.cpp",
   "modern_length": 4462,
@@ -5815,6 +4895,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcScanEvent::UpdateSpaceStationLocation()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcscanevent.cpp",
   "modern_length": 1319,
@@ -5851,6 +4932,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcScanEventManager::PassesPlanetInfoChecks(PlanetGenerationQuery const&, cGcScanEventSolarSystemLookup const&, bool, eBuildingClass, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\scanning\\gcscaneventmanager.cpp",
   "modern_length": 612,
@@ -5863,42 +4945,6 @@
    "cGcScanEventManager::CheckInterstellarEvent"
   ]
  },
- "cGcShipHUD::ReadPlanetStats": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcShipHUD::ReadPlanetStats(bool, cTkFixedString<512,char> &, cTkFixedString<512,char> &, cTkFixedString<512,char> &, bool, bool &, float *)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\graphics\\hud\\gcshiphud.cpp",
-  "modern_length": 2949,
-  "strings": [
-   "DISC_OWNER_NOT_VISITED",
-   "UI_UNIT_U",
-   "UI_UNIT_KS",
-   "%+.2f, %+.2f",
-   "%PLANETCLASS%",
-   "DISC_TYPE_MOON",
-   "DISC_TYPE_PLANET",
-   "UI_UNKNOWN_PLANET"
-  ],
-  "imm64": [],
-  "modern_callees": [
-   "??$Format@D$0A@@?$cTkFixedString@$0CAA@D@@QEAAHPEBDZZ",
-   "??$FormatNumberLocalised@H@?$cTkStringUtilities@D@@SAPEADHPEADHPEBD1@Z",
-   "?GetOwnershipDescription@NameAndOwnerResult@DiscoveryResolver@@QEBAXAEAV?$cTkFixedString@$0CAA@D@@_N11@Z",
-   "?InsertPrefix@?$cTkStringUtilities@D@@SAPEADPEADHPEBD@Z",
-   "DiscoveryResolver::ComputeDisplayNameAndOwnerForDiscovery",
-   "cGcDiscoveryOwner::SetDefaults",
-   "cTkLanguageManager::GetInstance",
-   "cTkLanguageManagerBase::Translate"
-  ],
-  "modern_callers": [
-   "cGcShipHUD::RenderHeadsUp",
-   "cGcShipHUD::RenderOffscreen2D"
-  ]
- },
  "cGcShipHUD::cGcShipHUD": {
   "missing_in": [
    "1.09.1",
@@ -5906,6 +4952,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcShipHUD::cGcShipHUD()",
   "source_file": "",
   "modern_length": 976,
@@ -5929,6 +4976,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSimpleInteractionComponent::DoAction()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\components\\gameplay\\gcsimpleinteractioncomponent.cpp",
   "modern_length": 7606,
@@ -5976,6 +5024,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcSimulation::cGcSimulation()",
   "source_file": "",
   "modern_length": 1096,
@@ -6009,6 +5058,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSky::SetSunAngle(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\weather\\gcsky.cpp",
   "modern_length": 257,
@@ -6021,45 +5071,6 @@
    "cGcSky::UpdateSunPosition"
   ]
  },
- "cGcSky::Update": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcSky::Update(float)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\weather\\gcsky.cpp",
-  "modern_length": 1841,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "??4cGcDroneControlData@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcFogProperties@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcLightShaftProperties@@QEAAAEAV0@AEBV0@@Z",
-   "??4cGcPlanetHeavyAirData@@QEAAAEAV0@AEBV0@@Z",
-   "cGcPlanetWeatherColourData::cGcPlanetWeatherColourData",
-   "cGcSky::CalculateColours",
-   "cGcSky::CalculateFogProperties",
-   "cGcSky::CalculateHeavyAirProperties",
-   "cGcSky::CalculateLightShaftProperties",
-   "cGcSky::CalculateSkyProperties",
-   "cGcSky::ImpulsetWeatherBloomInterpFactor",
-   "cGcSky::UpdateFlight",
-   "cGcSky::UpdateHeavyAir",
-   "cGcSky::UpdateLightDirection",
-   "cGcSky::UpdateScreenFilter",
-   "cGcSky::UpdateSkyNodes",
-   "cGcSky::UpdateSunPosition",
-   "cGcSky::UpdateWeatherEffects",
-   "cGcSky::UpdateWind",
-   "cGcWeatherHazardGiftManager::Update"
-  ],
-  "modern_callers": [
-   "cGcApplicationSimulationState::ThreadSyncPoint",
-   "cGcSimulation::Update"
-  ]
- },
  "cGcSky::UpdateSunPosition": {
   "missing_in": [
    "1.09.1",
@@ -6067,6 +5078,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSky::UpdateSunPosition()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\environment\\weather\\gcsky.cpp",
   "modern_length": 1178,
@@ -6094,6 +5106,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSolarSystem::OnEnterPlanetOrbit(bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystem.cpp",
   "modern_length": 2457,
@@ -6142,6 +5155,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSolarSystem::OnLeavePlanetOrbit(bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystem.cpp",
   "modern_length": 1580,
@@ -6173,82 +5187,6 @@
    "cGcSolarSystem::Update"
   ]
  },
- "cGcSolarSystem::Update": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcSolarSystem::Update(float)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystem.cpp",
-  "modern_length": 4455,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
-   "??$GetStatValue@H@cGcStatsManager@@QEBAHAEBT?$TkID@$0IA@@@0AEB_K@Z",
-   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z",
-   "??$emplace_back@VTkHandle@@AEBV?$function@$$A6A?AW4TkPollResult@@XZ@std@@@?$deque@U?$pair@VTkHandle@@V?$function@$$A6A?AW4TkPollResult@@XZ@std@@@std@@V?$TkSTLAllocatorShim@U?$pair@VTkHandle@@V?$function@$$A6A?AW4TkPollResult@@XZ@std@@@std@@$07$03@@@std@@QEAA?A_T$$QEAVTkHandle@@AEBV?$function@$$A6A?AW4TkPollResult@@XZ@1@@Z",
-   "??1?$_Func_class@XAEBUAddFriendResult@ClientModels@PlayFab@@PEAX@std@@QEAA@XZ",
-   "??BTkHandle@@QEBAP80@EAAXXZXZ",
-   "?Pop@?$cTkLockFreeQueue@UcTkJob@@@@QEAA_NAEAUcTkJob@@_NPEAU?$atomic@H@std@@@Z",
-   "Engine::GetNodeAbsoluteTransMatrix",
-   "Engine::IsResLoadedIncludingSubResourcesAndGeometry",
-   "Engine::RequestRemoveNode",
-   "Engine::SetNodeActivation",
-   "cGcAsteroidManager::Update",
-   "cGcCameraManager::IsControlStealingBehaviourActive",
-   "cGcDiscoveryManager::BeginRemoteQueryAllOnPlanet",
-   "cGcDiscoveryManager::BeginRemoteQueryCategory",
-   "cGcFullscreenEffectManager::IsSSROn",
-   "cGcOutpostComponent::FindFirstTypedComponent",
-   "cGcPlanet::UpdatePhase1",
-   "cGcPlanet::UpdatePhase2",
-   "cGcPlayerState::HasPortalInterference"
-  ],
-  "modern_callers": [
-   "cGcSimulation::Update"
-  ]
- },
- "cGcSolarSystem::cGcSolarSystem": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "cGcSolarSystem::cGcSolarSystem()",
-  "source_file": "",
-  "modern_length": 1622,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
-   "??0?$cTkFixedArray@VcGcPlanetGenerationInputData@@$07@@QEAA@XZ",
-   "?reserve@?$vector@VcGcSolarSystemLocator@@V?$StackAllocator@VcGcSolarSystemLocator@@$0BA@$0?0@@@std@@QEAAX_K@Z",
-   "?reserve@?$vector@VcTkSphere@@V?$StackAllocator@VcTkSphere@@$05$0?0@@@std@@QEAAX_K@Z",
-   "cGcAsteroidManager::cGcAsteroidManager",
-   "cGcColourPaletteData::SetDefaults",
-   "cGcGalaxyAttributesAtAddress::cGcGalaxyAttributesAtAddress",
-   "cGcLightProperties::SetDefaults",
-   "cGcPlanet::cGcPlanet",
-   "cGcPlanetColourData::SetDefaults",
-   "cGcPlanetGenerator::cGcPlanetGenerator",
-   "cGcPlayerSpawnStateData::SetDefaults",
-   "cGcScanEffectData::SetDefaults",
-   "cGcSolarSystemAsteroidFields::cGcSolarSystemAsteroidFields",
-   "cGcSolarSystemData::SetDefaults",
-   "cGcSolarSystemTraderSpawnData::SetDefaults",
-   "cGcSpaceSkyProperties::SetDefaults",
-   "cGcSpaceStationSpawnData::SetDefaults",
-   "cTkClock::GetSystemTime",
-   "cTkPersonalRNG::cTkPersonalRNG"
-  ],
-  "modern_callers": [
-   "cGcSimulation::Construct"
-  ]
- },
  "cGcSolarSystemGenerator::GenerateBasics": {
   "missing_in": [
    "1.09.1",
@@ -6256,6 +5194,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSolarSystemGenerator::GenerateBasics(cTkSeed const&, cGcGalaxyAttributesAtAddress const&, cGcGalaxyAttributeGenerator::StarSystemKeyAttributes &, cGcSolarSystemGenerator::GenerationData &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystemgenerator.cpp",
   "modern_length": 541,
@@ -6278,6 +5217,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSolarSystemGenerator::GeneratePlanetBiomes(cGcGalaxyAttributesAtAddress const&, cGcSolarSystemGenerator::GenerationData &, cGcGalaxyAttributeGenerator::StarSystemKeyAttributes &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystemgenerator.cpp",
   "modern_length": 2576,
@@ -6300,6 +5240,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSolarSystemGenerator::GeneratePlanetPositions(cGcGalaxyAttributesAtAddress const&, cGcSolarSystemGenerator::GenerationData &, cGcSolarSystemGeometry *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystemgenerator.cpp",
   "modern_length": 4287,
@@ -6328,6 +5269,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSolarSystemGenerator::GenerateQueryInfo(cTkSeed const&, cGcGalaxyAttributesAtAddress const&, cGcSolarSystemGenerator::GenerationData &)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystemgenerator.cpp",
   "modern_length": 852,
@@ -6362,6 +5304,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSolarSystemQuery::Run(unsigned __int64, cGcSolarSystemQuery::Type, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\solarsystem\\gcsolarsystemquery.cpp",
   "modern_length": 780,
@@ -6386,6 +5329,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcSpaceshipComponent::Eject(cGcPlayer *, bool, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\spaceship\\gcspaceshipcomponent.cpp",
   "modern_length": 498,
@@ -6417,6 +5361,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkVector3 cGcSpaceshipComponent::GetVelocity()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\spaceship\\gcspaceshipcomponent.cpp",
   "modern_length": 34,
@@ -6430,68 +5375,6 @@
    "cGcSpaceshipComponent::UpdateControlled"
   ]
  },
- "cGcSpaceshipComponent::UpdateControlled": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "void cGcSpaceshipComponent::UpdateControlled(float)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\spaceship\\gcspaceshipcomponent.cpp",
-  "modern_length": 36336,
-  "strings": [
-   "Down Angle",
-   "Hard Height",
-   "Target Turn",
-   "Soft Height",
-   "  Down Speed",
-   "  Down Angle SOFT",
-   "  Return Strength",
-   "  Down Angle HARD",
-   "CRUISE: Max Boost",
-   "CRUISE: Max Speed",
-   "  Down Speed Factor",
-   "  Opposite Strength",
-   "Pitch Correct Factor",
-   "CRUISE: Current Speed",
-   "DIRECTION BRAKE: Braking Factor",
-   "ENGINEKICK",
-   "Lateral Drift",
-   "Rudder to Roll",
-   "Roll Spring Time",
-   "GcWiringSocketComponentData"
-  ],
-  "imm64": [
-   "0x1D408D8D480185",
-   "0x75397A0D8B48FF58"
-  ],
-  "modern_callees": [
-   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
-   "??$?M$0A@@?$Splatter@$0A@@VecIntrinsics@@QEAA_NAEBU01@@Z",
-   "??$?Y$00@?$Splatter@$0A@@VecIntrinsics@@QEAAAEAU01@AEBU?$Splatter@$00@1@@Z",
-   "??$?Y$01@?$Splatter@$0A@@VecIntrinsics@@QEAAAEAU01@AEBU?$Splatter@$01@1@@Z",
-   "??$GetNodeOBB@$0A@@cTkEngineUtils@@SA_NVTkHandle@@AEAVcTkAABB@@H_N2@Z",
-   "??$GetStatValue@M@cGcStatsManager@@QEBAMAEBT?$TkID@$0IA@@@0AEB_K@Z",
-   "??$Record@M@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@M_NPEBUIStatVariant@@@Z",
-   "??$SmoothCD@MM@cTkCurveFunction@@SAMPEAMAEBM1MM@Z",
-   "??$_Emplace_one_at_back@AEAVcGcWFCScene@@AEAM@?$vector@UsWeightedWFCScene@@V?$TkSTLAllocatorShim@UsWeightedWFCScene@@$07$0?0@@@std@@AEAAAEAUsWeightedWFCScene@@AEAVcGcWFCScene@@AEAM@Z",
-   "??$emplace_back@AEAY0BB@$$CBDAEAM@?$vector@VDisplayNumber@cGcSpaceshipComponent@@V?$TkSTLAllocatorShim@VDisplayNumber@cGcSpaceshipComponent@@$07$0?0@@@std@@QEAA?A_TAEAY0BB@$$CBDAEAM@Z",
-   "??$emplace_back@AEAY0BC@$$CBDAEAM@?$vector@VDisplayNumber@cGcSpaceshipComponent@@V?$TkSTLAllocatorShim@VDisplayNumber@cGcSpaceshipComponent@@$07$0?0@@@std@@QEAA?A_TAEAY0BC@$$CBDAEAM@Z",
-   "??$emplace_back@AEAY0O@$$CBDAEAM@?$vector@VDisplayNumber@cGcSpaceshipComponent@@V?$TkSTLAllocatorShim@VDisplayNumber@cGcSpaceshipComponent@@$07$0?0@@@std@@QEAA?A_TAEAY0O@$$CBDAEAM@Z",
-   "??$emplace_back@AEAY0P@$$CBDAEAM@?$vector@VDisplayNumber@cGcSpaceshipComponent@@V?$TkSTLAllocatorShim@VDisplayNumber@cGcSpaceshipComponent@@$07$0?0@@@std@@QEAA?A_TAEAY0P@$$CBDAEAM@Z",
-   "??$min@_K@std@@YAAEB_KAEB_K0@Z",
-   "??0?$Splatter@$00@VecIntrinsics@@QEAA@AEBT__m128@@@Z",
-   "??0TerrainResourcePosition@cGcScanner@@QEAA@XZ",
-   "??0USplitBits@cTkBaseMath@@QEAA@M@Z",
-   "??4cGcPlayerSpaceshipEngineData@@QEAAAEAV0@AEBV0@@Z",
-   "??BcTkAttachmentPtr@@QEBAPEAVcTkAttachment@@XZ",
-   "?Cos@?$cTkTrig@M@@SAMM@Z"
-  ],
-  "modern_callers": [
-   "cGcSpaceshipComponent::Update"
-  ]
- },
  "cGcSpaceshipWarp::GetPulseDriveFuelFactor": {
   "missing_in": [
    "1.09.1",
@@ -6499,6 +5382,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cGcSpaceshipWarp::GetPulseDriveFuelFactor()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\spaceship\\gcspaceshipwarp.cpp",
   "modern_length": 84,
@@ -6518,6 +5402,9 @@
    "1.13",
    "1.24",
    "1.38"
+  ],
+  "icf_folded_with": [
+   "cGcPlayerExperienceDirector::UpdatePulseEncounters"
   ],
   "modern_signature": "void cGcPlayerExperienceDirector::UpdatePulseEncounters(float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\player\\gcplayerexperiencedirector.cpp",
@@ -6569,6 +5456,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkPhysRelVec3 cGcSpaceshipWeapons::GetAverageBarrelPos()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\spaceship\\systems\\gcspaceshipweapons.cpp",
   "modern_length": 437,
@@ -6590,6 +5478,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cGcShootPoint * cGcSpaceshipWeapons::GetCurrentShootPoints()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\spaceship\\systems\\gcspaceshipweapons.cpp",
   "modern_length": 139,
@@ -6612,6 +5501,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cGcSpaceshipWeapons::GetHeatFactor()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\Game\\Code\\Source\\Simulation\\Spaceship\\Systems\\GcSpaceshipWeapons.h",
   "modern_length": 17,
@@ -6627,6 +5517,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cGcSpaceshipWeapons::GetOverheatProgress()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\spaceship\\systems\\gcspaceshipweapons.cpp",
   "modern_length": 39,
@@ -6639,6 +5530,7 @@
   "missing_in": [
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "int cGcTerrainEditorBeam::ApplyTerrainEditFlatten(sTerrainEditData, cGcProjectileImpact const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\projectiles\\gcterraineditorbeam.cpp",
   "modern_length": 4239,
@@ -6666,6 +5558,7 @@
   "missing_in": [
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "int cGcTerrainEditorBeam::ApplyTerrainEditStroke(sTerrainEditData, cGcProjectileImpact const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\projectiles\\gcterraineditorbeam.cpp",
   "modern_length": 2560,
@@ -6696,6 +5589,7 @@
   "missing_in": [
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcTerrainEditorBeam::Fire(cTkPhysRelVec3 const&, cTkRigidBody *, cGcOwnerConcept *, eStatsType, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\projectiles\\gcterraineditorbeam.cpp",
   "modern_length": 1514,
@@ -6724,6 +5618,7 @@
   "missing_in": [
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcTerrainEditorBeam::StartEffect()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\simulation\\projectiles\\gcterraineditorbeam.cpp",
   "modern_length": 1119,
@@ -6749,6 +5644,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cGcVibrationManager::SendValue(union TkID<128> const&, float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\system\\input\\gcvibrationmanager.cpp",
   "modern_length": 182,
@@ -6787,6 +5683,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cGcVisitedSystemsBuffer::VisitNewGalacticAddress(unsigned __int64 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\game\\code\\source\\gamestate\\gcvisitedsystemsbuffer.cpp",
   "modern_length": 743,
@@ -6808,6 +5705,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void * cTkAsyncIOManager::GetOpData(int, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\tkasynciomanager.cpp",
   "modern_length": 164,
@@ -6831,6 +5729,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "__int64 cTkAsyncIOManager::GetOpDataSize(int, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\tkasynciomanager.cpp",
   "modern_length": 138,
@@ -6852,6 +5751,9 @@
    "1.13",
    "1.24",
    "1.38"
+  ],
+  "icf_folded_with": [
+   "cTkAudioManager::Play"
   ],
   "modern_signature": "bool cTkAudioManager::Play(TkAudioID, cTkVector3 const&, TkAudioObject, float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\audio\\wwise\\tkaudiomanagerwwise.cpp",
@@ -6894,6 +5796,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkDynamicGravityControl::Construct()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\simulation\\physics\\tkdynamicgravitycontrol.cpp",
   "modern_length": 61,
@@ -6911,6 +5814,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkGravityData cTkDynamicGravityControl::GetGravity(cTkVector3 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\simulation\\physics\\tkdynamicgravitycontrol.cpp",
   "modern_length": 883,
@@ -6949,6 +5853,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkDynamicGravityControl::UpdateGravityPoint(cTkVector3 const&, float, float)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\simulation\\physics\\tkdynamicgravitycontrol.cpp",
   "modern_length": 232,
@@ -6961,11 +5866,10 @@
  },
  "cTkDynamicGravityControl::cTkDynamicGravityControl": {
   "missing_in": [
-   "1.09.1",
-   "1.13",
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkDynamicGravityControl::cTkDynamicGravityControl()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\Simulation\\Physics\\TkDynamicGravityControl.h",
   "modern_length": 144,
@@ -7002,6 +5906,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "TkHandle cTkEngineUtils::GetMasterModelNode(TkHandle, eMasterModelNodeDistance)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\utilities\\engine\\tkengineutils.cpp",
   "modern_length": 124,
@@ -7042,6 +5947,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cTkEngineUtils::GetMatricesFromNode(TkHandle, cTkMatrix34 *, cTkMatrix34 *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\utilities\\engine\\tkengineutils.cpp",
   "modern_length": 125,
@@ -7061,6 +5967,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkEngineUtils::RepositionGroupNode(TkHandle, cTkVector3 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\utilities\\engine\\tkengineutils.cpp",
   "modern_length": 235,
@@ -7087,10 +5994,9 @@
  "cTkFileSystem::CreatePath": {
   "missing_in": [
    "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
+   "1.13"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkFileSystem::CreatePath(char const *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\fios2\\tkfilesystemfios2.cpp",
   "modern_length": 1120,
@@ -7143,6 +6049,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -7154,10 +6061,9 @@
  "cTkFileSystem::DoesFileExist": {
   "missing_in": [
    "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
+   "1.13"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cTkFileSystem::DoesFileExist(char const *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\fios2\\tkfilesystemfios2.cpp",
   "modern_length": 288,
@@ -7181,27 +6087,6 @@
    "cTkResourceDescriptor::GetResourceFilter"
   ]
  },
- "cTkFileSystem::EnumerateDirectory": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "int cTkFileSystem::EnumerateDirectory(char const *, char * * const, int, int)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\fios2\\tkfilesystemfios2.cpp",
-  "modern_length": 820,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cTkMemoryManager::Free",
-   "cTkMemoryManager::Malloc"
-  ],
-  "modern_callers": [
-   "cGcBaseBuildingManager::Construct",
-   "cGcFrontendManager::PreloadDirectory"
-  ]
- },
  "cTkFileSystem::IsModded": {
   "missing_in": [
    "1.09.1",
@@ -7209,6 +6094,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cTkFileSystem::IsModded()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\fios2\\tkfilesystemfios2.cpp",
   "modern_length": 17,
@@ -7227,6 +6113,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -7242,6 +6129,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -7250,67 +6138,6 @@
   "modern_callees": [],
   "modern_callers": []
  },
- "cTkFileSystem::Open": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "FIOS2HANDLE * cTkFileSystem::Open(char const *, eFileOpenMode)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\fios2\\tkfilesystemfios2.cpp",
-  "modern_length": 488,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "??$Format@D$0A@@?$cTkFixedString@$0EAA@D@@QEAAHPEBDZZ"
-  ],
-  "modern_callers": [
-   "??$ReadGlobalFromFile@VcGcAISpaceshipGlobals@@@cTkMetaData@@SA_NPEAVcGcAISpaceshipGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcAtlasGlobals@@@cTkMetaData@@SA_NPEAVcGcAtlasGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcAudioGlobals@@@cTkMetaData@@SA_NPEAVcGcAudioGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcBuildingGlobals@@@cTkMetaData@@SA_NPEAVcGcBuildingGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcCameraGlobals@@@cTkMetaData@@SA_NPEAVcGcCameraGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcCharacterGlobals@@@cTkMetaData@@SA_NPEAVcGcCharacterGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcCreatureGlobals@@@cTkMetaData@@SA_NPEAVcGcCreatureGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcDebugOptions@@@cTkMetaData@@SA_NPEAVcGcDebugOptions@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcEffectsGlobals@@@cTkMetaData@@SA_NPEAVcGcEffectsGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcEnvironmentGlobals@@@cTkMetaData@@SA_NPEAVcGcEnvironmentGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcFleetGlobals@@@cTkMetaData@@SA_NPEAVcGcFleetGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcFreighterBaseGlobals@@@cTkMetaData@@SA_NPEAVcGcFreighterBaseGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcGalaxyGlobals@@@cTkMetaData@@SA_NPEAVcGcGalaxyGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcGameplayGlobals@@@cTkMetaData@@SA_NPEAVcGcGameplayGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcGraphicsGlobals@@@cTkMetaData@@SA_NPEAVcGcGraphicsGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcMultiplayerGlobals@@@cTkMetaData@@SA_NPEAVcGcMultiplayerGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcPlacementGlobals@@@cTkMetaData@@SA_NPEAVcGcPlacementGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcPlayerGlobals@@@cTkMetaData@@SA_NPEAVcGcPlayerGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcRichPresenceGlobals@@@cTkMetaData@@SA_NPEAVcGcRichPresenceGlobals@@PEBD@Z",
-   "??$ReadGlobalFromFile@VcGcRobotGlobals@@@cTkMetaData@@SA_NPEAVcGcRobotGlobals@@PEBD@Z"
-  ]
- },
- "cTkFileSystem::Write": {
-  "missing_in": [
-   "1.09.1",
-   "1.13",
-   "1.24",
-   "1.38"
-  ],
-  "modern_signature": "__int64 cTkFileSystem::Write(void *, __int64, __int64, FIOS2HANDLE *)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\filesystem\\fios2\\tkfilesystemfios2.cpp",
-  "modern_length": 122,
-  "strings": [],
-  "imm64": [],
-  "modern_callees": [
-   "cTkFileSystemCache::InvalidatePath"
-  ],
-  "modern_callers": [
-   "??$WriteToXMLFile@VcGcGenericMissionSequence@@@cTkMetaDataXML@@SA_NPEAVcGcGenericMissionSequence@@PEBD1_N222@Z",
-   "??$WriteToXMLFile@VcGcUserSettingsData@@@cTkMetaDataXML@@SA_NPEAVcGcUserSettingsData@@PEBD1_N222@Z",
-   "XMLNode::writeToFile",
-   "cGcApplicationSmokeTestState::AssertCallback",
-   "cTkAudioWwiseIO::Write"
-  ]
- },
  "cTkGraphicsAPI::CreateIndexBuffer": {
   "missing_in": [
    "1.09.1",
@@ -7318,6 +6145,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void * cTkGraphicsAPI::CreateIndexBuffer(VkBuffer_T * &, TkDeviceMemory &, void *, int, bool, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\graphics\\api\\vulkan\\tkgraphicsapivulkan.cpp",
   "modern_length": 1456,
@@ -7351,6 +6179,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void * cTkGraphicsAPI::CreateVertexBuffer(VkBuffer_T * &, TkDeviceMemory &, void * *, void *, cTkVertexLayoutRT const&, int, int, bool, bool, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\graphics\\api\\vulkan\\tkgraphicsapivulkan.cpp",
   "modern_length": 1785,
@@ -7391,6 +6220,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkGraphicsAPI::GetVertexBufferData(cTkBuffer * const, void *, int *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\graphics\\api\\vulkan\\tkgraphicsapivulkan.cpp",
   "modern_length": 120,
@@ -7414,6 +6244,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cTkInputPort::GetButton(eInputButton, eInputValidation, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\input\\tkinputdevicemanager.cpp",
   "modern_length": 315,
@@ -7452,6 +6283,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkInputPort::SetButton(eInputButton)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\input\\tkinputdevicemanager.cpp",
   "modern_length": 268,
@@ -7472,6 +6304,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkMetaDataManager & cTkMetaDataManager::GetInstance()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\Utilities\\Data\\TkMetaDataManager.h",
   "modern_length": 123,
@@ -7512,6 +6345,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": null,
   "source_file": null,
   "modern_length": null,
@@ -7527,6 +6361,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkMetaDataXMLFunctionLookup * cTkMetaDataXML::GetLookup(char const *)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\utilities\\data\\tkmetadataxml.cpp",
   "modern_length": 168,
@@ -7548,6 +6383,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkMetaDataXML::Register(char const *,void (__cdecl*)(cTkClassPointer const &,XMLNode &,bool),void (__cdecl*)(cTkClassPointer &,XMLNode &,cTkLinearMemoryPool *),bool (__cdecl*)(cTkClassPointer const&, char const *))",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\utilities\\data\\tkmetadataxml.cpp",
   "modern_length": 471,
@@ -7593,6 +6429,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "cTkResource::cTkResource(int, std::basic_string<char,std::char_traits<char>,TkSTLAllocatorShim<char,1,-1> > const&, int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\resources\\tkresource.cpp",
   "modern_length": 398,
@@ -7621,6 +6458,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkRigidBody::SetAngularVelocity(cTkVector3 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\simulation\\physics\\havok\\tkrigidbody.cpp",
   "modern_length": 89,
@@ -7657,6 +6495,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkRigidBody::SetLinearVelocity(cTkVector3 const&)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\simulation\\physics\\havok\\tkrigidbody.cpp",
   "modern_length": 89,
@@ -7693,6 +6532,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "float cTkStopwatch::GetDurationInSeconds()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\System\\Timer\\TkStopwatch.h",
   "modern_length": 121,
@@ -7714,6 +6554,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "bool cTkSystem::IntegratedGPUActive()",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\system\\system\\pc\\tksystemglfw.cpp",
   "modern_length": 24,
@@ -7736,6 +6577,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkTexture::CopyPixelDataToBuffer(char *, bool, unsigned int, unsigned int)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\graphics\\2d\\texture\\dx12\\tktexturedx12.cpp",
   "modern_length": 182,
@@ -7763,6 +6605,7 @@
    "1.24",
    "1.38"
   ],
+  "icf_folded_with": [],
   "modern_signature": "void cTkTexture::CreateEmptyTexture(eTkTextureType, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, eTextureAddressMode, eTextureFilterMode, unsigned int, bool, bool, bool, bool, bool)",
   "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\graphics\\2d\\texture\\dx12\\tktexturedx12.cpp",
   "modern_length": 2904,
@@ -7788,32 +6631,214 @@
    "cTkTextureBase::LoadDDS"
   ]
  },
- "cTkTextureBase::CalculateTextureSize": {
+ "nvgArc": {
   "missing_in": [
    "1.09.1",
    "1.13",
    "1.24",
    "1.38"
   ],
-  "modern_signature": "unsigned int cTkTextureBase::CalculateTextureSize(cTkTextureBase::eTexFormat, int, int, int)",
-  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\toolkit\\graphics\\2d\\texture\\tktexture.cpp",
-  "modern_length": 428,
+  "icf_folded_with": [],
+  "modern_signature": "",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\sdks\\nanovg\\src\\nanovg.cpp",
+  "modern_length": 754,
   "strings": [],
   "imm64": [],
-  "modern_callees": [],
+  "modern_callees": [
+   "nvg__appendCommands"
+  ],
   "modern_callers": [
-   "cEgTextureResource::CalculateAverageColour",
-   "cEgTextureResource::Initialise",
-   "cEgTextureResource::LoadFromDds",
-   "cEgTextureResource::MapResStream",
-   "cGcBaseBuildingManager::UpdateRender",
-   "cGcBaseBuildingOffenseReporter::OnRenderScreenshotFinished",
-   "cGcFrontendPageInteractions::DoTeleperporterNexusDescriptionPage",
-   "cGcPhotoModeUI::OnRenderScreenshotFinished",
-   "cTkGraphicsAPI::ClearTexture",
-   "cTkScreenshot::SavePendingScreenshots",
-   "cTkTexture::CreateEmptyTexture",
-   "cTkTextureBase::RestoreMipsFromDDS"
+   "?RenderNVG@Data@cGcGalaxyMap@@QEAAXXZ",
+   "?RenderSolarSelection@Data@cGcGalaxyMap@@QEAAXPEAVcGcGalaxySolarSelection@@_N@Z",
+   "TkNGuiEffectTools::nvgFilledBusyRadial",
+   "TkNGuiEffectTools::nvgFilledProgressRadial",
+   "TkNGuiEffectTools::nvgProgressSegmentedRing",
+   "`cGcShipHUD::RenderOffscreen2D'::`177'::<lambda_1>::operator()",
+   "cGcApplicationGameModeSelectorState::CustomIconFX",
+   "cGcApplicationUGCBaseViewerState::CustomIconFX",
+   "cGcApplicationUGCBaseViewerState::RenderCursor",
+   "cGcFrontendPageDiscovery::DiscoveryProgressGauge",
+   "cGcFrontendPageInteractions::RadialInteractionPageRenderFunction",
+   "cGcGalaxyMapUI::CustomScanRenderFunction",
+   "nvgArcTo"
+  ]
+ },
+ "nvgEllipse": {
+  "missing_in": [
+   "1.09.1",
+   "1.13",
+   "1.24",
+   "1.38"
+  ],
+  "icf_folded_with": [],
+  "modern_signature": "",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\sdks\\nanovg\\src\\nanovg.cpp",
+  "modern_length": 363,
+  "strings": [],
+  "imm64": [
+   "0x7D110FF3CA280F44"
+  ],
+  "modern_callees": [
+   "nvg__appendCommands"
+  ],
+  "modern_callers": [
+   "?RenderNVG@Data@cGcGalaxyMap@@QEAAXXZ",
+   "?RenderSolarSystemOrbit@Data@cGcGalaxyMap@@QEAAXAEBVcTkVector2@@MMMMMAEAUNVGcolor@@AEAV3@@Z",
+   "GcNGuiFx::LoadingDistractionFullscreenNoPhase",
+   "`cGcFrontendPageMaintenance::DoSlotLocators'::`5'::<lambda_1>::operator()",
+   "`cGcFrontendPageManageFleet::DoFrigateDetails'::`327'::<lambda_2>::operator()",
+   "`cGcOutpostComponent::RenderNGui'::`2'::<lambda_2>::operator()",
+   "`cGcPlayerExperienceDirector::RenderNGuiMap'::`2'::<lambda_2>::operator()",
+   "`cGcPlayerHUD::RenderIndicatorPanel'::`116'::<lambda_1>::<lambda_invoker_cdecl>",
+   "`cGcPlayerStick::RenderNGui'::`3'::<lambda_1>::operator()",
+   "`cGcShipHUD::RenderOffscreen2D'::`177'::<lambda_1>::operator()",
+   "cGcApplicationGameModeSelectorState::RenderCursor",
+   "cGcApplicationUGCBaseViewerState::RenderCursor",
+   "cGcFrontendManager::DrawCursor",
+   "cGcFrontendPageByteBeat::RenderArpeggio",
+   "cGcFrontendPageByteBeat::RenderPartSequencer",
+   "cGcFrontendPageByteBeat::RenderRhythmStep",
+   "cGcFrontendPageByteBeat::RenderSequencerArpStep",
+   "cGcFrontendPageByteBeat::RenderSlider",
+   "cGcFrontendPageInteractions::ByteBeatSwitchPanelRenderFunction",
+   "cGcGalaxyMapUI::CustomScanRenderFunction"
+  ]
+ },
+ "nvgFill": {
+  "missing_in": [
+   "1.09.1",
+   "1.13",
+   "1.24",
+   "1.38"
+  ],
+  "icf_folded_with": [],
+  "modern_signature": "",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\sdks\\nanovg\\src\\nanovg.cpp",
+  "modern_length": 349,
+  "strings": [],
+  "imm64": [],
+  "modern_callees": [
+   "nvg__expandFill",
+   "nvg__flattenPaths"
+  ],
+  "modern_callers": [
+   "?RenderNVG@Data@cGcGalaxyMap@@QEAAXXZ",
+   "?RenderSolarSystemOrbit@Data@cGcGalaxyMap@@QEAAXAEBVcTkVector2@@MMMMMAEAUNVGcolor@@AEAV3@@Z",
+   "OSDMessageEffectReward::RareReward",
+   "ScrollBarState::ScrollBarRenderFunction",
+   "TextScrollBarState::TextScrollBarRenderFunction",
+   "`cGcFrontendPageByteBeat::RenderPlayButton'::`5'::<lambda_2>::operator()",
+   "`cGcFrontendPageInteractions::ByteBeatSwitchBeatRenderFunction'::`2'::<lambda_1>::operator()",
+   "`cGcOutpostComponent::RenderNGui'::`2'::<lambda_2>::operator()",
+   "`cGcPlayerExperienceDirector::RenderNGuiMap'::`2'::<lambda_2>::operator()",
+   "`cGcPlayerHUD::RenderOffscreen2D'::`5'::<lambda_1>::operator()",
+   "cGcApplicationGameModeSelectorState::RenderCursor",
+   "cGcFrontendManager::DrawCursor",
+   "cGcFrontendPageByteBeat::RenderArpeggio",
+   "cGcFrontendPageByteBeat::RenderPartSequencer",
+   "cGcFrontendPageByteBeat::RenderPlayHead",
+   "cGcFrontendPageByteBeat::RenderRhythmStep",
+   "cGcFrontendPageByteBeat::RenderSequencerArpStep",
+   "cGcFrontendPageByteBeat::RenderSequencerStep",
+   "cGcFrontendPageByteBeat::RenderSlider",
+   "cGcFrontendPageByteBeat::RenderVisualisation"
+  ]
+ },
+ "nvgRect": {
+  "missing_in": [
+   "1.09.1",
+   "1.13",
+   "1.24",
+   "1.38"
+  ],
+  "icf_folded_with": [],
+  "modern_signature": "",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\sdks\\nanovg\\src\\nanovg.cpp",
+  "modern_length": 125,
+  "strings": [],
+  "imm64": [
+   "0xC848110FF3E2280F"
+  ],
+  "modern_callees": [
+   "nvg__appendCommands"
+  ],
+  "modern_callers": [
+   "?RenderNVG@Data@cGcGalaxyMap@@QEAAXXZ",
+   "OSDMessageEffectReward::RareReward",
+   "`cGcPlayerHUD::RenderOffscreen2D'::`5'::<lambda_1>::operator()",
+   "cGcFrontendPageByteBeat::RenderPlayHead",
+   "cGcFrontendPageByteBeat::RenderVisualisation",
+   "cGcFrontendPopup::Render",
+   "cGcGalaxyMapUI::RenderTextLabel",
+   "cGcGraphicsManager::RenderMemoryPoolOverlayNVG",
+   "cGcPlayerHUD::RenderOffscreen2D",
+   "cTkNGuiStyles::RenderGraphic",
+   "cTkNGuiStyles::RenderShape",
+   "nvgRoundedRect",
+   "sSketchCurve::RenderNGui"
+  ]
+ },
+ "nvgText": {
+  "missing_in": [
+   "1.09.1",
+   "1.13",
+   "1.24",
+   "1.38"
+  ],
+  "icf_folded_with": [],
+  "modern_signature": "",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\sdks\\nanovg\\src\\nanovg.cpp",
+  "modern_length": 1433,
+  "strings": [],
+  "imm64": [],
+  "modern_callees": [
+   "nNanoVG::fonsTextIterInit",
+   "nNanoVG::fonsTextIterNext",
+   "nvg__allocTempVerts",
+   "nvg__allocTextAtlas",
+   "nvg__flushTextTexture",
+   "nvg__getAverageScale",
+   "nvg__renderText"
+  ],
+  "modern_callers": [
+   "?RenderNVG@Data@cGcGalaxyMap@@QEAAXXZ",
+   "``cGcOutpostComponent::RenderNGui'::`2'::<lambda_3>::operator()'::`2'::<lambda_1>::operator()",
+   "`cGcFrontendPageInteractions::ByteBeatSwitchBeatRenderFunction'::`2'::<lambda_1>::operator()",
+   "cGcApplicationGameModeSelectorState::RenderWarning",
+   "cGcApplicationLocalLoadState::Render",
+   "cGcFrontendPageByteBeat::RenderSlider",
+   "cGcGalaxyMapUI::RenderTextLabel",
+   "cGcGraphicsManager::RenderMemoryPoolOverlayNVG",
+   "cGcOutpostComponent::RenderNGui",
+   "cGcPetBlackboard::RenderNGui",
+   "cGcPlayerHUD::RenderDamageNumbers",
+   "cGcPositionMarker::Render",
+   "cTkNGuiStyles::RenderGraphic",
+   "cTkNGuiStyles::RenderText",
+   "nvgTextBox"
+  ]
+ },
+ "nvgTextBox": {
+  "missing_in": [
+   "1.09.1",
+   "1.13",
+   "1.24",
+   "1.38"
+  ],
+  "icf_folded_with": [],
+  "modern_signature": "",
+  "source_file": "T:\\BuildAgent\\work\\571d5f2f066da37c\\common\\code\\sdks\\nanovg\\src\\nanovg.cpp",
+  "modern_length": 982,
+  "strings": [],
+  "imm64": [],
+  "modern_callees": [
+   "nvgText",
+   "nvgTextBreakLines",
+   "nvg__getAverageScale"
+  ],
+  "modern_callers": [
+   "?RenderNVG@Data@cGcGalaxyMap@@QEAAXXZ",
+   "cTkNGuiStyles::RenderText"
   ]
  }
 }

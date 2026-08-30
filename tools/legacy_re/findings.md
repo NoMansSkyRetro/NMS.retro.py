@@ -92,6 +92,48 @@ functions in the same compilation unit are identified by their GUI element IDs:
   `SPEEDBAR`, `JUMPBAR`, `SHIELD`, `TARGET_NAME`, `MINIJUMP`, ... — the per-frame
   speed/target flight display, a sibling with no matched modern name.
 
+## Fleet hunt (2026-08-30)
+
+A fleet of 15 agents (one per functional batch, see `out/hunt_batches.json`) worked the
+NOT_YET_FOUND surface in parallel, each following `HUNTING.md` and shipping a
+reproducible `finders/find_<batch>.py`. `merge_finder_results.py` validated and merged
+every result (each address re-checked as a real function start). Net: **+170 addresses**,
+raising upstream-surface coverage to 103 / 108 / 113 / 120 functions for
+1.09.1 / 1.13 / 1.24 / 1.38.
+
+Highest yields: planet_terrain (+25, anchored `cGcPlanet::Construct` off the 6-iteration
+planet loop in `cGcSolarSystem::Construct`), solar_galaxy (+36, the galaxy classifier
+cluster), filesystem_meta (+20, the FIOS2 syscall wrappers), engine_scene (+19, scene
+-graph node accessors). interaction_trade returned +0 honestly: its anchor strings are
+hashed in the legacy builds and its accessors are inlined.
+
+Version-history facts the fleet established: 1.09.1 uses virtual-dispatch scene nodes
+while 1.13+ use a struct-of-arrays node layout; `cTkDynamicGravityControl` was refactored
+between 1.13 and 1.24 (its 64-slot free list removed); the scan-event runtime was
+refactored after 1.38 (several sub-methods inlined); timed-goto HUD strings were added
+between 1.13 and 1.24.
+
+### Corrections applied after the fleet
+
+The aggressive `min_votes=1` propagation had introduced a few mislabels, which the
+agents surfaced and I verified before fixing:
+
+- `cGcPlanet::UpdateWeather` was actually `cGcSky::Update` (identical addresses; the
+  planet_terrain finder located Sky::Update independently). Moved the addresses to
+  `cGcSky::Update`, reset `UpdateWeather` to NOT_YET_FOUND.
+- `cTkFileSystem::GetInstance` pointed at a 180-byte path-string builder, not a
+  singleton accessor. Reset to NOT_YET_FOUND.
+- `Engine::AddGroupNode` was flagged as suspect but verified CORRECT on inspection
+  (parent-resolve + add-child + `0x3ffff` invalid-handle sentinel, no FNV hashing).
+  Kept.
+- `nvg*` primitives were reclassified NOT_IN_THIS_VERSION -> NOT_YET_FOUND: the fleet
+  found `cGcGalaxyMap::Data::RenderNVG` in all four builds, so the original
+  single-string basis for "feature absent" no longer holds.
+
+`make_target_hints.py` now flags identical-COMDAT-folded targets (`icf_folded_with`),
+whose string/call hints are inherently ambiguous (e.g. `cGcSpaceshipWarp::UpdatePulseDrive`
+folds with `cGcPlayerExperienceDirector::UpdatePulseEncounters`).
+
 ## Struct layout so far
 
 - `cTkFSM`: `+0x10` current `cTkFSMState*`; `+0x18` pending-state

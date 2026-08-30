@@ -28,7 +28,10 @@ NOT_FOUND = "NOT_YET_FOUND"
 # Evidence: release history, cross-checked with string probes of the four exes
 # (e.g. no NanoVG shader uniforms or TextChat strings exist in any 1.x binary).
 RULES = [
-    ("nvg", None, "NanoVG UI drawing only exists in modern builds; no NanoVG shader strings in any 1.x exe."),
+    # nvg*: originally flagged NOT_IN_THIS_VERSION on one absent string, but the fleet
+    # located cGcGalaxyMap::Data::RenderNVG in all four builds, so NanoVG-style drawing
+    # is present. Downgraded to NOT_YET_FOUND (unlocated, possibly inlined) since we no
+    # longer have positive evidence the primitives are absent.
     ("cGcTextChat", None, "Text chat arrived with multiplayer in NEXT (1.5); no TextChat strings in any 1.x exe."),
     ("cGcPlayerFleetManager", None, "Frigates and fleets arrived in NEXT (1.5)."),
     ("cGcPlayerCreatureOwnership", None, "Creature adoption arrived in Companions (3.2)."),

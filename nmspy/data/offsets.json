@@ -229,7 +229,7 @@
       "1.38": "0x141163850"
     },
     "cEgTextureResource::LoadFromDds": {
-      "1.09.1": "NOT_YET_FOUND",
+      "1.09.1": "0x140C859B0",
       "1.13": "0x140DAFD60",
       "1.24": "0x140F758D0",
       "1.38": "0x14112D8F0"
@@ -265,22 +265,24 @@
       "1.38": "0x140DEF190"
     },
     "cTkLanguageManagerBase::Load": {
-      "1.09.1": "NOT_YET_FOUND",
+      "1.09.1": "0x140BCC2D0",
       "1.13": "0x140D56850",
       "1.24": "0x140F196F0",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "0x1410D5340"
     },
     "cGcFrontendPageClaimBase::DoBaseClaimOptions": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "0x1406517B0",
       "1.24": "0x14073F460",
-      "1.38": "0x140832A60"
+      "1.38": "0x140832A60",
+      "_unresolved": "1.13/1.24/1.38 already curated; base-claim UI predates base building so the function does not exist in 1.09.1"
     },
     "cGcQuickActionMenu::TriggerAction": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "0x140B42C80",
       "1.24": "0x140CBEDF0",
-      "1.38": "0x140E98880"
+      "1.38": "0x140E98880",
+      "_unresolved": "1.09.1 only: quick-action-menu strings first appear in Foundation (1.1); the function does not exist in 1.09.1. 1.13/1.24/1.38 already curated."
     },
     "cGcBinoculars::PopulateDiscoveryInfo": {
       "1.09.1": "0x14096F340",
@@ -326,10 +328,11 @@
       "1.38": "0x14092CAE0"
     },
     "cGcPlanet::UpdateWeather": {
-      "1.09.1": "0x140986910",
-      "1.13": "0x140AE4B80",
-      "1.24": "0x140C5A670",
-      "1.38": "0x140DEDBC0"
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Propagation mislabeled cGcSky::Update as this (same addresses); real UpdateWeather unlocated. See find_planet_terrain."
     },
     "cGcPlayer::Update": {
       "1.09.1": "0x1409D5070",
@@ -362,10 +365,11 @@
       "1.38": "0x141220A20"
     },
     "cTkFileSystem::GetInstance": {
-      "1.09.1": "0x140BB13D0",
-      "1.13": "0x140D37490",
-      "1.24": "0x140EF4F70",
-      "1.38": "0x1410A2550"
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Propagation (min_votes=1) mislabeled a path-building helper as GetInstance; real singleton accessor unlocated."
     },
     "cTkLanguageManager::GetInstance": {
       "1.09.1": "0x140E0C8B0",
@@ -456,7 +460,8 @@
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "0x14061E970",
-      "1.38": "0x140737530"
+      "1.38": "0x140737530",
+      "_unresolved": "1.13 only (1.24/1.38 curated): both curated addresses handle OffensiveBaseScreenshot.dds, a string/feature absent from 1.13; cGcSimulation::Update does not call it directly, so no reliable 1.13 counterpart."
     },
     "cGcBeamEffect::Prepare": {
       "1.09.1": "0x140A12350",
@@ -468,7 +473,8 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "0x140DD15E0"
+      "1.38": "0x140DD15E0",
+      "_unresolved": "XHAIR_DISTANCE crosshair string only present in 1.38; earlier builds have no anchor."
     },
     "cGcCreatureComponent::Prepare": {
       "1.09.1": "0x1408F73B0",
@@ -501,9 +507,9 @@
       "1.38": "0x140EAA560"
     },
     "cGcNGuiText::EditElement": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
+      "1.09.1": "0x1403CC1D0",
+      "1.13": "0x1404A4350",
+      "1.24": "0x140556720",
       "1.38": "0x140923A30"
     },
     "cGcNameGenerator::GenerateGalacticRegionName": {
@@ -528,7 +534,8 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "0x140E05B20",
-      "1.38": "0x140FBE0D0"
+      "1.38": "0x140FBE0D0",
+      "_unresolved": "already curated for 1.24/1.38; for 1.09.1/1.13 the modern debug-menu strings are absent and Steam-Workshop-era code paths post-date these builds - could not port"
     },
     "cGcSolarSystem::Construct": {
       "1.09.1": "0x140A2EF30",
@@ -576,329 +583,375 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no distinctive strings; imm64 are common (0xAAAA.. reciprocal); call-graph ambiguous (ratio 1.0)"
     },
     "Engine::AddNodes": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140C2D3E0",
+      "1.13": "0x140DA7CC0",
+      "1.24": "0x140F71EE0",
+      "1.38": "0x1411299D0"
     },
     "Engine::AddResource": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no modern signature/callees in hints; no distinctive legacy signature found"
     },
     "Engine::GetNodeName": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.13": "0x140DA7400",
+      "1.24": "0x140F71620",
+      "1.38": "0x141129110"
     },
     "Engine::GetNodeNumChildren": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no standalone single-handle getter matches; inlined at call sites in these builds"
     },
     "Engine::GetNodeParent": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no standalone single-handle getter matches; inlined at call sites in these builds"
     },
     "Engine::GetNodeType": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140C2C470",
+      "1.13": "0x140DA6BC0",
+      "1.24": "0x140F70D40",
+      "1.38": "0x141128820"
     },
     "Engine::GetRenderBufferTexture": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "render-buffer lookup wrapper not disambiguated from sibling texture getters with two signals"
     },
     "Engine::GetResourceHandleForNode": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only one ambiguous single-handle getter (mgr+0x78 SoA); one weak signal, not committed"
     },
     "Engine::GetTexture": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140C2C140",
+      "1.13": "0x140DA68E0",
+      "1.24": "0x140F70970",
+      "1.38": "0x141128420"
     },
     "Engine::SetMaterialSampler": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140C2B6C0",
+      "1.13": "0x140DA5A50",
+      "1.24": "0x140F6FAB0",
+      "1.38": "0x141127560"
     },
     "Engine::SetMaterialUniformArray": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no type-4 float-array material wrapper present; inlined into its two callers in these builds"
     },
     "Engine::SetOption": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only marker is the 'Invalid param for EgSetOption' debug string, stripped from these release builds"
     },
     "Engine::ShiftAllTransformsForNode": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "MarkSelfOrAncestorTransformDirtyRecurse/MarkSelfOrDescendentsAABBDirty callees unmapped in legacy; not isolated with two signals"
     },
     "GenerateModdedFilepath": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no modern signature/strings/callees in hints; no anchor"
     },
     "GeometryStreaming::cEgGeometryStreamer::FindVertexBufferIndexByHash": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "inlined in 4.13 (no reference VA) and no strings/imm64; nothing to transfer"
     },
     "GeometryStreaming::cEgGeometryStreamer::GetVertexBufferByIndex": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "inlined in 4.13 (no reference VA) and no strings/imm64; nothing to transfer"
     },
     "GeometryStreaming::cEgGeometryStreamer::OnBufferLoadFinish": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "GeometryStreaming::cEgGeometryStreamer::RequestStream": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "'.GEOMETRY.' string does not survive into legacy decomp; imm64 are FNV seeds; call-graph ambiguous"
     },
     "GeometryStreaming::cEgStreamRequests::ProcessOnlyStreamRequests": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "call-graph best candidate verified false (__security_check_cookie); no other signal"
     },
     "MiniDumpFunction": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140248D70",
+      "1.13": "0x1402F1390",
+      "1.24": "0x140391F60",
+      "1.38": "0x14043FAD0"
     },
     "SolarQueryResult::ComputeLightyearDistanceBetweenSolarSystems": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "small (542B) leaf reached only from unmapped cGcGalaxyMap::Data methods; no distinctive string/imm/anchored callee to pin it in any build"
     },
     "XMLNode::writeToFile": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "inlined into cTkMetaDataXML::WriteToXMLFile<T> (they carry the FHOpen/Write inline); no standalone function calls Open+Write+Close"
     },
     "cEgDrawGeometry::Draw": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cEgGeometryResource::CloneOriginalVertDataToIndex": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cEgGeometryResource::CreateVertexInfoForHash": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cEgGeometryResource::Load": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 1 common mapped callee; call-graph ambiguous (ratio 1.0)"
     },
     "cEgGeometryResource::ParseData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "'AssistanceType' shared by 4 funcs, none matches the parser; call-graph ambiguous"
     },
     "cEgGeometryResource::cEgGeometryResource": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "imm64 0xC4CEB9FE.. is a common hash seed; no mapped call-graph neighbours"
     },
     "cEgMeshNode::ParsingFunc": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "call-graph candidates tie (ratio 1.0); no structural confirmation"
     },
     "cEgModelNode::Animate": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cEgModelNode::UpdateGeometry": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "imm64 0x7FFF.. common; only 1 mapped callee; call-graph ambiguous"
     },
     "cEgRenderer::DrawMeshes": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cEgRenderer::DrawRenderables": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cEgRenderer::SetupMeshGeometry": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "imm64 0xAAAA.. reciprocal common; only 1 mapped callee; call-graph ambiguous"
     },
     "cEgRenderer::SetupMeshMaterial": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; only common mapped callers; call-graph ambiguous"
     },
     "cEgRendererBase::ApplyVertexLayout": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "imm64 are MurmurHash3 c1/c2/fmix constants shared by many funcs; call-graph ambiguous"
     },
     "cEgSceneNodeData::SetRelativeTransform": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; only 1 common mapped caller; call-graph ambiguous"
     },
     "cGcApplication::Data::Data": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Nested cGcApplication::Data ctor. Modern caller cGcApplication::Construct is mapped but the legacy Construct calls only small helpers (no ~1.5KB manager-aggregating ctor); likely pre-refactor (managers built directly / via static init). Unique imm64 0xA3BD50BB894800A3 absent from legacy .text."
     },
     "cGcApplicationLocalLoadState::GetRespawnReason": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.13": "0x1404C2790",
+      "1.24": "0x14057CB00",
+      "1.38": "0x140692D20",
+      "_unresolved": "1.09.1: pre-respawn-refactor; no Update-sole-callee matches the param+0x34 enum-getter shape (logic inlined/restructured). Found in 1.13/1.24/1.38."
     },
     "cGcBaseBuildingManager::AddHUDMarker": {
       "_note": "Base building arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "No string/imm fingerprint; zero mapped callees/callers in propagated data."
     },
     "cGcBaseBuildingManager::GetBaseBuildingRootMatrix": {
       "_note": "Base building arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Only shared sentinel 0xEEEEEEEEEEEEEEEF; zero mapped callees, callers unmapped."
     },
     "cGcBaseBuildingManager::GetBaseRootNode": {
       "_note": "Base building arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "No distinctive tokens; propagated callee anchors mislabeled (the 'Engine::AddGroupNode' mapping is a TkID resolver) and candidates fail the decompiled signature check."
     },
     "cGcBaseSearch::FindNearestBaseInCurrentSystem": {
       "_note": "Base building arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Callee/caller anchoring yields only candidates whose signatures contradict BaseIndex(cTkVector3 const&, ePersistentBaseTypes) (void/1-arg, or a strlen helper); no two-signal confirmation."
     },
     "cGcBinoculars::GetRange": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "float getter; no strings/imm; not split out of UpdateTarget until after 1.38 (1.38 UpdateTarget is 423 bytes and calls none of it); no mapped caller/callee anchor."
     },
     "cGcBinoculars::SetMarker": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only distinctive string cGcAtmosphereEntryComponentData is absent from all four legacy exes; sole caller cGcPlayer::UpdateScanning is unmapped."
     },
     "cGcBinoculars::UpdateRayCasts": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "decorated-name/source-path RTTI strings are stripped in legacy; raycast logic still inlined in UpdateTarget in 1.38 (UpdateTarget calls no raycast sub-function)."
     },
     "cGcBinoculars::UpdateScanBarProgress": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "tiny (67 bytes) lambda-wrapping helper, no strings/imm, called only by UpdateTarget which does not call it in 1.38 (post-1.38 split); nothing to anchor on."
     },
     "cGcBuilding::DestroyIntersectingVolcanoes": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "'VOLCANO' (inline 8-byte immediate in 4.13) absent from every legacy .text/.rdata; no caller/callee match. Volcano-landmark feature post-dates 1.38."
     },
     "cGcBuilding::Visited": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140A4C170",
+      "1.13": "0x140BB9AD0",
+      "1.24": "0x140D3E8B0",
+      "1.38": "0x140EDDFE0"
     },
     "cGcDestructableComponent::Destroy": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "large (11.6 KB) function; none of its 9 modern callers are present in the seed (offsets.json + propagated_*.json), so the anchored caller vote has zero support and the referenced strings ('Not Found', a creature-perception source path) are shared by many functions."
     },
     "cGcDiscoveryManager::SubmitDiscoveryData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "62-byte wrapper over Data::SubmitDiscoveryData + cTkUnixTimestamp::Now; neither callee nor caller (cGcSimpleInteractionComponent::DoAction) is mapped in any legacy build."
     },
     "cGcEnvironment::Update": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no PDB entry with a unique 4.13 VA (overloaded/inlined); no string or imm anchor to latch onto."
     },
     "cGcEnvironment::UpdateRender": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.13": "0x140A9A770",
+      "1.24": "0x140C0D1C0",
+      "1.38": "0x140D8F760"
     },
     "cGcFishLaser::OnModeChanged": {
       "_note": "Fishing arrived in Aquarius (5.1).",
@@ -932,194 +985,215 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "114-byte leaf; none of its many modern callers are mapped in any build, no strings/imm64, so no anchor"
     },
     "cGcFrontendManager::cGcFrontendManager": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "constructor; sole modern caller (cGcApplication::Data ctor) and its distinctive callee ctors are all unmapped; no strings/imm64"
     },
     "cGcFrontendPageDiscovery::DoDiscoveryView": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "0x140834900"
     },
     "cGcFrontendPageDiscovery::GetDiscoveryHintString": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "UI_CRE_* ids are hashed (no literals); the only DoDiscoveryView callee that hashes+translates is a generic multi-caller helper, not distinguishable as this 812-byte function"
     },
     "cGcFrontendPageFunctions::SetEmptySlotBackground": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "EGGINPUT id is hashed; its mapped callers' shared callees are dominated by SetPopupBasics, leaving no unique ~2.3KB candidate"
     },
     "cGcFrontendPageFunctions::SetPopupBasics": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14044EE50",
+      "1.13": "0x140579130",
+      "1.24": "0x1406F15B0",
+      "1.38": "0x14082AB20"
     },
     "cGcFrontendPagePortalRunes::CheckUAIsValid": {
       "_note": "Portal travel arrived in Atlas Rises (1.3).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "portal runes exist only in 1.38; its distinctive voxel-generator callees are unmapped, only a weak size match remains"
     },
     "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140999970",
+      "1.13": "0x140AF7A80",
+      "1.24": "0x140C6F390",
+      "1.38": "0x140E02630"
     },
     "cGcGalaxyAttributeGenerator::ClassifyStarSystem": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14099A300",
+      "1.13": "0x140AF8410",
+      "1.24": "0x140C6FD20",
+      "1.38": "0x140E030C0"
     },
     "cGcGalaxyAttributeGenerator::ClassifyVoxel": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140999710",
+      "1.13": "0x140AF7820",
+      "1.24": "0x140C6F130",
+      "1.38": "0x140E02390"
     },
     "cGcGalaxyAttributesAtAddress::Classify": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14099A620",
+      "1.13": "0x140AF8730",
+      "1.24": "0x140C70040",
+      "1.38": "0x140E03440"
     },
     "cGcGalaxyMap::Data::DoSolarPopup": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "0x140E0E6D0"
     },
     "cGcGalaxyMap::Data::RenderNVG": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x1409A1740",
+      "1.13": "0x140AFFA60",
+      "1.24": "0x140C77830",
+      "1.38": "0x140E0BBF0"
     },
     "cGcGalaxyMapUI::SolarInfoPanel::UpdatePanelUI": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x1409B7CE0",
+      "1.13": "0x140B15F10",
+      "1.24": "0x140C8E500",
+      "1.38": "0x140E26860"
     },
     "cGcGalaxyStarAttributesData::SetDefaults": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x1401C8F50",
+      "1.13": "0x140270090",
+      "1.24": "0x140312220",
+      "1.38": "0x140396420"
     },
     "cGcGalaxyVoxelAttributesData::SetDefaults": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "76-byte metadata SetDefaults, inlined at every call site (never a direct callee of Populate/ClassifyStarKeyAttributes in the legacy call graph)"
     },
     "cGcGalaxyVoxelGenerator::Populate": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x1409C0DB0",
+      "1.13": "0x140B1F010",
+      "1.24": "0x140C97920",
+      "1.38": "0x140E2FBF0"
     },
     "cGcGameState::ComputeWarpCapability": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Only mapped anchor is callee cGcPlayerState::GetPrimaryItemForStat (shared by many functions); its callers (cGcGalaxyMap::Data solar fns) are unmapped, so no unique intersection. No distinctive strings/imm64."
     },
     "cGcGameState::cGcGameState": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Only anchor is caller cGcApplication::Data::Data (itself unresolved). gamestate unit located (LoadFromPersistentStorage/WriteStateToStorage literals) but the ctor cannot be singled out from sibling methods without a mapped neighbour; imm64 0xC4CEB9FE1A85EC53 absent from legacy."
     },
     "cGcHUD::cGcHUD": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only anchored callee is a shared lambda_invoker (~28 referencers/build); no second signal to isolate this small ctor among them."
     },
     "cGcHUDManager::RemoveOSDMessage": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no modern signature/strings/callees/callers in target_hints; nothing to anchor on."
     },
     "cGcHUDManager::cGcHUDManager": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "sole anchored callee is cGcNGuiLayer::cGcNGuiLayer (25-35 referencers); its own caller cGcApplication::Data ctor and the other member ctors are unmapped, so the referencer set cannot be narrowed to one."
     },
     "cGcHUDMarker::cGcHUDMarker": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "anchored callees are the shared lambda_invoker plus (unmapped) cGcMarkerPoint::Reset and cGcNGui::cGcNGui; no distinctive anchor to intersect on."
     },
     "cGcInteractionComponent::FindFirstTypedComponent": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "3 resolved callers; caller-intersection stays ambiguous (candidates/build={'1.09.1': 5, '1.13': 3, '1.24': 2, '1.38': 3}); no distinctive resolved callee to pin it"
     },
     "cGcInteractionComponent::GetInteractionData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "3 resolved callers but non-utility callee-intersection is empty in every build -> accessor inlined into its legacy callers"
     },
     "cGcInteractionComponent::GetPuzzle": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "6 resolved callers but non-utility callee-intersection is empty in every build -> accessor inlined into its legacy callers"
     },
     "cGcInteractionComponent::GiveReward": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcInteractionData::SetDefaults": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "3 resolved callers but non-utility callee-intersection is empty in every build -> accessor inlined into its legacy callers"
     },
     "cGcInventoryStore::Add": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "2 resolved callers; caller-intersection stays ambiguous (candidates/build={'1.09.1': 6, '1.13': 6, '1.24': 13, '1.38': 14}); no distinctive resolved callee to pin it"
     },
     "cGcInventoryStore::GetElement": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no resolved caller/callee anchors in any build; 4.13-only strings/imm64/name-literals absent from legacy exes -> unanchored"
     },
     "cGcInventoryStore::Remove": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no resolved caller/callee anchors in any build; 4.13-only strings/imm64/name-literals absent from legacy exes -> unanchored"
     },
     "cGcInventoryStore::cGcInventoryStore": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "4 resolved callers; caller-intersection stays ambiguous (candidates/build={'1.09.1': 7, '1.13': 7, '1.24': 14, '1.38': 13}); no distinctive resolved callee to pin it"
     },
     "cGcLocalPlayerCharacterInterface::IsJetpacking": {
       "_note": "The third-person player character arrived in NEXT (1.5).",
@@ -1132,243 +1206,276 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "gcmarkerpoint.cpp cluster; only anchored caller is cGcCreatureComponent::Prepare (14KB, ~34 callees) and callees cGcMarkerPoint::IsEqual/operator= are unmapped."
     },
     "cGcMarkerList::TryAddMarker": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no anchored caller/callee; depends on the unmapped cGcMarkerPoint cluster."
     },
     "cGcMarkerPoint::Reset": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only anchored caller cGcCreatureComponent::Prepare has ~34 callees; the tiny-ctor signature that would isolate Reset is swamped by generic single-callee wrappers."
     },
     "cGcMarkerPoint::cGcMarkerPoint": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no anchored caller/callee; would follow from locating cGcMarkerPoint::Reset first."
     },
     "cGcNGuiElement::GetPosition": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "tiny inlined accessor; caller-vote over 2-3 anchored callers does not converge to a unique small function (top hits are shared utilities/FindElementRecursive)."
     },
     "cGcNGuiElement::Render": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "virtual (called via vtable, no direct FUN_ callers) and its callees GetPosition/BeginUndo/EndUndo are unmapped; no anchor."
     },
     "cGcNGuiElement::SetPosition": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "tiny inlined accessor; caller-vote does not converge to a unique function."
     },
     "cGcNGuiLayer::AddElement": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "header-inline; callees are STL _Emplace_reallocate template bodies (unmapped) and caller-vote is non-unique."
     },
     "cGcNGuiLayer::FindElementRecursive": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140443860",
+      "1.13": "0x1404A6CC0",
+      "1.24": "0x1405588D0",
+      "1.38": "0x14066BF70"
     },
     "cGcNGuiLayer::FindTextRecursive": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "header-inline thin wrapper around FindElementRecursive; FindElementRecursive has ~94 callers/build and no candidate carries the modern TkID hash, so it cannot be isolated."
     },
     "cGcNGuiLayer::GetGraphic": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "one of four byte-identical templated accessor siblings next to the known cGcNGuiLayer::GetText; no structural feature distinguishes GetGraphic from its peers."
     },
     "cGcNGuiLayer::cGcNGuiLayer": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x1403CDD00",
+      "1.13": "0x1404A5F30",
+      "1.24": "0x140557EE0",
+      "1.38": "0x14066B580"
     },
     "cGcNameGenerator::GeneratePlanetName": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140858320",
+      "1.13": "0x14099BB90",
+      "1.24": "0x140B07330",
+      "1.38": "0x140C79310"
     },
     "cGcNotificationSequenceStartEvent::DeepInterstellarSearch": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no resolved caller/callee anchors in any build; 4.13-only strings/imm64/name-literals absent from legacy exes -> unanchored"
     },
     "cGcOptionsPageUI::BeginList": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no 4.13 PDB entry (inlined/renamed upstream) so no modern tokens or call graph, and no name literal in the legacy decomp"
     },
     "cGcOptionsPageUI::ListOption": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no 4.13 PDB entry so no modern evidence; no name literal in the legacy decomp"
     },
     "cGcOptionsPageUI::QualityOption": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no 4.13 PDB entry so no modern evidence; no name literal in the legacy decomp"
     },
     "cGcPersistentInteractionBuffer::LoadGalacticAddressBuffers": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 0 resolved caller and 1 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcPersistentInteractionBuffer::PopulateBufferData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no resolved caller/callee anchors in any build; 4.13-only strings/imm64/name-literals absent from legacy exes -> unanchored"
     },
     "cGcPersistentInteractionBuffer::SaveInteraction": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no resolved caller/callee anchors in any build; 4.13-only strings/imm64/name-literals absent from legacy exes -> unanchored"
     },
     "cGcPersistentInteractionsManager::LoadGalacticAddressBuffers": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcPersistentInteractionsManager::PopulateArrays": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcPhotoModeUI::OnRenderScreenshotFinished": {
       "_note": "Photo mode arrived in Path Finder (1.2).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "photo-mode ids/paths are hashed or renamed (no literals) and distinctive callees (SaveImageUsingWic/TonemapHdrToSdr) are unmapped; candidates tie"
     },
     "cGcPlanet::Construct": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140A56E50",
+      "1.13": "0x140BC50E0",
+      "1.24": "0x140D4A2A0",
+      "1.38": "0x140EF8A90"
     },
     "cGcPlanet::UpdateClouds": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "unique caller cGcPlanet::UpdateWeather is mislabelled in propagated (that address is really cGcSky::Update), so the weather-leaf cluster has no valid anchor; no distinctive tokens."
     },
     "cGcPlanet::UpdateGravity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "same as UpdateClouds: true cGcPlanet::UpdateWeather anchor unavailable; the gravity leaf (calls cTkDynamicGravityControl) has no mapped callee to pin it."
     },
     "cGcPlanetGenerationInputData::SetDefaults": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x1401E5020",
+      "1.13": "0x140294AD0",
+      "1.24": "0x1403344A0",
+      "1.38": "0x1403D75C0"
     },
     "cGcPlanetGenerator::FillCreatureSpawnDataFromDescription": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "0x140EE0C00",
+      "_unresolved": "confident only for 1.38 (see functions); in 1.09.1/1.13/1.24 the Generate->SpawnData->Fill size signature is ambiguous (no callee anchor, sizes drift)."
     },
     "cGcPlanetGenerator::GenerateCreatureInfo": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140A69230",
+      "1.13": "0x140BD8310",
+      "1.24": "0x140D5DC30",
+      "1.38": "0x140F0E290"
     },
     "cGcPlanetGenerator::GenerateCreatureRoles": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140A6CD40",
+      "1.13": "0x140BDC450",
+      "1.24": "0x140D61E20",
+      "1.38": "0x140F12230"
     },
     "cGcPlanetGenerator::GenerateCreatureSpawnData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "0x140EE0970",
+      "_unresolved": "confident only for 1.38 (see functions); earlier builds give multiple Generate-callees fitting the size window with no tiebreaker."
     },
     "cGcPlanetGenerator::GenerateQueryInfo": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "in the same imm64 cluster as GenerateCreatureRoles; 4 candidate callers of Roles remain and its unique modern caller cGcSolarSystemQuery::Run is not in the anchor map, so it cannot be disambiguated from FulfillGenerationRequests/GenerateWonderQueryData."
     },
     "cGcPlayer::CheckFallenThroughFloor": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only caller is cGcPlayer::Update (>20 same-caller callees); modern strings (VOLCANO) and callees (raycast/gravity) are not distinctively mapped in legacy - no unique start"
     },
     "cGcPlayer::GetDominantHand": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "VR accessor calling cTkHmdOpenVR::GetInstance; OpenVR/VR support post-dates all four builds (Beyond 2.0, 2019) - function absent, no legacy signature"
     },
     "cGcPlayer::OnEnteredCockpit": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "modern 'IN_SHIP' string only survives as a substring of unrelated tokens; callers cGcVehicleCockpit::DoEnter / cGcPlayerDissapearEffect::End not mapped - no unique signal"
     },
     "cGcPlayer::RenderInventoryEditor": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "debug NGui editor; modern menu strings (Give All, Add Suit Slot, ...) absent in 2016-2017 builds; only caller RenderNGui maps but its legacy body is a much smaller dialog handler - no reliable start"
     },
     "cGcPlayer::SetToPosition": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "small (186B); calls SetFacing/UpdateGraphics (unmapped) and Havok SetPosition; 12 callers of which only Update/SwitchToAnimatedCamera map, yielding only generic high-in-degree helpers - no unique start"
     },
     "cGcPlayer::TakeDamage": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "large; only mapped caller is cGcPlayer::Update; damage-audio strings and health callees not distinctively mapped - several same-caller candidates, none uniquely confirmable"
     },
     "cGcPlayer::UpdateGraphics": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "callers (Update/CheckFallenThroughFloor/SetToPosition/...) mostly unmapped; imm64 0x290F44A850290F44 is a generic packed constant (194 funcs); no distinctive string - no unique start"
     },
     "cGcPlayerBasePersistentBuffer::LoadGalacticAddress": {
       "_note": "Base building arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "NMS-Newton hook; no string/imm fingerprint and zero mapped callees/callers in the propagated data."
     },
     "cGcPlayerCharacterComponent::SetDeathState": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1431,14 +1538,16 @@
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "string UI_FREIGHT_BASE_RESET_OWNER_OSD / imm64 0xA3784A062B2E43DB absent in 1.13-1.38 (freighter-base feature post-dates 1.38)"
     },
     "cGcPlayerFreighterOwnership::cGcPlayerFreighterOwnership": {
       "_note": "Freighter purchase arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.13-1.38; no strings/imm; ctor call-graph indistinct from sibling ownership ctors"
     },
     "cGcPlayerHUD::RenderCrosshair": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1482,91 +1591,102 @@
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.24/1.38 only; no distinctive string/imm; call-graph vote ties among ship-ownership siblings"
     },
     "cGcPlayerShipOwnership::GetShipComponent": {
       "_note": "Multi-ship ownership arrived in Path Finder (1.2).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.24/1.38 only; tiny accessor, no unique anchor; vote non-unique"
     },
     "cGcPlayerShipOwnership::SpawnNewShip": {
       "_note": "Multi-ship ownership arrived in Path Finder (1.2).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.24/1.38 only; hint string 'cGcCustomisationComponentData' not a literal in legacy decomp; vote non-unique"
     },
     "cGcPlayerShipOwnership::Update": {
       "_note": "Multi-ship ownership arrived in Path Finder (1.2).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.24/1.38 only; only caller cGcGameState::Update also parents 3 near-identical ownership updates; vote ties"
     },
     "cGcPlayerShipOwnership::UpdateMeshRefresh": {
       "_note": "Multi-ship ownership arrived in Path Finder (1.2).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.24/1.38 only; private helper of ::Update but ::Update itself unresolved; no anchor"
     },
     "cGcPlayerShipOwnership::cGcPlayerShipOwnership": {
       "_note": "Multi-ship ownership arrived in Path Finder (1.2).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.24/1.38 only; ctor shares all seeded callees with cGcPlayerVehicleOwnership ctor; indistinguishable by call-graph"
     },
     "cGcPlayerState::AwardNanites": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no 'NANITES' stat string in any legacy build and no add-and-return signature on a nanites field; only Record as modern callee - not distinguishable from other small accessors"
     },
     "cGcPlayerState::AwardUnits": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140430B10",
+      "1.13": "0x140553F20",
+      "1.24": "0x140661140",
+      "1.38": "0x140785C70"
     },
     "cGcPlayerState::GetStatValue": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "float stat accessor; calls the mapped GetInventoryStoreFromChoice but so do ~69 functions; its item-lookup helpers (GetPrimaryItemForStat-style) return pointers and shadow it - no unique start"
     },
     "cGcPlayerState::LoadFromData": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140428C30",
+      "1.13": "0x14054A3E0",
+      "1.24": "0x140656910",
+      "1.38": "0x140779DB0"
     },
     "cGcPlayerState::SaveToData": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14042A170",
+      "1.13": "0x14054BB80",
+      "1.24": "0x1406584F0",
+      "1.38": "0x14077BC40"
     },
     "cGcPlayerState::StoreCurrentSystemSpaceStationEndpoint": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "104B; only modern callee Engine::IterateNode is unmapped; 'SpawnPos' survives only inside longer node tokens; common callees of mapped Update/Interact are generic helpers - no unique start"
     },
     "cGcPlayerState::cGcPlayerState": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "constructor; caller cGcGameState::cGcGameState and member-ctor anchors (cGcInventoryStore::cGcInventoryStore) unmapped; imm64 0xC4CEB9FE1A85EC53 absent from legacy .text - no anchor"
     },
     "cGcPlayerVehicleOwnership::cGcPlayerVehicleOwnership": {
       "_note": "Exocraft arrived in Path Finder (1.2).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.24/1.38 only; ctor shares all seeded callees with cGcPlayerShipOwnership ctor; indistinguishable by call-graph"
     },
     "cGcPlayerWanted::Update": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1590,264 +1710,301 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "references UI_UNIT_U which exists only in 1.38; the sole 1.38 referencer (0x1407931F0, 526B) is the %DIST% unit-format helper, far too small for the 1846-len Render."
     },
     "cGcPurchaseableItem::Update": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 0 resolved caller and 1 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcQuickMenu::cGcQuickMenu": {
       "_note": "Quick-menu strings first appear in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Sole caller cGcHUDManager::cGcHUDManager and callee ctors (cGcQuickActionMenu/cGcTerrainEditMenu/cGcNGui) are all unmapped; no string/imm64 anchor. (Not in 1.09.1.)"
     },
     "cGcRealityManager::GenerateProceduralProduct": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Same reality unit as GenerateProceduralTechnology but two large self-recursive candidates per build (e.g. 1.38 0x140C7A080 sz5129 vs 0x140C81640 sz16361) with conflicting signals (callee-overlap vs size); cannot disambiguate with two clean signals. No mapped caller available."
     },
     "cGcRealityManager::GenerateProceduralTechnology": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14085A300",
+      "1.13": "0x14099DD20",
+      "1.24": "0x140B09770",
+      "1.38": "0x140C7BFA0"
     },
     "cGcRealityManager::cGcRealityManager": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Sole modern caller is cGcApplication::Data::Data (unresolved). Reality unit identified but no mapped anchor isolates the ctor; imm64 anchor absent from legacy .text."
     },
     "cGcResourceCustomisation::CreateGenerationTask": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "16 callers, only 1 mapped callee (cGcProceduralTextureManager::CreateGenerationTask, itself unmapped); call-graph votes tie across many same-size candidates."
     },
     "cGcRewardManager::GiveGenericReward": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcScanEvent::CalculateMarkerPosition": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.24": "0x140C358E0",
+      "1.38": "0x140DE1B60",
+      "_unresolved": "reached only via ScanEvent::Update, which is itself unlocatable in 1.09.1/1.13."
     },
     "cGcScanEvent::Construct": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only generic strings (\"list too long\") and a generic reciprocal-divide immediate; the one detectable caller of CalculateMarkerPosition is Update, so Construct cannot be reached via the call graph; callers (ScanEventManager::AddEvent*) are unmapped."
     },
     "cGcScanEvent::Update": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.24": "0x140C33FA0",
+      "1.38": "0x140DDF9C0",
+      "_unresolved": "TIMED_GOTO/%d:%.2d timed-goto display strings are absent before 1.24; no mapped scanevent-runtime caller in 1.09.1/1.13 to anchor on."
     },
     "cGcScanEvent::UpdateInteraction": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "0x140DE0DC0",
+      "_unresolved": "cGcMaintenanceComponentData class-name string is only emitted in the 1.38 exe."
     },
     "cGcScanEvent::UpdateSpaceStationLocation": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "distinctive string SettlementConstructionLevel is absent from all legacy exes (space-station settlements are a post-1.38 feature); no other anchor."
     },
     "cGcScanEventManager::PassesPlanetInfoChecks": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm; sole callee cGcSolarSystem::DoesBuildingDensityHaveBuildingClass and sole caller cGcScanEventManager::CheckInterstellarEvent are both unmapped in every legacy build."
     },
     "cGcShipHUD::ReadPlanetStats": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x1404A38E0",
+      "1.13": "0x1405D5B30",
+      "1.24": "0x140786620",
+      "1.38": "0x1408F5620"
     },
     "cGcShipHUD::cGcShipHUD": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "constructor: only 1 seeded neighbour, no vtable/string anchor; call-graph vote non-unique"
     },
     "cGcSimpleInteractionComponent::DoAction": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "only 0 resolved caller and 4 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcSimulation::cGcSimulation": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Sole modern caller is cGcApplication::Data::Data (unresolved). cGcSimulation::Construct zone located (1.38 0x140C956A0) but the ctor vs Construct/other members cannot be split with a second signal."
     },
     "cGcSky::SetSunAngle": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "chain cGcSky::Update -> UpdateSunPosition -> SetSunAngle relies on unmapped leaves (sSolarDay::GetSunDirection/GetSolarSunAngle, cTkTrig::Cos/Sin); the trig helpers are shared by dozens of funcs so no unique lock."
     },
     "cGcSky::Update": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140986910",
+      "1.13": "0x140AE4B80",
+      "1.24": "0x140C5A670",
+      "1.38": "0x140DEDBC0"
     },
     "cGcSky::UpdateSunPosition": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "same Sky sun sub-chain: its markers (Cos/Sin/GetSolarSunAngle) are unmapped and non-distinctive; multiple Sky-window candidates of similar size, no clear winner."
     },
     "cGcSolarSystem::OnEnterPlanetOrbit": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "its distinctive callees (FadeNodeUpdater::GetInstance, PersistentInteractionsManager::LoadGalacticAddressBuffers, GetPlayerSolarSystemInstance) and 0x9A94.. imm are all unmapped/absent in the legacy builds"
     },
     "cGcSolarSystem::OnLeavePlanetOrbit": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "same as OnEnterPlanetOrbit: no mapped distinctive callee and the second caller (cGcPlayerRespawn::UpdateSolarSystem) is unmapped"
     },
     "cGcSolarSystem::Update": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140A30270",
+      "1.13": "0x140BA8970",
+      "1.24": "0x140D2DC90",
+      "1.38": "0x140EE5970"
     },
     "cGcSolarSystem::cGcSolarSystem": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x14086B120",
+      "1.13": "0x1409B0C50",
+      "1.24": "0x140B1D6B0",
+      "1.38": "0x140C95BA0"
     },
     "cGcSolarSystemGenerator::GenerateBasics": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "inlined into cGcSolarSystemGenerator::Generate in 1.38 (Generate calls ClassifyStarKeyAttributes directly); no standalone anchored signal"
     },
     "cGcSolarSystemGenerator::GeneratePlanetBiomes": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "sub-generator with no mapped distinctive callee; cannot be separated from its siblings among Generate's in-TU callees with two signals"
     },
     "cGcSolarSystemGenerator::GeneratePlanetPositions": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "callees (cTkFibonacciSphere::Generate, GetRegionRadiusForSize, trig) are unmapped, so it cannot be distinguished from its sibling sub-generators"
     },
     "cGcSolarSystemGenerator::GenerateQueryInfo": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "inlined into cGcSolarSystemGenerator::Generate in 1.38 (Generate is the only generator-TU caller of SolarSystemData::SetDefaults)"
     },
     "cGcSolarSystemQuery::Run": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "calls Classify/GenerateQueryInfo that are inlined here, and none of its callers (SolarInfoPanel::Update, ...) are mapped"
     },
     "cGcSpaceshipComponent::Eject": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no distinctive string/imm; seeded neighbours only via 2 callers; vote ties across builds"
     },
     "cGcSpaceshipComponent::GetVelocity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "34-byte accessor (rigidbody GetLinearVelocity); inlined in legacy callers, no standalone function found"
     },
     "cGcSpaceshipComponent::UpdateControlled": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140A92AA0",
+      "1.13": "0x140C05490",
+      "1.24": "0x140D8DC70",
+      "1.38": "0x140F64A00"
     },
     "cGcSpaceshipWarp::GetPulseDriveFuelFactor": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "84-byte stat getter; one of many indistinguishable small callers of GetPrimaryItemForStat; vote score 1, non-unique"
     },
     "cGcSpaceshipWarp::UpdatePulseDrive": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "target_hints signature is mismatched (points at cGcPlayerExperienceDirector::UpdatePulseEncounters); no reliable anchor"
     },
     "cGcSpaceshipWeapons::GetAverageBarrelPos": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm and none of its 4.13 call-neighbours are in the propagated seed; no anchor"
     },
     "cGcSpaceshipWeapons::GetCurrentShootPoints": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm and no seeded call-neighbours; cTkHmdOpenVR::GetInstance / GetTypedComponent anchors unavailable"
     },
     "cGcSpaceshipWeapons::GetHeatFactor": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "17-byte header (.h) inline accessor; not emitted as a standalone function in legacy builds"
     },
     "cGcSpaceshipWeapons::GetOverheatProgress": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "39-byte inline accessor; no call-neighbours seeded; not separately identifiable"
     },
     "cGcTerrainEditorBeam::ApplyTerrainEditFlatten": {
       "_note": "The terrain manipulator arrived in Atlas Rises (1.3).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.38-only; no string/imm tokens and every callee (CanApplyTerrainEdit, EditTerrain, GenerateElevation, BroadcastEdits) is unmapped -> no anchor."
     },
     "cGcTerrainEditorBeam::ApplyTerrainEditStroke": {
       "_note": "The terrain manipulator arrived in Atlas Rises (1.3).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.38-only; same as ApplyTerrainEditFlatten -- callee set entirely unmapped, and it is near-identical to Flatten so size/structure cannot separate them."
     },
     "cGcTerrainEditorBeam::Fire": {
       "_note": "The terrain manipulator arrived in Atlas Rises (1.3).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.38-only; sits in the terrain-editor unit but its distinctive callees (EditTerrain, ApplyTerrainEdit*, GetEditData) are all unmapped, leaving a ~136-func window with no decisive anchor."
     },
     "cGcTerrainEditorBeam::StartEffect": {
       "_note": "The terrain manipulator arrived in Atlas Rises (1.3).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "1.38-only; SHADOW+LASER_LIGHT locks a beam StartEffect at 0x140C9C320 but that lies OUTSIDE the terrain-editor unit (it is another beam's StartEffect); the terrain-unit candidate cannot be confirmed without its unmapped callees."
     },
     "cGcTextChatInput::ParseTextForCommands": {
       "_note": "Text chat arrived with multiplayer in NEXT (1.5); no TextChat strings in any 1.x exe.",
@@ -1874,53 +2031,61 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Small (TkID const&,float)->bool. Intersection of mapped callers' callees (Player/Weapon Update/Fire) yields no function taking a TkID+float; likely inlined at many call sites. imm64 is a shared FNV basis constant."
     },
     "cGcVisitedSystemsBuffer::VisitNewGalacticAddress": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm; callees (ClassifyStarKeyAttributes, ClampToLimits) and caller (LoadGalacticAddressBuffers) are all unmapped in every legacy build."
     },
     "cTkAsyncIOManager::GetOpData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "small critical-section accessor; TkThread::Lock/UnlockCriticalSection callees not symbolised, no string/imm anchor"
     },
     "cTkAsyncIOManager::GetOpDataSize": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "same as GetOpData; no independent signal to separate the two"
     },
     "cTkAudioManager::Play_attenuated": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Wwise Play(TkAudioID,cTkVector3&,TkAudioObject,float). Only anchors are AK::SoundEngine::PostEvent/SetScalingFactor imports (unmapped) and many unmapped callers; no unique legacy signature isolated."
     },
     "cTkDynamicGravityControl::Construct": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "void()->void reset that shares the ctor's 64-slot init loop; in 1.09.1/1.13 it is inlined (no standalone loop-bearing sibling under BootState::Update or the owning ctor); in 1.24/1.38 the free-list loop is refactored away. No second independent signal, so left unresolved."
     },
     "cTkDynamicGravityControl::GetGravity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "leaf-ish const method (only callee cTkAABB::IsPositionInBox, itself unmapped); no strings/imm64; modern caller set is a folded/subset of the ctor's and the legacy caller-intersection is dominated by generic helpers (memcpy/vector ops), so no unique legacy VA stands out."
     },
     "cTkDynamicGravityControl::UpdateGravityPoint": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "single modern caller cGcPlanet::UpdateGravity, which is itself NOT_YET_FOUND, so there is no mapped anchor; no strings/imm64 and no distinctive standalone loop."
     },
     "cTkDynamicGravityControl::cTkDynamicGravityControl": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
+      "1.09.1": "0x1403EF3F0",
+      "1.13": "0x1404CFF10",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND"
     },
@@ -1928,217 +2093,242 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Engine::GetModelNode/GetNodeParamI/GetNodeParent callees not symbolised; cluster candidates not distinguishable without guessing"
     },
     "cTkEngineUtils::GetMatricesFromNode": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "sole callee Engine::GetNodeTransMats not symbolised in the DBs"
     },
     "cTkEngineUtils::RepositionGroupNode": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Engine::ShiftAllTransformsForNode/GetNodeFirstChild/NextSibling not symbolised"
     },
     "cTkFileSystem::CreatePath": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.24": "0x140EF53C0",
+      "1.38": "0x1410A2950",
+      "_unresolved": "inlined (no standalone wrapper) in: 1.13, 1.09.1"
     },
     "cTkFileSystem::Data::MountAllArchives": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "mod/archive mount orchestrator identifiable by role only (DISABLEMODS.TXT + psarc dearchiver); no modern signature to give a second signal"
     },
     "cTkFileSystem::DoesFileExist": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.24": "0x140EF5370",
+      "1.38": "0x1410A2900",
+      "_unresolved": "inlined (no standalone wrapper) in: 1.13, 1.09.1"
     },
     "cTkFileSystem::EnumerateDirectory": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140BB1730",
+      "1.13": "0x140D377F0",
+      "1.24": "0x140EF5420",
+      "1.38": "0x1410A29B0"
     },
     "cTkFileSystem::IsModded": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "17-byte bool accessor, inlined; no standalone function located"
     },
     "cTkFileSystem::LoadModDirectory": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no modern signature/callees; only structural role (MODS/.pak enumeration)"
     },
     "cTkFileSystem::LoadModSubdirectory": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no modern signature/callees; cannot separate from LoadModDirectory"
     },
     "cTkFileSystem::Open": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140BB12D0",
+      "1.13": "0x140D37390",
+      "1.24": "0x140EF4E70",
+      "1.38": "0x1410A2450"
     },
     "cTkFileSystem::Write": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.09.1": "0x140BB16B0",
+      "1.13": "0x140D37770",
+      "1.24": "0x140EF5250",
+      "1.38": "0x1410A2830"
     },
     "cTkGraphicsAPI::CreateIndexBuffer": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "GL buffer creation inlined into one monolithic function; no per-symbol anchor"
     },
     "cTkGraphicsAPI::CreateVertexBuffer": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "call-graph best candidate (ratio 2.55) verified false (glGetActiveUniform lookup); no other signal"
     },
     "cTkGraphicsAPI::GetVertexBufferData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cTkInputPort::GetButton": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Overloaded/self-recursive input getter. Intersection of mapped callers' callees is empty under a small-size cap (inlined at most sites); no string/imm64 anchor."
     },
     "cTkInputPort::SetButton": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "All callers (cTkInputDeviceManager::Process*, cTkInputDualShock4::ReadImpl) are unmapped; no callees, strings, or imm64 to anchor on."
     },
     "cTkMetaDataManager::GetInstance": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Meyers singleton pattern shared by many classes; kRegister dynamic-initializer callers not symbolised, no distinguishing second signal"
     },
     "cTkMetaDataManager::LoadModdedData": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no modern signature/strings/callees; no anchor"
     },
     "cTkMetaDataXML::GetLookup": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "hash multiplier imm64 0x2E8BA2E8BA2E8BA3 is shared by 40+ funcs; callers (Register/Read/WriteClassPointer) not mapped -> no unique anchor"
     },
     "cTkMetaDataXML::Register": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "imm64 0x41110F412042100F migrated (owner in legacy is an unrelated struct-copy, verified); registrar callers not symbolised"
     },
     "cTkResource::cTkResource": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "base resource ctor; cEg*Resource ctor callers not mapped, no string anchor"
     },
     "cTkRigidBody::SetAngularVelocity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "89-byte leaf in tkrigidbody.cpp/havok; sets velocity via the stored Havok body (indirect, 0 direct callees) so no callee fingerprint; only 1-2 of its 21 modern callers map into the seed and they share only generic helpers -> no unique hit."
     },
     "cTkRigidBody::SetLinearVelocity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "identical situation to SetAngularVelocity (89-byte leaf, indirect Havok write); 3-4 of 51 modern callers map but the shared legacy callees are generic helpers, not the target, so no address is committable."
     },
     "cTkStopwatch::GetDurationInSeconds": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "~121-byte leaf calling cTkClock::GetSystemFrequency (unmapped). Called from many sites; the huge SimulationState::Render/ThreadedUpdate anchors give no unique small-callee. No distinctive constant."
     },
     "cTkSystem::IntegratedGPUActive": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "24-byte bool leaf reading a global. Callers (cTkEngineSettings::*, SimulationState::BuildRenderQueue) unmapped/huge; too generic to isolate without a second signal."
     },
     "cTkTexture::CopyPixelDataToBuffer": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cTkTexture::CreateEmptyTexture": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "call-graph candidate 0x140FDEF70 has 7 args vs 14 modern and no confirming signal; ambiguous"
     },
     "cTkTextureBase::CalculateTextureSize": {
+      "1.09.1": "0x140AECC20",
+      "1.13": "0x140C6D800",
+      "1.24": "0x140E24750",
+      "1.38": "0x140FE02A0"
+    },
+    "nvgArc": {
+      "_note": "NanoVG-style drawing is present (RenderNVG found in all builds); these primitives are unlocated, possibly inlined.",
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND"
     },
-    "nvgArc": {
-      "_note": "NanoVG UI drawing only exists in modern builds; no NanoVG shader strings in any 1.x exe.",
-      "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_IN_THIS_VERSION",
-      "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_IN_THIS_VERSION"
-    },
     "nvgEllipse": {
-      "_note": "NanoVG UI drawing only exists in modern builds; no NanoVG shader strings in any 1.x exe.",
-      "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_IN_THIS_VERSION",
-      "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_IN_THIS_VERSION"
+      "_note": "NanoVG-style drawing is present (RenderNVG found in all builds); these primitives are unlocated, possibly inlined.",
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND"
     },
     "nvgFill": {
-      "_note": "NanoVG UI drawing only exists in modern builds; no NanoVG shader strings in any 1.x exe.",
-      "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_IN_THIS_VERSION",
-      "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_IN_THIS_VERSION"
+      "_note": "NanoVG-style drawing is present (RenderNVG found in all builds); these primitives are unlocated, possibly inlined.",
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND"
     },
     "nvgRect": {
-      "_note": "NanoVG UI drawing only exists in modern builds; no NanoVG shader strings in any 1.x exe.",
-      "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_IN_THIS_VERSION",
-      "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_IN_THIS_VERSION"
+      "_note": "NanoVG-style drawing is present (RenderNVG found in all builds); these primitives are unlocated, possibly inlined.",
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND"
     },
     "nvgText": {
-      "_note": "NanoVG UI drawing only exists in modern builds; no NanoVG shader strings in any 1.x exe.",
-      "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_IN_THIS_VERSION",
-      "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_IN_THIS_VERSION"
+      "_note": "NanoVG-style drawing is present (RenderNVG found in all builds); these primitives are unlocated, possibly inlined.",
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND"
     },
     "nvgTextBox": {
-      "_note": "NanoVG UI drawing only exists in modern builds; no NanoVG shader strings in any 1.x exe.",
-      "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_IN_THIS_VERSION",
-      "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_IN_THIS_VERSION"
+      "_note": "NanoVG-style drawing is present (RenderNVG found in all builds); these primitives are unlocated, possibly inlined.",
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND"
     }
   },
   "globals": {

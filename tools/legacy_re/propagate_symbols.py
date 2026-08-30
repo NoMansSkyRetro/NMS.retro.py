@@ -182,7 +182,8 @@ class Side:
                 self.callers[int(t)].add(key)
         print(
             f"{label}: {len(self.functions)} functions, "
-            f"{len(self.prints)} with tokens, {len(self.callees)} with calls"
+            f"{len(self.prints)} with tokens, {len(self.callees)} with calls",
+            file=sys.stderr,
         )
 
 
@@ -301,7 +302,7 @@ def load_targets(mangled_to_va):
         else:
             targets[entry["name"]] = va
     if unmapped:
-        print(f"targets without a PDB entry ({len(unmapped)}): {', '.join(unmapped[:8])}...")
+        print(f"targets without a PDB entry ({len(unmapped)}): {', '.join(unmapped[:8])}...", file=sys.stderr)
     return targets
 
 
