@@ -36,3 +36,26 @@ def test_flagged_entries_never_carry_fake_addresses():
     for name, entry in functions.items():
         if entry.get("_note"):
             assert any(entry.get(v) for v in VERSIONS), f"{name} has a note but no data"
+
+
+def test_aliases_and_names_schema():
+    functions = load()["functions"]
+    for name, entry in functions.items():
+        for alias in entry.get("_aliases") or []:
+            assert isinstance(alias, str), f"{name} alias not a string"
+        for v, actual in (entry.get("_names") or {}).items():
+            assert v in VERSIONS and isinstance(actual, str), f"{name} bad _names[{v}]"
+
+
+def test_alias_resolution():
+    # A pure-Python resolver mirroring offsets.py (no pymhf import needed here).
+    functions = load()["functions"]
+    alias_of = {}
+    for canon, entry in functions.items():
+        for alias in entry.get("_aliases") or []:
+            alias_of[alias] = canon
+    for alias, canon in alias_of.items():
+        # the alias resolves to a real canonical entry with per-version data
+        assert canon in functions
+        entry = functions[canon]
+        assert any(ADDRESS.match(str(entry.get(v, ""))) for v in VERSIONS)

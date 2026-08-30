@@ -9,6 +9,16 @@ with a warning instead of crashing.
 
 Addresses are Ghidra-style virtual addresses assuming the preferred image base
 0x140000000; pyMHF gets them as offsets relative to the actual module base.
+
+Per-entry metadata keys (all optional, prefixed ``_``):
+
+- ``_note``   version-history note (e.g. why a feature is absent from a build).
+- ``_names``  ``{version: "ActualName"}`` documenting the function's real name in a
+              build when it differs from the entry key (functions get renamed across
+              versions; the key stays the 4.13/upstream name).
+- ``_aliases`` list of other names that resolve to this same function (renames or
+              ICF-folded siblings). ``offset_for``/``availability`` accept an alias
+              and transparently use the canonical entry.
 """
 
 import json
@@ -30,6 +40,28 @@ with open(Path(__file__).parent / "offsets.json") as _f:
 FUNCTIONS: dict = _DATA["functions"]
 GLOBALS: dict = _DATA["globals"]
 
+#: alias name -> canonical entry name (built from every entry's ``_aliases``).
+_ALIAS_OF: dict = {}
+for _canon, _entry in FUNCTIONS.items():
+    for _alias in (_entry.get("_aliases") or []):
+        _ALIAS_OF[_alias] = _canon
+
+
+def _entry_for(name: str) -> dict:
+    """The offsets entry for a function name, following an alias if needed."""
+    return FUNCTIONS.get(name) or FUNCTIONS.get(_ALIAS_OF.get(name, ""), {})
+
+
+def version_name(name: str, version: Optional[str] = None) -> Optional[str]:
+    """The function's actual name in a build, if it differs from the entry key.
+
+    Returns None when the name is unchanged for that build (or unknown).
+    """
+    version = version or (CURRENT_VERSION.value if CURRENT_VERSION else None)
+    if version is None:
+        return None
+    return (_entry_for(name).get("_names") or {}).get(version)
+
 #: The function exists in this build but nobody has located its address yet.
 NOT_YET_FOUND = "NOT_YET_FOUND"
 #: The feature this function belongs to postdates this build entirely.
@@ -47,7 +79,7 @@ def availability(name: str):
     status is FOUND, NOT_YET_FOUND, or NOT_IN_THIS_VERSION; note carries the
     version-history explanation when the data has one.
     """
-    entry = FUNCTIONS.get(name) or {}
+    entry = _entry_for(name)
     note = entry.get("_note")
     if CURRENT_VERSION is None:
         return NOT_YET_FOUND, note
@@ -60,10 +92,13 @@ def availability(name: str):
 
 
 def offset_for(name: str) -> Optional[int]:
-    """The module-relative offset of a named function in the running build, or None."""
+    """The module-relative offset of a named function in the running build, or None.
+
+    Accepts either the canonical entry key or any of its ``_aliases``.
+    """
     if CURRENT_VERSION is None:
         return None
-    address = (FUNCTIONS.get(name) or {}).get(CURRENT_VERSION.value)
+    address = _entry_for(name).get(CURRENT_VERSION.value)
     return int(address, 16) - STATIC_BASE if _is_address(address) else None
 
 

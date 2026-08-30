@@ -116,14 +116,23 @@
       "1.09.1": "0x14041F6F0",
       "1.13": "0x140536830",
       "1.24": "0x140646CA0",
-      "1.38": "0x1407621D0"
+      "1.38": "0x1407621D0",
+      "_aliases": [
+        "cGcGameState::OnSaveProgressCompleted"
+      ]
     },
     "cGcGameState::OnSaveProgressCompleted": {
       "_comment": "Alias: legacy has no distinct save-completed callback; these are WriteStateToStorage, whose .after is the closest equivalent.",
       "1.09.1": "0x14041F6F0",
       "1.13": "0x140536830",
       "1.24": "0x140646CA0",
-      "1.38": "0x1407621D0"
+      "1.38": "0x1407621D0",
+      "_names": {
+        "1.09.1": "cGcGameState::WriteStateToStorage",
+        "1.13": "cGcGameState::WriteStateToStorage",
+        "1.24": "cGcGameState::WriteStateToStorage",
+        "1.38": "cGcGameState::WriteStateToStorage"
+      }
     },
     "cGcGraphicsManager::Prepare": {
       "1.09.1": "0x14045C2C0",
