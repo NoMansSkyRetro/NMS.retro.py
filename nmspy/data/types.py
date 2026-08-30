@@ -164,8 +164,8 @@ class cGcShipHUD(Structure):
     @legacy_hook("cGcShipHUD::RenderHeadsUp")
     def RenderHeadsUp(self, this: c_uint64): ...
 
-    @legacy_hook("cGcShipHUD::UpdateSelectedPlanetPanel")
-    def UpdateSelectedPlanetPanel(self, this: c_uint64): ...
+    @legacy_hook("cGcShipHUD::RenderFlightHUD")
+    def RenderFlightHUD(self, this: c_uint64): ...
 
 
 class cGcNGuiLayer(Structure):

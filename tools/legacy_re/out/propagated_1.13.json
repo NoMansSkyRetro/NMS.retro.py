@@ -1,0 +1,1202 @@
+{
+ "??0Data@cTkFileSystem@@QEAA@_N0@Z": {
+  "address": "0x140D36250",
+  "votes": 3,
+  "upstream_surface": true
+ },
+ "??0Pimpl@TypeCopier@hkReflect@@QEAA@AEBUOptions@12@@Z": {
+  "address": "0x14109B370",
+  "votes": 10,
+  "upstream_surface": false
+ },
+ "?Construct@Data@cGcGalaxyMap@@QEAAXXZ": {
+  "address": "0x140AF9AD0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "?EnqueueApplyShadowMask@@YAXH@Z": {
+  "address": "0x1404C7CF0",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "?FindWindEigenvectorsJob@@YAXPEAX@Z": {
+  "address": "0x140CB6770",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?Load@?$PulseItemList@VEventGenerator@SoundScapeIndex@SoundScape@cGcAudioPulseMusic@@@@QEAAHAEBUXMLNode@@@Z": {
+  "address": "0x1404EDC50",
+  "votes": 34,
+  "upstream_surface": false
+ },
+ "?Load@?$PulseItemList@VInstrument@cGcAudioPulseMusic@@@@QEAAHAEBUXMLNode@@@Z": {
+  "address": "0x1404EF0F0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?Load@?$PulseItemList@VInstrumentNote@InstrumentIndex@Instrument@cGcAudioPulseMusic@@@@QEAAHAEBUXMLNode@@@Z": {
+  "address": "0x1404EEEB0",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "?Load@?$PulseItemList@VModulatorLink@EventGenerator@SoundScapeIndex@SoundScape@cGcAudioPulseMusic@@@@QEAAHAEBUXMLNode@@@Z": {
+  "address": "0x1404ED9A0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "?Load@?$PulseItemList@VSoundScape@cGcAudioPulseMusic@@@@QEAAHAEBUXMLNode@@@Z": {
+  "address": "0x1404EECA0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?Load@Instrument@cGcAudioPulseMusic@@QEAAHAEBUXMLNode@@@Z": {
+  "address": "0x1404F0A10",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "?Load@SoundScape@cGcAudioPulseMusic@@QEAAHAEBUXMLNode@@@Z": {
+  "address": "0x1404F0120",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "?Render@cEgPStreamNode@TkGalactic@@SAXAEAVcEgRenderQueueBuffer@@AEBT?$TkID@$0IA@@@H_NW4List@RenderingOrder@@22AEBVcEgFrustum@@PEAVcEgThreadableRenderCall@@@Z": {
+  "address": "0x140E64CE0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?ToString@KnownHeader@Http@@SAPEBDW4Enum@12@@Z": {
+  "address": "0x140D56D10",
+  "votes": 40,
+  "upstream_surface": false
+ },
+ "?Update@Data@cGcGalaxyMap@@QEAAXM@Z": {
+  "address": "0x140AFBA90",
+  "votes": 2,
+  "upstream_surface": true
+ },
+ "?UpdateCommonFsFxUniforms@Data@cGcGalaxyMap@@QEAAXU?$TkStrongType@HUTkResHandleID@TkStrongTypeIDs@@@@@Z": {
+  "address": "0x140B022A0",
+  "votes": 17,
+  "upstream_surface": false
+ },
+ "?UpdateTracingFsFxUniforms@Data@cGcGalaxyMap@@QEAAXU?$TkStrongType@HUTkResHandleID@TkStrongTypeIDs@@@@@Z": {
+  "address": "0x140B02980",
+  "votes": 12,
+  "upstream_surface": false
+ },
+ "?clone1@CloneImpl@Cloner@hkReflect@@IEAAXAEAUVar@3@AEBU43@W4CloneFlags@123@@Z": {
+  "address": "0x141077530",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?clone@CloneImpl@Cloner@hkReflect@@QEAAXAEAUVar@3@AEBU43@AEAVClonerCallback@3@@Z": {
+  "address": "0x141077880",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?hknpStepConstraintJacobianProcess@@YAXAEAVhknpSimulationThreadContext@@HH_NHW4Enum@hknpJacobianGridType@@HEEPEBVhknpSolverStepInfo@@PEAVhkMonitorStream@@@Z": {
+  "address": "0x14122A6D0",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "?makeNewCopy@Pimpl@TypeCopier@hkReflect@@IEAAPEAVType@3@PEBV43@AEAV?$hkArray@U?$hkTuple@PEAVType@hkReflect@@PEBV12@XXXXXX@@U?$hkBuiltinContainerAllocator@$01$0A@@@@@@Z": {
+  "address": "0x14109BCC0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?parseType@Impl@XmlReadFormat@hkSerialize@@IEAA?AUhkResult@@AEAVhkXmlStreamParser@@@Z": {
+  "address": "0x141011A70",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "?populateVtableValues@VtableCache@Detail@hkReflect@@IEAA?AUhkResult@@PEBVType@3@AEAV?$hkArray@UVtableInfo@VtableCache@Detail@hkReflect@@U?$hkBuiltinContainerAllocator@$0A@$0A@@@@@@Z": {
+  "address": "0x141019E10",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "?visit2@CloneImpl@Cloner@hkReflect@@QEAAXAEBUArrayVar@3@AEAU43@_N@Z": {
+  "address": "0x1410782F0",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "?writeAllOutstandingTypes@TypeWriter@XmlWriteFormat@hkSerialize@@QEAAXPEAUXmlFormatter@23@@Z": {
+  "address": "0x14105F340",
+  "votes": 12,
+  "upstream_surface": false
+ },
+ "AssertDialogMsgProc": {
+  "address": "0x140D3B530",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "EgInstancedModelExtension::InitExtension": {
+  "address": "0x140E66850",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "TkGalactic::InitParticleStreamVertex": {
+  "address": "0x140E65F50",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "XMLNode::getError": {
+  "address": "0x140D9D170",
+  "votes": 20,
+  "upstream_surface": false
+ },
+ "__security_init_cookie": {
+  "address": "0x140FB1B58",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "_glfwInitWGL": {
+  "address": "0x140E27220",
+  "votes": 11,
+  "upstream_surface": false
+ },
+ "_glfwInputError": {
+  "address": "0x140E22F80",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "`anonymous namespace'::WriteVarVisitor::visit": {
+  "address": "0x14105EEB0",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "`anonymous namespace'::hknpMultithreadedSimulationEx::finalizeSolving": {
+  "address": "0x141143700",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "`anonymous namespace'::unregisteredCacheCreator": {
+  "address": "0x1411378B0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "`dynamic initializer for '_stackTracerWin32DataBuf''": {
+  "address": "0x140159EA0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cEgCameraNode::ParsingFunc": {
+  "address": "0x140DAA950",
+  "votes": 10,
+  "upstream_surface": false
+ },
+ "cEgCameraNode::SetParameterInt": {
+  "address": "0x140DAB4F0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cEgCodeResource::Load": {
+  "address": "0x140DD0510",
+  "votes": 3,
+  "upstream_surface": true
+ },
+ "cEgExtensionManager::InstallExtensions": {
+  "address": "0x140E18290",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cEgLightNode::ParsingFunc": {
+  "address": "0x140E18EA0",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cEgMaterialResource::ParseNode": {
+  "address": "0x140E06020",
+  "votes": 10,
+  "upstream_surface": true
+ },
+ "cEgMaterialResource::SetElementParamInt": {
+  "address": "0x140E07F60",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cEgMeshNode::Parse": {
+  "address": "0x140E01010",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cEgModelNode::ParsingFunc": {
+  "address": "0x140DFAE40",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cEgPipelineResource::ParseStage": {
+  "address": "0x140DB4290",
+  "votes": 71,
+  "upstream_surface": false
+ },
+ "cEgRenderer::Initialise": {
+  "address": "0x140DDE5A0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cEgSceneGraphResource::ParseData": {
+  "address": "0x140DDA9D0",
+  "votes": 2,
+  "upstream_surface": true
+ },
+ "cEgShaderResource::Load": {
+  "address": "0x140DD4FF0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cEgShaderResource::ParseFXSection": {
+  "address": "0x140DD1A70",
+  "votes": 35,
+  "upstream_surface": false
+ },
+ "cEgTextureResource::LoadFromDds": {
+  "address": "0x140DAFD60",
+  "votes": 2,
+  "upstream_surface": true
+ },
+ "cGcAISpaceshipManager::Prepare": {
+  "address": "0x140C25EE0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcApplicationGameModeSelectorState::RenderWarningMessages": {
+  "address": "0x1404C0220",
+  "votes": 13,
+  "upstream_surface": false
+ },
+ "cGcApplicationGameModeSelectorState::UpdateDeletionWarningDlg": {
+  "address": "0x1404BE510",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcApplicationLocalLoadState::Update": {
+  "address": "0x1404C0CD0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcApplicationSimulationState::ThreadSyncPoint": {
+  "address": "0x1404C68A0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcAsteroidManager::Prepare": {
+  "address": "0x140BBE700",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcAtlasBrokerAuth::HttpHandleAuth": {
+  "address": "0x1404DFC10",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcAtlasBrokerAuth::Update": {
+  "address": "0x1404DF200",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcAudioManager::BeginLoadingMusic": {
+  "address": "0x1404E9C80",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcAudioManager::UpdateAudioPulseState": {
+  "address": "0x1404EB8D0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcAudioPulseMusic::Construct": {
+  "address": "0x1404EF320",
+  "votes": 6,
+  "upstream_surface": false
+ },
+ "cGcAudioPulseMusic::LoadProject": {
+  "address": "0x1404F07F0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcAudioPulseMusic::Prepare": {
+  "address": "0x1404EF590",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcBaseBuildingManager::CreateSnapPointTemplate": {
+  "address": "0x140510D60",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcBaseBuildingPlayerPlacement::GetInvalidPositionDescription": {
+  "address": "0x1405148F0",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcCostManager::CostAsString": {
+  "address": "0x14066D550",
+  "votes": 11,
+  "upstream_surface": false
+ },
+ "cGcCreatureComponent::GetPlayerDamage": {
+  "address": "0x140A05690",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcCreatureComponent::RenderNGui": {
+  "address": "0x140A545B0",
+  "votes": 30,
+  "upstream_surface": false
+ },
+ "cGcCreatureGroundNavigation::RenderNGuiControl": {
+  "address": "0x140A16A50",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcCreatureGroundNavigation::RenderNGuiVis": {
+  "address": "0x140A169A0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcCreatureNavigation::RenderNGuiControl": {
+  "address": "0x140A1A3C0",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cGcCreaturePerception::RenderNGui": {
+  "address": "0x140A2AD40",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcDebugOptions::SetDefaults": {
+  "address": "0x1401BF8F0",
+  "votes": 11,
+  "upstream_surface": false
+ },
+ "cGcDiscoveryManager::GenerateDiscoveryExport": {
+  "address": "0x14052F410",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcEnvironment::Construct": {
+  "address": "0x140A93C80",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcEnvironment::PollToConstructTextures": {
+  "address": "0x140A99610",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcFadeNodeInstance::Prepare": {
+  "address": "0x140B9EF50",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcFrontendManager::Preload": {
+  "address": "0x14057BB60",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcFrontendManager::Prepare": {
+  "address": "0x14057BCB0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcFrontendManager::RenderPCOSK": {
+  "address": "0x140585880",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcFrontendManager::RenderPage": {
+  "address": "0x140581E70",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageFunctions::DoEmptySlotPopup": {
+  "address": "0x140629390",
+  "votes": 3,
+  "upstream_surface": true
+ },
+ "cGcFrontendPageFunctions::DoItemPopup": {
+  "address": "0x140621E60",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageFunctions::DoOnlineStatusBar": {
+  "address": "0x140633A90",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageFunctions::DoTechChargePopup": {
+  "address": "0x140625B40",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageInteractions::DoNewTech": {
+  "address": "0x140641180",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageInteractions::DoPatchNotes": {
+  "address": "0x140642040",
+  "votes": 6,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageInteractions::DoTeleporter": {
+  "address": "0x140642650",
+  "votes": 6,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageOptions::DoCreditsLine": {
+  "address": "0x14064B7D0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageOptions::DoRedeem": {
+  "address": "0x14064BB60",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageShop::DoAcceptButton": {
+  "address": "0x140655C70",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageShop::DoDeclineButton": {
+  "address": "0x1406567F0",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageShop::DoPurchaseButton": {
+  "address": "0x140656250",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageShop::DoShopInteraction": {
+  "address": "0x14064F580",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcFrontendPageShop::DoShopItem": {
+  "address": "0x14061DDA0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcFrontendTextInput::GetResult": {
+  "address": "0x14065CDE0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcFullscreenEffectManager::Prepare": {
+  "address": "0x1409B1B20",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcGalaxyMapUI::GenerateGalaxyName": {
+  "address": "0x140B14430",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcGalaxyMapUI::UpdateScanningState": {
+  "address": "0x140B13610",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcGameState::Prepare": {
+  "address": "0x140531DB0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcGameplayGlobals::SetDefaults": {
+  "address": "0x1401CD460",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcGenericSectionConditionBaseClaimed::GetDescription": {
+  "address": "0x1405EC8D0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcGenericSectionConditionBasePartNear::GetDescription": {
+  "address": "0x1405ECB80",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcGraphicsManager::EnqueueRenderCombinedTexture": {
+  "address": "0x1405875A0",
+  "votes": 10,
+  "upstream_surface": false
+ },
+ "cGcGraphicsManager::Prepare": {
+  "address": "0x140586640",
+  "votes": 11,
+  "upstream_surface": false
+ },
+ "cGcHUDManager::Prepare": {
+  "address": "0x14058A480",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcHUDTrackArrow::Construct": {
+  "address": "0x1405E8080",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcHologramComponent::UpdateCreatureState": {
+  "address": "0x140A7D020",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcIdleAnimList::BuildIdleList": {
+  "address": "0x140A83070",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcInteractionComponent::RenderNGui": {
+  "address": "0x1409CB680",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcIntroFeed::Load": {
+  "address": "0x14066E380",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcIntroFeed::Update": {
+  "address": "0x14066EEF0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcMarkovAssembler::Assemble": {
+  "address": "0x140998AF0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcMissileComponentData::SetDefaults": {
+  "address": "0x140288770",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcNGuiElement::EditLayout": {
+  "address": "0x14060B1D0",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cGcNGuiElement::RenderUIEditorToolbar": {
+  "address": "0x14060BDD0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcNGuiNodeInfo::Get": {
+  "address": "0x140618880",
+  "votes": 3,
+  "upstream_surface": true
+ },
+ "cGcNGuiPresetText::WriteToXMLNodeExplicit": {
+  "address": "0x1401FC640",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcNameGenerator::GenerateStructureName": {
+  "address": "0x14099C830",
+  "votes": 6,
+  "upstream_surface": false
+ },
+ "cGcNotificationSequenceCraftDevice::cGcNotificationSequenceCraftDevice": {
+  "address": "0x1405F31A0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcNotificationSequenceGoToGalacticPoint::DefaultCallback": {
+  "address": "0x1405EFD30",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcNotificationSequenceRefuelFinal::DefaultCallback": {
+  "address": "0x1405EED50",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcNotificationSequenceRepairFinal::DefaultCallback": {
+  "address": "0x1405EE720",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcNotificationSequenceScan::DefaultCallback": {
+  "address": "0x1405EF030",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcNotificationSequenceUpgradeTech::cGcNotificationSequenceUpgradeTech": {
+  "address": "0x1405FFF50",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcNotificationTextHelper::AmountMoreString": {
+  "address": "0x1405F0530",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcNotificationTextHelper::GetRequirementsString": {
+  "address": "0x1405ED560",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcPlanet::CreateResources": {
+  "address": "0x140BCC7C0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcPlanet::Generate": {
+  "address": "0x140BC5940",
+  "votes": 3,
+  "upstream_surface": true
+ },
+ "cGcPlanet::Prepare": {
+  "address": "0x140BC52E0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlanet::SetPlanetUniforms": {
+  "address": "0x140BC9560",
+  "votes": 26,
+  "upstream_surface": false
+ },
+ "cGcPlanet::UpdatePhase2": {
+  "address": "0x140BC8C30",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlanetGenerator::GenerateInfo": {
+  "address": "0x140BD7D00",
+  "votes": 22,
+  "upstream_surface": false
+ },
+ "cGcPlayer::Prepare": {
+  "address": "0x140B316F0",
+  "votes": 2,
+  "upstream_surface": true
+ },
+ "cGcPlayerDiscoveryHelper::TriggerEvent": {
+  "address": "0x140540430",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlayerExperienceDirector::UpdatePirates": {
+  "address": "0x140B4BAC0",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcPlayerHUD::LoadData": {
+  "address": "0x1405B4030",
+  "votes": 3,
+  "upstream_surface": true
+ },
+ "cGcPlayerHUD::Prepare": {
+  "address": "0x1405B5930",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcPlayerHUD::RenderBaseGridObjectInfo": {
+  "address": "0x140579130",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlayerHUD::RenderBuildInfo": {
+  "address": "0x1405C42B0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlayerInteract::Construct": {
+  "address": "0x140B72830",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlayerInteract::Render": {
+  "address": "0x140B73CC0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlayerLogBook::Clear": {
+  "address": "0x140549050",
+  "votes": 10,
+  "upstream_surface": false
+ },
+ "cGcPlayerNotifications::GetTechChargeMessage": {
+  "address": "0x1405CF750",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlayerNotifications::GetTechChargeString": {
+  "address": "0x1405CF500",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "cGcPlayerNotifications::UpdateNotifyEnergy": {
+  "address": "0x1405CB110",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPlayerStick::RenderNGui": {
+  "address": "0x140B46610",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cGcPlayerWeapon::Melee": {
+  "address": "0x140B64A00",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcPredatorHunt::Run": {
+  "address": "0x140A839A0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcQuickActionMenu::Prepare": {
+  "address": "0x140B41900",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cGcQuickActionMenu::UpdateActionString": {
+  "address": "0x140B419D0",
+  "votes": 6,
+  "upstream_surface": false
+ },
+ "cGcQuickActionMenu::UpdateControlsString": {
+  "address": "0x140B431A0",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cGcRealityManager::GetAlienRaceName": {
+  "address": "0x1409A5A80",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcRegionKnowledge::RenderNGui": {
+  "address": "0x140A4B5D0",
+  "votes": 10,
+  "upstream_surface": false
+ },
+ "cGcRobotBehaviourTree::Prepare": {
+  "address": "0x140A8C3E0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcScanEventManager::Construct": {
+  "address": "0x140ABC1F0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcScanner::UpdateRender": {
+  "address": "0x140AC8990",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcSceneManager::Construct": {
+  "address": "0x140BA16A0",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cGcSceneOptions::SetDefaults": {
+  "address": "0x1401D89C0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcShipHUD::RenderHeadsUp": {
+  "address": "0x1405D87E0",
+  "votes": 3,
+  "upstream_surface": true
+ },
+ "cGcSimulation::Construct": {
+  "address": "0x1409B06F0",
+  "votes": 2,
+  "upstream_surface": true
+ },
+ "cGcSky::SetCloudProperties": {
+  "address": "0x140AEA360",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cGcSky::SetStormState": {
+  "address": "0x140AE5F70",
+  "votes": 2,
+  "upstream_surface": true
+ },
+ "cGcSolarSystem::UpdateRender": {
+  "address": "0x140BA9650",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcSolarSystemGenerator::GenerateLocators": {
+  "address": "0x140BB7F50",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcSpaceMap::Prepare": {
+  "address": "0x1405D9EC0",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cGcSpaceshipComponent::UpdateLanding": {
+  "address": "0x140C13DC0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcSpaceshipEngineAudioController::Prepare": {
+  "address": "0x140C242F0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcSpaceshipWarp::RenderNGui": {
+  "address": "0x140C43540",
+  "votes": 9,
+  "upstream_surface": false
+ },
+ "cGcSpaceshipWeapons::Prepare": {
+  "address": "0x140C47860",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcTargetHelper::Update": {
+  "address": "0x140B75250",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcTargetScreen::RenderNGui": {
+  "address": "0x1405E11B0",
+  "votes": 11,
+  "upstream_surface": false
+ },
+ "cGcTriggerActionComponent::HandleAudioTrigger": {
+  "address": "0x1409BC710",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cGcTriggerActionComponent::RenderNGui": {
+  "address": "0x1409BA3B0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cTkAnimPoseComponent::RenderNGui": {
+  "address": "0x140CACB10",
+  "votes": 8,
+  "upstream_surface": false
+ },
+ "cTkAnimationComponent::RenderNGui": {
+  "address": "0x140CA99B0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cTkAudioManager::GetLanguageFolder": {
+  "address": "0x140C54D70",
+  "votes": 13,
+  "upstream_surface": false
+ },
+ "cTkDbghelpLib::Bind": {
+  "address": "0x140D4B720",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cTkFontLoaderText::InterpretChar": {
+  "address": "0x140C6BB40",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cTkFontLoaderText::InterpretCommon": {
+  "address": "0x140C6C370",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "cTkFontLoaderText::InterpretKerning": {
+  "address": "0x140C6B670",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cTkInstanceWindComponent::RenderNGui": {
+  "address": "0x140CBA4C0",
+  "votes": 18,
+  "upstream_surface": false
+ },
+ "cTkLanguageManagerBase::Construct": {
+  "address": "0x140D55C40",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cTkLanguageManagerBase::Load": {
+  "address": "0x140D56850",
+  "votes": 15,
+  "upstream_surface": true
+ },
+ "cTkModelDressroom::SetDressedParamStr": {
+  "address": "0x140C84DD0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cTkModelResourceRenderer::Construct": {
+  "address": "0x140C85A50",
+  "votes": 9,
+  "upstream_surface": false
+ },
+ "cTkNGuiEditor::OpenFileBrowser": {
+  "address": "0x140C761E0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cTkNGuiStyles::EditGraphicStyle": {
+  "address": "0x140C7CAA0",
+  "votes": 8,
+  "upstream_surface": false
+ },
+ "cTkNGuiStyles::EditGraphicStyleData": {
+  "address": "0x140C71320",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "cTkPhysicsComponent::RenderNGui": {
+  "address": "0x140CC7F80",
+  "votes": 17,
+  "upstream_surface": false
+ },
+ "cTkSystem::ConstructVideo": {
+  "address": "0x140D3CE70",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "cTkSystem::GenerateSystemSeed": {
+  "address": "0x140D3E9C0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "cTkUserServiceNull::CreateUserIdentity": {
+  "address": "0x140D3F780",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "detectXmlPackfile2014": {
+  "address": "0x141064570",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkBlockStreamAllocator::exportStatisticsToMonitorStream": {
+  "address": "0x14130FA40",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkDebugCommandProcessor::print": {
+  "address": "0x14131D430",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkDefaultError::getMessageTypeString": {
+  "address": "0x141005080",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkHardwareInfo::hkHardwareInfo": {
+  "address": "0x1410170D0",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "hkMemoryResourceContainer::parentTo": {
+  "address": "0x141037060",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkMemoryResourceHandle::getExternalLinks": {
+  "address": "0x141036410",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkSerialize::TagfileReadFormat::Impl::unloadCompendiumReference": {
+  "address": "0x14100B820",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkSkinnedMeshShape::dbgOut": {
+  "address": "0x1410B9050",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkStackTracerImpl::ensureInitialized": {
+  "address": "0x14104D020",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "hkUintVle::write": {
+  "address": "0x14106CCE0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hkgpConvexHull::expandByPlanarMargin": {
+  "address": "0x1412C2930",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpApiCommandProcessor::print": {
+  "address": "0x14113C0F0",
+  "votes": 70,
+  "upstream_surface": false
+ },
+ "hknpBuildConstraintJacobiansTask::process": {
+  "address": "0x141160100",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpCharacterProxy::integrateWithCollectors": {
+  "address": "0x141109EF0",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "hknpCollisionQueryDispatcher::initGetClosestPointsTable": {
+  "address": "0x1410EE030",
+  "votes": 17,
+  "upstream_surface": false
+ },
+ "hknpCompositeCompositeTimers::exportTimers": {
+  "address": "0x141155CC0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpCompressedMeshShapeFunctions::getLeafShapes": {
+  "address": "0x14116A650",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpContactImpulseEvent::printCommand": {
+  "address": "0x141154BA0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpCvxCompositeKeysTimers::exportTimers": {
+  "address": "0x141155520",
+  "votes": 5,
+  "upstream_surface": false
+ },
+ "hknpCvxCvxDetectorTimers::exportTimers": {
+  "address": "0x141155110",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpDebrisDetectorTimers::exportTimers": {
+  "address": "0x141155850",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpLinearIntegrationClippedEvent::printCommand": {
+  "address": "0x141154EC0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpManifoldEvent::printCommand": {
+  "address": "0x1410F4C50",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpMaterialLibrary::hknpMaterialLibrary": {
+  "address": "0x1410E8470",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpMultithreadedSimulation::exportStatisticsToMonitorStream": {
+  "address": "0x141143190",
+  "votes": 9,
+  "upstream_surface": false
+ },
+ "hknpPrepareConstraintsTask::process": {
+  "address": "0x14115FDE0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpPrepareNarrowPhasePairsTask::processImpl": {
+  "address": "0x14115F250",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "hknpPrepareNarrowPhaseTask::process": {
+  "address": "0x14115ECB0",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpPrepareSolverData::initPreSolve": {
+  "address": "0x141160630",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpProcessNarrowPhasePairsTask::process": {
+  "address": "0x141162AE0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpSingleThreadedSimulation::solve": {
+  "address": "0x141140860",
+  "votes": 6,
+  "upstream_surface": false
+ },
+ "hknpSolverUtil::solveSt": {
+  "address": "0x14115DD30",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "hknpTriggerEvent::printCommand": {
+  "address": "0x1410F4D80",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpWorld::addBodies": {
+  "address": "0x1410F9480",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpWorld::destroyBodies": {
+  "address": "0x1410FA370",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpWorld::generateCollideTasks": {
+  "address": "0x1410F8840",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpWorld::removeBodies": {
+  "address": "0x1410F9E90",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "hknpWorldEx::generateSolveTasks": {
+  "address": "0x1410FF290",
+  "votes": 4,
+  "upstream_surface": false
+ },
+ "hknpWorldEx::postCollide": {
+  "address": "0x1410FE510",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpWorldEx::postSolve": {
+  "address": "0x1410FEC70",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "hknpWorldEx::preCollide": {
+  "address": "0x1410FDE70",
+  "votes": 7,
+  "upstream_surface": false
+ },
+ "hknpWorldEx::preSolve": {
+  "address": "0x1410FE820",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "loadLibraries": {
+  "address": "0x140E24D40",
+  "votes": 2,
+  "upstream_surface": false
+ },
+ "ngx::IsCryptSvcPausedOrRunning": {
+  "address": "0x1400353E0",
+  "votes": 3,
+  "upstream_surface": false
+ },
+ "std::_Func_impl_no_alloc<`cGcCreatureLegIKComponent::Prepare'::`2'::<lambda_1>,bool,TkHandle>::_Do_call": {
+  "address": "0x140A570C0",
+  "votes": 2,
+  "upstream_surface": false
+ }
+}

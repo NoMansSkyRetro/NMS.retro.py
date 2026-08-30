@@ -42,14 +42,15 @@
       "1.38": "0x1408F0730"
     },
     "cGcShipHUD::RenderHeadsUp": {
-      "1.13": "0x1405D5EB0",
-      "1.24": "0x1407869B0",
-      "1.38": "0x1408F5B10"
-    },
-    "cGcShipHUD::UpdateSelectedPlanetPanel": {
       "1.13": "0x1405D87E0",
       "1.24": "0x1407894A0",
       "1.38": "0x1408F8E90"
+    },
+    "cGcShipHUD::RenderFlightHUD": {
+      "_comment": "Descriptive name, not from the PDB: the per-frame speed/jump/shield/target HUD render, split from RenderHeadsUp in legacy builds.",
+      "1.13": "0x1405D5EB0",
+      "1.24": "0x1407869B0",
+      "1.38": "0x1408F5B10"
     },
     "cGcAISpaceshipManager::Prepare": {
       "1.13": "0x140C25EE0",
@@ -174,6 +175,82 @@
     "cGcDiscoveryPageData::UpdateWaypointStates": {
       "1.24": "0x14074DFC0",
       "1.38": "0x140830F70"
+    },
+    "cTkFileSystem::Data::Data": {
+      "1.13": "0x140D36250",
+      "1.24": "0x140EF3D40",
+      "1.38": "0x1410A12E0"
+    },
+    "cGcGalaxyMap::Data::Update": {
+      "1.13": "0x140AFBA90",
+      "1.24": "0x140C73560",
+      "1.38": "0x140E06DB0"
+    },
+    "cEgCodeResource::Load": {
+      "1.13": "0x140DD0510",
+      "1.24": "0x140F9D530",
+      "1.38": "0x141159170"
+    },
+    "cEgMaterialResource::ParseNode": {
+      "1.13": "0x140E06020",
+      "1.24": "0x140FD5260",
+      "1.38": "0x141191A50"
+    },
+    "cEgSceneGraphResource::ParseData": {
+      "1.13": "0x140DDA9D0",
+      "1.24": "0x140FA7C10",
+      "1.38": "0x141163850"
+    },
+    "cEgTextureResource::LoadFromDds": {
+      "1.13": "0x140DAFD60",
+      "1.24": "0x140F758D0",
+      "1.38": "0x14112D8F0"
+    },
+    "cGcFrontendPageFunctions::DoEmptySlotPopup": {
+      "1.13": "0x140629390",
+      "1.24": "0x14070AC70",
+      "1.38": "0x1408A8FC0"
+    },
+    "cGcNGuiNodeInfo::Get": {
+      "1.13": "0x140618880",
+      "1.24": "0x1407D0D00",
+      "1.38": "0x140937FC0"
+    },
+    "cGcPlayer::Prepare": {
+      "1.13": "0x140B316F0",
+      "1.24": "0x140CABD80",
+      "1.38": "0x140E57460"
+    },
+    "cGcPlayerHUD::LoadData": {
+      "1.13": "0x1405B4030",
+      "1.24": "0x140761C60",
+      "1.38": "0x1408D0810"
+    },
+    "cGcSky::SetStormState": {
+      "1.13": "0x140AE5F70",
+      "1.24": "0x140C5BAE0",
+      "1.38": "0x140DEF190"
+    },
+    "cTkLanguageManagerBase::Load": {
+      "1.13": "0x140D56850",
+      "1.24": "0x140F196F0"
+    },
+    "cGcFrontendPageClaimBase::DoBaseClaimOptions": {
+      "1.24": "0x14073F460",
+      "1.38": "0x140832A60"
+    },
+    "cGcQuickActionMenu::TriggerAction": {
+      "1.24": "0x140CBEDF0",
+      "1.38": "0x140E98880"
+    },
+    "cGcBinoculars::PopulateDiscoveryInfo": {
+      "1.38": "0x140DD3780"
+    },
+    "cGcFrontendPagePortalRunes::DoInteraction": {
+      "1.38": "0x140873740"
+    },
+    "cGcRealityManager::Construct": {
+      "1.38": "0x140C81640"
     }
   },
   "globals": {

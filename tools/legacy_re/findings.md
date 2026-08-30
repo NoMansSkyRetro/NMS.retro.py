@@ -81,11 +81,13 @@ real name.
 1.24/1.38; grep HEADSUP, then take the helper's one caller). The two large sibling
 functions in the same compilation unit are identified by their GUI element IDs:
 
-- **RenderHeadsUp** references `SPEED`, `SPEEDBAR`, `JUMPBAR`, `SHIELD`,
-  `TARGET_NAME`, `MINIJUMP`, ... (the per-frame heads-up render; Newton's HUD hook).
-- **UpdateSelectedPlanetPanel** (descriptive name, not from any PDB) references
-  `MOON_TITLE`, `MOON_DESC`, `%PLANET%`, `SHIP_SCAN_PLANET` — the selected-planet
-  info panel.
+- **RenderHeadsUp** references `MOON_TITLE`, `MOON_DESC`, `%PLANET%`,
+  `SHIP_SCAN_PLANET` — confirmed by string-fingerprint match against the 4.13 PDB
+  (propagate_symbols.py, 3 distinctive shared strings). An earlier manual guess had
+  this the other way around.
+- **RenderFlightHUD** (descriptive name, not from any PDB) references `SPEED`,
+  `SPEEDBAR`, `JUMPBAR`, `SHIELD`, `TARGET_NAME`, `MINIJUMP`, ... — the per-frame
+  speed/target flight display, a sibling with no matched modern name.
 
 ## Struct layout so far
 

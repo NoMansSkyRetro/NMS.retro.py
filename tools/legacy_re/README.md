@@ -36,6 +36,19 @@ database was rebuilt from scratch.
     units cluster, so neighbours of a known function are often related).
   - `vtable <build> <address> [n]` — read n pointer slots at a data address and name
     the functions they point to.
+- `find_boot_set.py` — automates the boot-set identification chain (FSM cluster,
+  application globals, main loop) for one build and merges into offsets.json.
+- `harvest_name_literals.py` — maps profiler string literals (functions that
+  `strncpy` their own name) to their containing functions; ~24 exact symbols per
+  build.
+- `propagate_symbols.py` — the mass mapper: matches upstream NMS.py's 4.13 hook
+  surface (`upstream_data_413.json`, from upstream git history) to legacy functions
+  by fingerprinting distinctive string references and TkID imm64 constants on both
+  sides. Requires the 4.13 exe + PDB dump (paths at the top of the script).
+- `try_modern_signatures.py` — evaluates upstream's modern byte signatures against a
+  legacy exe. Verdict: ~4% "unique" hits, and cross-checking against known ground
+  truth shows even those are mostly false positives (e.g. it places cTkFSM::Update
+  at the wrong address). Kept as documentation of why we don't signature-match.
 - `verify_alignment.py` — proves a decomp DB and an exe are the same binary (padding
   bytes before every recorded function start). Run this before trusting any database.
 - `verify_offsets.py` — cross-checks every address in `nmspy/data/offsets.json`
