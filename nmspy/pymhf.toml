@@ -1,7 +1,8 @@
 [pymhf]
+# No steam_gameid: Steam only serves the modern build. Point pyMHF at a legacy
+# install's NMS.exe (E:\...\no_mans_sky_v<ver>\Binaries\NMS.exe) when configuring.
 exe = "NMS.exe"
 internal_mod_dir = "{CURR_DIR}/_internal_mods"
-steam_gameid = 275850
 start_paused = true
 default_mod_save_dir = "{EXE_DIR}"
 

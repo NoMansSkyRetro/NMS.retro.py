@@ -1,41 +1,11 @@
-from typing import Optional
-
 import nmspy.data.types as nms
 
 
 class GameData:
     GcApplication: nms.cGcApplication = None  # type: ignore
 
-    @property
-    def environment(self) -> Optional[nms.cGcEnvironment]:
-        if (sim := self.simulation) is not None:
-            return sim.mEnvironment
-
-    @property
-    def player_environment(self) -> Optional[nms.cGcPlayerEnvironment]:
-        if (env := self.environment) is not None:
-            return env.mPlayerEnvironment
-
-    @property
-    def game_state(self) -> Optional[nms.cGcGameState]:
-        if self.GcApplication is not None:
-            return self.GcApplication.mpData.contents.mGameState
-
-    @property
-    def simulation(self) -> Optional[nms.cGcSimulation]:
-        if self.GcApplication is not None:
-            if self.GcApplication.mpData:
-                return self.GcApplication.mpData.contents.mSimulation
-
-    @property
-    def player(self) -> Optional[nms.cGcPlayer]:
-        if (sim := self.simulation) is not None:
-            return sim.mPlayer
-
-    @property
-    def player_state(self) -> Optional[nms.cGcPlayerState]:
-        if (game_state := self.game_state) is not None:
-            return game_state.mPlayerState
+    # Convenience accessors (player, simulation, game state, ...) return once their
+    # legacy struct offsets are mapped; see PLAN.md phase 3.
 
 
 gameData = GameData()
