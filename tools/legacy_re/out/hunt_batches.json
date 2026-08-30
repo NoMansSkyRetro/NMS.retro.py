@@ -126,12 +126,6 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cEgTextureResource::LoadFromDds": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "0x140DAFD60",
-   "1.24": "0x140F758D0",
-   "1.38": "0x14112D8F0"
-  },
   "cTkGraphicsAPI::CreateIndexBuffer": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
@@ -161,21 +155,9 @@
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
-  },
-  "cTkTextureBase::CalculateTextureSize": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
   }
  },
  "engine_scene": {
-  "Engine::AddNodes": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
   "Engine::AddResource": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
@@ -184,9 +166,9 @@
   },
   "Engine::GetNodeName": {
    "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.13": "0x140DA7400",
+   "1.24": "0x140F71620",
+   "1.38": "0x141129110"
   },
   "Engine::GetNodeNumChildren": {
    "1.09.1": "NOT_YET_FOUND",
@@ -200,12 +182,6 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "Engine::GetNodeType": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
   "Engine::GetRenderBufferTexture": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
@@ -213,18 +189,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "Engine::GetResourceHandleForNode": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "Engine::GetTexture": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "Engine::SetMaterialSampler": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -251,12 +215,6 @@
  },
  "filesystem_meta": {
   "GenerateModdedFilepath": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "MiniDumpFunction": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -301,8 +259,8 @@
   "cTkFileSystem::CreatePath": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.24": "0x140EF53C0",
+   "1.38": "0x1410A2950"
   },
   "cTkFileSystem::Data::MountAllArchives": {
    "1.09.1": "NOT_YET_FOUND",
@@ -313,10 +271,10 @@
   "cTkFileSystem::DoesFileExist": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.24": "0x140EF5370",
+   "1.38": "0x1410A2900"
   },
-  "cTkFileSystem::EnumerateDirectory": {
+  "cTkFileSystem::GetInstance": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -335,18 +293,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cTkFileSystem::LoadModSubdirectory": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cTkFileSystem::Open": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cTkFileSystem::Write": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -390,49 +336,7 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcGalaxyAttributeGenerator::ClassifyStarSystem": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcGalaxyAttributeGenerator::ClassifyVoxel": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcGalaxyAttributesAtAddress::Classify": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcGalaxyStarAttributesData::SetDefaults": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
   "cGcGalaxyVoxelAttributesData::SetDefaults": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcGalaxyVoxelGenerator::Populate": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcNameGenerator::GeneratePlanetName": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -445,18 +349,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cGcSolarSystem::OnLeavePlanetOrbit": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcSolarSystem::Update": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcSolarSystem::cGcSolarSystem": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -502,9 +394,9 @@
   },
   "cGcApplicationLocalLoadState::GetRespawnReason": {
    "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.13": "0x1404C2790",
+   "1.24": "0x14057CB00",
+   "1.38": "0x140692D20"
   },
   "cGcGameState::ComputeWarpCapability": {
    "1.09.1": "NOT_YET_FOUND",
@@ -531,12 +423,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cGcRealityManager::GenerateProceduralProduct": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcRealityManager::GenerateProceduralTechnology": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -578,12 +464,6 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cTkLanguageManagerBase::Load": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "0x140D56850",
-   "1.24": "0x140F196F0",
-   "1.38": "NOT_YET_FOUND"
-  },
   "cTkStopwatch::GetDurationInSeconds": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
@@ -591,6 +471,42 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cTkSystem::IntegratedGPUActive": {
+   "1.09.1": "NOT_YET_FOUND",
+   "1.13": "NOT_YET_FOUND",
+   "1.24": "NOT_YET_FOUND",
+   "1.38": "NOT_YET_FOUND"
+  },
+  "nvgArc": {
+   "1.09.1": "NOT_YET_FOUND",
+   "1.13": "NOT_YET_FOUND",
+   "1.24": "NOT_YET_FOUND",
+   "1.38": "NOT_YET_FOUND"
+  },
+  "nvgEllipse": {
+   "1.09.1": "NOT_YET_FOUND",
+   "1.13": "NOT_YET_FOUND",
+   "1.24": "NOT_YET_FOUND",
+   "1.38": "NOT_YET_FOUND"
+  },
+  "nvgFill": {
+   "1.09.1": "NOT_YET_FOUND",
+   "1.13": "NOT_YET_FOUND",
+   "1.24": "NOT_YET_FOUND",
+   "1.38": "NOT_YET_FOUND"
+  },
+  "nvgRect": {
+   "1.09.1": "NOT_YET_FOUND",
+   "1.13": "NOT_YET_FOUND",
+   "1.24": "NOT_YET_FOUND",
+   "1.38": "NOT_YET_FOUND"
+  },
+  "nvgText": {
+   "1.09.1": "NOT_YET_FOUND",
+   "1.13": "NOT_YET_FOUND",
+   "1.24": "NOT_YET_FOUND",
+   "1.38": "NOT_YET_FOUND"
+  },
+  "nvgTextBox": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -629,12 +545,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cGcBuilding::DestroyIntersectingVolcanoes": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcBuilding::Visited": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -687,8 +597,8 @@
   "cGcScanEvent::CalculateMarkerPosition": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.24": "0x140C358E0",
+   "1.38": "0x140DE1B60"
   },
   "cGcScanEvent::Construct": {
    "1.09.1": "NOT_YET_FOUND",
@@ -699,14 +609,14 @@
   "cGcScanEvent::Update": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.24": "0x140C33FA0",
+   "1.38": "0x140DDF9C0"
   },
   "cGcScanEvent::UpdateInteraction": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.38": "0x140DE0DC0"
   },
   "cGcScanEvent::UpdateSpaceStationLocation": {
    "1.09.1": "NOT_YET_FOUND",
@@ -753,8 +663,8 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cTkDynamicGravityControl::cTkDynamicGravityControl": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
+   "1.09.1": "0x1403EF3F0",
+   "1.13": "0x1404CFF10",
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
@@ -780,15 +690,9 @@
   },
   "cGcEnvironment::UpdateRender": {
    "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcPlanet::Construct": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.13": "0x140A9A770",
+   "1.24": "0x140C0D1C0",
+   "1.38": "0x140D8F760"
   },
   "cGcPlanet::UpdateClouds": {
    "1.09.1": "NOT_YET_FOUND",
@@ -802,7 +706,7 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cGcPlanetGenerationInputData::SetDefaults": {
+  "cGcPlanet::UpdateWeather": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -812,25 +716,13 @@
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcPlanetGenerator::GenerateCreatureInfo": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcPlanetGenerator::GenerateCreatureRoles": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.38": "0x140EE0C00"
   },
   "cGcPlanetGenerator::GenerateCreatureSpawnData": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.38": "0x140EE0970"
   },
   "cGcPlanetGenerator::GenerateQueryInfo": {
    "1.09.1": "NOT_YET_FOUND",
@@ -845,12 +737,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cGcSky::SetSunAngle": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcSky::Update": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -910,7 +796,7 @@
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.38": "0x140834900"
   },
   "cGcFrontendPageDiscovery::GetDiscoveryHintString": {
    "1.09.1": "NOT_YET_FOUND",
@@ -919,12 +805,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cGcFrontendPageFunctions::SetEmptySlotBackground": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcFrontendPageFunctions::SetPopupBasics": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -940,19 +820,7 @@
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcGalaxyMap::Data::RenderNVG": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcGalaxyMapUI::SolarInfoPanel::UpdatePanelUI": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.38": "0x140E0E6D0"
   },
   "cGcOptionsPageUI::BeginList": {
    "1.09.1": "NOT_YET_FOUND",
@@ -1052,12 +920,6 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cGcNGuiLayer::FindElementRecursive": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
   "cGcNGuiLayer::FindTextRecursive": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
@@ -1069,18 +931,6 @@
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
-  },
-  "cGcNGuiLayer::cGcNGuiLayer": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcNGuiText::EditElement": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "0x140923A30"
   },
   "cGcPositionMarker::Render": {
    "1.09.1": "NOT_YET_FOUND",
@@ -1254,25 +1104,7 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cGcPlayerState::AwardUnits": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
   "cGcPlayerState::GetStatValue": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcPlayerState::LoadFromData": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcPlayerState::SaveToData": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
@@ -1328,35 +1160,17 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cGcPlayerEnvironment::Update": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcPlayerHUD::RenderCrosshair": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
   "cGcPlayerHUD::RenderIndicatorPanel": {
    "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcPlayerHUD::RenderWeaponPanel": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.13": "0x1405BE0A0",
+   "1.24": "0x14076C980",
+   "1.38": "0x1408DB110"
   },
   "cGcPlayerHUD::Update": {
    "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
+   "1.13": "0x1409C9E00",
+   "1.24": "0x140B38490",
+   "1.38": "0x140CA93C0"
   },
   "cGcPlayerHUD::cGcPlayerHUD": {
    "1.09.1": "NOT_YET_FOUND",
@@ -1438,12 +1252,6 @@
    "1.24": "NOT_YET_FOUND",
    "1.38": "NOT_YET_FOUND"
   },
-  "cGcShipHUD::ReadPlanetStats": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
   "cGcShipHUD::cGcShipHUD": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
@@ -1457,12 +1265,6 @@
    "1.38": "NOT_YET_FOUND"
   },
   "cGcSpaceshipComponent::GetVelocity": {
-   "1.09.1": "NOT_YET_FOUND",
-   "1.13": "NOT_YET_FOUND",
-   "1.24": "NOT_YET_FOUND",
-   "1.38": "NOT_YET_FOUND"
-  },
-  "cGcSpaceshipComponent::UpdateControlled": {
    "1.09.1": "NOT_YET_FOUND",
    "1.13": "NOT_YET_FOUND",
    "1.24": "NOT_YET_FOUND",
