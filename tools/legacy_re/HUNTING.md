@@ -1,0 +1,68 @@
+# Finder hunt protocol
+
+How to locate NOT_YET_FOUND functions across the four legacy builds and record the
+result reproducibly. Read this fully before writing a finder.
+
+## What you produce
+
+For your assigned batch, one script: `tools/legacy_re/finders/find_<batch>.py`.
+Running it (from `tools/legacy_re/`, `python finders/find_<batch>.py`) prints a single
+JSON object to stdout and nothing else on stdout (log to stderr):
+
+```json
+{"functions": {"cGcX::Y": {"1.13": "0x1401234A0", "1.24": "0x140...", ...}},
+ "unresolved": {"cGcX::Z": "one line: what was tried and why it failed"}}
+```
+
+Only include a build slot when you are confident. `merge_finder_results.py` re-runs
+your script and validates every address against the decompilation DB, so a wrong
+guess is caught, but do not pad with guesses: an honest `unresolved` entry is better.
+Do NOT edit `nmspy/data/offsets.json` yourself; the merge tool owns it.
+
+The script must be deterministic and self-contained (no network, no manual steps) so
+anyone can reproduce your addresses by re-running it.
+
+## Tools available (all in tools/legacy_re/)
+
+- `common.Binary(build)` — `.data` (exe bytes), `.db` (Ghidra SQLite, read-only),
+  `.function_at(va)`, `.functions_matching(like, limit)`, `.va_to_file_offset(va)`,
+  `.file_offset_to_va(off)`, `.read_ptr(va)`, `.sections`.
+- `out/target_hints.json` — per target: modern signature, referenced `strings`,
+  `imm64` constants, `modern_callees`/`modern_callers`, source file, length.
+- `out/propagated_<build>.json` — 1,400-2,000 already-matched 4.13->legacy function
+  pairs per build. If a target's modern callee/caller is in here, you can locate your
+  target relative to it.
+- `explore.py` (strings/grep/dump/range/vtable/dumpstr) for interactive checks.
+- `propagate_symbols.py` internals (`load_side_413`, `Side`, `match_sides`) if you
+  want to run a focused fingerprint/call-graph match programmatically.
+
+## Method, in order of reliability
+
+1. **Distinctive strings.** If a target references a string (see hints), find that
+   string in the legacy exe, then the function referencing it. `explore.py strings
+   <build> <text>` does both. A string referenced by exactly one function is a lock.
+2. **imm64 TkID constants.** These FNV hashes are identical across versions. Scan the
+   legacy `.text` for the same 8-byte immediate (see `imm64_refs` in
+   propagate_symbols) and find the containing function.
+3. **Anchored call graph.** If a `modern_callee`/`modern_caller` is already mapped
+   (check offsets.json and propagated_<build>.json), the target sits at a known
+   position relative to it: the unique caller of X, the function whose N-th call is X,
+   a sibling in the same compilation unit (adjacent addresses).
+4. **Cross-version transfer.** Once you locate a function in ONE build (usually 1.38,
+   closest to modern), the other builds are months apart: find it there by the same
+   strings, or by its position among already-matched neighbours. Locate once, port
+   sideways. This is the "share signatures between versions" win; exploit it.
+5. **Profiler name literal.** Some functions strncpy their own name; grep the legacy
+   decomp for the `"cGcX::Y"` literal (harvest_name_literals already swept exact
+   single-owner cases, but overloaded/multi-owner ones may still be resolvable by
+   hand).
+
+## Rules
+
+- Verify every address is a function START: `Binary(build).function_at(va)` must
+  return a row. The merge tool enforces this; check it yourself first.
+- Never overwrite an existing `0x...` in offsets.json. If your evidence disagrees with
+  a curated address, put it in `unresolved` with the discrepancy, do not force it.
+- Prefer few correct over many shaky. Two independent signals (string + call site,
+  or same across two builds) before you commit a hard-to-verify one.
+- Log reasoning to stderr so the derivation is auditable; keep stdout pure JSON.
