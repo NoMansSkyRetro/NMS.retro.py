@@ -130,6 +130,44 @@ version Steam currently has installed. The legacy copies live in standalone fold
 path in the pyMHF config, one config per installed version. `exe = "NMS.exe"` name
 matching is unchanged.
 
+## Target mod: NMS-Newton
+
+The concrete goal driving coverage is running
+[NMS-Newton](https://github.com/monkeyman192/NMS-Newton) (moving planets) on all four
+builds. Its nmspy API surface defines the Phase 2/3 work list:
+
+Functions to locate per build:
+
+| symbol | notes |
+|--------|-------|
+| cGcApplication::Update | done (main loop) |
+| cTkStopwatch::GetDurationInSeconds | or substitute: cTkFSM::Update already carries the frame dt |
+| cGcPlanet::SetupRegionMap | planet init; caches planet + node handle |
+| cGcSolarSystem::OnEnterPlanetOrbit / OnLeavePlanetOrbit | orbit state tracking |
+| cGcShipHUD::RenderHeadsUp | orbital-period HUD text |
+| cGcNGuiLayer::FindTextRecursive | called directly to find the HUD text element |
+| cGcMarkerPoint::IsEqual | marker stability while planets move |
+| cTkDynamicGravityControl::Construct (or ctor/GetGravity) | gravity singleton capture |
+| cGcApplicationLocalLoadState::GetRespawnReason | "loaded enough" signal |
+| cGcGameState::LoadFromPersistentStorage / OnSaveProgressCompleted | save integration |
+| cGcPlayerBasePersistentBuffer::LoadGalacticAddress | base-building objects; 1.13+ only (1.09.1 predates bases) |
+| Engine::ShiftAllTransformsForNode | called to move a planet's scene node |
+| cGcRewardManager::GiveGenericReward | interactions.py toggle |
+| cGcInteractionComponent::GetPuzzle | interactions.py station-core dialogue |
+
+Structs/fields to map: cGcPlanet (mPosition, miPlanetIndex, mNode, mRegionMap,
+mpEnvProperties, generation seed, discovery UA), cGcSolarSystem (maPlanets, system
+data PlanetOrbits), cGcApplication (mbPaused, muPlayerSaveSlot, data chain to
+simulation / game state / player environment), cGcPlayerEnvironment
+(miNearestPlanetIndex, mfDistanceFromPlanet), cTkDynamicGravityControl
+(maGravityPoints), cGcShipHUD (mHeadsUpGUI.mRoot, miSelectedPlanet,
+mbSelectedPlanetPanelVisible), cGcNGuiText (mpTextData.Text), cGcMarkerPoint
+(mCustomName), basic Vector3f/TkHandle (already build-independent).
+
+Newton itself will need a small retro fork on top of this (per-build guards for the
+BBO path, dt sourced from cTkFSM::Update, legacy save-slot handling), but the aim is
+to keep its core untouched.
+
 ## Phases
 
 1. **Plumbing.** `versions.py` (timestamp detection), `offset_for()` helper,
