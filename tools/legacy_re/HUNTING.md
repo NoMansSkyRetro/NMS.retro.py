@@ -22,6 +22,45 @@ Do NOT edit `nmspy/data/offsets.json` yourself; the merge tool owns it.
 The script must be deterministic and self-contained (no network, no manual steps) so
 anyone can reproduce your addresses by re-running it.
 
+## Fast path: handles.py (use this first)
+
+`handles.py` precomputes and caches (per build) the string-xref index, imm64 index,
+and call graph, so you do not rebuild them. First construction builds the caches
+(~1 min each, once per machine); after that `Xverse()` loads in seconds.
+
+```python
+from handles import Xverse
+xv = Xverse()                          # all four builds, cached
+
+xv.by_string("CRUISE: Max Boost")      # {build: [addrs]} referencing it (EXACT, trust it)
+xv.by_string("PLANET", exact=False)    # substring search
+xv.port("1.38", 0x1408F5620)           # {build: addr} same function everywhere (see below)
+xv.port_candidates("1.38", 0x140...)   # {build: [(addr, score, why)]} ranked leads to verify
+xv.callers("1.13", 0x140D4B460)        # exact
+xv.callees("1.13", 0x140D4B460)        # exact
+xv.neighbours("1.13", 0x140D4B460)     # address-adjacent funcs (same compilation unit)
+xv.strings_of("1.13", 0x140D4B460)     # strings this function references
+xv.name("1.38", 0x1408F5620)           # Ghidra name + size
+xv.find_by_profiler_name("cGcGameState::LoadFromPersistentStorage")  # {build: [addrs]}
+```
+
+**Workflow that works:** locate a function in ONE build (usually 1.38, closest to the
+4.13 PDB) by a distinctive string or profiler name, then `xv.port("1.38", va)` to get
+the other three for free.
+
+**Trusting the results:**
+- `by_string`, `callers`, `callees`, `neighbours`, `strings_of`, `name` are EXACT
+  (read straight from the indices) — trust them.
+- `port` is high precision by design (it returns a build only when the string winner
+  and call-graph winner agree, or one is overwhelming) but abstains on ~half of
+  cases; **it is unreliable for generic library functions** (allocators, `GetInstance`,
+  `Malloc`/`Free`, thin IO wrappers), so always decompile-verify a ported allocator/
+  singleton before committing it.
+- `port_candidates` never abstains; treat its output as leads to confirm, not answers.
+
+Still verify each committed address with `xv.name(build, va)` (must be a real function,
+not `None`) — the merge tool enforces this too.
+
 ## Tools available (all in tools/legacy_re/)
 
 - `common.Binary(build)` — `.data` (exe bytes), `.db` (Ghidra SQLite, read-only),
