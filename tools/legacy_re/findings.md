@@ -1,9 +1,12 @@
 # Identification log
 
 How each entry in `nmspy/data/offsets.json` was found. Commands are `explore.py`
-subcommands; all addresses assume the 0x140000000 preferred base. 1.09.1 columns stay
-null until its Steam decompilation database finishes building (the earlier "1.09.1"
-analysis was of the GOG binary, whose addresses do not transfer).
+subcommands; all addresses assume the 0x140000000 preferred base. The original
+"1.09.1" analysis turned out to be of the GOG binary (whose addresses do not
+transfer); the Steam 1.09.1 build was re-analyzed from scratch, after which
+`find_boot_set.py`, `harvest_name_literals.py` and `propagate_symbols.py` filled its
+column (boot set: cGcApplication global 0x14160BA50, Update 0x1403DBBC0, cTkFSM
+cluster at 0x140BC30D0..0x140BC32F0).
 
 ## The application FSM cluster
 

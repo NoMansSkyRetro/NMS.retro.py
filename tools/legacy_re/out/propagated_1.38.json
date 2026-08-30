@@ -3,6 +3,10 @@
   "address": "0x14066AAC0",
   "upstream_surface": false
  },
+ "??$?AV?$cTkLinearHashTable@_KU?$TkStrongType@HUTkResHandleID@TkStrongTypeIDs@@@@$05$0A@V?$cTkLinearHashTableHash@_K@@@@@?$Table@$0A@$0FA@HV?$cTkLinearHashTable@_KU?$TkStrongType@HUTkResHandleID@TkStrongTypeIDs@@@@$05$0A@V?$cTkLinearHashTableHash@_K@@@@U?$hash@HX@robin_hood@@U?$equal_to@H@std@@$05@detail@robin_hood@@QEAAAEAV?$cTkLinearHashTable@_KU?$TkStrongType@HUTkResHandleID@TkStrongTypeIDs@@@@$05$0A@V?$cTkLinearHashTableHash@_K@@@@$$QEAH@Z": {
+  "address": "0x14100FF60",
+  "upstream_surface": false
+ },
  "??$DoComboBox@E@cTkNGuiEditor@@QEAAXPEBDPEBVcTkMetaDataEnumLookup@@HPEAEM@Z": {
   "address": "0x1410003B0",
   "upstream_surface": false
@@ -211,10 +215,6 @@
   "address": "0x140DA13F0",
   "upstream_surface": false
  },
- "??0?$cTkTypedSmartResHandle@VcEgMaterialResource@@@@QEAA@PEBVcEgMaterialResource@@@Z": {
-  "address": "0x1410FCEF0",
-  "upstream_surface": false
- },
  "??0Data@cTkFileSystem@@QEAA@_N0@Z": {
   "address": "0x1410A12E0",
   "upstream_surface": true
@@ -233,10 +233,6 @@
  },
  "??2@YAPEAX_K@Z": {
   "address": "0x141120D50",
-  "upstream_surface": false
- },
- "??2@YAPEAX_KPEBDH1@Z": {
-  "address": "0x1402478A0",
   "upstream_surface": false
  },
  "??3@YAXPEAX_K@Z": {
@@ -337,10 +333,6 @@
  },
  "?GetIDFromString@SoundEngine@AK@@YAIPEBD@Z": {
   "address": "0x14132FA84",
-  "upstream_surface": false
- },
- "?GetNullSelectionResDescriptor@@YAAEBU?$cTkSharedPtr@$$CBVcTkResourceDescriptor@@@@XZ": {
-  "address": "0x1410E6A70",
   "upstream_surface": false
  },
  "?GetOwnershipDescription@NameAndOwnerResult@DiscoveryResolver@@QEBAXAEAV?$cTkFixedString@$0CAA@D@@_N11@Z": {
@@ -815,10 +807,6 @@
   "address": "0x1411269F0",
   "upstream_surface": false
  },
- "Engine::EnqueueSetResParamI": {
-  "address": "0x141012680",
-  "upstream_surface": false
- },
  "Engine::GetModelNode": {
   "address": "0x141128870",
   "upstream_surface": true
@@ -1183,10 +1171,6 @@
   "address": "0x1411A5E40",
   "upstream_surface": false
  },
- "cEgLightNodeTemplate::cEgLightNodeTemplate": {
-  "address": "0x1411227E0",
-  "upstream_surface": false
- },
  "cEgMaterialResource::ParseNode": {
   "address": "0x141191A50",
   "upstream_surface": true
@@ -1285,14 +1269,6 @@
  },
  "cEgSceneNodeData::RecalculateAbsoluteTransform": {
   "address": "0x14114DA00",
-  "upstream_surface": false
- },
- "cEgSceneNodeTemplate::cEgSceneNodeTemplate": {
-  "address": "0x141104660",
-  "upstream_surface": false
- },
- "cEgSceneNodeTemplate::~cEgSceneNodeTemplate": {
-  "address": "0x1410E6C00",
   "upstream_surface": false
  },
  "cEgShaderResource::CompileContextsSynchronous": {
@@ -1693,10 +1669,6 @@
  },
  "cGcAudioNPCDoppler::ClassPointerSave": {
   "address": "0x1404534C0",
-  "upstream_surface": false
- },
- "cGcAudioObstructionRequest::cGcAudioObstructionRequest": {
-  "address": "0x1406F89F0",
   "upstream_surface": false
  },
  "cGcAudioPulseDemo::ClassPointerSave": {
@@ -2365,10 +2337,6 @@
  },
  "cGcDoShipFlybyOverhead::ClassPointerSave": {
   "address": "0x1405F52A0",
-  "upstream_surface": false
- },
- "cGcDroneBehaviourTree::Prepare": {
-  "address": "0x140EC6E80",
   "upstream_surface": false
  },
  "cGcDroneComponentData::ClassPointerSave": {
@@ -6427,10 +6395,6 @@
   "address": "0x140FC6C50",
   "upstream_surface": false
  },
- "cTkAudioManager::LoadAudioBank": {
-  "address": "0x14121FCF0",
-  "upstream_surface": false
- },
  "cTkAudioManager::Play": {
   "address": "0x141220A20",
   "upstream_surface": true
@@ -7152,7 +7116,7 @@
   "upstream_surface": false
  },
  "cTkSmartResHandle::GetPResource": {
-  "address": "0x141329184",
+  "address": "0x1406E6AA0",
   "upstream_surface": false
  },
  "cTkSmartResHandle::IncRef": {
