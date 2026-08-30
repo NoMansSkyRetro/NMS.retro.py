@@ -35,6 +35,139 @@
       "1.13": "0x140D4B2D0",
       "1.24": "0x140F0DBE0",
       "1.38": "0x1410D3F00"
+    },
+    "cGcShipHUD::LoadData": {
+      "1.13": "0x1405D0D30",
+      "1.24": "0x140781310",
+      "1.38": "0x1408F0730"
+    },
+    "cGcShipHUD::RenderHeadsUp": {
+      "1.13": "0x1405D5EB0",
+      "1.24": "0x1407869B0",
+      "1.38": "0x1408F5B10"
+    },
+    "cGcShipHUD::UpdateSelectedPlanetPanel": {
+      "1.13": "0x1405D87E0",
+      "1.24": "0x1407894A0",
+      "1.38": "0x1408F8E90"
+    },
+    "cGcAISpaceshipManager::Prepare": {
+      "1.13": "0x140C25EE0",
+      "1.24": "0x140DA92B0",
+      "1.38": "0x140F59850"
+    },
+    "cGcApplicationBootState::Update": {
+      "1.13": "0x1404B6160",
+      "1.24": "0x14056DB40",
+      "1.38": "0x1406827D0"
+    },
+    "cGcAudioManager::BeginLoadingMusic": {
+      "1.13": "0x1404E9C80",
+      "1.24": "0x1405E4FD0",
+      "1.38": "0x1406FADF0"
+    },
+    "cGcAudioManager::Construct": {
+      "1.13": "0x1404E8E90",
+      "1.24": "0x1405E40B0",
+      "1.38": "0x1406F9ED0"
+    },
+    "cGcAudioManager::Prepare": {
+      "1.13": "0x1404E9580",
+      "1.24": "0x1405E4810",
+      "1.38": "0x1406FA630"
+    },
+    "cGcAudioPulseMusic::LoadProject": {
+      "1.13": "0x1404F07F0",
+      "1.24": "0x1405EBFE0",
+      "1.38": "0x140701E30"
+    },
+    "cGcDiscoveryManager::GenerateDiscoveryExport": {
+      "1.13": "0x14052F410",
+      "1.24": "0x14063E900",
+      "1.38": "0x140758770"
+    },
+    "cGcDiscoveryManager::SynchronousTrimDb": {
+      "1.13": "0x14052FE50",
+      "1.24": "0x14063F350",
+      "1.38": "0x1407591C0"
+    },
+    "cGcGalaxyMap::QueryStarsAroundPlayerLocation": {
+      "1.13": "0x140B0FC40",
+      "1.24": "0x140C88040",
+      "1.38": "0x140E1F210"
+    },
+    "cGcGameState::LoadFromPersistentStorage": {
+      "1.13": "0x140533060",
+      "1.24": "0x140643000",
+      "1.38": "0x14075CFD0"
+    },
+    "cGcGameState::WriteStateToStorage": {
+      "1.13": "0x140536830",
+      "1.24": "0x140646CA0",
+      "1.38": "0x1407621D0"
+    },
+    "cGcGraphicsManager::Prepare": {
+      "1.13": "0x140586640",
+      "1.24": "0x140695E50",
+      "1.38": "0x1407C4FF0"
+    },
+    "cGcIntroFeed::Load": {
+      "1.13": "0x14066E380",
+      "1.24": "0x1407DA350",
+      "1.38": "0x14094C370"
+    },
+    "cGcPlanet::Generate": {
+      "1.13": "0x140BC5940",
+      "1.24": "0x140D4AC10",
+      "1.38": "0x140EF9730"
+    },
+    "cGcPlanetBuildingGenerator::AddBuildingAtDistance": {
+      "1.13": "0x140BBC2A0",
+      "1.24": "0x140D41240",
+      "1.38": "0x140EE2C10"
+    },
+    "cGcPlanetBuildingGenerator::AddNearestBuildings": {
+      "1.13": "0x140BBC770",
+      "1.24": "0x140D41710",
+      "1.38": "0x140EE30E0"
+    },
+    "cGcPlanetBuildingGenerator::AddRandomBuildingSelection": {
+      "1.13": "0x140BBBEF0",
+      "1.24": "0x140D40E90",
+      "1.38": "0x140EE2860"
+    },
+    "cGcPlanetGenerator::Generate": {
+      "1.13": "0x140BD26A0",
+      "1.24": "0x140D57F60",
+      "1.38": "0x140F07D00"
+    },
+    "cGcPlanetGenerator::GenerateSpawnData": {
+      "1.13": "0x140BDA7F0",
+      "1.24": "0x140D60130",
+      "1.38": "0x140F104E0"
+    },
+    "cGcSimulation::Construct": {
+      "1.13": "0x1409B06F0",
+      "1.24": "0x140B1D120",
+      "1.38": "0x140C956A0"
+    },
+    "cGcSimulation::Destruct": {
+      "1.13": "0x1409B2640",
+      "1.24": "0x140B1F8C0",
+      "1.38": "0x140C97E80"
+    },
+    "cGcSimulation::PollToRelease": {
+      "1.13": "0x1409B23F0",
+      "1.24": "0x140B1F610",
+      "1.38": "0x140C97C20"
+    },
+    "cGcDiscoveryPageData::PopulateFromDiscoveryExport": {
+      "1.24": "0x14074D070",
+      "1.38": "0x14082FEE0"
+    },
+    "cGcDiscoveryPageData::UpdateWaypointStates": {
+      "1.24": "0x14074DFC0",
+      "1.38": "0x140830F70"
     }
   },
   "globals": {

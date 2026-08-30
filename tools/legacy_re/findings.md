@@ -58,6 +58,35 @@ Chain of identification, per build:
 | cGcApplication (global) | 0x1417F6C80 | 0x141A433F0 | 0x142033690 |
 | cGcApplicationData* (global) | 0x1417F6CB8 | 0x141A43428 | 0x1420336C8 |
 
+## Profiler name literals
+
+Some functions wrap themselves in a profiler scope that copies their own name into a
+local buffer, so the decompiled C contains e.g.
+`strncpy(buf, "cGcGameState::LoadFromPersistentStorage", 0x80)`.
+`harvest_name_literals.py` maps every such literal to its containing function
+(skipping literals that appear in more than one function) and merges the result into
+offsets.json — 22 functions in 1.13, 24 in 1.24/1.38, including
+`cGcGameState::LoadFromPersistentStorage` / `WriteStateToStorage`,
+`cGcPlanet::Generate`, `cGcPlanetGenerator::Generate` and
+`cGcSimulation::Construct` / `Destruct`.
+
+Notable: `cGcPlanet::Generate` is the function the 2023 Copernicus notes called
+`NMS_PlanetSetupPerPlanet` (0x140BC5940 in 1.13); the profiler literal settles its
+real name.
+
+## cGcShipHUD
+
+`cGcShipHUD::LoadData` is the one function referencing the
+`UI\HUD\SHIP\HEADSUP.MXML` path string (via a small path-building helper in
+1.24/1.38; grep HEADSUP, then take the helper's one caller). The two large sibling
+functions in the same compilation unit are identified by their GUI element IDs:
+
+- **RenderHeadsUp** references `SPEED`, `SPEEDBAR`, `JUMPBAR`, `SHIELD`,
+  `TARGET_NAME`, `MINIJUMP`, ... (the per-frame heads-up render; Newton's HUD hook).
+- **UpdateSelectedPlanetPanel** (descriptive name, not from any PDB) references
+  `MOON_TITLE`, `MOON_DESC`, `%PLANET%`, `SHIP_SCAN_PLANET` — the selected-planet
+  info panel.
+
 ## Struct layout so far
 
 - `cTkFSM`: `+0x10` current `cTkFSMState*`; `+0x18` pending-state
