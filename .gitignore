@@ -37,3 +37,5 @@ tools/legacy_re/out/crossbuild_picks.json
 # tools/mbin/README.md) and decompiled EXML work output
 tools/mbin/bin/
 tools/mbin/out/
+tools/mbin/structdump/bin/
+tools/mbin/structdump/obj/

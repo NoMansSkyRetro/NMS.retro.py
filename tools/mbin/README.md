@@ -26,7 +26,35 @@ MBINCompiler struct definitions rather than trusting the modern PDB.
 - **`analyze_structs.py`** — diffs a struct's fields across builds from the EXML.
   `python analyze_structs.py GCENVIRONMENTGLOBALS.GLOBAL` shows added/removed/changed
   fields per version, the raw material for a `versioned_struct`.
+- **`structdump/`** — a small C# tool that references the rc1 `MBINCompiler.dll` and dumps
+  every `NMSTemplate`'s authoritative layout (name, type, offset, size) using libMBIN's own
+  `OffsetOf`/`SizeOf`, so we never reimplement its alignment logic. Writes
+  `out/rc1_layout.json` (525 structs).
+- **`gen_structs.py`** — turns that layout JSON into nmspy `versioned_struct` classes:
+  primitives/vectors map to real ctypes, everything else becomes a correctly-sized opaque
+  blob tagged with its real type. `python gen_structs.py Globals` prints a module.
 - **`test_mbin.py`** — self-check: round-trips a globals MBIN out of the 1.38 install.
+
+## The authoritative layout path (rc1)
+
+monkeyman192 pointed us at the **`rc1` branch** of MBINCompiler: the RC1/launch struct
+definitions, but reverse-engineered with modern methodology, so its names and layouts are
+the authoritative retro source (not the incomplete 2016 tooling). Build and dump it:
+
+```
+git clone --depth 1 --branch rc1 https://github.com/monkeyman192/MBINCompiler.git
+dotnet build MBINCompiler/MBINCompiler.csproj -f net6.0-windows -c Release -p:IsNestedBuild=true
+# copy Build/Release/win-x64/* into tools/mbin/bin/rc1/ (only net9 runtime here, so run via
+#   DOTNET_ROLL_FORWARD=Major dotnet MBINCompiler.dll ... )
+dotnet run --project structdump -c Release -f net6.0-windows > out/rc1_layout.json
+python gen_structs.py Globals > out/mbin_globals_v1091.py
+```
+
+`GcEnvironmentGlobals` comes out at size 0x330 with exact types and offsets that match the
+`Unknown<offset>` field names, confirming the engine is authoritative. rc1 encodes the RC1
+layout, which matches **1.09.1**; where a field is still `Unknown<offset>` that is the
+genuine RE frontier, not a tooling gap. Later builds (1.13/1.24/1.38) need their own era
+layout dumped the same way (build that tag, or reflect its binary).
 
 ## MBINCompiler binaries (not in the repo)
 
@@ -70,16 +98,16 @@ build     format  stamp             guid                libMBIN tag
 
 ## Next step (struct codegen)
 
-The decompile pipeline is proven (extract -> EXML with field names) for 1.09.1/1.13/1.24.
-Remaining to turn EXML into `nmspy` structs:
+The full path works for **1.09.1**: PAK -> MBIN -> libMBIN layout (structdump) ->
+`versioned_struct` (gen_structs). Remaining:
 
-1. Get exact **types** (EXML gives name + order + a coarse kind, not `float` vs `int32`
-   vs fixed-array-size). Either infer from the era compiler's `Unknown<offset>` gaps
-   (successive offsets give each field's size) or read the MBINCompiler assembly's
-   `NMSTemplate` field types via reflection-only metadata (no code execution).
-2. Emit per-version `versioned_struct` classes (offsets from the era EXML, names from the
-   newest compiler that knows the GUID), adapting `tools/create.py`.
-3. Verify a handful of offsets against the exe before trusting the rest.
-4. Get a usable **1.38** MBINCompiler (build `1.38.0.2`).
+1. **Other builds' layouts.** Build the MBINCompiler for 1.13/1.24/1.38 (or reflect its
+   binary) and dump each with structdump, then merge offsets into the same
+   `versioned_struct` classes (the `_vfields_` dicts already key by version).
+2. **Verify** a handful of generated offsets against the exe before trusting the rest.
+3. **Integrate** the generated modules into `nmspy` (replacing the 4.13 `exported_types.py`
+   for the mbin-backed structs) behind the existing `versioned_struct` machinery.
+4. **Names** for the remaining `Unknown<offset>` fields as they get reverse-engineered
+   upstream in rc1.
 
 Start with the Newton-relevant set (planet/biome/atmosphere/environment globals).

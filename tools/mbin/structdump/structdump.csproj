@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Dumps every NMSTemplate struct's authoritative layout (name, type, offset, size)
+       using libMBIN's own OffsetOf/SizeOf. References the merged MBINCompiler.dll built
+       from the rc1 branch (see ../README.md). Run per README to write out/rc1_layout.json. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <AssemblyName>structdump</AssemblyName>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MBINCompiler">
+      <HintPath>..\bin\rc1\MBINCompiler.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>
