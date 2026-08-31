@@ -16,7 +16,8 @@ rather than byte-pattern scanning; these builds are frozen forever, so their add
 are too. Every address is derived reproducibly with the scripts in `tools/legacy_re/`,
 which document the whole reverse-engineering process.
 
-See [PLAN.md](PLAN.md) for the retargeting design and current phase.
+See [PLAN.md](PLAN.md) for the original retargeting design and [PLAN2.md](PLAN2.md) for the
+Phase 2 completion plan (struct layer, MBIN-derived function anchors, Newton bring-up).
 
 ## How the addresses were found
 
