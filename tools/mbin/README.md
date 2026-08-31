@@ -20,7 +20,33 @@ MBINCompiler struct definitions rather than trusting the modern PDB.
   `YYYYMMDDHHMM`), the root template **GUID**, and the template class name.
 - **`probe_versions.py`** — reports each legacy build's MBIN stamp + GUID and the
   matching libMBIN tag. This is how each build is pinned to a point in libMBIN history.
+- **`decompile.py`** — extracts metadata MBINs from a build's PAKs and decompiles them to
+  EXML with the era-matched MBINCompiler. `python decompile.py 1.24 [name-filter]` writes
+  `out/exml/1_24/*.exml`.
+- **`analyze_structs.py`** — diffs a struct's fields across builds from the EXML.
+  `python analyze_structs.py GCENVIRONMENTGLOBALS.GLOBAL` shows added/removed/changed
+  fields per version, the raw material for a `versioned_struct`.
 - **`test_mbin.py`** — self-check: round-trips a globals MBIN out of the 1.38 install.
+
+## MBINCompiler binaries (not in the repo)
+
+`decompile.py` shells out to `MBINCompiler.<ver>.exe` in `tools/mbin/bin/` (gitignored).
+Get them from the NoMansSkyRetro bundle (`MBINCompiler1to1.38.zip`) or MBINCompiler's
+GitHub releases/tags. Verified-good, era-matched:
+`1.09.1 -> 1.09.1`, `1.13 -> 1.13.2`, `1.24 -> 1.24.4`. **1.38 is missing a usable binary**
+(the bundle's 1.31/1.34/1.38 copies are corrupt HTML and no GitHub release ships a built
+exe), so build `1.38.0.2` from its tag, or decompile 1.38's stable structs with 1.24.4
+where the GUID matches.
+
+## Two findings that shape the struct codegen
+
+- **Offsets come free from the era EXML.** The 2016-era compiler names fields it had not
+  yet reverse-engineered `Unknown<hexoffset>` (`Unknown0`, `Unknown10`, `Unknown1C`, ...),
+  which *is* the byte offset. So even where names are missing, the layout is recoverable.
+- **Names improved over versions.** `GcEnvironmentGlobals` is 35 mostly-`Unknown*` fields
+  in 1.09.1/1.13 but 124 properly-named fields in 1.24. So take **offsets from the
+  era-matched compiler** (correct per build) and **names from the newest compiler that
+  still knows the struct's GUID**, then reconcile.
 
 ## What the probe established
 
@@ -42,11 +68,18 @@ build     format  stamp             guid                libMBIN tag
   in every build here) the layout evolved and that struct must be reversed from the exe
   or hand-ported from the nearest libMBIN commit.
 
-## Next step (struct regeneration)
+## Next step (struct codegen)
 
-For 1.24 and 1.38: check out MBINCompiler at the matching tag, decompile the relevant
-globals/metadata MBINs to EXML (field names + types + order), and emit per-version
-struct modules for `nmspy` (adapting `tools/create.py`). Field order in a template is
-field order in memory, so this yields offsets to verify against the exe. For 1.13/1.09.1:
-run the GUID diff first, reuse the stable structs, and reverse only the changed ones.
+The decompile pipeline is proven (extract -> EXML with field names) for 1.09.1/1.13/1.24.
+Remaining to turn EXML into `nmspy` structs:
+
+1. Get exact **types** (EXML gives name + order + a coarse kind, not `float` vs `int32`
+   vs fixed-array-size). Either infer from the era compiler's `Unknown<offset>` gaps
+   (successive offsets give each field's size) or read the MBINCompiler assembly's
+   `NMSTemplate` field types via reflection-only metadata (no code execution).
+2. Emit per-version `versioned_struct` classes (offsets from the era EXML, names from the
+   newest compiler that knows the GUID), adapting `tools/create.py`.
+3. Verify a handful of offsets against the exe before trusting the rest.
+4. Get a usable **1.38** MBINCompiler (build `1.38.0.2`).
+
 Start with the Newton-relevant set (planet/biome/atmosphere/environment globals).

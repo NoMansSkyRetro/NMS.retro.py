@@ -32,3 +32,8 @@ tools/legacy_re/out/verify_risky.json
 tools/legacy_re/out/older_decompile_set.json
 tools/legacy_re/out/older_jobs*.json
 tools/legacy_re/out/crossbuild_picks.json
+
+# Third-party MBINCompiler binaries (get from the NoMansSkyRetro zip / GitHub, see
+# tools/mbin/README.md) and decompiled EXML work output
+tools/mbin/bin/
+tools/mbin/out/
