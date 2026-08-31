@@ -96,18 +96,29 @@ build     format  stamp             guid                libMBIN tag
   in every build here) the layout evolved and that struct must be reversed from the exe
   or hand-ported from the nearest libMBIN commit.
 
-## Next step (struct codegen)
+## Per-build layouts (1.09.1 / 1.24 / 1.38)
 
-The full path works for **1.09.1**: PAK -> MBIN -> libMBIN layout (structdump) ->
-`versioned_struct` (gen_structs). Remaining:
+Authoritative layouts are dumped from each build's **own** libMBIN serializer and committed
+under `layouts/` (regenerable):
 
-1. **Other builds' layouts.** Build the MBINCompiler for 1.13/1.24/1.38 (or reflect its
-   binary) and dump each with structdump, then merge offsets into the same
-   `versioned_struct` classes (the `_vfields_` dicts already key by version).
-2. **Verify** a handful of generated offsets against the exe before trusting the rest.
-3. **Integrate** the generated modules into `nmspy` (replacing the 4.13 `exported_types.py`
-   for the mbin-backed structs) behind the existing `versioned_struct` machinery.
-4. **Names** for the remaining `Unknown<offset>` fields as they get reverse-engineered
-   upstream in rc1.
+- **1.09.1** via the `rc1` build + `structdump/` (uses libMBIN's public `OffsetOf`/`SizeOf`).
+- **1.24 / 1.38** via the `1.24.4` / `1.38.0.2` tags built on the modern SDK and patched with
+  a `--dumplayout` command (`patches/dumplayout-*.patch`) that captures each field's offset
+  from `AppendToWriter`, depth-guarded to root fields. 704 and 890 templates respectively.
 
-Start with the Newton-relevant set (planet/biome/atmosphere/environment globals).
+`gen_structs.py` merges all three by field name into per-version `versioned_struct` classes.
+**1.13** predates any MBINCompiler and is still to be dumped.
+
+The full approach, and how to fold it into a dedicated standalone tool, is written up in
+[RETRO_MBINCOMPILER.md](RETRO_MBINCOMPILER.md) for a future project.
+
+## Remaining
+
+1. **1.13 layout** — no MBINCompiler existed at Foundation; bisect to the nearest commit
+   whose GUIDs match, or hand-author a 1.13 definition set (see RETRO_MBINCOMPILER.md).
+2. **Verify** a few generated offsets against the exe (confirm libMBIN's serialized layout
+   equals the in-memory layout we hook).
+3. **Integrate** the generated modules into `nmspy`, replacing the 4.13 `exported_types.py`
+   for the mbin-backed structs.
+4. **Per-version types** for heavily-restructured structs (name-merge keeps one ctype today;
+   the offsets are still correct per build).

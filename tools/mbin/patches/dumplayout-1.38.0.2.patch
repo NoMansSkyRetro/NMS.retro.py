@@ -1,0 +1,107 @@
+diff --git a/MBINCompiler/Program.cs b/MBINCompiler/Program.cs
+index dea14f7..a1f38bf 100644
+--- a/MBINCompiler/Program.cs
++++ b/MBINCompiler/Program.cs
+@@ -2,6 +2,8 @@
+ using System.Collections.Generic;
+ using System.IO;
+ using System.Text;
++using System.Linq;
++using System.Reflection;
+ 
+ using libMBIN;
+ using libMBIN.Models;
+@@ -12,6 +14,46 @@ namespace MBINCompiler {
+     // TODO: (GH) needs more refactoring
+     class Program {
+ 
++        // Dump every template's authoritative field layout using this build's own serializer,
++        // for NMSRetroPy per-version struct generation.
++        static void DumpLayout()
++        {
++            var baseType = typeof(NMSTemplate);
++            var types = baseType.Assembly.GetTypes()
++                .Where(t => baseType.IsAssignableFrom(t) && t != baseType && !t.IsAbstract)
++                .OrderBy(t => t.Name);
++            var sb = new StringBuilder("{");
++            bool firstT = true;
++            foreach (var t in types)
++            {
++                NMSTemplate tmpl = null;
++                try { tmpl = NMSTemplate.TemplateFromName(t.Name); } catch { }
++                if (tmpl == null) continue;
++                NMSTemplate.CaptureOffsets = true;
++                NMSTemplate.CaptureDepth = 0;
++                NMSTemplate.CapturedFields.Clear();
++                int total = -1;
++                try { total = tmpl.GetDataSize(); } catch { }
++                NMSTemplate.CaptureOffsets = false;
++                var caps = new List<Tuple<string, long, string>>(NMSTemplate.CapturedFields);
++                if (caps.Count == 0) continue;
++                if (!firstT) sb.Append(",");
++                firstT = false;
++                sb.Append("\"" + t.Name + "\":{\"size\":" + total + ",\"fields\":[");
++                for (int i = 0; i < caps.Count; i++)
++                {
++                    long off = caps[i].Item2;
++                    long size = (i + 1 < caps.Count ? caps[i + 1].Item2 : total) - off;
++                    if (i > 0) sb.Append(",");
++                    sb.Append("{\"name\":\"" + caps[i].Item1 + "\",\"type\":\"" + caps[i].Item3
++                              + "\",\"offset\":" + off + ",\"size\":" + size + "}");
++                }
++                sb.Append("]}");
++            }
++            sb.Append("}");
++            Console.Out.Write(sb.ToString());
++        }
++
+         // TODO: (GH) not used
+         static void ScanMBINs( string path, ref List<string> types ) {
+             foreach (var file in Directory.GetFiles( path, "*.mbin*" )) {
+@@ -285,6 +327,8 @@ namespace MBINCompiler {
+             if (args[0] == "--version") return ShowVersion( true );
+             if (args[0] == "-v") return ShowVersion( false );
+ 
++            if (args[0] == "--dumplayout") { DumpLayout(); return 0; }
++
+             // at least the first argument is an input param
+ 
+             // if there is 2 args, is the 2nd arg a version switch?
+diff --git a/libMBIN/Source/Models/NMSTemplate.cs b/libMBIN/Source/Models/NMSTemplate.cs
+index 930a689..0046f25 100644
+--- a/libMBIN/Source/Models/NMSTemplate.cs
++++ b/libMBIN/Source/Models/NMSTemplate.cs
+@@ -31,6 +31,12 @@ namespace libMBIN.Models
+             return Activator.CreateInstance(type) as NMSTemplate;
+         }
+ 
++        // --- retro layout capture (added for NMSRetroPy struct dumping) ---
++        public static bool CaptureOffsets = false;
++        public static int CaptureDepth = 0;
++        public static System.Collections.Generic.List<Tuple<string, long, string>> CapturedFields
++            = new System.Collections.Generic.List<Tuple<string, long, string>>();
++
+         public int GetDataSize()
+         {
+             using (var ms = new MemoryStream())
+@@ -495,9 +501,12 @@ namespace libMBIN.Models
+ 
+             if (type.Name != "EmptyNode")
+             {
++                CaptureDepth++;
+                 foreach (var field in fields)
+                 {
+                     var fieldAddr = writer.BaseStream.Position - templatePosition;
++                    if (CaptureOffsets && CaptureDepth == 1)
++                        CapturedFields.Add(Tuple.Create(field.Name, fieldAddr, field.FieldType.Name));
+                     var fieldData = field.GetValue(this);
+                     if (field.FieldType.Name == "NMSTemplate")
+                     {
+@@ -510,6 +519,7 @@ namespace libMBIN.Models
+                         SerializeValue(writer, field.FieldType, fieldData, settings, field, ref additionalData, ref addtDataIndex, structLength);
+                     }
+                 }
++                CaptureDepth--;
+             }
+             else
+             {
