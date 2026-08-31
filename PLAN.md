@@ -99,10 +99,13 @@ upstream uses.
 `nmspy/data/exported_types.py` (1.8 MB) is generated from the 4.13 PDB. 1.x layouts are
 substantially different; reusing it would produce silently-wrong field reads. Plan:
 
-- **Metadata/Globals structs** (everything mbin-backed): generate from historical
-  MBINCompiler/libMBIN releases matching each game era (the project has tags back to
-  the 1.x days; 1.3x is well covered). Adapt `tools/create.py` to consume those
-  definitions per version.
+- **Metadata/Globals structs** (everything mbin-backed): generate from the MBINCompiler
+  release matching each build's era. `tools/mbin/` reads the shipped PSARC archives and
+  MBIN headers directly (no external tool) and `probe_versions.py` pins the era: the MBIN
+  container format is 2500 across all four builds, MBINCompiler tags **1.24.4** and
+  **1.38.0.2** are exact matches, and 1.09.1/1.13 predate MBINCompiler so they fall back
+  to per-struct GUID compatibility against 1.24 (reuse the stable structs, reverse the
+  changed ones). Adapt `tools/create.py` to consume those definitions per version.
 - **Runtime classes** (cGcApplication, cGcSimulation, cGcPlayer, cGcGameState, ...):
   reverse from the Ghidra DBs, 1.09.1 first since it has real names, then diff forward.
 - Use pyMHF's `partial_struct` + explicit `Field(type, offset)` and define **only
