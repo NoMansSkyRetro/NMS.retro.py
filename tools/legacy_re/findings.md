@@ -247,6 +247,102 @@ Ghidra MCP bridge: real data xrefs and the decompiler, which the static SQLite d
 databases (and our E8/E9 call-edge scan) cannot provide. That is a manual RE session,
 not an automated sweep.
 
+## Triage + port backfill (2026-08-30)
+
+After the automated string/call-graph sweep saturated (fleet yields fell 170 -> 24), a
+consolidation pass rather than another blind sweep:
+
+- **Port backfill.** `finders/find_ports.py` ports every partially-mapped surface
+  function (located in >=1 build, NOT_YET_FOUND in another) from each build where it is
+  known, accepting a slot only when every resolving source agrees and the merge tool
+  re-validates it as a function start. Net **+9 addresses**: `cGcGalaxyMap::Data::DoSolarPopup`
+  and `cGcPlanetGenerator::GenerateCreatureSpawnData` completed in all four builds from
+  their 1.38 anchor, `cGcFrontendPageDiscovery::DoDiscoveryView` to 1.13/1.24, and
+  `cGcPlayerHUD::Update` back-filled in 1.09.1. This dropped partials 18 -> 13; the
+  survivors are the hard 1.09.1/1.13 hops where `port()` abstains (six-year token/
+  call-graph decay), plus `cTkDynamicGravityControl::cTkDynamicGravityControl` which
+  needs 1.24/1.38 because the gravity control was refactored after 1.13.
+
+- **Absence reclassification.** The 86 anchor-less NOT_YET_FOUND functions were triaged:
+  they are overwhelmingly present-but-inlined engine/utility code (cEg*, cTk*, Engine,
+  nvg, core cGc gameplay), not absent features. The genuinely-absent features were
+  already marked in earlier rounds. Six exceptions whose `_unresolved` note already
+  concluded the feature postdates the build were promoted NOT_YET_FOUND -> NOT_IN_THIS_VERSION
+  and recorded in `build_full_surface.py`'s new per-function `EXACT` table (prefix rules
+  can't express a single late method in an otherwise-old class): `cGcPlayer::GetDominantHand`
+  (VR/OpenVR, Beyond 2.0), `cGcBuilding::DestroyIntersectingVolcanoes` (volcano landmarks),
+  `cGcScanEvent::UpdateSpaceStationLocation` (settlements), `cGcPlayerFreighterOwnership::ResetPlayerFreighterBase`
+  (freighter bases, NEXT 1.5), and the 1.09.1 slots of `cGcFrontendPageClaimBase::DoBaseClaimOptions`
+  and `cGcQuickActionMenu::TriggerAction` (base/quick-action UI predates Foundation 1.1).
+  Net +17 NOT_IN slots. The lesson for future rounds: the anchor-less bucket is not
+  hiding ghosts to prune, so "remaining that exists" is already an honest count.
+
+- **Marker anchor tracked.** `cGcMarkerPoint::IsEqual` (an NMS-Newton anchor, not in
+  upstream's 330) had no row at all; added off-surface as NOT_YET_FOUND carrying the
+  documented blocker so it stops being invisible to the tooling.
+
+Coverage after this round (surface addresses located): **1.09.1 133, 1.13 142, 1.24 148,
+1.38 151**; NOT_YET_FOUND remaining 175 / 178 / 182 / 185. `verify_offsets.py` passes.
+
+## Decompiler-in-the-loop fleet (2026-08-30)
+
+The string/imm/name sweeps and porting are exhausted; what remains has no distinctive
+tokens, so the only handles are call-graph position and *behaviour*. New pipeline:
+
+1. `ghidra_live.py dossier 1.38` opens the analyzed project once and, for each of the 54
+   mapped anchors that a still-missing target hangs off, dumps the anchor's decompiled
+   body plus every callee (real ReferenceManager edges) with size, named grandchildren,
+   and a decompiled body — 1,108 candidate functions.
+2. `fleet_slice.py <build> <targets>` turns that into a focused per-target view (4.13
+   profile + anchor context + size-banded candidate bodies).
+3. A 14-agent workflow (`out/match_workflow.js`): 7 match agents read their slices and
+   propose a 1.38 address per target by signature/size/behaviour; a paired adversarial
+   agent tries to refute each. Only matches that survive verify are kept.
+4. `finders/find_anchor_matches.py` commits the confirmed 1.38 addresses and ports them
+   sideways; `merge_finder_results.py` re-validates every address as a function start.
+
+Result on 68 anchored targets: **11 located in 1.38, 0 rejected, 57 classified as not
+separately present** (21 inlined into the anchor, 25 no callee of matching shape/size,
+3 feature postdates 1.38, plus folded/other). I decompile-reviewed the tiny/odd and
+medium-confidence matches by hand before committing (e.g. `cGcInteractionData::SetDefaults`
+0x14028A9D0 is a 24-byte zero-init writing -1.0f at +0x1c; `cGcInteractionComponent::GiveReward`
+0x140CA49F0 has the exact `(this, option&, bool, bool)->bool` shape and reward-array loop).
+
+The 11: cGcSpaceshipWarp::UpdatePulseDrive (via the SENTINELS_EVADED string, ported to
+1.13/1.24), cGcPlayerWanted::Update, cGcFrontendPagePortalRunes::CheckUAIsValid (1.38-only,
+portals postdate the older builds), cGcMarkerList::TryAddMarker (its body inlines
+cGcMarkerPoint::IsEqual — the marker-identity compare the cluster was blocked on),
+cGcInteractionData::SetDefaults, cTkAudioManager::Play_attenuated,
+cGcPersistentInteractionsManager::LoadGalacticAddressBuffers, cGcInventoryStore::Add,
+cGcInteractionComponent::GetInteractionData, cGcInteractionComponent::GiveReward,
+cGcPlayer::CheckFallenThroughFloor.
+
+**Empirical ceiling:** even among targets that *have* a mapped call-anchor, only ~16%
+were separately present in 1.38; the rest are inlined/fused. This confirms 100% *located*
+is impossible and 100% *classified* is the real goal.
+
+### Cross-build port of the 1.38 finds (deterministic fingerprint match)
+
+Ten of the 11 exist in all builds but came in 1.38-only. A second fleet on the older
+builds was starved (dossier bodies too thin, plus a session-limit outage), so the port
+was done deterministically instead: `handles.py port_candidates` gives ranked leads from
+the 1.38 address, filtered to a size band, and `match_crossbuild.py` fingerprints each
+candidate's decompiled body against the 1.38 original (return kind, param count, shared
+named library calls, shared literals/constants, size ratio) and commits only a clear
+winner. Discriminators that settled the hard ones: `SENTINELS_EVADED` (UpdatePulseDrive
+1.09.1), the `AK::SoundEngine::PostEvent` pair + exact 120 B (Play_attenuated), the
+`+0x238` reward-array offset + `TECHWEAPON` (GiveReward, all three older builds), and the
+`GetCurrentThreadId`+`Sleep` mutex guard that picked CheckFallenThroughFloor 1.13
+0x140B5BB30 over the closer-in-size but signature-wrong 0x140B729E0. Net **+13 addresses**.
+`cGcInteractionData::SetDefaults` (a 24 B stub, inlined in the older builds),
+`cGcInteractionComponent::GetInteractionData` (the modern global data-slots at DAT+0x54e0
+don't exist in legacy), and `cGcMarkerList::TryAddMarker` (no matching 0x140-stride marker
+vector) were left classified rather than force-matched.
+
+**Session total (2026-08-30):** located +6 / +9 / +9 / +11 (1.09.1 / 1.13 / 1.24 / 1.38)
+to **136 / 148 / 154 / 162**, +17 NOT_IN reclassifications, and the whole "should exist
+but unmapped" surface (173 functions) is 100% classified with a recorded blocker.
+
 ## Struct layout so far
 
 - `cTkFSM`: `+0x10` current `cTkFSMState*`; `+0x18` pending-state

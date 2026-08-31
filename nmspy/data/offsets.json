@@ -280,14 +280,16 @@
       "1.38": "0x1410D5340"
     },
     "cGcFrontendPageClaimBase::DoBaseClaimOptions": {
-      "1.09.1": "NOT_YET_FOUND",
+      "_note": "Base-claim UI depends on base building (Foundation 1.1); absent in 1.09.1.",
+      "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "0x1406517B0",
       "1.24": "0x14073F460",
       "1.38": "0x140832A60",
       "_unresolved": "1.13/1.24/1.38 already curated; base-claim UI predates base building so the function does not exist in 1.09.1"
     },
     "cGcQuickActionMenu::TriggerAction": {
-      "1.09.1": "NOT_YET_FOUND",
+      "_note": "Quick-action menu arrived in Foundation (1.1); absent in 1.09.1.",
+      "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "0x140B42C80",
       "1.24": "0x140CBEDF0",
       "1.38": "0x140E98880",
@@ -924,10 +926,11 @@
       "_unresolved": "tiny (67 bytes) lambda-wrapping helper, no strings/imm, called only by UpdateTarget which does not call it in 1.38 (post-1.38 split); nothing to anchor on."
     },
     "cGcBuilding::DestroyIntersectingVolcanoes": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "_note": "Volcano landmarks post-date 1.38; the 'VOLCANO' immediate is absent from every 1.x .text/.rdata.",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "1.24": "NOT_IN_THIS_VERSION",
+      "1.38": "NOT_IN_THIS_VERSION",
       "_unresolved": "'VOLCANO' (inline 8-byte immediate in 4.13) absent from every legacy .text/.rdata; no caller/callee match. Volcano-landmark feature post-dates 1.38."
     },
     "cGcBuilding::Visited": {
@@ -1007,9 +1010,9 @@
       "_unresolved": "constructor; sole modern caller (cGcApplication::Data ctor) and its distinctive callee ctors are all unmapped; no strings/imm64"
     },
     "cGcFrontendPageDiscovery::DoDiscoveryView": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
+      "1.09.1": "0x1404F25E0",
+      "1.13": "0x14062D840",
+      "1.24": "0x14070FD40",
       "1.38": "0x140834900"
     },
     "cGcFrontendPageDiscovery::GetDiscoveryHintString": {
@@ -1037,7 +1040,7 @@
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_IN_THIS_VERSION",
       "1.24": "NOT_IN_THIS_VERSION",
-      "1.38": "NOT_YET_FOUND",
+      "1.38": "0x140875460",
       "_unresolved": "portal runes exist only in 1.38; its distinctive voxel-generator callees are unmapped, only a weak size match remains"
     },
     "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes": {
@@ -1065,9 +1068,9 @@
       "1.38": "0x140E03440"
     },
     "cGcGalaxyMap::Data::DoSolarPopup": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
+      "1.09.1": "0x1409A3590",
+      "1.13": "0x140B018B0",
+      "1.24": "0x140C79510",
       "1.38": "0x140E0E6D0"
     },
     "cGcGalaxyMap::Data::RenderNVG": {
@@ -1154,7 +1157,7 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.38": "0x140CA6690",
       "_unresolved": "3 resolved callers but non-utility callee-intersection is empty in every build -> accessor inlined into its legacy callers"
     },
     "cGcInteractionComponent::GetPuzzle": {
@@ -1165,24 +1168,24 @@
       "_unresolved": "6 resolved callers but non-utility callee-intersection is empty in every build -> accessor inlined into its legacy callers"
     },
     "cGcInteractionComponent::GiveReward": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x14087C980",
+      "1.13": "0x1409C6480",
+      "1.24": "0x140B33EE0",
+      "1.38": "0x140CA49F0",
       "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcInteractionData::SetDefaults": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.38": "0x14028A9D0",
       "_unresolved": "3 resolved callers but non-utility callee-intersection is empty in every build -> accessor inlined into its legacy callers"
     },
     "cGcInventoryStore::Add": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x140413990",
+      "1.13": "0x1405262F0",
+      "1.24": "0x140634F80",
+      "1.38": "0x14078B140",
       "_unresolved": "2 resolved callers; caller-intersection stays ambiguous (candidates/build={'1.09.1': 6, '1.13': 6, '1.24': 13, '1.38': 14}); no distinctive resolved callee to pin it"
     },
     "cGcInventoryStore::GetElement": {
@@ -1224,7 +1227,7 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.38": "0x140DD8960",
       "_unresolved": "no anchored caller/callee; depends on the unmapped cGcMarkerPoint cluster."
     },
     "cGcMarkerPoint::Reset": {
@@ -1240,6 +1243,14 @@
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
       "_unresolved": "no anchored caller/callee; would follow from locating cGcMarkerPoint::Reset first."
+    },
+    "cGcMarkerPoint::IsEqual": {
+      "_comment": "Off-surface: not in upstream's 330 hooks, but PLAN.md lists it as an NMS-Newton anchor (marker stability while planets move). Tracked here so the hunt and its blocker are visible.",
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "Marker cluster has no anchor: the struct diverged too far from 4.13 for any body fingerprint and nothing in the marker unit is string/imm-anchored. Live-Ghidra confirmed the scan-event code no longer calls the marker add/remove path the 4.13 way. Needs a fresh anchor (e.g. the marker-vector element size 0x30 in the reset loop at 1.38 0x1406C27A0) or manual RTTI/vtable work. See findings.md."
     },
     "cGcNGuiElement::GetPosition": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1354,7 +1365,7 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.38": "0x140768B20",
       "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
     },
     "cGcPersistentInteractionsManager::PopulateArrays": {
@@ -1418,9 +1429,9 @@
       "1.38": "0x140F12230"
     },
     "cGcPlanetGenerator::GenerateCreatureSpawnData": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
+      "1.09.1": "0x140A4CE40",
+      "1.13": "0x140BBA840",
+      "1.24": "0x140D3F690",
       "1.38": "0x140EE0970",
       "_unresolved": "confident only for 1.38 (see functions); earlier builds give multiple Generate-callees fitting the size window with no tiebreaker."
     },
@@ -1432,17 +1443,18 @@
       "_unresolved": "in the same imm64 cluster as GenerateCreatureRoles; 4 candidate callers of Roles remain and its unique modern caller cGcSolarSystemQuery::Run is not in the anchor map, so it cannot be disambiguated from FulfillGenerationRequests/GenerateWonderQueryData."
     },
     "cGcPlayer::CheckFallenThroughFloor": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x1409F2B20",
+      "1.13": "0x140B5BB30",
+      "1.24": "0x140CD9790",
+      "1.38": "0x140E44560",
       "_unresolved": "only caller is cGcPlayer::Update (>20 same-caller callees); modern strings (VOLCANO) and callees (raycast/gravity) are not distinctively mapped in legacy - no unique start"
     },
     "cGcPlayer::GetDominantHand": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "_note": "VR (OpenVR) support arrived in Beyond (2.0, 2019); the cTkHmdOpenVR accessor is absent from all four builds.",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "1.24": "NOT_IN_THIS_VERSION",
+      "1.38": "NOT_IN_THIS_VERSION",
       "_unresolved": "VR accessor calling cTkHmdOpenVR::GetInstance; OpenVR/VR support post-dates all four builds (Beyond 2.0, 2019) - function absent, no legacy signature"
     },
     "cGcPlayer::OnEnteredCockpit": {
@@ -1551,11 +1563,11 @@
       "1.38": "NOT_IN_THIS_VERSION"
     },
     "cGcPlayerFreighterOwnership::ResetPlayerFreighterBase": {
-      "_note": "Freighter purchase arrived in Foundation (1.1).",
+      "_note": "Freighter bases post-date 1.38 (arrived in NEXT 1.5); the base-reset OSD string and its imm64 are absent from every 1.x exe.",
       "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "1.24": "NOT_IN_THIS_VERSION",
+      "1.38": "NOT_IN_THIS_VERSION",
       "_unresolved": "string UI_FREIGHT_BASE_RESET_OWNER_OSD / imm64 0xA3784A062B2E43DB absent in 1.13-1.38 (freighter-base feature post-dates 1.38)"
     },
     "cGcPlayerFreighterOwnership::cGcPlayerFreighterOwnership": {
@@ -1585,7 +1597,7 @@
       "1.38": "0x1408DC720"
     },
     "cGcPlayerHUD::Update": {
-      "1.09.1": "NOT_YET_FOUND",
+      "1.09.1": "0x14087F9C0",
       "1.13": "0x1409C9E00",
       "1.24": "0x140B38490",
       "1.38": "0x140CA93C0"
@@ -1708,9 +1720,9 @@
     },
     "cGcPlayerWanted::Update": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.13": "0x140B71E20",
+      "1.24": "0x140CF1BA0",
+      "1.38": "0x140E95810",
       "_unresolved": "debug strings LAST KNOWN PLAYER POS / LAST KNOWN DRONE CRIME POS are absent; cGcDroneComponentData is non-distinctive (~20 owners); the closest witness/drone candidate (1.38 0x140EC3280) is NOT called by cGcPlayer::Update, so it is likely cGcWitness::Update or a sub-helper, not Wanted::Update - unconfirmed"
     },
     "cGcPlayerWeapon::GetChargeFactor": {
@@ -1812,10 +1824,11 @@
       "_unresolved": "cGcMaintenanceComponentData class-name string is only emitted in the 1.38 exe."
     },
     "cGcScanEvent::UpdateSpaceStationLocation": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "_note": "Space-station settlements post-date 1.38; the SettlementConstructionLevel string is absent from every 1.x exe.",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "1.24": "NOT_IN_THIS_VERSION",
+      "1.38": "NOT_IN_THIS_VERSION",
       "_unresolved": "distinctive string SettlementConstructionLevel is absent from all legacy exes (space-station settlements are a post-1.38 feature); no other anchor."
     },
     "cGcScanEventManager::PassesPlanetInfoChecks": {
@@ -1961,10 +1974,10 @@
       "_unresolved": "84-byte stat getter; one of many indistinguishable small callers of GetPrimaryItemForStat; vote score 1, non-unique"
     },
     "cGcSpaceshipWarp::UpdatePulseDrive": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.09.1": "0x1409E7E40",
+      "1.13": "0x140B4E4C0",
+      "1.24": "0x140CCBBA0",
+      "1.38": "0x140E6F2E0",
       "_unresolved": "target_hints signature is mismatched (points at cGcPlayerExperienceDirector::UpdatePulseEncounters); no reliable anchor"
     },
     "cGcSpaceshipWeapons::GetAverageBarrelPos": {
@@ -2078,9 +2091,9 @@
     },
     "cTkAudioManager::Play_attenuated": {
       "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
+      "1.13": "0x140C55610",
+      "1.24": "0x140E0A4F0",
+      "1.38": "0x140FC7830",
       "_unresolved": "Wwise Play(TkAudioID,cTkVector3&,TkAudioObject,float). Only anchors are AK::SoundEngine::PostEvent/SetScalingFactor imports (unmapped) and many unmapped callers; no unique legacy signature isolated."
     },
     "cTkDynamicGravityControl::Construct": {
@@ -2108,7 +2121,8 @@
       "1.09.1": "0x1403EF3F0",
       "1.13": "0x1404CFF10",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND"
+      "1.38": "NOT_YET_FOUND",
+      "_unresolved": "port() abstained for ['1.24', '1.38'] (no agreeing distinctive-token/call-graph winner)"
     },
     "cTkEngineUtils::GetMasterModelNode": {
       "1.09.1": "NOT_YET_FOUND",

@@ -27,11 +27,16 @@ this fork maps functions **structurally** and records every result in
 `nmspy/data/offsets.json`, where each slot is an address, `NOT_YET_FOUND`, or
 `NOT_IN_THIS_VERSION` (with a note on the release history).
 
-Coverage of the upstream hook surface so far: **1.09.1: 112, 1.13: 120, 1.24: 124,
-1.38: 130** of ~330 functions, plus the struct-field and version-detection layers.
-The remaining slots are dominated by functions that are inlined, ICF-folded, or belong
-to features that postdate these 2016-2018 builds; `tools/legacy_re/findings.md` records
-which and why.
+Coverage of the upstream hook surface so far: **1.09.1: 136, 1.13: 148, 1.24: 154,
+1.38: 162** of ~330 functions located, plus the struct-field and version-detection
+layers. The goal is **100% classification**, not 100% location, and the "should exist
+but not yet located" surface is there: every one of those slots is either a located
+address, `NOT_IN_THIS_VERSION` (the feature postdates the build), or `NOT_YET_FOUND`
+with a recorded blocker. A hard ceiling on *location* is that the
+2016-2017 MSVC inlined many small accessors, `/OPT:ICF`-folded identical siblings, and
+predates modern helper-splits, so a number of upstream functions are not separately
+present in these builds and cannot be hooked there; `tools/legacy_re/findings.md`
+records which and why.
 
 ### The tooling (`tools/legacy_re/`)
 
@@ -50,6 +55,13 @@ which and why.
   surface in `offsets.json` and the gated hook stubs in `nmspy/data/generated_hooks.py`.
 - **`merge_finder_results.py`** — validates and merges hunt results, re-checking every
   address is a real function start before it lands.
+- **`ghidra_live.py`** — live access to the analyzed Ghidra projects via pyghidra for
+  the string-less remainder the SQLite decomp can't reach: real ReferenceManager xrefs
+  (indirect/vtable/data, not just E8/E9), the decompiler on demand, `dossier` (dump a
+  mapped anchor's body + its callees with decompiled bodies in one JVM open), and
+  `decompmany` (decompile an address list). `fleet_slice.py` turns a dossier into a
+  focused per-target view for a matching agent (4.13 profile + anchor context +
+  size-banded candidate bodies).
 - **`verify_offsets.py`, `verify_alignment.py`** — invariant checks (every address is a
   function start; a decomp database actually matches its exe).
 - **`HUNTING.md`, `findings.md`** — the hunt protocol and the running derivation log.
@@ -65,6 +77,16 @@ and merges centrally, so no agent writes an address that is not first confirmed 
 real function start. Agents report honest `unresolved` reasons instead of guessing, and
 cross-version transfer (find once in the build closest to the PDB, port sideways) does
 the heavy lifting. Two such rounds mapped ~210 addresses across the four builds.
+
+Once the string/constant sweeps saturated, a later round switched to **decompiler-in-the-
+loop** matching for the string-less remainder: `ghidra_live.py` dumps a mapped anchor's
+callees with their decompiled bodies, agents identify each target by signature and
+behaviour, an adversarial pass refutes weak matches, and the survivors are ported
+sideways and confirmed by structural fingerprint (`match_crossbuild.py`). This round also
+established the honest ceiling empirically: among targets that even have a mapped anchor,
+only ~16% are separately present in these builds; the rest were inlined or folded by the
+2016-2017 compiler and simply cannot be hooked, so they are recorded with that reason
+instead of a forced address.
 
 **NOTE:** Any responsibility for broken saves is entirely on the users of this library.
 This library will never contain functions relating to online functionality.
