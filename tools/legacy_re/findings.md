@@ -356,3 +356,30 @@ but unmapped" surface (173 functions) is 100% classified with a recorded blocker
 - The app data block (`cGcApplicationData*` global) is the legacy analogue of the
   modern `cGcApplication::mpData`; sub-objects live at fixed offsets inside it
   (e.g. `+0x30` referenced in every build's Construct).
+
+### Runtime-class field offsets (exe RE, `field_evidence.py` + adversarial verify)
+
+Offsets by build `1.09.1 / 1.13 / 1.24 / 1.38`, written into `nmspy/data/types.py`
+`_vfields_`. Derived from each class's ctor/Construct/user methods in the cached decomp
+(`tools/legacy_re/field_evidence.py`), then adversarially verified; guarded by
+`tools/legacy_re/test_runtime_fields.py`.
+
+- `cGcPlanet`: `miPlanetIndex` (int) `0x50 / 0x50 / 0x50 / 0x58`; `mPlanetGenerationInputData`
+  (embedded) `0x2F00 / 0x3010 / 0x3010 / 0x3550`; `mRegionMap` (embedded `cGcTerrainRegionMap`,
+  ctor'd in place, used by `SetupRegionMap`) `0x2FC0 / 0x30F0 / 0x30F0 / 0x3630`; `mNode`
+  (`TkHandle`, ctor sentinel `0x3FFFF`, fed to the node-transform call in `Generate`)
+  `0xE7CE8 / 0x12E318 / 0x12E318 / 0x12E868`; `mPosition` (`Vector3f`, the three floats +w=1.0
+  written in `Generate`) `0xE7D00 / 0x12E330 / 0x12E330 / 0x12E880`. `mpEnvProperties`,
+  `mPlanetDiscoveryData` not yet located.
+- `cGcShipHUD`: `mHeadsUpGUI` (embedded `HEADSUP.MXML` GUI, named from `LoadData`'s MXML loads)
+  `0x22930 / 0x23030 / 0x23030 / 0x23AD0`; `miSelectedPlanet` (int, from `RenderHeadsUp`)
+  `0x212A8 / 0x21998 / 0x21998 / 0x22438`.
+- `cGcSolarSystem`: `maPlanets` (base of the 6 inline `cGcPlanet`, from the 6-iter `Construct`
+  loop) `0x16B0 / 0x17A0 / 0x17A0 / 0x1C30`.
+- `cGcApplication` (static singleton, base = the object passed to `cTkFSM::Construct`/`Update`:
+  `&DAT_14160BA50 / &DAT_1417F6C80 / &DAT_141A433F0 / &DAT_142033690`): `mpData`
+  (`cGcApplicationData*`) at base `+0x38` in all builds; `muPlayerSaveSlot` (int) at `+0x40`
+  (1.38 only so far).
+- `cTkDynamicGravityControl::maGravityPoints`: **not accepted.** Only the ctor is located
+  (`Construct`/`GetGravity` are `NOT_YET_FOUND`); the ctor's `+0x4C800` store is the pool
+  bookkeeping, not the points array. Needs `GetGravity` located first.

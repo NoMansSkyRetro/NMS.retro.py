@@ -23,6 +23,8 @@ from logging import getLogger
 
 from pymhf.core.hooking import Structure
 
+from nmspy.data.basic_types import TkHandle, Vector3f
+
 # The auto-generated full upstream hook surface (see tools/legacy_re/
 # generate_hook_stubs.py). Everything it defines is importable from this module;
 # the hand-written classes below inherit from it and refine what they need.
@@ -85,9 +87,13 @@ class cTkFSMState(gen.cTkFSMState, Structure):
 class cGcApplication(gen.cGcApplication, cTkFSM):
     """The static application singleton (a cTkFSM whose states are the App* states)."""
 
+    # The app is a static singleton (base = the value passed to cTkFSM::Construct/Update in
+    # cGcApplication::Construct/Update: 1.09.1 &DAT_14160BA50, 1.13 &DAT_1417F6C80,
+    # 1.24 &DAT_141A433F0, 1.38 &DAT_142033690); mpData (cGcApplicationData*) sits at base+0x38
+    # in every build and the big subsystems live behind it, so modern deep offsets do not map.
     _vfields_ = {
         "mbPaused": (c_bool, {}),
-        "muPlayerSaveSlot": (c_int32, {}),
+        "muPlayerSaveSlot": (c_int32, {"1.38": 0x40}),
     }
 
     @legacy_hook("cGcApplication::Update")
@@ -125,14 +131,18 @@ class cGcGameState(gen.cGcGameState, Structure):
 
 @versioned_struct
 class cGcPlanet(gen.cGcPlanet, Structure):
+    # Offsets are exe-RE'd from cGcPlanet::cGcPlanet/Construct/Generate/SetupRegionMap across
+    # builds (tools/legacy_re/field_evidence.py; adversarially verified). mRegionMap and
+    # mPlanetGenerationInputData are embedded sub-objects, so the offset is the sub-object
+    # start, not a pointer value. mpEnvProperties/mPlanetDiscoveryData not yet located.
     _vfields_ = {
-        "miPlanetIndex": (c_int32, {}),
-        "mPosition": (c_uint64, {}),
-        "mNode": (c_uint64, {}),
-        "mRegionMap": (c_uint64, {}),
+        "miPlanetIndex": (c_int32, {"1.09.1": 0x50, "1.13": 0x50, "1.24": 0x50, "1.38": 0x58}),
+        "mPlanetGenerationInputData": (c_uint64, {"1.09.1": 0x2F00, "1.13": 0x3010, "1.24": 0x3010, "1.38": 0x3550}),
+        "mRegionMap": (c_uint64, {"1.09.1": 0x2FC0, "1.13": 0x30F0, "1.24": 0x30F0, "1.38": 0x3630}),
+        "mNode": (TkHandle, {"1.09.1": 0xE7CE8, "1.13": 0x12E318, "1.24": 0x12E318, "1.38": 0x12E868}),
+        "mPosition": (Vector3f, {"1.09.1": 0xE7D00, "1.13": 0x12E330, "1.24": 0x12E330, "1.38": 0x12E880}),
         "mpEnvProperties": (c_uint64, {}),
         "mPlanetDiscoveryData": (c_uint64, {}),
-        "mPlanetGenerationInputData": (c_uint64, {}),
     }
 
     @legacy_hook("cGcPlanet::SetupRegionMap")
@@ -144,8 +154,10 @@ class cGcPlanet(gen.cGcPlanet, Structure):
 
 @versioned_struct
 class cGcSolarSystem(gen.cGcSolarSystem, Structure):
+    # Base of the 6 inline cGcPlanet objects (stride = sizeof cGcPlanet); from the 6-iteration
+    # loop in cGcSolarSystem::Construct. The offset is the array base, not a pointer.
     _vfields_ = {
-        "maPlanets": (c_uint64, {}),
+        "maPlanets": (c_uint64, {"1.09.1": 0x16B0, "1.13": 0x17A0, "1.24": 0x17A0, "1.38": 0x1C30}),
     }
 
     @legacy_hook("cGcSolarSystem::OnEnterPlanetOrbit")
@@ -157,9 +169,11 @@ class cGcSolarSystem(gen.cGcSolarSystem, Structure):
 
 @versioned_struct
 class cGcShipHUD(gen.cGcShipHUD, Structure):
+    # mHeadsUpGUI is the embedded HEADSUP.MXML cGcNGui (offset is sub-object start), named from
+    # cGcShipHUD::LoadData's MXML loads; miSelectedPlanet from RenderHeadsUp. PanelVisible not found.
     _vfields_ = {
-        "mHeadsUpGUI": (c_uint64, {}),
-        "miSelectedPlanet": (c_int32, {}),
+        "mHeadsUpGUI": (c_uint64, {"1.09.1": 0x22930, "1.13": 0x23030, "1.24": 0x23030, "1.38": 0x23AD0}),
+        "miSelectedPlanet": (c_int32, {"1.09.1": 0x212A8, "1.13": 0x21998, "1.24": 0x21998, "1.38": 0x22438}),
         "mbSelectedPlanetPanelVisible": (c_bool, {}),
     }
 
