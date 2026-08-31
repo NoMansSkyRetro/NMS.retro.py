@@ -1,0 +1,1118 @@
+{
+ "cGcPlanet::UpdateWeather": {
+  "anchors": [
+   "cGcSky::SetStormState"
+  ],
+  "anchors_138": {
+   "cGcSky::SetStormState": "0x140DEF190"
+  },
+  "modern_sig": "void cGcPlanet::UpdateWeather(float)",
+  "modern_len": 1952,
+  "modern_callees": [
+   "??$SmoothCD@MM@cTkCurveFunction@@SAMPEAMAEBM1MM@Z",
+   "??$_Emplace_reallocate@AEA_KH@?$vector@UsStorm@cGcSky@@V?$TkSTLAllocatorShim@UsStorm@cGcSky@@$07$0?0@@@std@@AEAAPEAUsStorm@cGcSky@@QEAU23@AEA_K$$QEAH@Z",
+   "cGcPlanet::GetUA",
+   "cGcPlanet::UpdateClouds",
+   "cGcPlanet::UpdateGravity",
+   "cGcPlanet::UpdateTargetGravityMultiplier"
+  ]
+ },
+ "XMLNode::writeToFile": {
+  "anchors": [
+   "cTkFileSystem::Open",
+   "cTkFileSystem::Write"
+  ],
+  "anchors_138": {
+   "cTkFileSystem::Open": "0x1410A2450",
+   "cTkFileSystem::Write": "0x1410A2830"
+  },
+  "modern_sig": "XMLError XMLNode::writeToFile(char const *, char const *, char)",
+  "modern_len": 594,
+  "modern_callees": [
+   "??$Format@D$0A@@?$cTkFixedString@$0IA@D@@QEAAHPEBDZZ",
+   "XMLNode::CreateXMLStringR",
+   "XMLNode::deleteNodeContent_priv",
+   "cTkFileSystem::Close",
+   "cTkFileSystem::Open",
+   "cTkFileSystem::Write"
+  ]
+ },
+ "cEgGeometryResource::Load": {
+  "anchors": [
+   "cEgResource::Load"
+  ],
+  "anchors_138": {
+   "cEgResource::Load": "0x1411A68D0"
+  },
+  "modern_sig": "bool cEgGeometryResource::Load(char const *, int)",
+  "modern_len": 252,
+  "modern_callees": [
+   "__dyn_tls_on_demand_init",
+   "cEgGeometryResource::ParseData",
+   "cEgResource::Load",
+   "cTkGeometryData::FixUp",
+   "cTkMemoryPoolBlock::~cTkMemoryPoolBlock"
+  ]
+ },
+ "cGcApplication::Data::Data": {
+  "anchors": [
+   "cGcApplication::Construct"
+  ],
+  "anchors_138": {
+   "cGcApplication::Construct": "0x140675900"
+  },
+  "modern_sig": "cGcApplication::Data::Data()",
+  "modern_len": 1511,
+  "modern_callees": [
+   "??2@YAPEAX_K@Z",
+   "?_Assign_grow@?$_Hash_vec@V?$TkSTLAllocatorShim@V?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBT?$TkID@$0IA@@@PEAVcGcVibrationChannel@@@std@@@std@@@std@@@std@@$07$0BC@@@@std@@QEAAX_KV?$_List_unchecked_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBT?$TkID@$0IA@@@PEAVcGcVibrationChannel@@@std@@@std@@@std@@@2@@Z",
+   "cGcAudioManager::cGcAudioManager",
+   "cGcCameraManager::cGcCameraManager",
+   "cGcFrontendManager::cGcFrontendManager",
+   "cGcGameState::cGcGameState"
+  ]
+ },
+ "cGcBaseBuildingManager::GetBaseRootNode": {
+  "anchors": [
+   "Engine::AddGroupNode",
+   "cGcScanEvent::CalculateMarkerPosition",
+   "cGcScanEvent::UpdateInteraction"
+  ],
+  "anchors_138": {
+   "Engine::AddGroupNode": "0x141129560",
+   "cGcScanEvent::CalculateMarkerPosition": "0x140DE1B60",
+   "cGcScanEvent::UpdateInteraction": "0x140DE0DC0"
+  },
+  "modern_sig": "TkHandle cGcBaseBuildingManager::GetBaseRootNode(BaseIndex, bool)",
+  "modern_len": 656,
+  "modern_callees": [
+   "??$Format@D$0A@@?$cTkFixedString@$0CA@D@@QEAAHPEBDZZ",
+   "?resize@?$vector@VTkHandle@@V?$TkSTLAllocatorShim@VTkHandle@@$03$0?0@@@std@@QEAAX_K@Z",
+   "Engine::AddGroupNode",
+   "cGcBaseBuildingManager::GetBaseBuildingRootMatrix",
+   "cTkEngineSettings::GetSettingGraphicDetail",
+   "cTkEngineUtils::SetNodeMatrixWorld"
+  ]
+ },
+ "cGcBaseSearch::FindNearestBaseInCurrentSystem": {
+  "anchors": [
+   "cGcScanEvent::CalculateMarkerPosition"
+  ],
+  "anchors_138": {
+   "cGcScanEvent::CalculateMarkerPosition": "0x140DE1B60"
+  },
+  "modern_sig": "BaseIndex cGcBaseSearch::FindNearestBaseInCurrentSystem(cTkVector3 const&, ePersistentBaseTypes)",
+  "modern_len": 930,
+  "modern_callees": [
+   "??$_Sort_unchecked@PEAUsBaseSearchResult@cGcBaseSearch@@U?$less@X@std@@@std@@YAXPEAUsBaseSearchResult@cGcBaseSearch@@0_JU?$less@X@0@@Z",
+   "??2@YAPEAX_KPEBDH1@Z",
+   "??3@YAXPEAX@Z",
+   "?_Xlength@?$vector@CV?$StackAllocator@C$0CAA@$0?0@@@std@@CAXXZ",
+   "cGcBasePartSearchFilter::SetDefaults",
+   "cGcBaseSearch::Match"
+  ]
+ },
+ "cGcBinoculars::GetRange": {
+  "anchors": [
+   "cGcBinoculars::UpdateTarget"
+  ],
+  "anchors_138": {
+   "cGcBinoculars::UpdateTarget": "0x140DD15E0"
+  },
+  "modern_sig": "float cGcBinoculars::GetRange()",
+  "modern_len": 182,
+  "modern_callees": [
+   "cGcSolarSystem::GetNearestPlanet"
+  ]
+ },
+ "cGcBinoculars::UpdateRayCasts": {
+  "anchors": [
+   "cGcBinoculars::UpdateTarget"
+  ],
+  "anchors_138": {
+   "cGcBinoculars::UpdateTarget": "0x140DD15E0"
+  },
+  "modern_sig": "void cGcBinoculars::UpdateRayCasts(cTkContactPoint &)",
+  "modern_len": 3611,
+  "modern_callees": [
+   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
+   "??BcTkRigidBodyPtr@@QEAAPEAVcTkRigidBody@@XZ",
+   "?Cos@?$cTkTrig@M@@SAMM@Z",
+   "?Count@ReadBytesSkip@AK@@QEAAHXZ",
+   "?Sin@?$cTkTrig@M@@SAMM@Z",
+   "EgInstancedModelExtension::IsInstanceModelNode"
+  ]
+ },
+ "cGcBinoculars::UpdateScanBarProgress": {
+  "anchors": [
+   "cGcBinoculars::UpdateTarget"
+  ],
+  "anchors_138": {
+   "cGcBinoculars::UpdateTarget": "0x140DD15E0"
+  },
+  "modern_sig": "void cGcBinoculars::UpdateScanBarProgress(float)",
+  "modern_len": 67,
+  "modern_callees": [
+   "`cGcBinoculars::UpdateScanBarProgress'::`2'::<lambda_1>::operator()"
+  ]
+ },
+ "cGcFrontendManager::cGcFrontendManager": {
+  "anchors": [
+   "cGcNGuiLayer::cGcNGuiLayer"
+  ],
+  "anchors_138": {
+   "cGcNGuiLayer::cGcNGuiLayer": "0x14066B580"
+  },
+  "modern_sig": "cGcFrontendManager::cGcFrontendManager()",
+  "modern_len": 1967,
+  "modern_callees": [
+   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
+   "??0MessageBoxData@cGcFrontendManager@@QEAA@XZ",
+   "cGcFrontendModelRenderer::cGcFrontendModelRenderer",
+   "cGcFrontendPage::cGcFrontendPage",
+   "cGcNGui::cGcNGui",
+   "cGcNGuiLayer::cGcNGuiLayer"
+  ]
+ },
+ "cGcFrontendPageDiscovery::GetDiscoveryHintString": {
+  "anchors": [
+   "cGcFrontendPageDiscovery::DoDiscoveryView"
+  ],
+  "anchors_138": {
+   "cGcFrontendPageDiscovery::DoDiscoveryView": "0x140834900"
+  },
+  "modern_sig": "cTkFixedString<64,char> cGcFrontendPageDiscovery::GetDiscoveryHintString(eTileType, eCreatureType, eRarity, eCreatureActiveTime, eCreatureHemiSphere)",
+  "modern_len": 812,
+  "modern_callees": [
+   "??$Format@D$0A@@?$cTkFixedString@$0EA@D@@QEAAHPEBDZZ"
+  ]
+ },
+ "cGcFrontendPageFunctions::SetEmptySlotBackground": {
+  "anchors": [
+   "cGcNGuiLayer::FindElementRecursive",
+   "cGcNGuiLayer::GetGraphic",
+   "cGcFrontendPageFunctions::DoEmptySlotPopup"
+  ],
+  "anchors_138": {
+   "cGcNGuiLayer::FindElementRecursive": "0x14066BF70",
+   "cGcNGuiLayer::GetGraphic": "0x14066BD50",
+   "cGcFrontendPageFunctions::DoEmptySlotPopup": "0x1408A8FC0"
+  },
+  "modern_sig": "void cGcFrontendPageFunctions::SetEmptySlotBackground(cGcFrontendPage *, cGcNGuiLayer *, InventoryChoice, bool)",
+  "modern_len": 2363,
+  "modern_callees": [
+   "cGcNGuiLayer::FindElementRecursive",
+   "cGcNGuiLayer::GetGraphic"
+  ]
+ },
+ "cGcFrontendPagePortalRunes::CheckUAIsValid": {
+  "anchors": [
+   "cGcGalaxyAttributeGenerator::ClassifyStarSystem",
+   "cGcGalaxyAttributeGenerator::ClassifyVoxel",
+   "cGcGalaxyStarAttributesData::SetDefaults",
+   "cGcGalaxyVoxelGenerator::Populate",
+   "cGcFrontendPagePortalRunes::DoInteraction"
+  ],
+  "anchors_138": {
+   "cGcGalaxyAttributeGenerator::ClassifyStarSystem": "0x140E030C0",
+   "cGcGalaxyAttributeGenerator::ClassifyVoxel": "0x140E02390",
+   "cGcGalaxyStarAttributesData::SetDefaults": "0x140396420",
+   "cGcGalaxyVoxelGenerator::Populate": "0x140E2FBF0",
+   "cGcFrontendPagePortalRunes::DoInteraction": "0x140873740"
+  },
+  "modern_sig": "bool cGcFrontendPagePortalRunes::CheckUAIsValid(unsigned __int64, unsigned __int64 &, bool)",
+  "modern_len": 2396,
+  "modern_callees": [
+   "cGcGalaxyAttributeGenerator::ClassifyStarSystem",
+   "cGcGalaxyAttributeGenerator::ClassifyVoxel",
+   "cGcGalaxyStarAttributesData::SetDefaults",
+   "cGcGalaxyVoxelAttributesData::SetDefaults",
+   "cGcGalaxyVoxelData::cGcGalaxyVoxelData",
+   "cGcGalaxyVoxelData::~cGcGalaxyVoxelData"
+  ]
+ },
+ "cGcGalaxyVoxelAttributesData::SetDefaults": {
+  "anchors": [
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes",
+   "cGcGalaxyVoxelGenerator::Populate"
+  ],
+  "anchors_138": {
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes": "0x140E02630",
+   "cGcGalaxyVoxelGenerator::Populate": "0x140E2FBF0"
+  },
+  "modern_sig": "void cGcGalaxyVoxelAttributesData::SetDefaults()",
+  "modern_len": 76,
+  "modern_callees": []
+ },
+ "cGcHUDManager::cGcHUDManager": {
+  "anchors": [
+   "cGcNGuiLayer::cGcNGuiLayer"
+  ],
+  "anchors_138": {
+   "cGcNGuiLayer::cGcNGuiLayer": "0x14066B580"
+  },
+  "modern_sig": "cGcHUDManager::cGcHUDManager()",
+  "modern_len": 626,
+  "modern_callees": [
+   "??0?$array@VcTkModelResourceRenderer@@$01@std@@QEAA@XZ",
+   "??0DiscoveryInfo@DiscoveryResolver@@QEAA@M@Z",
+   "cGcInventoryStore::cGcInventoryStore",
+   "cGcNGui::cGcNGui",
+   "cGcNGuiLayer::cGcNGuiLayer",
+   "cGcPlayerHUD::cGcPlayerHUD"
+  ]
+ },
+ "cGcInteractionComponent::FindFirstTypedComponent": {
+  "anchors": [
+   "cGcBinoculars::PopulateDiscoveryInfo",
+   "cGcPlayerCommunicator::Update"
+  ],
+  "anchors_138": {
+   "cGcBinoculars::PopulateDiscoveryInfo": "0x140DD3780",
+   "cGcPlayerCommunicator::Update": "0x140CA59D0"
+  },
+  "modern_sig": "cGcInteractionComponent * cGcInteractionComponent::FindFirstTypedComponent(TkHandle, bool)",
+  "modern_len": 173,
+  "modern_callees": [
+   "??$IterateAttachmentsInScene@V<lambda_1>@?1??FindFirstTypedComponent@cGcInteractionComponent@@SAPEAV3@VTkHandle@@_N@Z@@cTkAttachmentManager@@SA?AW4eIterateReturn@@VTkHandle@@V<lambda_1>@?1??FindFirstTypedComponent@cGcInteractionComponent@@SAPEAV5@0_N@Z@@Z",
+   "cTkAttachmentManager::cTkAttachmentManager"
+  ]
+ },
+ "cGcInteractionComponent::GetInteractionData": {
+  "anchors": [
+   "cGcInteractionComponent::DoInteractionEvent"
+  ],
+  "anchors_138": {
+   "cGcInteractionComponent::DoInteractionEvent": "0x140CA2820"
+  },
+  "modern_sig": "cGcInteractionData const * cGcInteractionComponent::GetInteractionData()",
+  "modern_len": 547,
+  "modern_callees": [
+   "cEgSceneNodeData::RecalculateAbsoluteTransform",
+   "cGcInteractionComponent::GetPersistentBuffer",
+   "cGcInteractionComponent::IsPersistentInteract",
+   "cGcInteractionComponent::UpdateInteractionPosition",
+   "cGcPersistentInteractionBuffer::GetInteraction",
+   "cGcPersistentInteractionBuffer::GetInteractionOnPlanet"
+  ]
+ },
+ "cGcInteractionComponent::GetPuzzle": {
+  "anchors": [
+   "cGcInteractionComponent::DoInteractionEvent"
+  ],
+  "anchors_138": {
+   "cGcInteractionComponent::DoInteractionEvent": "0x140CA2820"
+  },
+  "modern_sig": "cGcAlienPuzzleEntry const * cGcInteractionComponent::GetPuzzle()",
+  "modern_len": 138,
+  "modern_callees": [
+   "cGcInteractionComponent::CalculateCurrentPuzzle"
+  ]
+ },
+ "cGcInteractionComponent::GiveReward": {
+  "anchors": [
+   "cGcInteractionComponent::DoInteractionEvent"
+  ],
+  "anchors_138": {
+   "cGcInteractionComponent::DoInteractionEvent": "0x140CA2820"
+  },
+  "modern_sig": "bool cGcInteractionComponent::GiveReward(cGcAlienPuzzleOption const&, bool, bool)",
+  "modern_len": 1075,
+  "modern_callees": [
+   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z",
+   "cGcInteractionComponent::GetNewRewardSeed",
+   "cGcRealityManager::LookupMissionByDialogID",
+   "cGcRewardManager::GiveGenericReward",
+   "cGcRewardManager::cGcRewardManager"
+  ]
+ },
+ "cGcInteractionData::SetDefaults": {
+  "anchors": [
+   "cGcBuilding::Visited",
+   "cGcGameState::LoadFromPersistentStorage",
+   "cGcInteractionComponent::DoInteractionEvent"
+  ],
+  "anchors_138": {
+   "cGcBuilding::Visited": "0x140EDDFE0",
+   "cGcGameState::LoadFromPersistentStorage": "0x14075CFD0",
+   "cGcInteractionComponent::DoInteractionEvent": "0x140CA2820"
+  },
+  "modern_sig": "void cGcInteractionData::SetDefaults()",
+  "modern_len": 21,
+  "modern_callees": []
+ },
+ "cGcInventoryStore::Add": {
+  "anchors": [
+   "cGcPlayerState::LoadFromData"
+  ],
+  "anchors_138": {
+   "cGcPlayerState::LoadFromData": "0x140779DB0"
+  },
+  "modern_sig": "cGcInventoryIndex cGcInventoryStore::Add(cGcInventoryElement const&)",
+  "modern_len": 1141,
+  "modern_callees": [
+   "??$_Emplace_reallocate@AEAVcGcInventoryElement@@@?$vector@VcGcInventoryElement@@V?$TkSTLAllocatorShim@VcGcInventoryElement@@$07$0?0@@@std@@AEAAPEAVcGcInventoryElement@@QEAV2@AEAV2@@Z",
+   "??$emplace@AEBT?$TkID@$0BAA@@@H@?$_Hash@V?$_Umap_traits@T?$TkID@$0BAA@@@HV?$_Uhash_compare@T?$TkID@$0BAA@@@UHash256@TkIDUnorderedMap@@U?$equal_to@T?$TkID@$0BAA@@@@std@@@std@@V?$TkSTLAllocatorShim@U?$pair@$$CBT?$TkID@$0BAA@@@H@std@@$07$0?0@@$0A@@std@@@std@@QEAA?AU?$pair@V?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBT?$TkID@$0BAA@@@H@std@@@std@@@std@@@std@@_N@1@AEBT?$TkID@$0BAA@@@$$QEAH@Z",
+   "??$find@X@?$_Hash@V?$_Umap_traits@T?$TkID@$0BAA@@@HV?$_Uhash_compare@T?$TkID@$0BAA@@@UHash256@TkIDUnorderedMap@@U?$equal_to@T?$TkID@$0BAA@@@@std@@@std@@V?$TkSTLAllocatorShim@U?$pair@$$CBT?$TkID@$0BAA@@@H@std@@$07$0?0@@$0A@@std@@@std@@QEAA?AV?$_List_iterator@V?$_List_val@U?$_List_simple_types@U?$pair@$$CBT?$TkID@$0BAA@@@H@std@@@std@@@std@@@1@AEBT?$TkID@$0BAA@@@@Z",
+   "??8cGcAtlasSendSubmitContribution@@QEBA_NAEBV0@@Z",
+   "cGcByteBeatTokenInfo::cGcByteBeatTokenInfo",
+   "cGcInventoryElement::SetDefaults"
+  ]
+ },
+ "cGcInventoryStore::cGcInventoryStore": {
+  "anchors": [
+   "cGcPlayerState::LoadFromData"
+  ],
+  "anchors_138": {
+   "cGcPlayerState::LoadFromData": "0x140779DB0"
+  },
+  "modern_sig": "cGcInventoryStore::cGcInventoryStore()",
+  "modern_len": 360,
+  "modern_callees": [
+   "?_Assign_grow@?$_Hash_vec@V?$TkSTLAllocatorShim@V?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@T?$TkID@$0IA@@@@std@@@std@@U_Iterator_base0@2@@std@@$07$0?0@@@std@@QEAAX_KV?$_List_unchecked_const_iterator@V?$_List_val@U?$_List_simple_types@T?$TkID@$0IA@@@@std@@@std@@U_Iterator_base0@2@@2@@Z",
+   "cGcInventoryLayout::SetDefaults"
+  ]
+ },
+ "cGcMarkerList::RemoveMarker": {
+  "anchors": [
+   "cGcCreatureComponent::Prepare",
+   "cGcScanEvent::UpdateInteraction"
+  ],
+  "anchors_138": {
+   "cGcCreatureComponent::Prepare": "0x140D41AD0",
+   "cGcScanEvent::UpdateInteraction": "0x140DE0DC0"
+  },
+  "modern_sig": "bool cGcMarkerList::RemoveMarker(cGcMarkerPoint &)",
+  "modern_len": 219,
+  "modern_callees": [
+   "??4cGcMarkerPoint@@QEAAAEAV0@$$QEAV0@@Z",
+   "cGcMarkerPoint::IsEqual"
+  ]
+ },
+ "cGcMarkerList::TryAddMarker": {
+  "anchors": [
+   "cGcScanEvent::UpdateInteraction"
+  ],
+  "anchors_138": {
+   "cGcScanEvent::UpdateInteraction": "0x140DE0DC0"
+  },
+  "modern_sig": "bool cGcMarkerList::TryAddMarker(cGcMarkerPoint const&, bool)",
+  "modern_len": 818,
+  "modern_callees": [
+   "??$_Emplace_reallocate@AEBVcGcMarkerPoint@@@?$vector@VcGcMarkerPoint@@V?$TkSTLAllocatorShim@VcGcMarkerPoint@@$0BA@$0?0@@@std@@AEAAPEAVcGcMarkerPoint@@QEAV2@AEBV2@@Z",
+   "??4cGcMarkerPoint@@QEAAAEAV0@$$QEAV0@@Z",
+   "cGcMarkerPoint::IsEqual",
+   "cGcMarkerPoint::cGcMarkerPoint"
+  ]
+ },
+ "cGcMarkerPoint::Reset": {
+  "anchors": [
+   "cGcCreatureComponent::Prepare"
+  ],
+  "anchors_138": {
+   "cGcCreatureComponent::Prepare": "0x140D41AD0"
+  },
+  "modern_sig": "void cGcMarkerPoint::Reset()",
+  "modern_len": 750,
+  "modern_callees": [
+   "cTkAttachmentPtr::cTkAttachmentPtr"
+  ]
+ },
+ "cGcNGuiElement::SetPosition": {
+  "anchors": [
+   "cGcPlayerHUD::RenderCrosshair",
+   "cGcPlayerHUD::RenderWeaponPanel"
+  ],
+  "anchors_138": {
+   "cGcPlayerHUD::RenderCrosshair": "0x1408D8910",
+   "cGcPlayerHUD::RenderWeaponPanel": "0x1408DC720"
+  },
+  "modern_sig": "void cGcNGuiElement::SetPosition(cTkVector2 const&, cGcNGuiElement::PositionType)",
+  "modern_len": 173,
+  "modern_callees": []
+ },
+ "cGcNGuiLayer::FindTextRecursive": {
+  "anchors": [
+   "cGcNGuiLayer::FindElementRecursive",
+   "cGcBinoculars::UpdateTarget"
+  ],
+  "anchors_138": {
+   "cGcNGuiLayer::FindElementRecursive": "0x14066BF70",
+   "cGcBinoculars::UpdateTarget": "0x140DD15E0"
+  },
+  "modern_sig": "cGcNGuiText * cGcNGuiLayer::FindTextRecursive(union TkID<128> const&)",
+  "modern_len": 250,
+  "modern_callees": [
+   "cGcNGuiLayer::FindElementRecursive"
+  ]
+ },
+ "cGcPersistentInteractionBuffer::SaveInteraction": {
+  "anchors": [
+   "cGcBuilding::Visited"
+  ],
+  "anchors_138": {
+   "cGcBuilding::Visited": "0x140EDDFE0"
+  },
+  "modern_sig": "void cGcPersistentInteractionBuffer::SaveInteraction(cTkVector3 const&, cGcInteractionData const&, bool, float)",
+  "modern_len": 472,
+  "modern_callees": [
+   "??2@YAPEAX_K@Z",
+   "cGcInteractionData::SetDefaults",
+   "cGcNetworkBufferHash::OnBufferRangeSet",
+   "cGcNetworkBufferSyncManager::BroadcastMessage",
+   "cGcNetworkMessage::cGcNetworkMessage",
+   "cGcPersistentInteractionBuffer::StoreInteraction"
+  ]
+ },
+ "cGcPersistentInteractionsManager::LoadGalacticAddressBuffers": {
+  "anchors": [
+   "cGcSolarSystem::Generate"
+  ],
+  "anchors_138": {
+   "cGcSolarSystem::Generate": "0x140EE7250"
+  },
+  "modern_sig": "void cGcPersistentInteractionsManager::LoadGalacticAddressBuffers(unsigned __int64 const&)",
+  "modern_len": 712,
+  "modern_callees": [
+   "??$_Emplace_one_at_back@F@?$vector@FV?$TkSTLAllocatorShim@F$01$0?0@@@std@@AEAAAEAF$$QEAF@Z",
+   "??$doThrow@Vbad_alloc@stdext@@$$V@detail@robin_hood@@YAXXZ",
+   "??$insertKeyPrepareEmptySpot@AEB_K@?$Table@$00$0FA@_KV?$vector@GV?$TkSTLAllocatorShim@G$01$0?0@@@std@@U?$hash@_KX@robin_hood@@U?$equal_to@_K@2@$0?0@detail@robin_hood@@AEAA?AU?$pair@_KW4InsertionState@?$Table@$00$0FA@_KV?$vector@GV?$TkSTLAllocatorShim@G$01$0?0@@@std@@U?$hash@_KX@robin_hood@@U?$equal_to@_K@2@$0?0@detail@robin_hood@@@std@@AEB_K@Z",
+   "??4?$DataNode@V?$Table@$00$0FA@_KV?$vector@GV?$TkSTLAllocatorShim@G$01$0?0@@@std@@U?$hash@_KX@robin_hood@@U?$equal_to@_K@2@$0?0@detail@robin_hood@@$00@?$Table@$00$0FA@_KV?$vector@GV?$TkSTLAllocatorShim@G$01$0?0@@@std@@U?$hash@_KX@robin_hood@@U?$equal_to@_K@2@$0?0@detail@robin_hood@@QEAAAEAV0123@$$QEAV0123@@Z",
+   "?clear@?$Table@$00$0FA@_KV?$vector@GV?$TkSTLAllocatorShim@G$01$0?0@@@std@@U?$hash@_KX@robin_hood@@U?$equal_to@_K@2@$0?0@detail@robin_hood@@QEAAXXZ",
+   "TkThread::LockMutex"
+  ]
+ },
+ "cGcPersistentInteractionsManager::PopulateArrays": {
+  "anchors": [
+   "cGcPlayerState::SaveToData"
+  ],
+  "anchors_138": {
+   "cGcPlayerState::SaveToData": "0x14077BC40"
+  },
+  "modern_sig": "void cGcPersistentInteractionsManager::PopulateArrays(cTkFixedArray<cGcInteractionBuffer,11> &, cTkDynamicArray<cGcPersistentBase> &, cTkDynamicArray<cGcMaintenanceContainer> &, cTkDynamicArray<cGcMaintenanceContainer> &, cTkDynamicArray<unsigned __int64> &)",
+  "modern_len": 1678,
+  "modern_callees": [
+   "??$_Emplace_one_at_back@AEBH@?$vector@HV?$TkSTLAllocatorShim@H$03$0?0@@@std@@AEAAAEAHAEBH@Z",
+   "?Allocate@?$cTkDynamicArray@VcGcPersistentBase@@@@QEAAXH@Z",
+   "?Allocate@?$cTkDynamicArray@_J@@QEAAXH@Z",
+   "?PopulateVariableData@?$cGcVariablePersistentInteractionBuffer@VcGcMaintenanceContainer@@@@QEAAXAEAVcGcInteractionBuffer@@AEAV?$cTkDynamicArray@VcGcMaintenanceContainer@@@@@Z",
+   "cGcBaseBuildingBaseLayout::ForceGenerateLayout",
+   "cGcBaseBuildingBaseLayout::TestLayout"
+  ]
+ },
+ "cGcPhotoModeUI::OnRenderScreenshotFinished": {
+  "anchors": [
+   "cTkTextureBase::CalculateTextureSize"
+  ],
+  "anchors_138": {
+   "cTkTextureBase::CalculateTextureSize": "0x140FE02A0"
+  },
+  "modern_sig": "void cGcPhotoModeUI::OnRenderScreenshotFinished(void *)",
+  "modern_len": 3366,
+  "modern_callees": [
+   "??$Format@D$0A@@?$cTkFixedString@$0BAA@D@@QEAAHPEBDZZ",
+   "?InsertPrefix@?$cTkStringUtilities@D@@SAPEADPEADHPEBD@Z",
+   "Engine::GetRenderBufferTexture",
+   "SaveImageUsingWic",
+   "TonemapHdrToSdr",
+   "cTkTexture::CopyPixelDataToBuffer"
+  ]
+ },
+ "cGcPlanetGenerator::GenerateQueryInfo": {
+  "anchors": [
+   "cGcNameGenerator::GeneratePlanetName"
+  ],
+  "anchors_138": {
+   "cGcNameGenerator::GeneratePlanetName": "0x140C79310"
+  },
+  "modern_sig": "void cGcPlanetGenerator::GenerateQueryInfo(PlanetGenerationQuery &, cGcPlanetGenerationInputData const&, unsigned __int64, bool)",
+  "modern_len": 4097,
+  "modern_callees": [
+   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
+   "??$_Emplace_reallocate@AEBVcGcPlanetDataResourceHint@@@?$vector@VcGcPlanetDataResourceHint@@V?$TkSTLAllocatorShim@VcGcPlanetDataResourceHint@@$07$0?0@@@std@@AEAAPEAVcGcPlanetDataResourceHint@@QEAV2@AEBV2@@Z",
+   "??0?$cTkFixedArray@VcTkNoiseCaveData@@$00@@QEAA@XZ",
+   "??0?$cTkFixedArray@VcTkNoiseFeatureData@@$06@@QEAA@XZ",
+   "??0?$cTkFixedArray@VcTkNoiseGridData@@$08@@QEAA@XZ",
+   "??0?$cTkFixedArray@VcTkNoiseUberLayerData@@$07@@QEAA@XZ"
+  ]
+ },
+ "cGcPlayer::CheckFallenThroughFloor": {
+  "anchors": [
+   "Engine::GetModelNode",
+   "cGcPlayer::Update"
+  ],
+  "anchors_138": {
+   "Engine::GetModelNode": "0x141128870",
+   "cGcPlayer::Update": "0x140E59230"
+  },
+  "modern_sig": "void cGcPlayer::CheckFallenThroughFloor()",
+  "modern_len": 3857,
+  "modern_callees": [
+   "??$GetNodeName@$00@Engine@@YAPEBDVTkHandle@@@Z",
+   "??BcTkAttachmentPtr@@QEBAPEAVcTkAttachment@@XZ",
+   "Engine::GetModelNode",
+   "Engine::RequestRemoveNode",
+   "cGcPlayer::UpdateGraphics",
+   "cGcSolarSystem::GetNearestPlanet"
+  ]
+ },
+ "cGcPlayer::RenderInventoryEditor": {
+  "anchors": [
+   "cGcPlayer::RenderNGui"
+  ],
+  "anchors_138": {
+   "cGcPlayer::RenderNGui": "0x140FBE0D0"
+  },
+  "modern_sig": "void cGcPlayer::RenderInventoryEditor()",
+  "modern_len": 7660,
+  "modern_callees": [
+   "??$DoComboBox@W4InventoryChoice@@@cTkNGuiEditor@@QEAAXPEBDPEBVcTkMetaDataEnumLookup@@HPEAW4InventoryChoice@@M@Z",
+   "??$DoComboBox@W4eInventoryType@@@cTkNGuiEditor@@QEAAXPEBDPEBVcTkMetaDataEnumLookup@@HPEAW4eInventoryType@@M@Z",
+   "??$DoComboBox@W4eProceduralProductCategory@@@cTkNGuiEditor@@QEAAXPEBDPEBVcTkMetaDataEnumLookup@@HPEAW4eProceduralProductCategory@@M@Z",
+   "??$DoComboBox@W4eStatsType@@@cTkNGuiEditor@@QEAAXPEBDPEBVcTkMetaDataEnumLookup@@HPEAW4eStatsType@@M@Z",
+   "??$Format@D$0A@@?$cTkFixedString@$0EA@D@@QEAAHPEBDZZ",
+   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z"
+  ]
+ },
+ "cGcPlayer::SetToPosition": {
+  "anchors": [
+   "cGcPlayer::Update"
+  ],
+  "anchors_138": {
+   "cGcPlayer::Update": "0x140E59230"
+  },
+  "modern_sig": "void cGcPlayer::SetToPosition(cTkPhysRelVec3 const&, cTkVector3 const&, cTkVector3 const&)",
+  "modern_len": 186,
+  "modern_callees": [
+   "cGcPlayer::SetFacing",
+   "cGcPlayer::UpdateGraphics",
+   "cTkHavokCharacterController::GetRigidBody",
+   "cTkHavokCharacterController::SetPosition",
+   "cTkRigidBody::SetLinearVelocity"
+  ]
+ },
+ "cGcPlayer::TakeDamage": {
+  "anchors": [
+   "cGcPlayer::Update"
+  ],
+  "anchors_138": {
+   "cGcPlayer::Update": "0x140E59230"
+  },
+  "modern_sig": "void cGcPlayer::TakeDamage(float, eDamageType, union TkID<128> const&, cTkVector3 const&, cGcOwnerConcept *, std::vector<cGcCombatEffectDamageMultiplier,TkSTLAllocatorShim<cGcCombatEffectDamageMultiplier,4,-1> > const&)",
+  "modern_len": 6645,
+  "modern_callees": [
+   "??BTkHandle@@QEBAP80@EAAXXZXZ",
+   "??BcTkAttachmentPtr@@QEBAPEAVcTkAttachment@@XZ",
+   "?Cos@?$cTkTrig@M@@SAMM@Z",
+   "cGcCameraManager::IsControlStealingBehaviourActive",
+   "cGcCreatureComponent::GetTypedComponent",
+   "cGcGameCamera::Shake"
+  ]
+ },
+ "cGcPlayer::UpdateGraphics": {
+  "anchors": [
+   "cGcPlayer::Update"
+  ],
+  "anchors_138": {
+   "cGcPlayer::Update": "0x140E59230"
+  },
+  "modern_sig": "void cGcPlayer::UpdateGraphics(bool)",
+  "modern_len": 1336,
+  "modern_callees": [
+   "??$GetNodeRelativeTransMatrix@$0A@@Engine@@YAXVTkHandle@@PEAVcTkMatrix34@@@Z",
+   "cEgSceneNode::SetTransform",
+   "cGcPlayer::GetVehicleMatrix",
+   "cTkDynamicGravityControl::GetGravity",
+   "cTkEngineUtils::SetNodeMatrixWorld",
+   "cTkHavokCharacterController::GetPosition"
+  ]
+ },
+ "cGcPlayerDiscoveryHelper::GetDiscoveryWorth": {
+  "anchors": [
+   "cGcBinoculars::PopulateDiscoveryInfo"
+  ],
+  "anchors_138": {
+   "cGcBinoculars::PopulateDiscoveryInfo": "0x140DD3780"
+  },
+  "modern_sig": "int cGcPlayerDiscoveryHelper::GetDiscoveryWorth(cGcDiscoveryData const&)",
+  "modern_len": 416,
+  "modern_callees": [
+   "cGcCreatureInfo::SetDefaults",
+   "cGcPlanetGenerator::GetCreatureInfoFromDiscoveryData",
+   "cGcPlayerState::GetStatValue"
+  ]
+ },
+ "cGcPlayerEnvironment::IsOnPlanet": {
+  "anchors": [
+   "cGcPlayerHUD::RenderWeaponPanel"
+  ],
+  "anchors_138": {
+   "cGcPlayerHUD::RenderWeaponPanel": "0x1408DC720"
+  },
+  "modern_sig": "bool cGcPlayerEnvironment::IsOnPlanet()",
+  "modern_len": 16,
+  "modern_callees": []
+ },
+ "cGcPlayerEnvironment::IsOnboardOwnFreighter": {
+  "anchors": [
+   "cGcGameState::ComputeWarpCapability",
+   "cGcQuickActionMenu::TriggerAction"
+  ],
+  "anchors_138": {
+   "cGcGameState::ComputeWarpCapability": "0x14075BD50",
+   "cGcQuickActionMenu::TriggerAction": "0x140E98880"
+  },
+  "modern_sig": "bool cGcPlayerEnvironment::IsOnboardOwnFreighter()",
+  "modern_len": 69,
+  "modern_callees": []
+ },
+ "cGcPlayerHUD::cGcPlayerHUD": {
+  "anchors": [
+   "cGcNGuiLayer::cGcNGuiLayer"
+  ],
+  "anchors_138": {
+   "cGcNGuiLayer::cGcNGuiLayer": "0x14066B580"
+  },
+  "modern_sig": "cGcPlayerHUD::cGcPlayerHUD()",
+  "modern_len": 1014,
+  "modern_callees": [
+   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
+   "cGcHUD::cGcHUD",
+   "cGcHUDMarker::cGcHUDMarker",
+   "cGcHUDTrackArrow::cGcHUDTrackArrow",
+   "cGcNGui::cGcNGui",
+   "cGcNGuiLayer::cGcNGuiLayer"
+  ]
+ },
+ "cGcPlayerShipOwnership::GetShipComponent": {
+  "anchors": [
+   "cGcBinoculars::PopulateDiscoveryInfo",
+   "cGcPlayerCommunicator::Update",
+   "cGcQuickActionMenu::TriggerAction",
+   "cGcSpaceshipComponent::Update"
+  ],
+  "anchors_138": {
+   "cGcBinoculars::PopulateDiscoveryInfo": "0x140DD3780",
+   "cGcPlayerCommunicator::Update": "0x140CA59D0",
+   "cGcQuickActionMenu::TriggerAction": "0x140E98880",
+   "cGcSpaceshipComponent::Update": "0x140F61A80"
+  },
+  "modern_sig": "cGcSpaceshipComponent const * cGcPlayerShipOwnership::GetShipComponent(int)",
+  "modern_len": 54,
+  "modern_callees": [
+   "??BcTkAttachmentPtr@@QEBAPEAVcTkAttachment@@XZ",
+   "cGcSpaceshipComponent::GetTypedComponent"
+  ]
+ },
+ "cGcPlayerShipOwnership::SpawnNewShip": {
+  "anchors": [
+   "Engine::AddNodes",
+   "cGcQuickActionMenu::TriggerAction",
+   "cGcSpaceshipComponent::Update"
+  ],
+  "anchors_138": {
+   "Engine::AddNodes": "0x1411299D0",
+   "cGcQuickActionMenu::TriggerAction": "0x140E98880",
+   "cGcSpaceshipComponent::Update": "0x140F61A80"
+  },
+  "modern_sig": "bool cGcPlayerShipOwnership::SpawnNewShip(cTkMatrix34 const&, cGcPlayerShipOwnership::ShipSpawnLandingGearState, int, bool)",
+  "modern_len": 1193,
+  "modern_callees": [
+   "??BcTkAttachmentPtr@@QEBAPEAVcTkAttachment@@XZ",
+   "Engine::AddNodes",
+   "Engine::GetResourceData",
+   "Engine::GetResourceDataCount",
+   "cGcInventoryStore::CheckAndEnableTechBonusSlots",
+   "cGcInventoryStore::CheckAndUpdateBaseStats"
+  ]
+ },
+ "cGcPlayerShipOwnership::Update": {
+  "anchors": [
+   "Engine::AddNodes",
+   "cGcGameState::Update"
+  ],
+  "anchors_138": {
+   "Engine::AddNodes": "0x1411299D0",
+   "cGcGameState::Update": "0x14075B7C0"
+  },
+  "modern_sig": "void cGcPlayerShipOwnership::Update(float)",
+  "modern_len": 3560,
+  "modern_callees": [
+   "??$findIdx@I@?$Table@$0A@$0FA@IVScannedNode@@U?$hash@IX@robin_hood@@U?$equal_to@I@std@@$0?0@detail@robin_hood@@AEBA_KAEBI@Z",
+   "Engine::AddNodes",
+   "Engine::RequestRemoveNode",
+   "Engine::SetNodeActivation",
+   "cGcPlacementArc::Render",
+   "cGcPlacementArc::Reset"
+  ]
+ },
+ "cGcPlayerState::AwardNanites": {
+  "anchors": [
+   "cGcFrontendPageDiscovery::DoDiscoveryView"
+  ],
+  "anchors_138": {
+   "cGcFrontendPageDiscovery::DoDiscoveryView": "0x140834900"
+  },
+  "modern_sig": "unsigned int cGcPlayerState::AwardNanites(int)",
+  "modern_len": 300,
+  "modern_callees": [
+   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z"
+  ]
+ },
+ "cGcPlayerState::StoreCurrentSystemSpaceStationEndpoint": {
+  "anchors": [
+   "cGcPlayer::Update"
+  ],
+  "anchors_138": {
+   "cGcPlayer::Update": "0x140E59230"
+  },
+  "modern_sig": "void cGcPlayerState::StoreCurrentSystemSpaceStationEndpoint()",
+  "modern_len": 104,
+  "modern_callees": [
+   "Engine::IterateNode"
+  ]
+ },
+ "cGcPlayerWanted::Update": {
+  "anchors": [
+   "cGcPlayer::Update"
+  ],
+  "anchors_138": {
+   "cGcPlayer::Update": "0x140E59230"
+  },
+  "modern_sig": "void cGcPlayerWanted::Update(cTkVector3 const&, float)",
+  "modern_len": 4983,
+  "modern_callees": [
+   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
+   "??BcTkAttachmentPtr@@QEBAPEAVcTkAttachment@@XZ",
+   "?GetPlayerFromId@?$cGcNetworkPlayerArray@VcGcNetworkPlayerFireteam@@$03VcGcNetworkPlayerReplicatedState@@$00$0A@$0A@@cGcNetworkPlayerManager@@QEAAPEAVcGcNetworkPlayerFireteam@@AEBU?$cTkUserIdBase@V?$cTkFixedString@$0EA@D@@@@@Z",
+   "cGcNetworkPlayer::MatchesLocalPlayerLocation",
+   "cGcNetworkPlayerFullSim::VirtualGetMatrix",
+   "cGcNetworkPlayerManager::GetPlayerFromAttachment"
+  ]
+ },
+ "cGcPositionMarker::Render": {
+  "anchors": [
+   "Engine::GetTexture"
+  ],
+  "anchors_138": {
+   "Engine::GetTexture": "0x141128420"
+  },
+  "modern_sig": "void cGcPositionMarker::Render()",
+  "modern_len": 1846,
+  "modern_callees": [
+   "?FormatNumberLocalised@?$cTkStringUtilities@D@@SAPEADMPEADHHPEBD1_N@Z",
+   "Engine::GetTexture",
+   "__dyn_tls_on_demand_init",
+   "cGcInWorldScreen::SetVisible",
+   "cGcInWorldUIManager::ActivateScreen",
+   "cGcInWorldUIManager::ActivateScreenAndClear"
+  ]
+ },
+ "cGcScanEvent::Construct": {
+  "anchors": [
+   "cGcScanEvent::CalculateMarkerPosition"
+  ],
+  "anchors_138": {
+   "cGcScanEvent::CalculateMarkerPosition": "0x140DE1B60"
+  },
+  "modern_sig": "void cGcScanEvent::Construct(eScanTable, cGcScanEventData *, cGcBuilding *, float, bool, std::pair<union TkID<128>,cTkSeed> *, union TkID<128>)",
+  "modern_len": 1843,
+  "modern_callees": [
+   "??0TaskContext@cGcProceduralTextureManager@@QEAA@PEAVcTkSmartResHandle@@V?$cTkFixedString@$0BAA@D@@AEAVcTkResourceDescriptor@@PEAVcTkProceduralTextureChosenOptionList@@_N4@Z",
+   "??2@YAPEAX_K@Z",
+   "cGcBuilding::DestroyIntersectingVolcanoes",
+   "cGcMarkerPoint::Reset",
+   "cGcPlayer::GetPhysicsMatrix",
+   "cGcScanEvent::CalculateMarkerPosition"
+  ]
+ },
+ "cGcShipHUD::cGcShipHUD": {
+  "anchors": [
+   "cGcNGuiLayer::cGcNGuiLayer"
+  ],
+  "anchors_138": {
+   "cGcNGuiLayer::cGcNGuiLayer": "0x14066B580"
+  },
+  "modern_sig": "cGcShipHUD::cGcShipHUD()",
+  "modern_len": 976,
+  "modern_callees": [
+   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
+   "cGcHUD::cGcHUD",
+   "cGcHUDTrackArrow::cGcHUDTrackArrow",
+   "cGcNGui::cGcNGui",
+   "cGcNGuiLayer::cGcNGuiLayer"
+  ]
+ },
+ "cGcSky::SetSunAngle": {
+  "anchors": [
+   "cGcSky::UpdateSunPosition"
+  ],
+  "anchors_138": {
+   "cGcSky::UpdateSunPosition": "0x140DEF770"
+  },
+  "modern_sig": "void cGcSky::SetSunAngle(float)",
+  "modern_len": 257,
+  "modern_callees": [
+   "sSolarDay::GetSunDirection"
+  ]
+ },
+ "cGcSolarSystem::OnEnterPlanetOrbit": {
+  "anchors": [
+   "cGcSolarSystem::Update"
+  ],
+  "anchors_138": {
+   "cGcSolarSystem::Update": "0x140EE5970"
+  },
+  "modern_sig": "void cGcSolarSystem::OnEnterPlanetOrbit(bool)",
+  "modern_len": 2457,
+  "modern_callees": [
+   "??$ComputePhysRelMatFromNode@$00@cTkEngineUtils@@SA?AVcTkPhysRelMat34@@VTkHandle@@@Z",
+   "??$_Emplace_one_at_back@AEA_K@?$vector@_KV?$TkSTLAllocatorShim@_K$07$04@@@std@@AEAAAEA_KAEA_K@Z",
+   "??4cGcUniverseAddressData@@QEAAAEAV0@AEBV0@@Z",
+   "?InsertPrefix@?$cTkStringUtilities@D@@SAPEADPEADHPEBD@Z",
+   "DiscoveryResolver::ComputeDisplayNameAndOwnerForDiscovery",
+   "Engine::SetNodeActivation"
+  ]
+ },
+ "cGcSolarSystem::OnLeavePlanetOrbit": {
+  "anchors": [
+   "cGcSolarSystem::Update"
+  ],
+  "anchors_138": {
+   "cGcSolarSystem::Update": "0x140EE5970"
+  },
+  "modern_sig": "void cGcSolarSystem::OnLeavePlanetOrbit(bool)",
+  "modern_len": 1580,
+  "modern_callees": [
+   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z",
+   "??$doThrow@Vbad_alloc@stdext@@$$V@detail@robin_hood@@YAXXZ",
+   "??$findIdx@T?$TkID@$0IA@@@@?$Table@$00$0FA@T?$TkID@$0IA@@@PEAVcGcStatDefinition@@U?$hash@T?$TkID@$0IA@@@X@robin_hood@@U?$equal_to@T?$TkID@$0IA@@@@std@@$0?0@detail@robin_hood@@AEBA_KAEBT?$TkID@$0IA@@@@Z",
+   "??0?$_Associated_state@H@std@@QEAA@PEAU?$_Deleter_base@H@1@@Z",
+   "??2@YAPEAX_K@Z",
+   "??2@YAPEAX_KPEBDH1@Z"
+  ]
+ },
+ "cGcSolarSystemGenerator::GenerateBasics": {
+  "anchors": [
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes"
+  ],
+  "anchors_138": {
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes": "0x140E02630"
+  },
+  "modern_sig": "void cGcSolarSystemGenerator::GenerateBasics(cTkSeed const&, cGcGalaxyAttributesAtAddress const&, cGcGalaxyAttributeGenerator::StarSystemKeyAttributes &, cGcSolarSystemGenerator::GenerationData &)",
+  "modern_len": 541,
+  "modern_callees": [
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes"
+  ]
+ },
+ "cGcSolarSystemQuery::Run": {
+  "anchors": [
+   "cGcGalaxyAttributesAtAddress::Classify"
+  ],
+  "anchors_138": {
+   "cGcGalaxyAttributesAtAddress::Classify": "0x140E03440"
+  },
+  "modern_sig": "void cGcSolarSystemQuery::Run(unsigned __int64, cGcSolarSystemQuery::Type, bool)",
+  "modern_len": 780,
+  "modern_callees": [
+   "cGcGalaxyAttributesAtAddress::Classify",
+   "cGcPlanetGenerator::GenerateQueryInfo",
+   "cGcSolarSystemGenerator::GenerateQueryInfo"
+  ]
+ },
+ "cGcSpaceshipComponent::Eject": {
+  "anchors": [
+   "cGcSpaceshipComponent::Update"
+  ],
+  "anchors_138": {
+   "cGcSpaceshipComponent::Update": "0x140F61A80"
+  },
+  "modern_sig": "void cGcSpaceshipComponent::Eject(cGcPlayer *, bool, bool)",
+  "modern_len": 498,
+  "modern_callees": [
+   "cGcCameraManager::GetCurrentDesiredFOV",
+   "cGcCameraManager::ShakeStop",
+   "cGcVehicleCockpit::DoExit",
+   "cTkComponent::GetEntityOwnerPlayerId",
+   "cTkRigidBody::SetCollisionFilters"
+  ]
+ },
+ "cGcSpaceshipComponent::GetVelocity": {
+  "anchors": [
+   "cGcSpaceshipComponent::UpdateControlled"
+  ],
+  "anchors_138": {
+   "cGcSpaceshipComponent::UpdateControlled": "0x140F64A00"
+  },
+  "modern_sig": "cTkVector3 cGcSpaceshipComponent::GetVelocity()",
+  "modern_len": 34,
+  "modern_callees": [
+   "cTkRigidBody::GetLinearVelocity"
+  ]
+ },
+ "cGcSpaceshipWarp::GetPulseDriveFuelFactor": {
+  "anchors": [
+   "cGcPlayerHUD::RenderIndicatorPanel"
+  ],
+  "anchors_138": {
+   "cGcPlayerHUD::RenderIndicatorPanel": "0x1408DB110"
+  },
+  "modern_sig": "float cGcSpaceshipWarp::GetPulseDriveFuelFactor()",
+  "modern_len": 84,
+  "modern_callees": [
+   "cGcPlayerState::GetPrimaryItemForStat"
+  ]
+ },
+ "cGcSpaceshipWarp::UpdatePulseDrive": {
+  "anchors": [
+   "cGcPlayerExperienceDirector::Update"
+  ],
+  "anchors_138": {
+   "cGcPlayerExperienceDirector::Update": "0x140E68670"
+  },
+  "modern_sig": "void cGcPlayerExperienceDirector::UpdatePulseEncounters(float)",
+  "modern_len": 9594,
+  "modern_callees": [
+   "?<lambda_invoker_cdecl>@<lambda_405cf0ef3258aa12debc2edb6cdcdfbd>@@CAXPEAX@Z",
+   "??$?Y$00@?$Splatter@$0A@@VecIntrinsics@@QEAAAEAU01@AEBU?$Splatter@$00@1@@Z",
+   "??$?Y$01@?$Splatter@$0A@@VecIntrinsics@@QEAAAEAU01@AEBU?$Splatter@$01@1@@Z",
+   "??$Broadcast@VcGcDoShipClearCommunication@@@?$cTkMetaMessageMap@$01@@QEAAXPEBVcGcDoShipClearCommunication@@@Z",
+   "??$ComputePhysRelMatFromNode@$00@cTkEngineUtils@@SA?AVcTkPhysRelMat34@@VTkHandle@@@Z",
+   "??$FindFirstAttachmentWithComponent@VcTkPhysicsComponent@@@cTkAttachment@@SAPEAV0@VTkHandle@@@Z"
+  ]
+ },
+ "cGcTerrainEditorBeam::Fire": {
+  "anchors": [
+   "cGcBeamEffect::Prepare"
+  ],
+  "anchors_138": {
+   "cGcBeamEffect::Prepare": "0x140EA9910"
+  },
+  "modern_sig": "bool cGcTerrainEditorBeam::Fire(cTkPhysRelVec3 const&, cTkRigidBody *, cGcOwnerConcept *, eStatsType, bool)",
+  "modern_len": 1514,
+  "modern_callees": [
+   "cGcBeamEffect::Prepare",
+   "cGcNetworkWeapon::FireRemote",
+   "cGcPlayerState::GetPrimaryItemForStat",
+   "cGcProjectileImpact::cGcProjectileImpact",
+   "cGcTerrainEditorBeam::ApplyTerrainEditFlatten",
+   "cGcTerrainEditorBeam::ApplyTerrainEditStroke"
+  ]
+ },
+ "cGcVisitedSystemsBuffer::VisitNewGalacticAddress": {
+  "anchors": [
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes"
+  ],
+  "anchors_138": {
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes": "0x140E02630"
+  },
+  "modern_sig": "void cGcVisitedSystemsBuffer::VisitNewGalacticAddress(unsigned __int64 const&)",
+  "modern_len": 743,
+  "modern_callees": [
+   "??$Record@H@cGcStatsManager@@QEAAXAEBT?$TkID@$0IA@@@H_NPEBUIStatVariant@@@Z",
+   "cGcGalacticVoxelCoordinate::ClampToLimits",
+   "cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes"
+  ]
+ },
+ "cTkAudioManager::Play_attenuated": {
+  "anchors": [
+   "cGcSpaceshipComponent::UpdateControlled"
+  ],
+  "anchors_138": {
+   "cGcSpaceshipComponent::UpdateControlled": "0x140F64A00"
+  },
+  "modern_sig": "bool cTkAudioManager::Play(TkAudioID, cTkVector3 const&, TkAudioObject, float)",
+  "modern_len": 195,
+  "modern_callees": [
+   "?PostEvent@SoundEngine@AK@@YAII_KIP6AXW4AkCallbackType@@PEAUAkCallbackInfo@@@ZPEAXIPEAUAkExternalSourceInfo@@I@Z",
+   "?SetScalingFactor@SoundEngine@AK@@YA?AW4AKRESULT@@_KM@Z",
+   "?find@?$Table@$0A@$0FA@_KUcTkAudioParamCache@@U?$hash@_KX@robin_hood@@U?$equal_to@_K@std@@$0?0@detail@robin_hood@@QEAA?AV?$Iter@$0A@@123@AEB_K@Z",
+   "cTkAudioParamCache::SetPosition"
+  ]
+ },
+ "cTkDynamicGravityControl::Construct": {
+  "anchors": [
+   "cGcApplicationBootState::Update"
+  ],
+  "anchors_138": {
+   "cGcApplicationBootState::Update": "0x1406827D0"
+  },
+  "modern_sig": "void cTkDynamicGravityControl::Construct()",
+  "modern_len": 61,
+  "modern_callees": []
+ },
+ "cTkEngineUtils::GetMasterModelNode": {
+  "anchors": [
+   "Engine::GetModelNode"
+  ],
+  "anchors_138": {
+   "Engine::GetModelNode": "0x141128870"
+  },
+  "modern_sig": "TkHandle cTkEngineUtils::GetMasterModelNode(TkHandle, eMasterModelNodeDistance)",
+  "modern_len": 124,
+  "modern_callees": [
+   "Engine::GetModelNode",
+   "Engine::GetNodeParamI",
+   "Engine::GetNodeParent"
+  ]
+ },
+ "cTkEngineUtils::RepositionGroupNode": {
+  "anchors": [
+   "Engine::ShiftAllTransformsForNode",
+   "cGcBaseBuildingManager::Update",
+   "cGcEcosystem::Update"
+  ],
+  "anchors_138": {
+   "Engine::ShiftAllTransformsForNode": "0x141128EE0",
+   "cGcBaseBuildingManager::Update": "0x140737530",
+   "cGcEcosystem::Update": "0x140D1CC50"
+  },
+  "modern_sig": "void cTkEngineUtils::RepositionGroupNode(TkHandle, cTkVector3 const&)",
+  "modern_len": 235,
+  "modern_callees": [
+   "Engine::GetNodeFirstChild",
+   "Engine::GetNodeNextSibling",
+   "Engine::ShiftAllTransformsForNode"
+  ]
+ },
+ "cTkFileSystem::IsModded": {
+  "anchors": [
+   "cGcApplicationGameModeSelectorState::Update"
+  ],
+  "anchors_138": {
+   "cGcApplicationGameModeSelectorState::Update": "0x14068E870"
+  },
+  "modern_sig": "bool cTkFileSystem::IsModded()",
+  "modern_len": 17,
+  "modern_callees": []
+ },
+ "cTkRigidBody::SetAngularVelocity": {
+  "anchors": [
+   "cGcSpaceshipComponent::Update"
+  ],
+  "anchors_138": {
+   "cGcSpaceshipComponent::Update": "0x140F61A80"
+  },
+  "modern_sig": "void cTkRigidBody::SetAngularVelocity(cTkVector3 const&)",
+  "modern_len": 89,
+  "modern_callees": []
+ },
+ "cTkTexture::CreateEmptyTexture": {
+  "anchors": [
+   "cTkTextureBase::CalculateTextureSize"
+  ],
+  "anchors_138": {
+   "cTkTextureBase::CalculateTextureSize": "0x140FE02A0"
+  },
+  "modern_sig": "void cTkTexture::CreateEmptyTexture(eTkTextureType, unsigned int, unsigned int, unsigned int, unsigned int, unsigned int, eTextureAddressMode, eTextureFilterMode, unsigned int, bool, bool, bool, bool, bool)",
+  "modern_len": 2904,
+  "modern_callees": [
+   "??2@YAPEAX_KPEBDH1@Z",
+   "?GetResourceTilingInfo@@YAHPEAVcTkTexture@@@Z",
+   "?GetStandardBlockSize2D@@YAXW4eTexFormat@cTkTextureBase@@AEAUVkExtent3D@@@Z",
+   "cTkEngineSettings::GetSettingBool",
+   "cTkEngineSettings::GetSettingInt",
+   "cTkGraphicsAPI::AllocImageMemory"
+  ]
+ }
+}

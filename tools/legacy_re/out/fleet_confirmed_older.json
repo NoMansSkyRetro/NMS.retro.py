@@ -1,0 +1,21 @@
+{
+ "1.24": {
+  "cGcPlayerWanted::Update": "0x140CF1BA0",
+  "cTkAudioManager::Play_attenuated": "0x140E0A4F0",
+  "cGcInventoryStore::Add": "0x140634F80",
+  "cGcPlayer::CheckFallenThroughFloor": "0x140CD9790",
+  "cGcInteractionComponent::GiveReward": "0x140B33EE0"
+ },
+ "1.13": {
+  "cGcPlayerWanted::Update": "0x140B71E20",
+  "cTkAudioManager::Play_attenuated": "0x140C55610",
+  "cGcInventoryStore::Add": "0x1405262F0",
+  "cGcPlayer::CheckFallenThroughFloor": "0x140B5BB30",
+  "cGcInteractionComponent::GiveReward": "0x1409C6480"
+ },
+ "1.09.1": {
+  "cGcSpaceshipWarp::UpdatePulseDrive": "0x1409E7E40",
+  "cGcPlayer::CheckFallenThroughFloor": "0x1409F2B20",
+  "cGcInteractionComponent::GiveReward": "0x14087C980"
+ }
+}

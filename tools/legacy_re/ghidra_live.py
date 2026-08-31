@@ -101,6 +101,121 @@ def decompile(build, va):
         print(res.getDecompiledFunction().getC())
 
 
+def _decomp_iface(prog):
+    from ghidra.app.decompiler import DecompInterface
+    di = DecompInterface()
+    di.openProgram(prog)
+    return di
+
+
+def dossier(build, out_path, anchor_vas):
+    """Dump, in ONE JVM open, everything a matching agent needs for a call-anchor walk.
+
+    For each mapped anchor VA: its decompiled body (the calling context), and every
+    function it calls (real ReferenceManager edges, so indirect/vtable calls too) with
+    address, Ghidra name, size, and the callee's own callee-names (named library
+    functions among them are strong fingerprints). Anchor bodies plus callee bodies
+    within a size band are decompiled so an agent can match by behaviour against the
+    4.13 target profile. Writes JSON; no address is committed here.
+
+        python ghidra_live.py dossier 1.38 out/dossier_1.38.json 0x140CA2820 0x140DD3780
+    """
+    import json
+
+    with open_program(build) as api:
+        from ghidra.util.task import ConsoleTaskMonitor
+        prog = api.getCurrentProgram()
+        ref = prog.getReferenceManager()
+        fm = _fm(prog)
+        di = _decomp_iface(prog)
+        mon = ConsoleTaskMonitor()
+
+        def name_size(va):
+            f = fm.getFunctionAt(_addr(prog, va))
+            return (f.getName(), int(f.getBody().getNumAddresses())) if f else (None, 0)
+
+        def body_decomp(f):
+            try:
+                r = di.decompileFunction(f, 60, mon)
+                return r.getDecompiledFunction().getC() if r and r.getDecompiledFunction() else None
+            except Exception as e:  # noqa: BLE001
+                return f"<decompile failed: {e}>"
+
+        def callees_of(f):
+            out = {}
+            body = f.getBody()
+            it = ref.getReferenceIterator(body.getMinAddress())
+            while it.hasNext():
+                r = it.next()
+                if not body.contains(r.getFromAddress()):
+                    break
+                tf = fm.getFunctionAt(r.getToAddress())
+                if tf:
+                    va = tf.getEntryPoint().getOffset()
+                    out[va] = (tf.getName(), int(tf.getBody().getNumAddresses()))
+            return out
+
+        result = {}
+        for anchor in anchor_vas:
+            af = fm.getFunctionAt(_addr(prog, anchor))
+            if af is None:
+                result[f"0x{anchor:X}"] = {"error": "anchor not a function start"}
+                continue
+            callees = callees_of(af)
+            entry = {
+                "anchor_name": af.getName(),
+                "anchor_size": int(af.getBody().getNumAddresses()),
+                "anchor_decomp": body_decomp(af),
+                "callees": [],
+            }
+            for va, (nm, sz) in sorted(callees.items()):
+                cf = fm.getFunctionAt(_addr(prog, va))
+                grandkids = sorted({n for n, _ in callees_of(cf).values()} if cf else set())
+                # named grandchildren (non-FUN_) are the useful fingerprints
+                named_gk = [g for g in grandkids if not g.startswith("FUN_")]
+                entry["callees"].append({
+                    "va": f"0x{va:X}", "name": nm, "size": sz,
+                    "named_callees": named_gk,
+                    "decomp": body_decomp(cf) if cf and sz <= 1600 else None,
+                })
+            result[f"0x{anchor:X}"] = entry
+            print(f"[dossier] {af.getName()} @ 0x{anchor:X}: {len(callees)} callees", file=sys.stderr)
+
+        with open(out_path, "w") as fh:
+            json.dump(result, fh, indent=1)
+        print(f"[dossier] wrote {out_path}", file=sys.stderr)
+
+
+def decompmany(build, out_path, vas):
+    """Decompile a list of function VAs in ONE JVM open; write {va: {name,size,decomp}}.
+
+        python ghidra_live.py decompmany 1.38 out/cluster.json 0x14066BB30 0x14066BC40 ...
+    """
+    import json
+
+    with open_program(build) as api:
+        from ghidra.util.task import ConsoleTaskMonitor
+        prog = api.getCurrentProgram()
+        fm = _fm(prog)
+        di = _decomp_iface(prog)
+        mon = ConsoleTaskMonitor()
+        out = {}
+        for va in vas:
+            f = fm.getFunctionAt(_addr(prog, va))
+            if f is None:
+                out[f"0x{va:X}"] = {"error": "not a function start"}
+                continue
+            try:
+                r = di.decompileFunction(f, 60, mon)
+                c = r.getDecompiledFunction().getC() if r and r.getDecompiledFunction() else None
+            except Exception as e:  # noqa: BLE001
+                c = f"<decompile failed: {e}>"
+            out[f"0x{va:X}"] = {"name": f.getName(), "size": int(f.getBody().getNumAddresses()), "decomp": c}
+        with open(out_path, "w") as fh:
+            json.dump(out, fh, indent=1)
+        print(f"[decompmany] wrote {out_path} ({len(vas)} funcs)", file=sys.stderr)
+
+
 def main():
     cmd = sys.argv[1]
     build = sys.argv[2]
@@ -110,6 +225,12 @@ def main():
         xrefs(build, int(sys.argv[3], 16))
     elif cmd == "decompile":
         decompile(build, int(sys.argv[3], 16))
+    elif cmd == "decompmany":
+        decompmany(build, sys.argv[3], [int(a, 16) for a in sys.argv[4:]])
+    elif cmd == "dossier":
+        out_path = sys.argv[3]
+        anchor_vas = [int(a, 16) for a in sys.argv[4:]]
+        dossier(build, out_path, anchor_vas)
 
 
 if __name__ == "__main__":

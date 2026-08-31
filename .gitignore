@@ -19,3 +19,16 @@ tools/legacy_re/_*.py
 
 # Derived cross-version index caches (rebuilt on demand by handles.py)
 tools/legacy_re/out/cache/
+
+# Large regenerable Ghidra decompile dumps + hunt scratch (rebuilt via ghidra_live.py
+# dossier/decompmany; the reproducible inputs are the finders + *_confirmed.json + worklists)
+tools/legacy_re/*.log
+tools/legacy_re/out/dossiers_*.json
+tools/legacy_re/out/dossier_*.json
+tools/legacy_re/out/cand_*.json
+tools/legacy_re/out/orig_*.json
+tools/legacy_re/out/*_cluster_*.json
+tools/legacy_re/out/verify_risky.json
+tools/legacy_re/out/older_decompile_set.json
+tools/legacy_re/out/older_jobs*.json
+tools/legacy_re/out/crossbuild_picks.json

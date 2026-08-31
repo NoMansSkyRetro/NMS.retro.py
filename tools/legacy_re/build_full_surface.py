@@ -50,8 +50,31 @@ RULES = [
     ("cGcPlayerFreighterOwnership", "1.13", "Freighter purchase arrived in Foundation (1.1)."),
 ]
 
+# Per-function overrides for cases a class-prefix rule can't express: a single method
+# whose feature postdates its class (e.g. freighter *bases* vs freighter purchase), or
+# a lone late feature in a class most of whose methods are old (cGcPlayer::GetDominantHand
+# among 10 old cGcPlayer methods). Same (first-supported-build | None, note) shape.
+# Checked before RULES. Each is corroborated by a string/imm probe recorded in
+# offsets.json's _unresolved note for that entry.
+EXACT = {
+    "cGcFrontendPageClaimBase::DoBaseClaimOptions":
+        ("1.13", "Base-claim UI depends on base building (Foundation 1.1); absent in 1.09.1."),
+    "cGcQuickActionMenu::TriggerAction":
+        ("1.13", "Quick-action menu arrived in Foundation (1.1); absent in 1.09.1."),
+    "cGcPlayerFreighterOwnership::ResetPlayerFreighterBase":
+        (None, "Freighter bases post-date 1.38 (arrived in NEXT 1.5); the base-reset OSD string and its imm64 are absent from every 1.x exe."),
+    "cGcBuilding::DestroyIntersectingVolcanoes":
+        (None, "Volcano landmarks post-date 1.38; the 'VOLCANO' immediate is absent from every 1.x .text/.rdata."),
+    "cGcPlayer::GetDominantHand":
+        (None, "VR (OpenVR) support arrived in Beyond (2.0, 2019); the cTkHmdOpenVR accessor is absent from all four builds."),
+    "cGcScanEvent::UpdateSpaceStationLocation":
+        (None, "Space-station settlements post-date 1.38; the SettlementConstructionLevel string is absent from every 1.x exe."),
+}
+
 
 def rule_for(name):
+    if name in EXACT:
+        return EXACT[name]
     for prefix, first, note in RULES:
         if name.startswith(prefix):
             return first, note
@@ -70,7 +93,9 @@ def main():
         if not any(str(entry.get(v, "")).startswith("0x") for v in VERSIONS):
             pass  # counted below either way
         first, note = rule_for(name)
-        if note and "_note" not in entry:
+        # An EXACT override is authoritative and replaces any stale prefix-rule note;
+        # a prefix rule only fills a note in when the entry has none.
+        if note and (name in EXACT or "_note" not in entry):
             entry["_note"] = note
         supported = VERSIONS[VERSIONS.index(first):] if first else []
         for v in VERSIONS:

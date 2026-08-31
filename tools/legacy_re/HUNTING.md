@@ -95,6 +95,29 @@ not `None`) — the merge tool enforces this too.
    decomp for the `"cGcX::Y"` literal (harvest_name_literals already swept exact
    single-owner cases, but overloaded/multi-owner ones may still be resolvable by
    hand).
+6. **Live-Ghidra dossier + decompiler (for the string-less remainder).** The functions
+   left after the string/imm/name sweeps have no distinctive tokens, so the only handle
+   is their call-graph position and their *behaviour*. `ghidra_live.py dossier <build>
+   <out.json> <anchor_va>...` opens the analyzed project once and, per mapped anchor,
+   dumps the anchor's decompiled body plus every callee (real ReferenceManager edges, so
+   indirect/vtable calls the E8/E9 scan misses) with size, named grandchildren, and a
+   decompiled body. Read the anchor's body to see the *context* of each call (what the
+   result is used for), then match a callee to the target by: modern size band, own
+   callee structure, and semantics from the decompiled body. `decompmany` decompiles an
+   arbitrary VA list (e.g. an address-adjacent sibling cluster) in one JVM open. Confirm
+   by cross-build size/shape consistency, then port sideways (method 4).
+
+### The inlining ceiling (read before chasing a string-less target)
+
+Many upstream functions are *not separately present* in the 2016-2017 builds: the older
+MSVC inlined a small accessor into its one caller, `/OPT:ICF` folded it with an
+identical sibling, or the modern refactor split a helper out of code that legacy kept
+monolithic. A dossier makes this visible fast (the anchor's callee list simply has no
+function of the target's shape). When that happens the target has no address to hook in
+that build; report it `unresolved` with the reason (`inlined into <caller>`, `fused with
+the Get<Type> family`, `folded with <sibling>`) rather than forcing a wrong match. That
+honest reason is the deliverable: it moves the slot from "not yet tried" to "classified,
+not hook-able here", which is as valuable as an address for the completeness goal.
 
 ## Rules
 

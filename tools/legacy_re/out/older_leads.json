@@ -1,0 +1,213 @@
+{
+ "cGcSpaceshipWarp::UpdatePulseDrive||1.09.1": [
+  [
+   "0x1409E7E40",
+   5144,
+   "callee+caller+str:SENTINELS_EVADED"
+  ],
+  [
+   "0x140C80DB0",
+   4182,
+   "callee"
+  ]
+ ],
+ "cGcPlayerWanted::Update||1.24": [
+  [
+   "0x140CF1BA0",
+   1781,
+   "callee+caller"
+  ]
+ ],
+ "cGcPlayerWanted::Update||1.13": [
+  [
+   "0x140B71E20",
+   1722,
+   "callee+caller"
+  ]
+ ],
+ "cGcPlayerWanted::Update||1.09.1": [],
+ "cGcMarkerList::TryAddMarker||1.24": [
+  [
+   "0x140C2F160",
+   894,
+   "callee+caller"
+  ]
+ ],
+ "cGcMarkerList::TryAddMarker||1.13": [
+  [
+   "0x140ABBC50",
+   968,
+   "callee+caller"
+  ]
+ ],
+ "cGcMarkerList::TryAddMarker||1.09.1": [
+  [
+   "0x140964AC0",
+   727,
+   "callee+caller"
+  ]
+ ],
+ "cGcInteractionData::SetDefaults||1.24": [],
+ "cGcInteractionData::SetDefaults||1.13": [
+  [
+   "0x140F94400",
+   31,
+   "caller"
+  ]
+ ],
+ "cGcInteractionData::SetDefaults||1.09.1": [
+  [
+   "0x140E0BEA0",
+   31,
+   "caller"
+  ]
+ ],
+ "cTkAudioManager::Play_attenuated||1.24": [
+  [
+   "0x140E0A4F0",
+   120,
+   "callee+caller"
+  ]
+ ],
+ "cTkAudioManager::Play_attenuated||1.13": [
+  [
+   "0x140C55610",
+   120,
+   "callee+caller"
+  ]
+ ],
+ "cTkAudioManager::Play_attenuated||1.09.1": [],
+ "cGcPersistentInteractionsManager::LoadGalacticAddressBuffers||1.24": [],
+ "cGcPersistentInteractionsManager::LoadGalacticAddressBuffers||1.13": [
+  [
+   "0x140BAB700",
+   1042,
+   "caller"
+  ]
+ ],
+ "cGcPersistentInteractionsManager::LoadGalacticAddressBuffers||1.09.1": [
+  [
+   "0x140B1AC00",
+   876,
+   "caller"
+  ]
+ ],
+ "cGcInventoryStore::Add||1.24": [
+  [
+   "0x140634F80",
+   670,
+   "caller"
+  ]
+ ],
+ "cGcInventoryStore::Add||1.13": [
+  [
+   "0x1405262F0",
+   459,
+   "caller"
+  ]
+ ],
+ "cGcInventoryStore::Add||1.09.1": [],
+ "cGcInteractionComponent::GetInteractionData||1.24": [
+  [
+   "0x140B35940",
+   332,
+   "callee+caller"
+  ],
+  [
+   "0x140B35A90",
+   536,
+   "callee+caller"
+  ]
+ ],
+ "cGcInteractionComponent::GetInteractionData||1.13": [
+  [
+   "0x1409C7AD0",
+   338,
+   "callee+caller"
+  ],
+  [
+   "0x1409C7C30",
+   526,
+   "callee+caller"
+  ]
+ ],
+ "cGcInteractionComponent::GetInteractionData||1.09.1": [
+  [
+   "0x14087DED0",
+   526,
+   "callee+caller"
+  ],
+  [
+   "0x14087DD70",
+   338,
+   "callee+caller"
+  ]
+ ],
+ "cGcInteractionComponent::GiveReward||1.24": [
+  [
+   "0x140B33EE0",
+   541,
+   "callee+caller+str:TECHWEAPON"
+  ],
+  [
+   "0x1405C5E00",
+   692,
+   "callee+caller"
+  ]
+ ],
+ "cGcInteractionComponent::GiveReward||1.13": [
+  [
+   "0x1409C6480",
+   663,
+   "callee+caller+str:TECHWEAPON"
+  ]
+ ],
+ "cGcInteractionComponent::GiveReward||1.09.1": [
+  [
+   "0x14087C980",
+   672,
+   "callee+caller"
+  ]
+ ],
+ "cGcPlayer::CheckFallenThroughFloor||1.24": [
+  [
+   "0x140CF2790",
+   3936,
+   "callee+caller"
+  ],
+  [
+   "0x140CD9790",
+   4299,
+   "callee+caller"
+  ]
+ ],
+ "cGcPlayer::CheckFallenThroughFloor||1.13": [
+  [
+   "0x140B729E0",
+   4222,
+   "callee+caller"
+  ],
+  [
+   "0x140B37040",
+   2913,
+   "callee+caller"
+  ],
+  [
+   "0x140B5BB30",
+   3942,
+   "callee+caller"
+  ]
+ ],
+ "cGcPlayer::CheckFallenThroughFloor||1.09.1": [
+  [
+   "0x140ACC490",
+   5944,
+   "callee"
+  ],
+  [
+   "0x1409F2B20",
+   3810,
+   "callee+caller"
+  ]
+ ]
+}
