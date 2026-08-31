@@ -180,12 +180,14 @@ def legacy_hook(name: str, static: bool = False):
 def versioned_struct(cls):
     """Build a partial struct from per-version field specs.
 
-    The class declares ``_vfields_`` as ``name -> (ctype, offset_spec)`` where
+    The class declares ``_vfields_`` as ``name -> (ctype_spec, offset_spec)`` where
     ``offset_spec`` is either an int (same offset in every build) or a
-    ``{version: offset}`` dict. Fields with an offset in the running build become
-    real ctypes fields (via pyMHF's partial_struct); the rest read as None with a
-    one-time warning, so a mod touching a field that does not exist in this build
-    degrades instead of crashing.
+    ``{version: offset}`` dict, and ``ctype_spec`` is either a single ctype (same type
+    and size in every build) or a ``{version: ctype}`` dict (a field whose type or size
+    changed across builds; the generator emits this so each build reads its own layout).
+    Fields with both an offset and a ctype in the running build become real ctypes fields
+    (via pyMHF's partial_struct); the rest read as None with a one-time warning, so a mod
+    touching a field that does not exist in this build degrades instead of crashing.
     """
     from typing import Annotated
 
@@ -194,9 +196,10 @@ def versioned_struct(cls):
     version = CURRENT_VERSION.value if CURRENT_VERSION else None
     available = []
     missing = set()
-    for name, (ctype, spec) in getattr(cls, "_vfields_", {}).items():
+    for name, (ctype_spec, spec) in getattr(cls, "_vfields_", {}).items():
         offset = spec if isinstance(spec, int) else (spec.get(version) if version else None)
-        if offset is None:
+        ctype = ctype_spec if not isinstance(ctype_spec, dict) else (ctype_spec.get(version) if version else None)
+        if offset is None or ctype is None:
             missing.add(name)
         else:
             available.append((offset, name, ctype))

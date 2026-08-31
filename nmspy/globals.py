@@ -9,7 +9,10 @@ from pymhf.core._internal import BASE_ADDRESS, BINARY_PATH
 from pymhf.core.memutils import map_struct
 from typing_extensions import get_type_hints
 
-import nmspy.data.exported_types as nms_types
+# Per-build mbin-backed global layouts (generated from MBINCompiler.retro dumps by
+# tools/mbin/gen_structs.py); falls back to the 4.13 exported_types for the handful of
+# globals that postdate the 1.x builds or are runtime-composed.
+import nmspy.data.mbin_globals as nms_types
 
 logger = logging.getLogger(__name__)
 

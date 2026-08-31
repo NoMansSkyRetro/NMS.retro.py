@@ -20,10 +20,13 @@ from pathlib import Path
 
 HERE = Path(__file__).parent
 OUT = HERE / "layouts"
-# build -> committed layout dump (1.09.1 = the rc1/RC1 layout via structdump; 1.24/1.38 via
-# the patched tag's --dumplayout). 1.13 predates any MBINCompiler, still to be dumped.
+ROOT = HERE.parents[1]
+# build -> committed layout dump. All four are the *effective* per-build layouts emitted by
+# MBINCompiler.retro's `dumplayout --nms-version=<build>` (each build's own struct folder
+# overlaid on the shared base, exactly as the runtime resolves types).
 LAYOUTS = {
     "1.09.1": "layout_1.09.1.json",
+    "1.13": "layout_1.13.json",
     "1.24": "layout_1.24.json",
     "1.38": "layout_1.38.json",
 }
@@ -56,57 +59,105 @@ def load():
 
 
 def merge(struct, builds):
-    """field name -> {'offsets': {ver: off}, 'type': str, 'size': int, 'order': min off}."""
+    """field name -> {ver: (offset, ctype_str, note)} plus 'order' (min offset).
+
+    Every build's field carries its *own* type and size, so a field whose layout differs
+    across builds (a nested struct that grew, a retype) reads each build correctly. A single
+    cross-build ctype would drift: partial_struct places fields sequentially, so a size taken
+    from the wrong build pushes every following field off (see tools/mbin/test_layouts.py)."""
     fields = {}
     for ver, layout in builds.items():
         info = layout.get(struct)
         if not info:
             continue
         for f in info["fields"]:
-            e = fields.setdefault(f["name"], {"offsets": {}, "type": f["type"], "size": f["size"], "order": f["offset"]})
-            e["offsets"][ver] = f["offset"]
+            ctype, note = ctype_for(f["type"], f["size"])
+            e = fields.setdefault(f["name"], {"per": {}, "order": f["offset"]})
+            e["per"][ver] = (f["offset"], ctype, note)
             e["order"] = min(e["order"], f["offset"])
-            # prefer a non-padding, named type from any build
-            if e["type"] in ("Byte[]",) and f["type"] not in ("Byte[]",):
-                e["type"] = f["type"]
     return fields
 
 
-def gen(struct, builds):
+def gen(struct, builds, classname=None):
+    classname = classname or struct
     fields = merge(struct, builds)
     have = [v for v in LAYOUTS if v in builds and struct in builds[v]]
     sizes = ", ".join(f'{v}=0x{builds[v][struct]["size"]:X}' for v in have)
-    lines = ["@versioned_struct", f"class {struct}(Structure):",
+    lines = ["@versioned_struct", f"class {classname}(Structure):",
              f'    """sizes {sizes}. Generated from libMBIN layouts (tools/mbin/gen_structs.py)."""',
              "    _vfields_ = {"]
     for name, e in sorted(fields.items(), key=lambda kv: (kv[1]["order"], kv[0])):
-        ctype, note = ctype_for(e["type"], e["size"])
-        offs = e["offsets"]
-        # collapse to a single int only when present in every build with the same offset
+        per = e["per"]
+        offs = {v: per[v][0] for v in have if v in per}
+        ctypes_ = {v: per[v][1] for v in have if v in per}
+        notes = {per[v][2] for v in have if v in per and per[v][2]}
+        # collapse offset/type to a single value only when identical across every build present
         if len(offs) == len(have) and len(set(offs.values())) == 1:
-            spec = f"0x{next(iter(offs.values())):X}"
+            off_spec = f"0x{next(iter(offs.values())):X}"
         else:
-            spec = "{" + ", ".join(f'"{v}": 0x{offs[v]:X}' for v in have if v in offs) + "}"
-        comment = f"  # {note}" if note else ""
-        lines.append(f'        "{name}": ({ctype}, {spec}),{comment}')
+            off_spec = "{" + ", ".join(f'"{v}": 0x{offs[v]:X}' for v in have if v in offs) + "}"
+        if len(ctypes_) == len(have) and len(set(ctypes_.values())) == 1:
+            ct_spec = next(iter(ctypes_.values()))
+        else:
+            ct_spec = "{" + ", ".join(f'"{v}": {ctypes_[v]}' for v in have if v in ctypes_) + "}"
+        comment = f"  # {'/'.join(sorted(notes))}" if notes else ""
+        lines.append(f'        "{name}": ({ct_spec}, {off_spec}),{comment}')
     lines.append("    }")
     return "\n".join(lines)
+
+
+def header(doc):
+    print(f'"""{doc}"""')
+    print("from ctypes import (Structure, c_bool, c_char, c_double, c_float, c_int8, c_int16,")
+    print("                    c_int32, c_int64, c_ubyte, c_uint8, c_uint16, c_uint32, c_uint64)")
+    print("from nmspy.data.basic_types import Vector2f, Vector3f, Vector4f, Colour")
+    print("from nmspy.data.offsets import versioned_struct")
+
+
+def globals_module(builds):
+    """Emit the module `nmspy/globals.py` imports: a versioned class per mbin-backed global
+    it maps, and a modern (4.13) fallback import for the globals absent from every 1.x build
+    (fishing/fleet/settlement postdate these builds; a few are runtime-composed, not MBINs)."""
+    refs = sorted(set(re.findall(r"nms_types\.(c[A-Za-z]\w+)", (ROOT / "nmspy" / "globals.py").read_text())))
+    present, absent = [], []
+    for name in refs:
+        key = name[1:]  # nmspy `cGcFooGlobals` -> MBIN template `GcFooGlobals`
+        (present if any(key in b for b in builds.values()) else absent).append((name, key))
+
+    header("Auto-generated mbin-backed globals for nmspy/globals.py. Per-build layouts dumped "
+           "from MBINCompiler.retro; regenerate with `python tools/mbin/gen_structs.py "
+           "globals-module`. Do not edit by hand. Field offsets are exact per build "
+           "(tools/mbin/test_layouts.py); sizeof can be a few bytes short of the true struct "
+           "size where a build has trailing alignment padding, which does not affect field "
+           "reads. Nested struct/list fields are correctly-sized opaque blobs, not yet drillable.")
+    if absent:
+        print("\n# Not mbin-backed in the 1.x builds (feature postdates them, or runtime-composed);")
+        print("# fall back to the 4.13 definition so nmspy/globals.py still imports the name.")
+        print("from nmspy.data.exported_types import (  # noqa: F401")
+        for name, _ in absent:
+            print(f"    {name},")
+        print(")")
+    print()
+    for name, key in present:
+        print(gen(key, builds, classname=name))
+        print()
+    print(f"[gen_structs] globals-module: {len(present)} versioned, {len(absent)} modern-fallback "
+          f"({', '.join(n for n, _ in absent)})", file=sys.stderr)
 
 
 def main():
     which = sys.argv[1] if len(sys.argv) > 1 else "Globals"
     builds = load()
+    if which == "globals-module":
+        return globals_module(builds)
+
     names = set()
     for layout in builds.values():
         names |= {k for k in layout if (k.endswith("Globals") if which == "Globals" else which.lower() in k.lower())}
     if not names:
         raise SystemExit(f"no struct matching {which!r}")
 
-    print('"""Auto-generated mbin-backed struct layouts. Regenerate with tools/mbin/gen_structs.py."""')
-    print("from ctypes import (Structure, c_bool, c_char, c_double, c_float, c_int8, c_int16,")
-    print("                    c_int32, c_int64, c_ubyte, c_uint8, c_uint16, c_uint32, c_uint64)")
-    print("from nmspy.data.basic_types import Vector2f, Vector3f, Vector4f, Colour")
-    print("from nmspy.data.offsets import versioned_struct")
+    header("Auto-generated mbin-backed struct layouts. Regenerate with tools/mbin/gen_structs.py.")
     print()
     for k in sorted(names):
         print(gen(k, builds))

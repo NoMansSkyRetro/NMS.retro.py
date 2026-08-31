@@ -12,9 +12,14 @@ finish line: **NMS-Newton running on all four builds (1.09.1 / 1.13 / 1.24 / 1.3
   (`tools/legacy_re/findings.md`). The empirical ceiling: ~16% of anchored targets are
   separately present in these builds; the rest were inlined/folded by the 2016-2017
   compiler and cannot be hooked.
-- **Structs:** authoritative per-build layouts dumped from each build's own libMBIN
-  serializer for **1.09.1 (525), 1.24 (704), 1.38 (890)** templates (`tools/mbin/`);
-  `gen_structs.py` merges them into `versioned_struct` classes. 1.13 pending.
+- **Structs:** authoritative *effective* per-build layouts dumped from
+  [MBINCompiler.retro](https://github.com/NoMansSkyRetro/MBINCompiler.retro) for all four
+  builds — **1.09.1 (535), 1.13 (651), 1.24 (714), 1.38 (905)** templates. `gen_structs.py`
+  merges them into per-build `versioned_struct` classes (per-build types), and the ~38
+  metadata globals `nmspy/globals.py` maps are wired in via the generated
+  `nmspy/data/mbin_globals.py`; `tools/mbin/test_layouts.py` verifies every field against
+  libMBIN's offset in all four builds. **The 1.13 gap is closed** (no released MBINCompiler
+  tag reached Foundation; MBINCompiler.retro's re-derived `V1_13` set does).
 - **New lever found:** every metadata struct GUID is a unique imm64 constant in the code
   (68/68 sampled hit, one owner function each), so the MBIN work yields ~890 named
   metadata-loader anchors per build, plus id-string TkID hashes.
@@ -31,24 +36,25 @@ finish line: **NMS-Newton running on all four builds (1.09.1 / 1.13 / 1.24 / 1.3
 
 ## Workstreams
 
-### A. Struct layer: complete and integrate
+### A. Struct layer: complete and integrate — **largely done**
 
-1. **1.13 layout.** 1.13 predates every MBINCompiler tag. Bisect MBINCompiler commits to
-   the one whose template GUIDs match 1.13's MBIN header GUIDs (read with
-   `tools/mbin/mbin.py`), build it, apply the `--dumplayout` patch, dump. Fallback: a
-   hand-authored 1.13 def set in a retro branch (workstream E).
+1. ~~**1.13 layout.**~~ **Done** via MBINCompiler.retro's `V1_13` set + `dumplayout`.
 2. **Verify** a handful of generated offsets against the exe per build (confirm libMBIN's
-   serialized layout equals the in-memory C++ layout we hook). Pick 2-3 structs whose
-   fields are already referenced by a mapped function.
-3. **Integrate.** Emit the generated `versioned_struct` modules into `nmspy/data/`, filling
-   the empty `_vfields_` offset dicts for mbin-backed structs; repoint `globals.py` off
-   `exported_types.py`; delete `exported_types.py` once nothing imports it.
-4. **Per-version types.** Heavily-restructured structs (e.g. `GcEnvironmentGlobals`,
-   0x330 -> 0x460) carry the same field name at the same offset with a different type per
-   build. Extend `versioned_struct`/`gen_structs.py` to emit a per-version ctype (not just
-   per-version offset) so those generate exactly.
-5. Trim the modern-only `Globals` (PLAN.md §5): drop `GcFishingGlobals`,
-   `GcSettlementGlobals`, `GcFleetGlobals`, ... that postdate 1.x.
+   serialized layout equals the in-memory C++ layout we hook). Field offsets already match
+   libMBIN by construction (`test_layouts.py`); still spot-check 2-3 container-bearing
+   structs against the running exe. **Open.**
+3. ~~**Integrate.**~~ **Done for the globals layer:** `gen_structs.py globals-module` emits
+   `nmspy/data/mbin_globals.py` (per-build `versioned_struct` globals, 4.13 fallback for the
+   13 modern-only/runtime-composed ones), and `globals.py` imports it instead of
+   `exported_types.py`. Retiring `exported_types.py` entirely waits on wider coverage (A.4)
+   and the runtime classes (workstream C, which it does not cover).
+4. ~~**Per-version types.**~~ **Done.** `versioned_struct` now takes a `{version: ctype}`
+   spec; `gen_structs.py` emits per-build type + offset so restructured structs
+   (`GcEnvironmentGlobals` 0x330→0x460) generate exactly. Widening past the ~38 mapped
+   globals is just running `gen_structs.py <Name>` for the structs a mod needs.
+5. Trim the modern-only `Globals` (PLAN.md §5): `GcFishingGlobals`, `GcSettlementGlobals`,
+   `GcFleetGlobals`, ... are already routed to the 4.13 fallback (absent from every 1.x
+   layout); drop them from `globals.py` outright when convenient.
 
 ### B. Function layer: mine the MBINs for anchors
 
@@ -90,8 +96,10 @@ the 1.13 def set. Unblocks A.1 and A.4 cleanly and removes the per-tag patching.
 
 ## Milestones / exit criteria
 
-- **M1 — Struct layer done.** 4-build layouts (incl. 1.13), a few offsets exe-verified,
-  generated modules integrated, `exported_types.py` gone.
+- **M1 — Struct layer done.** 4-build layouts (incl. 1.13) ✅, per-build types ✅, globals
+  generated + wired into `nmspy/globals.py` ✅, field offsets verified vs libMBIN ✅.
+  Remaining: exe cross-check (A.2) and retiring `exported_types.py` after runtime classes
+  (workstream C) and wider coverage.
 - **M2 — MBIN-anchor hunt round.** GUID + TkID anchor tables built; a decompiler round
   closes the reachable metadata-shaped functions and the remaining Newton blockers.
 - **M3 — Runtime fields.** Newton's runtime-class fields filled and exe-verified per build.

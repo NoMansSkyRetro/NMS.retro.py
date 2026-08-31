@@ -3,9 +3,18 @@
 NMS stores its game metadata (globals, biomes, atmospheres, recipes, entity templates)
 as compiled `.MBIN` files inside PSARC `.pak` archives. `nmspy/data/exported_types.py`
 is generated from the modern 4.13 PDB, so its layouts are wrong for the 1.x builds; the
-plan (PLAN.md §4) is to regenerate the **mbin-backed** structs from the definitions that
-match each build's era. This directory reads the archives and headers directly so that
-regeneration has clean, per-version inputs, no external tool required.
+plan (PLAN.md §4) was to regenerate the **mbin-backed** structs from the definitions that
+match each build's era.
+
+**Status: done for the globals layer.** The authoritative per-build layouts now come from
+[MBINCompiler.retro](https://github.com/NoMansSkyRetro/MBINCompiler.retro) (a fork of
+monkeyman192's rc1 branch carrying a byte-perfect struct set per build), dumped with its
+`dumplayout` command into `layouts/`, merged into per-build `versioned_struct` classes by
+`gen_structs.py`, and wired into `nmspy/globals.py` via the generated
+`nmspy/data/mbin_globals.py`. `tools/mbin/test_layouts.py` checks every generated field
+against libMBIN's own offset in all four builds. The tools below read the archives/headers
+directly and pin each build to its libMBIN era; that pinning is what MBINCompiler.retro is
+built on.
 
 Idea credit: monkeyman192 (NMS.py author) suggested python-ifying the era-matched
 MBINCompiler struct definitions rather than trusting the modern PDB.
@@ -35,26 +44,34 @@ MBINCompiler struct definitions rather than trusting the modern PDB.
   blob tagged with its real type. `python gen_structs.py Globals` prints a module.
 - **`test_mbin.py`** — self-check: round-trips a globals MBIN out of the 1.38 install.
 
-## The authoritative layout path (rc1)
+## The authoritative layout path (MBINCompiler.retro)
 
 monkeyman192 pointed us at the **`rc1` branch** of MBINCompiler: the RC1/launch struct
-definitions, but reverse-engineered with modern methodology, so its names and layouts are
-the authoritative retro source (not the incomplete 2016 tooling). Build and dump it:
+definitions reverse-engineered with modern methodology. That became
+[MBINCompiler.retro](https://github.com/NoMansSkyRetro/MBINCompiler.retro), one binary that
+carries a byte-perfect struct set per targeted build (rc1/1.09.1/1.13/1.24/1.38) in its own
+namespace folder over a shared base, selected at runtime. Its `dumplayout` command emits the
+**effective** per-build layout (the build's folder overlaid on the shared base, exactly as
+the runtime resolves types), which is the clean per-version input this pipeline needs:
 
 ```
-git clone --depth 1 --branch rc1 https://github.com/monkeyman192/MBINCompiler.git
-dotnet build MBINCompiler/MBINCompiler.csproj -f net6.0-windows -c Release -p:IsNestedBuild=true
-# copy Build/Release/win-x64/* into tools/mbin/bin/rc1/ (only net9 runtime here, so run via
-#   DOTNET_ROLL_FORWARD=Major dotnet MBINCompiler.dll ... )
-dotnet run --project structdump -c Release -f net6.0-windows > out/rc1_layout.json
-python gen_structs.py Globals > out/mbin_globals_v1091.py
+# in the MBINCompiler.retro checkout (net6; only net9 runtime here, so run via roll-forward):
+DOTNET_ROLL_FORWARD=LatestMajor dotnet Build/Release/win-x64/MBINCompiler.retro.dll \
+    dumplayout --nms-version=1.13 > tools/mbin/layouts/layout_1.13.json
+# then, in this repo:
+python tools/mbin/gen_structs.py globals-module > nmspy/data/mbin_globals.py
+python tools/mbin/test_layouts.py     # verify every field vs libMBIN's offset
 ```
 
-`GcEnvironmentGlobals` comes out at size 0x330 with exact types and offsets that match the
-`Unknown<offset>` field names, confirming the engine is authoritative. rc1 encodes the RC1
-layout, which matches **1.09.1**; where a field is still `Unknown<offset>` that is the
-genuine RE frontier, not a tooling gap. Later builds (1.13/1.24/1.38) need their own era
-layout dumped the same way (build that tag, or reflect its binary).
+`GcEnvironmentGlobals` comes out at 0x330 (1.09.1) → 0x360 (1.13) → 0x450 (1.24) → 0x460
+(1.38) with exact types and offsets that match the `Unknown<offset>` field names, confirming
+the engine is authoritative. Where a field is still `Unknown<offset>` that is the genuine RE
+frontier, not a tooling gap.
+
+The older per-tag path (`structdump/` against the rc1 DLL, and the `patches/dumplayout-*.patch`
+edits to the 1.24.4 / 1.38.0.2 tags) is how these layouts were first produced and is kept for
+reference; MBINCompiler.retro supersedes it with one binary that dumps any build, including
+the **1.13** layout that no released MBINCompiler tag could reach.
 
 ## MBINCompiler binaries (not in the repo)
 
@@ -96,29 +113,29 @@ build     format  stamp             guid                libMBIN tag
   in every build here) the layout evolved and that struct must be reversed from the exe
   or hand-ported from the nearest libMBIN commit.
 
-## Per-build layouts (1.09.1 / 1.24 / 1.38)
+## Per-build layouts (all four builds)
 
-Authoritative layouts are dumped from each build's **own** libMBIN serializer and committed
-under `layouts/` (regenerable):
+Effective per-build layouts are dumped from MBINCompiler.retro and committed under `layouts/`
+(regenerable): `layout_1.09.1.json` (535), `layout_1.13.json` (651), `layout_1.24.json` (714),
+`layout_1.38.json` (905 templates). `gen_structs.py globals-module` merges them by field name
+into per-version `versioned_struct` classes with **per-build types** (a field whose layout
+changed across builds reads each build correctly), and `test_layouts.py` checks every field
+against libMBIN's offset. **1.13 — the build no released MBINCompiler tag could reach — is now
+covered** by MBINCompiler.retro's re-derived `V1_13` set.
 
-- **1.09.1** via the `rc1` build + `structdump/` (uses libMBIN's public `OffsetOf`/`SizeOf`).
-- **1.24 / 1.38** via the `1.24.4` / `1.38.0.2` tags built on the modern SDK and patched with
-  a `--dumplayout` command (`patches/dumplayout-*.patch`) that captures each field's offset
-  from `AppendToWriter`, depth-guarded to root fields. 704 and 890 templates respectively.
-
-`gen_structs.py` merges all three by field name into per-version `versioned_struct` classes.
-**1.13** predates any MBINCompiler and is still to be dumped.
-
-The full approach, and how to fold it into a dedicated standalone tool, is written up in
-[RETRO_MBINCOMPILER.md](RETRO_MBINCOMPILER.md) for a future project.
+The full approach, and how it was folded into the standalone MBINCompiler.retro, is written up
+in [RETRO_MBINCOMPILER.md](RETRO_MBINCOMPILER.md).
 
 ## Remaining
 
-1. **1.13 layout** — no MBINCompiler existed at Foundation; bisect to the nearest commit
-   whose GUIDs match, or hand-author a 1.13 definition set (see RETRO_MBINCOMPILER.md).
-2. **Verify** a few generated offsets against the exe (confirm libMBIN's serialized layout
-   equals the in-memory layout we hook).
-3. **Integrate** the generated modules into `nmspy`, replacing the 4.13 `exported_types.py`
-   for the mbin-backed structs.
-4. **Per-version types** for heavily-restructured structs (name-merge keeps one ctype today;
-   the offsets are still correct per build).
+1. **Runtime C++ classes** (`nmspy/data/types.py`: `cGcApplication`, `cGcPlanet`,
+   `cGcSolarSystem`, the managers/HUD, `cTkDynamicGravityControl`) are **not** mbin-backed, so
+   `dumplayout` does not cover them; their `_vfields_` still need exe RE (PLAN2 workstream C).
+2. **Nested drill-down.** Nested struct / list fields are correctly-sized opaque blobs today;
+   emit them as real nested `versioned_struct` references once the generator does dependency
+   ordering.
+3. **Exe cross-check.** Field offsets match libMBIN's serialized layout; spot-verify a few
+   against the running exe to confirm the serialized layout equals the in-memory layout for
+   the container-bearing structs (flat globals already agree by construction).
+4. **Widen coverage** beyond the ~38 mapped globals: `gen_structs.py <Name>` already emits any
+   template, so retire more of `exported_types.py` as mods need those structs per build.
