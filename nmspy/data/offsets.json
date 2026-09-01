@@ -866,12 +866,11 @@
       "_unresolved": "1.09.1: pre-respawn-refactor; no Update-sole-callee matches the param+0x34 enum-getter shape (logic inlined/restructured). Found in 1.13/1.24/1.38."
     },
     "cGcBaseBuildingManager::AddHUDMarker": {
-      "_note": "Base building arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "No string/imm fingerprint; zero mapped callees/callers in propagated data."
+      "1.24": "0x140607B50",
+      "1.38": "0x14071DDE0",
+      "_note": "Calls the located cGcMarkerPoint ctor/Reset + cGcMarkerList::TryAddMarker; exact 4.13 5-arg signature. 1.09.1 NOT_IN (base building postdates it). 1.13 has two indistinguishable base-marker candidates (FUN_14050A2D0 / FUN_14050A450) - left NOT_YET_FOUND pending disambiguation."
     },
     "cGcBaseBuildingManager::GetBaseBuildingRootMatrix": {
       "_note": "Base building arrived in Foundation (1.1).",
@@ -1003,11 +1002,11 @@
       "_unresolved": "114-byte leaf; none of its many modern callers are mapped in any build, no strings/imm64, so no anchor"
     },
     "cGcFrontendManager::cGcFrontendManager": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "constructor; sole modern caller (cGcApplication::Data ctor) and its distinctive callee ctors are all unmapped; no strings/imm64"
+      "1.09.1": "0x1403D0D50",
+      "1.13": "0x1404A9740",
+      "1.24": "0x14055CCB0",
+      "1.38": "0x14066F130",
+      "_note": "App-data sub-ctor that registers the frontend singleton (getter returns DAT_...) and builds the QueueFrontendPage page-slot arrays; the located cGcFrontendPage::Do* functions reach their manager at this member offset."
     },
     "cGcFrontendPageDiscovery::DoDiscoveryView": {
       "1.09.1": "0x1404F25E0",
@@ -1133,11 +1132,11 @@
       "_unresolved": "no modern signature/strings/callees/callers in target_hints; nothing to anchor on."
     },
     "cGcHUDManager::cGcHUDManager": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "sole anchored callee is cGcNGuiLayer::cGcNGuiLayer (25-35 referencers); its own caller cGcApplication::Data ctor and the other member ctors are unmapped, so the referencer set cannot be narrowed to one."
+      "1.09.1": "0x1403D5DD0",
+      "1.13": "0x1404AEE80",
+      "1.24": "0x1405628D0",
+      "1.38": "0x1406766D0",
+      "_note": "4th manager sub-ctor of the app-data block; the unique fn referencing GCHUDMANAGER.MBIN + HUDManager_RTT (via its Construct) confirms it."
     },
     "cGcHUDMarker::cGcHUDMarker": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1339,11 +1338,10 @@
       "_unresolved": "no 4.13 PDB entry so no modern evidence; no name literal in the legacy decomp"
     },
     "cGcPersistentInteractionBuffer::LoadGalacticAddressBuffers": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "only 0 resolved caller and 1 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
+      "1.09.1": "0x1404238C0",
+      "1.13": "0x14053C0F0",
+      "1.24": "0x14064C450",
+      "1.38": "0x140768B20"
     },
     "cGcPersistentInteractionBuffer::PopulateBufferData": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1491,12 +1489,11 @@
       "_unresolved": "callers (Update/CheckFallenThroughFloor/SetToPosition/...) mostly unmapped; imm64 0x290F44A850290F44 is a generic packed constant (194 funcs); no distinctive string - no unique start"
     },
     "cGcPlayerBasePersistentBuffer::LoadGalacticAddress": {
-      "_note": "Base building arrived in Foundation (1.1).",
       "1.09.1": "NOT_IN_THIS_VERSION",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "NMS-Newton hook; no string/imm fingerprint and zero mapped callees/callers in the propagated data."
+      "_note": "Class exists (base-persistence cluster 1.38 0x14074E530-0x14074F370); the 'load for galactic address' candidate 0x14074EB20 is called beside the sibling PersistentInteractionsManager::LoadGal but could not be confirmed with 2+ independent signals (likely inlined-fused). 1.09.1 NOT_IN (base building postdates)."
     },
     "cGcPlayerCharacterComponent::SetDeathState": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2245,11 +2242,11 @@
       "_unresolved": "Meyers singleton pattern shared by many classes; kRegister dynamic-initializer callers not symbolised, no distinguishing second signal"
     },
     "cTkMetaDataManager::LoadModdedData": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "no modern signature/strings/callees; no anchor"
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "1.24": "NOT_IN_THIS_VERSION",
+      "1.38": "NOT_IN_THIS_VERSION",
+      "_note": "Feature postdates these builds: GCMODSETTINGS.MXML and the whole mod-settings/metadata-merge/MBINCACHE architecture are absent from every legacy exe (byte-scanned). Legacy mod loading is pure cTkFileSystem/PSARC pak-mounting."
     },
     "cTkMetaDataXML::GetLookup": {
       "1.09.1": "NOT_YET_FOUND",

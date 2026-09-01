@@ -442,3 +442,17 @@ gravity is not driven through `cTkDynamicGravityControl` by any distinct cGcPlan
 `cGcDiscoveryManager::SubmitDiscoveryData` (a 62-byte forwarder folded into callers). The
 managers with a GetInstance/ctor shape port cleanly; the per-frame `Update*` verbs are the
 inlining ceiling again.
+
+The RealityManager find exposed a reusable anchor: **every gameplay-manager singleton is an
+in-place sub-object ctor inside the app-data-block ctor** (`cGcApplication::Construct` →
+app-data ctor `FUN_1403D51B0 / FUN_1404AE110 / FUN_140561E30 / FUN_140675AE0`), constructed at
+successive offsets. Walking that ctor's callees + identifying each by what it constructs located
+(all four builds): `cGcHUDManager::cGcHUDManager` (the fn behind `GCHUDMANAGER.MBIN`/`HUDManager_RTT`)
+and `cGcFrontendManager::cGcFrontendManager` (registers the frontend singleton, builds the
+QueueFrontendPage slot arrays). Also located: `cGcBaseBuildingManager::AddHUDMarker` (1.24/1.38;
+calls the located marker ctor/Reset + `cGcMarkerList::TryAddMarker`, exact 4.13 signature; 1.09.1
+NOT_IN, 1.13 has two indistinguishable candidates) and
+`cGcPersistentInteractionBuffer::LoadGalacticAddressBuffers` (all four). Reclassified
+`cTkMetaDataManager::LoadModdedData` as **NOT_IN all builds** (the mod-settings/metadata-merge
+architecture, incl. `GCMODSETTINGS.MXML`, is byte-absent; legacy modding is pure PAK-mounting).
+Surface now **147 / 157 / 166 / 174** located.
