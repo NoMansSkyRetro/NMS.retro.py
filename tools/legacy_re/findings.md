@@ -456,3 +456,81 @@ NOT_IN, 1.13 has two indistinguishable candidates) and
 `cTkMetaDataManager::LoadModdedData` as **NOT_IN all builds** (the mod-settings/metadata-merge
 architecture, incl. `GCMODSETTINGS.MXML`, is byte-absent; legacy modding is pure PAK-mounting).
 Surface now **147 / 157 / 166 / 174** located.
+
+
+## Fleet Round 4 (2026-09-01): DeepSeek V4 Flash via OpenCode CLI
+
+8 batches, 47 anchored NOT_YET_FOUND targets, run as parallel opencode run processes
+with DeepSeek V4 Flash. Agents had access to handles.py toolkit and decomp DBs.
+
+### New functions located (10)
+
+| Function | 1.09.1 | 1.13 | 1.24 | 1.38 | How |
+|----------|--------|------|------|------|-----|
+| cGcSolarSystem::OnEnterPlanetOrbit | 0x140A35BE0 | 0x140BAE3F0 | 0x140D33860 | 0x140EEBEA0 | orbit-transition dispatcher callee |
+| cGcSolarSystem::OnLeavePlanetOrbit | 0x140A35F60 | 0x140BAE7C0 | 0x140D33BB0 | 0x140EEC290 | companion of OnEnter, same dispatcher |
+| cGcPlanetGenerator::GenerateQueryInfo | 0x140A63790 | 0x140BD26A0 | 0x140D57F60 | 0x140F07D00 | profile scope string + callee match |
+| cGcPlayerHUD::cGcPlayerHUD | 0x1403D8C60 | 0x1404B2230 | 0x140566530 | 0x14067A8F0 | HUDManager ctor chain member |
+| cGcScanEvent::Construct | 0x140968790 | 0x140ABF580 | 0x140C33980 | 0x140DDF300 | scan-event ctor |
+| cGcSpaceshipComponent::Eject | 0x140A91150 | 0x140C037D0 | 0x140D8CCE0 | 0x140F637C0 | ship-exit function |
+| cTkEngineUtils::GetMasterModelNode | 0x140BC4960 | 0x140D4CFA0 | 0x140F0F9D0 | 0x1410D12B0 | engine utility |
+| cTkTexture::CreateEmptyTexture | 0x140AECD30 | 0x140C6D910 | 0x140E24860 | 0x140FDE010 | texture creation |
+| cGcSpaceshipComponent::GetVelocity | NYF | NYF | 0x140D8DA70 | 0x140F645B0 | rigidbody velocity accessor (1.24+) |
+| cGcSpaceshipWarp::GetPulseDriveFuelFactor | 0x14042C3D0 | 0x14054ECB0 | 0x14065BF70 | NYF | stat getter (1.09.1-1.24) |
+| cGcVisitedSystemsBuffer::VisitNewGalacticAddress | NYF | NYF | NYF | 0x140798F50 | visited-systems recorder (1.38) |
+
+### Key correction: OnEnterPlanetOrbit / OnLeavePlanetOrbit
+
+Earlier dossier analysis (main session) classified these as "inlined into the solar
+system update state machine" based on checking the two size-band callees of
+cGcSolarSystem::Update (0x140EE5970). The fleet agents did a deeper investigation and
+found an orbit-transition dispatcher (1.38: 0x140EEA480, 1.24: 0x140D32F90,
+1.13: 0x140BADB10, 1.09.1: 0x140A352D0) that calls OnEnterPlanetOrbit when the in-orbit
+flag flips to true and OnLeavePlanetOrbit when it flips to false. These ARE standalone
+functions in all 4 builds. The dossier only checked direct callees of Update, not the
+dispatcher's callees.
+
+### Unresolved (13, all with documented blockers)
+
+- cGcShipHUD::cGcShipHUD: inlined into LoadData in every build
+- cGcSky::SetSunAngle: inlined into UpdateSunPosition
+- cGcSolarSystemGenerator::GenerateBasics: inlined into Generate
+- cGcPlayerEnvironment::IsOnPlanet: inlined (byte signature absent from all binaries)
+- cGcPlayerEnvironment::IsOnboardOwnFreighter: inlined/ICF-folded
+- cGcPlayerState::AwardNanites: saturating-add fingerprint absent from all binaries
+- cGcPlayerState::StoreCurrentSystemSpaceStationEndpoint: inlined into player update
+- cGcPositionMarker::Render: refactored/inlined after these builds
+- cTkEngineUtils::RepositionGroupNode: inlined into ShiftAllTransformsForNode callers
+- cTkFileSystem::IsModded: 17-byte accessor inlined at every call site
+- cTkRigidBody::SetAngularVelocity: 89-byte leaf not emitted in any legacy build
+- cGcSolarSystemQuery::Run: folded into solar-system phase machine
+- cTkDynamicGravityControl::Construct: inlined into boot state
+
+### Coverage after round 4
+
+| Build | Located | NYF | NIV |
+|-------|---------|-----|-----|
+| 1.09.1 | 156 | 156 | 45 |
+| 1.13 | 166 | 157 | 34 |
+| 1.24 | 176 | 157 | 24 |
+| 1.38 | 185 | 154 | 18 |
+
+### Struct RE: cGcEnvironment (PlayerEnvironment)
+
+Discovered via main-session struct RE agent (DeepSeek V4 Flash):
+- cGcEnvironment at cGcApplicationData + 0x101360 (1.38)
+- ctor: FUN_140678FC0 (1.38)
+- miNearestPlanetIndex (int, init=-1) at +0x528
+- mfDistanceFromPlanet (float, init=FLT_MAX) at +0x52C
+- Second state block (space-side) at +0x7E8/+0x7EC
+- cGcGameState at cGcApplicationData + 0x194 (1.38)
+- Data chain: app(+0x38) -> appdata -> environment(+0x101360)
+
+### Newton hook surface after round 4
+
+| Build | Hooks active | Disabled (inlined) | N/A |
+|-------|-------------|-------------------|-----|
+| 1.09.1 | 8 | 8 | 1 |
+| 1.13 | 10 | 7 | 0 |
+| 1.24 | 10 | 7 | 0 |
+| 1.38 | 10 | 7 | 0 |

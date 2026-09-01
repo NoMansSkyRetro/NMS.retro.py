@@ -42,3 +42,14 @@ tools/mbin/structdump/obj/
 
 # GUID-anchor mining derived output (regenerate: python tools/legacy_re/mine_guid_anchors.py)
 tools/legacy_re/out/guid_anchors.json
+
+# LLM benchmark scratch: API key + result files are local-only (regenerable)
+
+# OpenCode Go API key - local only
+tools/llm_bench/opencode_key.txt
+
+# Benchmark scratch output (regenerable from the harness)
+tools/llm_bench/out/
+
+# Scratch benchmark scripts (temp agent work)
+tools/llm_bench/_*.py

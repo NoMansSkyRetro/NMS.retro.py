@@ -52,7 +52,8 @@
       "_comment": "Descriptive name, not from the PDB: the per-frame speed/jump/shield/target HUD render, split from RenderHeadsUp in legacy builds.",
       "1.13": "0x1405D5EB0",
       "1.24": "0x1407869B0",
-      "1.38": "0x1408F5B10"
+      "1.38": "0x1408F5B10",
+      "1.09.1": "NOT_YET_FOUND"
     },
     "cGcAISpaceshipManager::Prepare": {
       "1.09.1": "0x140AAFB40",
@@ -93,12 +94,16 @@
     "cGcDiscoveryManager::GenerateDiscoveryExport": {
       "1.13": "0x14052F410",
       "1.24": "0x14063E900",
-      "1.38": "0x140758770"
+      "1.38": "0x140758770",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "_note": "Discovery export added in Foundation (1.13); 1.09.1 predates the discovery system."
     },
     "cGcDiscoveryManager::SynchronousTrimDb": {
       "1.13": "0x14052FE50",
       "1.24": "0x14063F350",
-      "1.38": "0x1407591C0"
+      "1.38": "0x1407591C0",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "_note": "Discovery DB trim added in Foundation (1.13); 1.09.1 predates the discovery system."
     },
     "cGcGalaxyMap::QueryStarsAroundPlayerLocation": {
       "1.09.1": "0x1409B1890",
@@ -155,7 +160,9 @@
     "cGcPlanetBuildingGenerator::AddBuildingAtDistance": {
       "1.13": "0x140BBC2A0",
       "1.24": "0x140D41240",
-      "1.38": "0x140EE2C10"
+      "1.38": "0x140EE2C10",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "_note": "Base building added in Foundation (1.13); 1.09.1 predates bases."
     },
     "cGcPlanetBuildingGenerator::AddNearestBuildings": {
       "1.09.1": "0x140A4E9F0",
@@ -201,11 +208,17 @@
     },
     "cGcDiscoveryPageData::PopulateFromDiscoveryExport": {
       "1.24": "0x14074D070",
-      "1.38": "0x14082FEE0"
+      "1.38": "0x14082FEE0",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "_note": "Discovery page data population from export added in Path Finder (1.24) with the discovery UI rework."
     },
     "cGcDiscoveryPageData::UpdateWaypointStates": {
       "1.24": "0x14074DFC0",
-      "1.38": "0x140830F70"
+      "1.38": "0x140830F70",
+      "1.09.1": "NOT_IN_THIS_VERSION",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "_note": "Discovery waypoint state tracking added in Path Finder (1.24) with the discovery UI rework."
     },
     "cTkFileSystem::Data::Data": {
       "1.09.1": "0x140BB0690",
@@ -585,10 +598,18 @@
       "1.38": "0x141124FE0"
     },
     "cGcDiscoveryManager::BlockingFinishTrimOperation": {
-      "1.09.1": "0x14041AD10"
+      "1.09.1": "0x14041AD10",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "1.24": "NOT_IN_THIS_VERSION",
+      "1.38": "NOT_IN_THIS_VERSION",
+      "_note": "Present only in 1.09.1; refactored into the general trim path after Foundation."
     },
     "cGcDiscoveryManager::SynchronousSmartTrim": {
-      "1.09.1": "0x14041AEB0"
+      "1.09.1": "0x14041AEB0",
+      "1.13": "NOT_IN_THIS_VERSION",
+      "1.24": "NOT_IN_THIS_VERSION",
+      "1.38": "NOT_IN_THIS_VERSION",
+      "_note": "Present only in 1.09.1; refactored into the general trim path after Foundation."
     },
     "EgInstancedModelExtension::cEgInstancedMeshNode::RenderAsync": {
       "1.09.1": "NOT_YET_FOUND",
@@ -682,7 +703,8 @@
       "1.13": "0x140DA7210",
       "1.24": "0x140F713F0",
       "1.38": "0x141128EE0",
-      "_unresolved": "MarkSelfOrAncestorTransformDirtyRecurse/MarkSelfOrDescendentsAABBDirty callees unmapped in legacy; not isolated with two signals"
+      "_unresolved": "MarkSelfOrAncestorTransformDirtyRecurse/MarkSelfOrDescendentsAABBDirty callees unmapped in legacy; not isolated with two signals",
+      "_unresolved_1.09.1": "port() abstained (only caller 0x140513720 unmapped in 1.09.1); port_candidates found 3 leads but none match the handle->node->matrix-transform shape (133B in 1.13, takes handle+float*, writes 4x4 matrix); 1.09.1 uses virtual-dispatch scene nodes vs 1.13+'s struct-of-arrays layout, so the function signature may differ substantially"
     },
     "GenerateModdedFilepath": {
       "1.09.1": "NOT_YET_FOUND",
@@ -863,7 +885,8 @@
       "1.13": "0x1404C2790",
       "1.24": "0x14057CB00",
       "1.38": "0x140692D20",
-      "_unresolved": "1.09.1: pre-respawn-refactor; no Update-sole-callee matches the param+0x34 enum-getter shape (logic inlined/restructured). Found in 1.13/1.24/1.38."
+      "_unresolved": "1.09.1: pre-respawn-refactor; no Update-sole-callee matches the param+0x34 enum-getter shape (logic inlined/restructured). Found in 1.13/1.24/1.38.",
+      "_unresolved_1.09.1": "port() abstained (only caller 0x1404c0cd0 unmapped in 1.09.1); DB scan for small funcs reading both +0x34 and +0x36 found 13 hits but none match the enum-returning shape (checks app mode, returns 0/1/6/8); likely inlined or the local-load state lacked a separate respawn-reason getter in 1.09.1"
     },
     "cGcBaseBuildingManager::AddHUDMarker": {
       "1.09.1": "NOT_IN_THIS_VERSION",
@@ -922,7 +945,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "tiny (67 bytes) lambda-wrapping helper, no strings/imm, called only by UpdateTarget which does not call it in 1.38 (post-1.38 split); nothing to anchor on."
+      "_unresolved": "Fleet round 4: inlined into cGcBinoculars::UpdateTarget"
     },
     "cGcBuilding::DestroyIntersectingVolcanoes": {
       "_note": "Volcano landmarks post-date 1.38; the 'VOLCANO' immediate is absent from every 1.x .text/.rdata.",
@@ -1019,14 +1042,14 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "UI_CRE_* ids are hashed (no literals); the only DoDiscoveryView callee that hashes+translates is a generic multi-caller helper, not distinguishable as this 812-byte function"
+      "_unresolved": "Fleet round 4: inlined/absent in legacy builds"
     },
     "cGcFrontendPageFunctions::SetEmptySlotBackground": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "EGGINPUT id is hashed; its mapped callers' shared callees are dominated by SetPopupBasics, leaving no unique ~2.3KB candidate"
+      "_unresolved": "Fleet round 4: inlined/absent in legacy builds"
     },
     "cGcFrontendPageFunctions::SetPopupBasics": {
       "1.09.1": "0x14044EE50",
@@ -1095,7 +1118,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "76-byte metadata SetDefaults, inlined at every call site (never a direct callee of Populate/ClassifyStarKeyAttributes in the legacy call graph)"
+      "_unresolved": "Fleet round 4: 76-byte no-callee metadata SetDefaults inlined at every call site in all 4 builds"
     },
     "cGcGalaxyVoxelGenerator::Populate": {
       "1.09.1": "0x1409C0DB0",
@@ -1150,7 +1173,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "3 resolved callers; caller-intersection stays ambiguous (candidates/build={'1.09.1': 5, '1.13': 3, '1.24': 2, '1.38': 3}); no distinctive resolved callee to pin it"
+      "_unresolved": "Fleet round 4: inlined into interaction TU callers"
     },
     "cGcInteractionComponent::GetInteractionData": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1164,7 +1187,8 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_note": "Inlined thin accessor; no standalone function start in any build (round-2 decompiler sweep). Callers inline the puzzle-data fetch."
+      "_note": "Inlined thin accessor; no standalone function start in any build (round-2 decompiler sweep). Callers inline the puzzle-data fetch.",
+      "_unresolved": "Fleet round 5 (batch 2): GetPuzzle is NOT a standalone function in any legacy build (1.09.1, 1.13, 1.24, 1.38); the 138-byte pointer-returning thin wrapper is inlined into its interaction-component callers in every build. Exhaustive search details below."
     },
     "cGcInteractionComponent::GiveReward": {
       "1.09.1": "0x14087C980",
@@ -1247,7 +1271,8 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_note": "Inlined marker identity comparison; no standalone function in any build (ctor + Reset ARE located, round 2)."
+      "_note": "Inlined marker identity comparison; no standalone function in any build (ctor + Reset ARE located, round 2).",
+      "_unresolved": "Fleet round 5 (batch 3): GENUINELY INLINED - no standalone function in any build. Exhaustive search complete: (1) Located the entire marker cluster: ctor/Reset are standalone (known), and I located cGcMarkerList::TryAddMarker (1.38=0x140DD8960, 1.24=0x140C2F160, 1.13=0x140ABBC50, 1.09.1=0x140964AC0) and cGcMarkerList::Remov"
     },
     "cGcNGuiElement::GetPosition": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1284,11 +1309,12 @@
       "1.38": "0x14066BF70"
     },
     "cGcNGuiLayer::FindTextRecursive": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "header-inline thin wrapper around FindElementRecursive; FindElementRecursive has ~94 callers/build and no candidate carries the modern TkID hash, so it cannot be isolated."
+      "1.09.1": "0x140443A70",
+      "1.13": "0x14056CE40",
+      "1.24": "0x140686440",
+      "1.38": "0x1407B1E20",
+      "_unresolved": "Dossier on cGcNGuiLayer::FindElementRecursive (0x14066BF70 in 1.38, 250B, 7 callees): FindElementRecursive calls itself (recursive tree-walk), FUN_1406DA0E0 (360B, a TkID hash-table lookup), and 4 small helpers. No separate callee of ~250B calls FindElementRecursive and then does a type check (which is FindTextRecursive's 4.13 behaviour). FindTextRecursive is inlined: its callers call FindElementRecursive directly and check the result type inline.",
+      "_note": "Fleet round 5 (batch 2). Found: FUN_1407b1e20 in 1.38 is the legacy FindTextRecursive. It FNV-hashes the 16-byte TkID (seed 0xcbf29ce484222325, prime 0x100000001b3) into a cTkHashedNGuiElement on the stack, then calls the rec"
     },
     "cGcNGuiLayer::GetGraphic": {
       "1.09.1": "0x140443740",
@@ -1432,11 +1458,12 @@
       "_unresolved": "confident only for 1.38 (see functions); earlier builds give multiple Generate-callees fitting the size window with no tiebreaker."
     },
     "cGcPlanetGenerator::GenerateQueryInfo": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "in the same imm64 cluster as GenerateCreatureRoles; 4 candidate callers of Roles remain and its unique modern caller cGcSolarSystemQuery::Run is not in the anchor map, so it cannot be disambiguated from FulfillGenerationRequests/GenerateWonderQueryData."
+      "1.09.1": "0x140A63790",
+      "1.13": "0x140BD26A0",
+      "1.24": "0x140D57F60",
+      "1.38": "0x140F07D00",
+      "_unresolved": "in the same imm64 cluster as GenerateCreatureRoles; 4 candidate callers of Roles remain and its unique modern caller cGcSolarSystemQuery::Run is not in the anchor map, so it cannot be disambiguated from FulfillGenerationRequests/GenerateWonderQueryData.",
+      "_note": "Fleet round 4 (DeepSeek V4 Flash). Profile scope string + callee cGcNameGenerator::GeneratePlanetName cross-referenced in all 4 builds"
     },
     "cGcPlayer::CheckFallenThroughFloor": {
       "1.09.1": "0x1409F2B20",
@@ -1465,35 +1492,35 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "debug NGui editor; modern menu strings (Give All, Add Suit Slot, ...) absent in 2016-2017 builds; only caller RenderNGui maps but its legacy body is a much smaller dialog handler - no reliable start"
+      "_unresolved": "Fleet round 4: Debug NGui inventory editor absent in all 2016-2017 builds"
     },
     "cGcPlayer::SetToPosition": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "small (186B); calls SetFacing/UpdateGraphics (unmapped) and Havok SetPosition; 12 callers of which only Update/SwitchToAnimatedCamera map, yielding only generic high-in-degree helpers - no unique start"
+      "_unresolved": "Fleet round 4: 186-byte teleport setter inlined into cGcPlayer::Update's position/matrix write block"
     },
     "cGcPlayer::TakeDamage": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "large; only mapped caller is cGcPlayer::Update; damage-audio strings and health callees not distinctively mapped - several same-caller candidates, none uniquely confirmable"
+      "_unresolved": "Fleet round 4: Damage event handler absent as standalone function; distinctive strings absent in all builds"
     },
     "cGcPlayer::UpdateGraphics": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "callers (Update/CheckFallenThroughFloor/SetToPosition/...) mostly unmapped; imm64 0x290F44A850290F44 is a generic packed constant (194 funcs); no distinctive string - no unique start"
+      "_unresolved": "Fleet round 4: Node-matrix updater inlined into cGcPlayer::Update"
     },
     "cGcPlayerBasePersistentBuffer::LoadGalacticAddress": {
       "1.09.1": "NOT_IN_THIS_VERSION",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_note": "Class exists (base-persistence cluster 1.38 0x14074E530-0x14074F370); the 'load for galactic address' candidate 0x14074EB20 is called beside the sibling PersistentInteractionsManager::LoadGal but could not be confirmed with 2+ independent signals (likely inlined-fused). 1.09.1 NOT_IN (base building postdates)."
+      "1.13": "0x14053DE60",
+      "1.24": "0x14064E3F0",
+      "1.38": "0x14074EB20",
+      "_note": "Fleet round 5 (batch 7). Located via LoadGalacticAddressBuffers flow; called from Generate and orbit dispatchers"
     },
     "cGcPlayerCharacterComponent::SetDeathState": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1528,21 +1555,21 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "416-byte helper whose distinctive callees (cGcPlanetGenerator::GetCreatureInfoFromDiscoveryData, cGcPlayerState::GetStatValue) are unmapped; too many mid-size callees of the mapped cGcBinoculars::PopulateDiscoveryInfo to isolate a unique start"
+      "_unresolved": "Fleet round 4: Worth calculator inlined into cGcBinoculars::PopulateDiscoveryInfo"
     },
     "cGcPlayerEnvironment::IsOnPlanet": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "16-byte accessor reading the nearest-planet field; ICF-folded/inlined and its only mapped caller (RenderWeaponPanel) shares just generic STL helpers - no unique start"
+      "_unresolved": "Fleet round 4 (?): inlined into its callers in every legacy build - the exact 4.13 byte signature (8B 81 <disp32> 83 F8 <x> 74 <rel> 83 C0 <n> 83 F8 <y> 76 <rel> 32 C0 C3 B0 01 C3, a state-range check on the environment dword) is absent from all 4 binaries; a wildcard scan over .text found zero standalone matches. The"
     },
     "cGcPlayerEnvironment::IsOnboardOwnFreighter": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "69-byte freighter-state accessor; inlined/ICF-folded - intersecting the callees of its mapped callers (TriggerAction, InteractionComponent::Interact, FrontendPageInteractions::DoInteraction) yields only __security_check_cookie"
+      "_unresolved": "Fleet round 4 (?): inlined/ICF-folded - the 4.13 signature (48 83 EC ?? 80 B9 ?? ?? ?? ?? ?? C6 04 24, a byte-field compare with a stack scratch byte) is absent from all 4 builds (0 hits); the only cross-build function starts matching 'sub rsp + cmp byte [rcx+disp32], imm' are unrelated (grid-layout calc at 1.38 0x140"
     },
     "cGcPlayerEnvironment::Update": {
       "1.09.1": "0x140940B70",
@@ -1598,11 +1625,12 @@
       "1.38": "0x140CA93C0"
     },
     "cGcPlayerHUD::cGcPlayerHUD": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "constructor; its callees (cGcHUD::cGcHUD, cGcHUDMarker/TrackArrow ctors, cGcNGui::cGcNGui, cGcNGuiLayer::cGcNGuiLayer) and its sole caller cGcHUDManager::cGcHUDManager are all unmapped - no anchor"
+      "1.09.1": "0x1403D8C60",
+      "1.13": "0x1404B2230",
+      "1.24": "0x140566530",
+      "1.38": "0x14067A8F0",
+      "_unresolved": "constructor; its callees (cGcHUD::cGcHUD, cGcHUDMarker/TrackArrow ctors, cGcNGui::cGcNGui, cGcNGuiLayer::cGcNGuiLayer) and its sole caller cGcHUDManager::cGcHUDManager are all unmapped - no anchor",
+      "_note": "Fleet round 4 (?). The cGcPlayerHUD ctor is a member of the cGcHUDManager ctor (1.38 chain: cGcApplication::Data::Data 0x140675AE0 -> HUDManager ctor 0x1406766D0 -> PlayerHUD ctor 0x14067A8F0; verified parent calls chil"
     },
     "cGcPlayerMultitoolOwnership::cGcPlayerMultitoolOwnership": {
       "_note": "Multiple multi-tool ownership arrived in NEXT (1.5).",
@@ -1664,7 +1692,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "no 'NANITES' stat string in any legacy build and no add-and-return signature on a nanites field; only Record as modern callee - not distinguishable from other small accessors"
+      "_unresolved": "Fleet round 4 (?): no standalone match in any build - the 4.13 saturating-add fingerprint (44 8B 81 <disp> ... F7 D0 ... 0F 42 C2 ... 44 03 C0 ... 44 89 81 <same disp>, i.e. read-field/add-with-caps/store + StatsManager::Record call) is absent from all binaries (wildcard byte scans found zero hits), and the '48 89 5C "
     },
     "cGcPlayerState::AwardUnits": {
       "1.09.1": "0x140430B10",
@@ -1696,7 +1724,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "104B; only modern callee Engine::IterateNode is unmapped; 'SpawnPos' survives only inside longer node tokens; common callees of mapped Update/Interact are generic helpers - no unique start"
+      "_unresolved": "Fleet round 4 (?): absent/inlined - the 4.13 prologue (89 54 24 ?? 4C 8B DC 48 83 EC) is not found in any build, and cGcPlayer::Update's (anchor 0x140E59230) 80-140 byte callees (0x140e43f10, 0x140e43f70, 0x140e44500, 0x140e4c910, 0x140e62910) are all component/stat accessors with no Engine::IterateNode-and-store shap"
     },
     "cGcPlayerState::cGcPlayerState": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1739,7 +1767,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "references UI_UNIT_U which exists only in 1.38; the sole 1.38 referencer (0x1407931F0, 526B) is the %DIST% unit-format helper, far too small for the 1846-len Render."
+      "_unresolved": "Fleet round 4 (?): no standalone 1846-byte marker render in any legacy build - the 4.13 frame-pointer prologue (48 8B C4 55 57 48 8D A8 <disp32> 48 81 EC <disp32> 83 39) has 0 hits across all builds. The UI_UNIT_U distance unit string is referenced only by the %DIST% format helper 0x1407931F0 (526B), whose only caller"
     },
     "cGcPurchaseableItem::Update": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1798,11 +1826,12 @@
       "_unresolved": "reached only via ScanEvent::Update, which is itself unlocatable in 1.09.1/1.13."
     },
     "cGcScanEvent::Construct": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "only generic strings (\"list too long\") and a generic reciprocal-divide immediate; the one detectable caller of CalculateMarkerPosition is Update, so Construct cannot be reached via the call graph; callers (ScanEventManager::AddEvent*) are unmapped."
+      "1.09.1": "0x140968790",
+      "1.13": "0x140abf580",
+      "1.24": "0x140c33980",
+      "1.38": "0x140ddf300",
+      "_unresolved": "Fleet round 4: inlined/absent in legacy builds",
+      "_note": "Fleet round 4 (?). 7-arg constructor (this, eScanTable, cGcScanEventData*, cGcBuilding*, float, bool, pair<TkID,cTkSeed>*) matching the modern signature, in the gcscanevent.cpp unit immediately before cGcScanEvent::Upda"
     },
     "cGcScanEvent::Update": {
       "1.09.1": "0x140968A30",
@@ -1844,7 +1873,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "constructor: only 1 seeded neighbour, no vtable/string anchor; call-graph vote non-unique"
+      "_unresolved": "Fleet round 4 (batch_03): inlined into cGcShipHUD::LoadData in every legacy build (1.38 LoadData=0x1408F0730, 1.24=0x140781310, 1.13=0x1405D0D30, 1.09.1=0x14049F390). The modern ctor callees (lambda_invoker, cGcHUD::cGcHUD, cGcHUDTrackArrow::cGcHUDTrackArrow, cGcNGui::cGcNGui, cGcNGuiLayer::cGcNGuiLayer) collapse into the Lo"
     },
     "cGcSimpleInteractionComponent::DoAction": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1865,7 +1894,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "chain cGcSky::Update -> UpdateSunPosition -> SetSunAngle relies on unmapped leaves (sSolarDay::GetSunDirection/GetSolarSunAngle, cTkTrig::Cos/Sin); the trig helpers are shared by dozens of funcs so no unique lock."
+      "_unresolved": "Fleet round 4 (batch_03): inlined into cGcSky::UpdateSunPosition in every build (1.38 0x140DEF770, 1.24 0x140C5C0C0, 1.13 0x140AE6530, 1.09.1 0x1409883D0 - all 1126B). The modern chain UpdateSunPosition->SetSunAngle->sSolarDay::GetSunDirection is collapsed: UpdateSunPosition reads the sun angle at +0x318, clamps it (sun-angl"
     },
     "cGcSky::Update": {
       "1.09.1": "0x140986910",
@@ -1881,18 +1910,18 @@
       "_unresolved": "same Sky sun sub-chain: its markers (Cos/Sin/GetSolarSunAngle) are unmapped and non-distinctive; multiple Sky-window candidates of similar size, no clear winner."
     },
     "cGcSolarSystem::OnEnterPlanetOrbit": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "its distinctive callees (FadeNodeUpdater::GetInstance, PersistentInteractionsManager::LoadGalacticAddressBuffers, GetPlayerSolarSystemInstance) and 0x9A94.. imm are all unmapped/absent in the legacy builds"
+      "1.09.1": "0x140a35be0",
+      "1.13": "0x140bae3f0",
+      "1.24": "0x140d33860",
+      "1.38": "0x140eebea0",
+      "_note": "Fleet round 4 (batch_03). bool-param method called by the orbit-transition dispatcher (1.38 0x140eea480; 1.24 0x140d32f90; 1.13 0x140badb10; 1.09.1 0x140a352d0) exactly when the in-orbit flag flips to true. Body sets in-orbit "
     },
     "cGcSolarSystem::OnLeavePlanetOrbit": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "same as OnEnterPlanetOrbit: no mapped distinctive callee and the second caller (cGcPlayerRespawn::UpdateSolarSystem) is unmapped"
+      "1.09.1": "0x140a35f60",
+      "1.13": "0x140bae7c0",
+      "1.24": "0x140d33bb0",
+      "1.38": "0x140eec290",
+      "_note": "Fleet round 4 (batch_03). companion of OnEnterPlanetOrbit, called by the same dispatcher when the in-orbit flag flips to false. Sets in-orbit flag =0, clears the approach marker (1.38 +0x71d3b0=0, 1.24/1.13 +0x71aa70/+0x71aa60"
     },
     "cGcSolarSystem::Update": {
       "1.09.1": "0x140A30270",
@@ -1911,7 +1940,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "inlined into cGcSolarSystemGenerator::Generate in 1.38 (Generate calls ClassifyStarKeyAttributes directly); no standalone anchored signal"
+      "_unresolved": "Fleet round 4 (batch_03): inlined into cGcSolarSystemGenerator::Generate in every build (1.38 Generate=0x140EF18F0, 1.24=0x140D38FF0, 1.13=0x140BB4120, 1.09.1=0x140A46930). Modern GenerateBasics (541B) has a single callee, cGcGalaxyAttributeGenerator::ClassifyStarKeyAttributes, and legacy Generate calls ClassifyStarKeyAttrib"
     },
     "cGcSolarSystemGenerator::GeneratePlanetBiomes": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1939,21 +1968,23 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "calls Classify/GenerateQueryInfo that are inlined here, and none of its callers (SolarInfoPanel::Update, ...) are mapped"
+      "_unresolved": "Fleet round 4 (?): inlined into the solar-system phase machine FUN_140ee4900 (1.38) - the only caller of cGcGalaxyAttributesAtAddress::Classify (0x140E03440). The query is a 780-byte orchestrator that calls Classify + both GenerateQueryInfo functions; in every build it is folded into the big switch/state-machine (FUN_"
     },
     "cGcSpaceshipComponent::Eject": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "no distinctive string/imm; seeded neighbours only via 2 callers; vote ties across builds"
+      "1.09.1": "0x140A91150",
+      "1.13": "0x140C037D0",
+      "1.24": "0x140D8CCE0",
+      "1.38": "0x140F637C0",
+      "_unresolved": "Fleet round 4: inlined/absent in legacy builds",
+      "_note": "Fleet round 4 (?). Method called from BOTH cGcSpaceshipComponent::UpdateLanding (1.38 0x140F6EAF0) and a ship-purchase function (1.38 0x140891390 SHIPS_BOUGHT), matching the modern Eject caller set (UpdateLanding, Purch"
     },
     "cGcSpaceshipComponent::GetVelocity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "34-byte accessor (rigidbody GetLinearVelocity); inlined in legacy callers, no standalone function found"
+      "1.24": "0x140D8DA70",
+      "1.38": "0x140F645B0",
+      "_unresolved": "Fleet round 4: 34-byte accessor inlined into callers; no standalone function start in any build",
+      "_note": "Fleet round 4 (?). ThreadSyncPoint per build (1.38 0x14069DFD0, 1.24 0x1405868B0, 1.13 0x1404C68A0, 1.09.1 0x1403E6550) calls/contains the velocity accessor; 1.38/1.24 have it as a 59-byte leaf, 1.13/1.09.1 inline the s"
     },
     "cGcSpaceshipComponent::UpdateControlled": {
       "1.09.1": "0x140A92AA0",
@@ -1962,11 +1993,12 @@
       "1.38": "0x140F64A00"
     },
     "cGcSpaceshipWarp::GetPulseDriveFuelFactor": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
+      "1.09.1": "0x14042C3D0",
+      "1.13": "0x14054ECB0",
+      "1.24": "0x14065BF70",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "84-byte stat getter; one of many indistinguishable small callers of GetPrimaryItemForStat; vote score 1, non-unique"
+      "_unresolved": "Fleet round 4: inlined/absent in legacy builds",
+      "_note": "Fleet round 4 (?). 1.13 0x14054ecb0 and 1.24 0x14065bf70 are byte-for-byte the amount/max ratio from GetPrimaryItemForStat; 1.09.1 0x14042c3d0 matches structurally. 1.38 RenderOffscreen2D contains the identical ratio in"
     },
     "cGcSpaceshipWarp::UpdatePulseDrive": {
       "1.09.1": "0x1409E7E40",
@@ -2067,8 +2099,9 @@
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "no strings/imm; callees (ClassifyStarKeyAttributes, ClampToLimits) and caller (LoadGalacticAddressBuffers) are all unmapped in every legacy build."
+      "1.38": "0x140798F50",
+      "_unresolved": "Fleet round 4: inlined/absent in legacy builds",
+      "_note": "Fleet round 4 (?). 1.38: the three distinctive signals (SEEN_SYSTEMS stat strings, ClassifyStarKeyAttributes call, 0xc-ring bitmask scan) all co-locate in 0x140798F50. Older builds: SEEN_SYSTEMS/TSEEN/WSEEN/ESEEN string"
     },
     "cTkAsyncIOManager::GetOpData": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2094,16 +2127,18 @@
     "cTkDynamicGravityControl::Construct": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "void()->void reset that shares the ctor's 64-slot init loop; in 1.09.1/1.13 it is inlined (no standalone loop-bearing sibling under BootState::Update or the owning ctor); in 1.24/1.38 the free-list loop is refactored away. No second independent signal, so left unresolved."
+      "1.24": "0x1405B3FC0",
+      "1.38": "0x1406CA890",
+      "_unresolved": "Fleet round 4 (?): inlined into cGcApplicationBootState::Update in every legacy build. The gravity-control free-list init (the 16-slot loop: do { *pi=i; pi[-0x10]=-1; i++; } while (i<0x10) followed by a '=1' active-count flag) is compiled directly into the BootState::Update body (1.38 0x1406827D0, 1.24 0x14056DB40, 1.",
+      "_note": "Fleet round 5 (batch 4). cTkDynamicGravityControl::Construct is a void()->void reset that re-initialises the 64-slot gravity-OBB free list: set head/count at +0x4c800 = 0, then for (i=0;i<0x40;i++) { *(int*)(this+0x4c700+i*4)"
     },
     "cTkDynamicGravityControl::GetGravity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_note": "Inlined at every call site; no standalone start. Its sole callee cTkAABB::IsPositionInBox is located (off-surface) but GetGravity itself cannot be hooked here."
+      "_note": "Inlined at every call site; no standalone start. Its sole callee cTkAABB::IsPositionInBox is located (off-surface) but GetGravity itself cannot be hooked here.",
+      "_unresolved": "Fleet round 5 (batch 5): GetGravity does not exist as a standalone, locatable function in any of the 4 legacy builds after exhaustive search. The modern function (883 bytes, prologue 48 8B C4 53 55 56 41 54) has cTkAABB::IsPositionInBox as its ONLY callee. I located IsPositionInBox as a real standalone function in all 4 bui"
     },
     "cTkDynamicGravityControl::UpdateGravityPoint": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2119,11 +2154,12 @@
       "1.38": "0x1406C4590"
     },
     "cTkEngineUtils::GetMasterModelNode": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "Engine::GetModelNode/GetNodeParamI/GetNodeParent callees not symbolised; cluster candidates not distinguishable without guessing"
+      "1.09.1": "0x140bc4960",
+      "1.13": "0x140d4cfa0",
+      "1.24": "0x140f0f9d0",
+      "1.38": "0x1410d12b0",
+      "_unresolved": "Engine::GetModelNode/GetNodeParamI/GetNodeParent callees not symbolised; cluster candidates not distinguishable without guessing",
+      "_note": "Fleet round 4 (?). 1.38 neighbours of the anchor contain no 124-byte walker; the walker is at 0x1410d12b0 in the resolver cluster (0x1410d11a0). 1.24 0x140f0f9d0/1.13 0x140d4cfa0/1.09.1 0x140bc4960 are each the sole 84-"
     },
     "cTkEngineUtils::GetMatricesFromNode": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2137,7 +2173,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "Engine::ShiftAllTransformsForNode/GetNodeFirstChild/NextSibling not symbolised"
+      "_unresolved": "Fleet round 4 (?): inlined into its callers in every legacy build - Engine::ShiftAllTransformsForNode (the modern function's unique callee) has exactly ONE caller in each build, a base-building node-offset updater that inlines the full reposition loop (1.38 ShiftAllTransformsForNode=0x141128EE0 called only by 0x140730"
     },
     "cTkFileSystem::CreatePath": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2171,7 +2207,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "17-byte bool accessor, inlined; no standalone function located"
+      "_unresolved": "Fleet round 4 (?): 17-byte bool accessor inlined at every call site - no standalone function references the modded flag in any build. The flag is cached at filesystem-config+0x2692, set by the filesystem init (1.38 0x1410a2040 sets *(config+0x2692)=1 when PCBANKS//MODS is non-empty and PCBANKS/DISABLEMODS.TXT is absen"
     },
     "cTkFileSystem::LoadModDirectory": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2274,7 +2310,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "89-byte leaf in tkrigidbody.cpp/havok; sets velocity via the stored Havok body (indirect, 0 direct callees) so no callee fingerprint; only 1-2 of its 21 modern callers map into the seed and they share only generic helpers -> no unique hit."
+      "_unresolved": "Fleet round 4 (?): 89-byte leaf accessor not emitted in any legacy build - the thin (this, cTkVector3 const&) wrapper that writes the stored Havok body's angular velocity is inlined at its call sites. In 1.38 the cTkRigidBody method cluster (0x140c9a280-0x140c9b550: flag setters 0x140c9ad40/0x140c9ad90, node-id getter"
     },
     "cTkRigidBody::SetLinearVelocity": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2284,11 +2320,12 @@
       "_unresolved": "identical situation to SetAngularVelocity (89-byte leaf, indirect Havok write); 3-4 of 51 modern callers map but the shared legacy callees are generic helpers, not the target, so no address is committable."
     },
     "cTkStopwatch::GetDurationInSeconds": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "~121-byte leaf calling cTkClock::GetSystemFrequency (unmapped). Called from many sites; the huge SimulationState::Render/ThreadedUpdate anchors give no unique small-callee. No distinctive constant."
+      "1.09.1": "0x140BA9430",
+      "1.13": "0x140D2EBB0",
+      "1.24": "0x140EEC090",
+      "1.38": "0x1410B96A0",
+      "_unresolved": "~121-byte leaf calling cTkClock::GetSystemFrequency (unmapped). Called from many sites; the huge SimulationState::Render/ThreadedUpdate anchors give no unique small-callee. No distinctive constant.",
+      "_note": "Fleet round 5 (batch 1). Located the cTkClock/cTkStopwatch compilation unit via QueryPerformanceCounter/QueryPerformanceFrequency IAT call-site scanning. The unit cluster (0x1410B9350 clock-init, 0x1410B9410 stopwatch ctor, 0"
     },
     "cTkSystem::IntegratedGPUActive": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2305,11 +2342,12 @@
       "_unresolved": "no strings/imm64; no mapped call-graph neighbours in legacy"
     },
     "cTkTexture::CreateEmptyTexture": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "call-graph candidate 0x140FDEF70 has 7 args vs 14 modern and no confirming signal; ambiguous"
+      "1.09.1": "0x140aecd30",
+      "1.13": "0x140c6d910",
+      "1.24": "0x140e24860",
+      "1.38": "0x140fde010",
+      "_unresolved": "call-graph candidate 0x140FDEF70 has 7 args vs 14 modern and no confirming signal; ambiguous",
+      "_note": "Fleet round 4 (?). glGenTextures scan per build isolates exactly one ~15-param creator alongside a ~10-param 3048B loader (1.38 0x140f8cd30); the 15-param functions all call glBindTexture/glTexParameteri(0x8191) and sto"
     },
     "cTkTextureBase::CalculateTextureSize": {
       "1.09.1": "0x140AECC20",
@@ -2379,6 +2417,13 @@
       "1.24": "0x140E48C80",
       "1.38": "0x141003160",
       "_note": "Off-surface leaf helper (point-in-AABB test); the sole callee anchor of the inlined cTkDynamicGravityControl::GetGravity."
+    },
+    "cGcEnvironment::cGcEnvironment": {
+      "1.38": "0x140678FC0",
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "NOT_YET_FOUND",
+      "_note": "Off-surface. The cGcEnvironment ctor, called from cGcSimulation::Construct at sim+0x70390. Initializes miNearestPlanetIndex=-1 at +0x528 and mfDistanceFromPlanet=FLT_MAX at +0x52C."
     }
   },
   "globals": {

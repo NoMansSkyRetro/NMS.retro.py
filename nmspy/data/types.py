@@ -91,8 +91,7 @@ class cGcApplication(gen.cGcApplication, cTkFSM):
     # cGcApplication::Construct/Update: 1.09.1 &DAT_14160BA50, 1.13 &DAT_1417F6C80,
     # 1.24 &DAT_141A433F0, 1.38 &DAT_142033690); mpData (cGcApplicationData*) sits at base+0x38
     # in every build and the big subsystems live behind it, so modern deep offsets do not map.
-    _vfields_ = {
-        "mbPaused": (c_bool, {}),
+    _vfields_ = {\r\n        "mpData": (c_uint64, 0x38),  # cGcApplicationData* at +0x38 in all builds\r\n        "mbPaused": (c_bool, {}),
         "muPlayerSaveSlot": (c_int32, {"1.38": 0x40}),
     }
 
@@ -205,6 +204,24 @@ class cGcNGuiText(Structure):
 
 
 @versioned_struct
+class cGcEnvironment(Structure):
+    """The player environment tracker (called cGcPlayerEnvironment in Newton/mods).
+
+    Located at cGcApplicationData + 0x101360 (1.38). The ctor (FUN_140678FC0 in 1.38)
+    initializes two state blocks (planet-side and space-side), each with a
+    nearest-planet-index (int, -1 = none) and distance-from-planet (float, FLT_MAX = far).
+    """
+    _vfields_ = {
+        # First state block (planet-side)
+        "miNearestPlanetIndex": (c_int32, {"1.38": 0x528}),
+        "mfDistanceFromPlanet": (c_float, {"1.38": 0x52C}),
+        # Second state block (space-side) � same layout at +0x2C0 offset
+        "miNearestPlanetIndexSpace": (c_int32, {"1.38": 0x7E8}),
+        "mfDistanceFromPlanetSpace": (c_float, {"1.38": 0x7EC}),
+    }
+
+
+@versioned_struct
 class cGcMarkerPoint(gen.cGcMarkerPoint, Structure):
     # mCustomName is a cTkFixedString<0x40> at +0x38 in every build (cleared in Reset via
     # strncpy(this+0x38, "", 0x40)); ctor + Reset are now located in offsets.json.
@@ -284,3 +301,4 @@ class _EngineModules:
 
 
 engine_modules = _EngineModules()
+
