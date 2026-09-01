@@ -1165,7 +1165,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "6 resolved callers but non-utility callee-intersection is empty in every build -> accessor inlined into its legacy callers"
+      "_note": "Inlined thin accessor; no standalone function start in any build (round-2 decompiler sweep). Callers inline the puzzle-data fetch."
     },
     "cGcInteractionComponent::GiveReward": {
       "1.09.1": "0x14087C980",
@@ -1231,18 +1231,16 @@
       "_unresolved": "no anchored caller/callee; depends on the unmapped cGcMarkerPoint cluster."
     },
     "cGcMarkerPoint::Reset": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "only anchored caller cGcCreatureComponent::Prepare has ~34 callees; the tiny-ctor signature that would isolate Reset is swamped by generic single-callee wrappers."
+      "1.09.1": "0x140962A90",
+      "1.13": "0x140AB9BB0",
+      "1.24": "0x140C2CE90",
+      "1.38": "0x140DD5FA0"
     },
     "cGcMarkerPoint::cGcMarkerPoint": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "no anchored caller/callee; would follow from locating cGcMarkerPoint::Reset first."
+      "1.09.1": "0x140962A20",
+      "1.13": "0x140AB9B40",
+      "1.24": "0x140C2CE00",
+      "1.38": "0x140DD5EF0"
     },
     "cGcMarkerPoint::IsEqual": {
       "_comment": "Off-surface: not in upstream's 330 hooks, but PLAN.md lists it as an NMS-Newton anchor (marker stability while planets move). Tracked here so the hunt and its blocker are visible.",
@@ -1250,7 +1248,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "Marker cluster has no anchor: the struct diverged too far from 4.13 for any body fingerprint and nothing in the marker unit is string/imm-anchored. Live-Ghidra confirmed the scan-event code no longer calls the marker add/remove path the 4.13 way. Needs a fresh anchor (e.g. the marker-vector element size 0x30 in the reset loop at 1.38 0x1406C27A0) or manual RTTI/vtable work. See findings.md."
+      "_note": "Inlined marker identity comparison; no standalone function in any build (ctor + Reset ARE located, round 2)."
     },
     "cGcNGuiElement::GetPosition": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2108,21 +2106,20 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "leaf-ish const method (only callee cTkAABB::IsPositionInBox, itself unmapped); no strings/imm64; modern caller set is a folded/subset of the ctor's and the legacy caller-intersection is dominated by generic helpers (memcpy/vector ops), so no unique legacy VA stands out."
+      "_note": "Inlined at every call site; no standalone start. Its sole callee cTkAABB::IsPositionInBox is located (off-surface) but GetGravity itself cannot be hooked here."
     },
     "cTkDynamicGravityControl::UpdateGravityPoint": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "single modern caller cGcPlanet::UpdateGravity, which is itself NOT_YET_FOUND, so there is no mapped anchor; no strings/imm64 and no distinctive standalone loop."
+      "_note": "No standalone start isolated; its sole caller cGcPlanet::UpdateGravity is also inlined/absent."
     },
     "cTkDynamicGravityControl::cTkDynamicGravityControl": {
       "1.09.1": "0x1403EF3F0",
       "1.13": "0x1404CFF10",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "port() abstained for ['1.24', '1.38'] (no agreeing distinctive-token/call-graph winner)"
+      "1.24": "0x1405ADB10",
+      "1.38": "0x1406C4590"
     },
     "cTkEngineUtils::GetMasterModelNode": {
       "1.09.1": "NOT_YET_FOUND",
@@ -2364,6 +2361,27 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND"
+    },
+    "cGcEnvironment::UpdatePlayerEnvironmentState": {
+      "1.09.1": "0x140940B70",
+      "1.13": "0x140A95AF0",
+      "1.24": "0x140C08450",
+      "1.38": "0x140D8A8E0",
+      "_note": "Off the upstream 4.13 hook surface. The env/weather state updater; reads the nearest planet's env values inline (no stored cGcEnvironmentProperties* member in these builds, which is why cGcPlanet.mpEnvProperties stays unmapped)."
+    },
+    "cGcApplication::SetPlayerSaveSlot": {
+      "1.09.1": "NOT_YET_FOUND",
+      "1.13": "NOT_YET_FOUND",
+      "1.24": "0x14056BC30",
+      "1.38": "0x140680830",
+      "_note": "Off-surface. The (slot,mode) setter on the app singleton. 1.24 writes only the mode (base+0x40); 1.38 inserts muPlayerSaveSlot at base+0x40 and moves mode to base+0x44, so the save-slot field is 1.38-era."
+    },
+    "cTkAABB::IsPositionInBox": {
+      "1.09.1": "0x140B0F490",
+      "1.13": "0x140C8FC70",
+      "1.24": "0x140E48C80",
+      "1.38": "0x141003160",
+      "_note": "Off-surface leaf helper (point-in-AABB test); the sole callee anchor of the inlined cTkDynamicGravityControl::GetGravity."
     }
   },
   "globals": {

@@ -380,6 +380,43 @@ Offsets by build `1.09.1 / 1.13 / 1.24 / 1.38`, written into `nmspy/data/types.p
   `&DAT_14160BA50 / &DAT_1417F6C80 / &DAT_141A433F0 / &DAT_142033690`): `mpData`
   (`cGcApplicationData*`) at base `+0x38` in all builds; `muPlayerSaveSlot` (int) at `+0x40`
   (1.38 only so far).
-- `cTkDynamicGravityControl::maGravityPoints`: **not accepted.** Only the ctor is located
-  (`Construct`/`GetGravity` are `NOT_YET_FOUND`); the ctor's `+0x4C800` store is the pool
-  bookkeeping, not the points array. Needs `GetGravity` located first.
+- `cTkDynamicGravityControl::maGravityPoints`: **not accepted.** The ctor is now located in
+  all four builds (below) and the pool structure is understood (0x40 elements, stride 0x1318,
+  free-list at `+0x4C600`/`+0x4C700`, count at `+0x4C800`), but `maGravityPoints` at `+0x0`
+  is just "the pool is the object" and `GetGravity`/`UpdateGravityPoint` (which would pin the
+  semantic offset) are inlined with no standalone start. Left unmapped.
+
+### Round 2 — blocker functions located, more fields (same fleet method)
+
+New functions located (validated function starts, in `offsets.json`; `verify_offsets.py` passes):
+
+- `cGcMarkerPoint::cGcMarkerPoint` + `::Reset`, **all four builds** (the marker cluster,
+  previously "diverged too far"): ctor sits right before Reset, tail-calls it; Reset does the
+  default-init (`strncpy(this+0x38, "", 0x40)` name-clear, `0x3FFFF` bitfield sentinels at
+  `+0x78`/`+0x7C`, `w=1.0` triplets). Found by the tiny-ctor→Reset adjacency.
+- `cTkDynamicGravityControl::cTkDynamicGravityControl`: **completed** (1.24 `0x1405ADB10`,
+  1.38 `0x1406C4590`; 1.09.1/1.13 already had it). Found by the unique `0x4C600`/`0x4C800`
+  class-pool init signature.
+- Off-surface anchors: `cGcEnvironment::UpdatePlayerEnvironmentState` (all 4; sole referencer
+  of its debug string), `cGcApplication::SetPlayerSaveSlot` (1.24/1.38), `cTkAABB::IsPositionInBox`
+  (all 4; the inlined `GetGravity`'s sole callee).
+
+New field offsets (in `types.py`, guarded by `test_runtime_fields.py`):
+
+- `cGcNGuiText::mpTextData` `+0x60` (all builds, from `EditElement`).
+- `cGcShipHUD::mbSelectedPlanetPanelVisible` (4-byte flag right after `miSelectedPlanet`)
+  `0x212AC / 0x2199C / 0x2199C / 0x2243C`.
+- `cGcMarkerPoint::mCustomName` (`cTkFixedString<0x40>`) `+0x38` (all builds).
+- `cGcAlienPuzzleEntry`: `Id` `+0x0`; `Options` `0x420 / 0x420 / 0x420 / 0x4B0`.
+
+Honest negatives (not stored / inlined, recorded so they are not re-hunted blindly):
+
+- `cGcPlanet::mpEnvProperties`, `mPlanetDiscoveryData`: **no stored member** in these builds.
+  The env/weather stats are read inline by `cGcEnvironment::UpdatePlayerEnvironmentState` off
+  the nearest planet; `Generate` takes `cGcDiscoveryData const&` but never copies it into a
+  field. These are modern-only pointers.
+- `cGcApplication::muPlayerSaveSlot`: **1.38-era**; `SetPlayerSaveSlot`/`GetRespawnReason`
+  show 1.24 has only the mode field (`base+0x40`), and 1.38 inserts the slot at `base+0x40`
+  (mode moves to `+0x44`). `mbPaused`: no dedicated pause bool found on the singleton.
+- `GetGravity`, `UpdateGravityPoint`, `cGcMarkerPoint::IsEqual`,
+  `cGcInteractionComponent::GetPuzzle`: **inlined**, no standalone function start in any build.

@@ -25,9 +25,20 @@ EXPECT = {
     },
     "cGcShipHUD": {
         "miSelectedPlanet": {"1.09.1": 0x212A8, "1.13": 0x21998, "1.24": 0x21998, "1.38": 0x22438},
+        "mbSelectedPlanetPanelVisible": {"1.09.1": 0x212AC, "1.13": 0x2199C, "1.24": 0x2199C, "1.38": 0x2243C},
     },
     "cGcSolarSystem": {
         "maPlanets": {"1.09.1": 0x16B0, "1.13": 0x17A0, "1.24": 0x17A0, "1.38": 0x1C30},
+    },
+    "cGcNGuiText": {
+        "mpTextData": {"1.09.1": 0x60, "1.13": 0x60, "1.24": 0x60, "1.38": 0x60},
+    },
+    "cGcMarkerPoint": {
+        "mCustomName": {"1.09.1": 0x38, "1.13": 0x38, "1.24": 0x38, "1.38": 0x38},
+    },
+    "cGcAlienPuzzleEntry": {
+        "Id": {"1.09.1": 0x0, "1.13": 0x0, "1.24": 0x0, "1.38": 0x0},
+        "Options": {"1.09.1": 0x420, "1.13": 0x420, "1.24": 0x420, "1.38": 0x4B0},
     },
 }
 

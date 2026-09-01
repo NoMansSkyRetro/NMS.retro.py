@@ -174,7 +174,8 @@ class cGcShipHUD(gen.cGcShipHUD, Structure):
     _vfields_ = {
         "mHeadsUpGUI": (c_uint64, {"1.09.1": 0x22930, "1.13": 0x23030, "1.24": 0x23030, "1.38": 0x23AD0}),
         "miSelectedPlanet": (c_int32, {"1.09.1": 0x212A8, "1.13": 0x21998, "1.24": 0x21998, "1.38": 0x22438}),
-        "mbSelectedPlanetPanelVisible": (c_bool, {}),
+        # 4-byte flag immediately after miSelectedPlanet (the ship's planet-select panel).
+        "mbSelectedPlanetPanelVisible": (c_int32, {"1.09.1": 0x212AC, "1.13": 0x2199C, "1.24": 0x2199C, "1.38": 0x2243C}),
     }
 
     @legacy_hook("cGcShipHUD::LoadData")
@@ -197,15 +198,18 @@ class cGcNGuiLayer(gen.cGcNGuiLayer, Structure):
 
 @versioned_struct
 class cGcNGuiText(Structure):
+    # mpTextData at +0x60 in all builds (from cGcNGuiText::EditElement).
     _vfields_ = {
-        "mpTextData": (c_uint64, {}),
+        "mpTextData": (c_uint64, 0x60),
     }
 
 
 @versioned_struct
 class cGcMarkerPoint(gen.cGcMarkerPoint, Structure):
+    # mCustomName is a cTkFixedString<0x40> at +0x38 in every build (cleared in Reset via
+    # strncpy(this+0x38, "", 0x40)); ctor + Reset are now located in offsets.json.
     _vfields_ = {
-        "mCustomName": (c_uint64, {}),
+        "mCustomName": (c_char * 0x40, 0x38),
     }
 
     @legacy_hook("cGcMarkerPoint::IsEqual")
@@ -253,8 +257,8 @@ class cGcInteractionComponent(gen.cGcInteractionComponent, Structure):
 @versioned_struct
 class cGcAlienPuzzleEntry(Structure):
     _vfields_ = {
-        "Id": (c_uint64, {}),
-        "Options": (c_uint64, {}),
+        "Id": (c_uint64, 0x0),
+        "Options": (c_uint64, {"1.09.1": 0x420, "1.13": 0x420, "1.24": 0x420, "1.38": 0x4B0}),
     }
 
 
