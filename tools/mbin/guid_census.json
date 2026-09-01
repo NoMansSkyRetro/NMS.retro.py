@@ -1,0 +1,2972 @@
+{
+ "1.09.1": {
+  "cGcAISpaceshipGlobals": {
+   "count": 1,
+   "example": "GCAISPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0x1CB1CD1E112E63E3"
+  },
+  "cGcAISpaceshipManagerData": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SPACE/AISPACESHIPMANAGER.MBIN",
+   "guid": "0xE89A3BC099F3709B"
+  },
+  "cGcAISpaceshipPreloadList": {
+   "count": 12,
+   "example": "SCENES/COMMON/SHIPPRELOADDEFAULT/SHIPPRELOADFACTIONCAPITAL.MBIN",
+   "guid": "0xBC16F96F869FC205"
+  },
+  "cGcAlienPuzzleTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN",
+   "guid": "0x8EF78E7D62025C1D"
+  },
+  "cGcAlienSpeechTable": {
+   "count": 2,
+   "example": "LANGUAGE/NMS_DIALOG.MBIN",
+   "guid": "0xF6F197DDF803B37F"
+  },
+  "cGcAtlasGlobals": {
+   "count": 1,
+   "example": "GCATLASGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF07A5559350356C7"
+  },
+  "cGcAudioGlobals": {
+   "count": 1,
+   "example": "GCAUDIOGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF624460E9915C08E"
+  },
+  "cGcAudioPulseDemo": {
+   "count": 1,
+   "example": "METADATA/AUDIO/PULSEDEMO.MBIN",
+   "guid": "0x267CDC1694674427"
+  },
+  "cGcBiomeData": {
+   "count": 8,
+   "example": "SCENES/TESTSCENES/TESTPLANETS/BIOMES/SUPERZOOBIOME/SUPERZOOBIOME.MBIN",
+   "guid": "0x874C5E117921E2EC"
+  },
+  "cGcBiomeFileList": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMEFILENAMES.MBIN",
+   "guid": "0x25A68D938DF333F4"
+  },
+  "cGcBiomeListPerStarType": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMELISTPERSTARTYPE.MBIN",
+   "guid": "0xED6D1A4E1FB2891C"
+  },
+  "cGcBootLogoData": {
+   "count": 2,
+   "example": "METADATA/UI/BOOTLOGOPC.MBIN",
+   "guid": "0x8B913442E7E83049"
+  },
+  "cGcBuildingDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/PLANETBUILDINGTABLE.MBIN",
+   "guid": "0x356B1A233FD73107"
+  },
+  "cGcBuildingGlobals": {
+   "count": 1,
+   "example": "GCBUILDINGGLOBALS.GLOBAL.MBIN",
+   "guid": "0x16C72DF9512B6478"
+  },
+  "cGcCameraGlobals": {
+   "count": 1,
+   "example": "GCCAMERAGLOBALS.GLOBAL.MBIN",
+   "guid": "0x9E3E97C26C896D73"
+  },
+  "cGcCostTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/COSTTABLE.MBIN",
+   "guid": "0xFF8CD316B72DCDB1"
+  },
+  "cGcCreatureAudioTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREAUDIOTABLE.MBIN",
+   "guid": "0x7D0676974C8E6A21"
+  },
+  "cGcCreatureDataTable": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREDATATABLE.MBIN",
+   "guid": "0x16D96F406BCC65BC"
+  },
+  "cGcCreatureFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREFILENAMETABLE.MBIN",
+   "guid": "0x8BE96E739B255AA3"
+  },
+  "cGcCreatureGlobals": {
+   "count": 1,
+   "example": "GCCREATUREGLOBALS.MBIN",
+   "guid": "0xF34799FD06FD5A87"
+  },
+  "cGcCreatureRoleDescriptionTable": {
+   "count": 25,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/ROLEDESCRIPTIONTABLES/AIR/AIRTABLEBUSY.MBIN",
+   "guid": "0x09004A39F4A29D3B"
+  },
+  "cGcCreatureRoleFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREROLEDESCRIPTIONTABLE.MBIN",
+   "guid": "0xC0A5DE8E4C44F7C6"
+  },
+  "cGcCreatureStupidNameTable": {
+   "count": 2,
+   "example": "SCENES/CREATURESTUPIDNAMETABLE.MBIN",
+   "guid": "0xC9DD036CB59D969D"
+  },
+  "cGcDebugOptions": {
+   "count": 1,
+   "example": "GCDEBUGOPTIONS.GLOBAL.MBIN",
+   "guid": "0xFB54DBAD740FC846"
+  },
+  "cGcDefaultSaveData": {
+   "count": 7,
+   "example": "METADATA/GAMESTATE/DEFAULTSAVEDATA.MBIN",
+   "guid": "0x2DA42CC978BCA522"
+  },
+  "cGcEntitlementRewardsTable": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/GCENTITLEMENTREWARDTABLE.MBIN",
+   "guid": "0x39D16E15AF0CB5E2"
+  },
+  "cGcEnvironmentGlobals": {
+   "count": 1,
+   "example": "GCENVIRONMENTGLOBALS.GLOBAL.MBIN",
+   "guid": "0x7874BDDACA5369F2"
+  },
+  "cGcExperienceSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SCENE/EXPERIENCESPAWNTABLE.MBIN",
+   "guid": "0x28D3847C40D0FDE2"
+  },
+  "cGcExplosionDataTable": {
+   "count": 4,
+   "example": "METADATA/EFFECTS/EXPLOSIONTABLE.MBIN",
+   "guid": "0x549E2085247DFE41"
+  },
+  "cGcExternalObjectList": {
+   "count": 66,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENOBJECTSDEAD.MBIN",
+   "guid": "0xB137683C4925404C"
+  },
+  "cGcFontTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/FONTTABLE.MBIN",
+   "guid": "0xB9913A609DA490D3"
+  },
+  "cGcGalaxyGlobals": {
+   "count": 1,
+   "example": "GCGALAXYGLOBALS.GLOBAL.MBIN",
+   "guid": "0xA8A2D13B2B5F5EBB"
+  },
+  "cGcGameplayGlobals": {
+   "count": 1,
+   "example": "GCGAMEPLAYGLOBALS.GLOBAL.MBIN",
+   "guid": "0xFA28A8C792C4F00F"
+  },
+  "cGcGraphicsGlobals": {
+   "count": 1,
+   "example": "GCGRAPHICSGLOBALS.GLOBAL.MBIN",
+   "guid": "0x654D13DED26C1660"
+  },
+  "cGcHUDLayerData": {
+   "count": 13,
+   "example": "METADATA/UI/HUD/PLAYERHUD.MBIN",
+   "guid": "0x773E299A9E36D5F7"
+  },
+  "cGcHUDManagerData": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/GCHUDMANAGER.MBIN",
+   "guid": "0x18C90AC3ABEDC7CD"
+  },
+  "cGcHeavyAirList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/ATMOSPHERE/UNDERWATERHEAVYAIRLIST.MBIN",
+   "guid": "0xF6D68847AB6B3C0F"
+  },
+  "cGcInventoryTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/INVENTORYTABLE.MBIN",
+   "guid": "0xD97B7C1AD8309CA5"
+  },
+  "cGcJourneyMilestoneTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/JOURNEYMILESTONETABLE.MBIN",
+   "guid": "0x00A4768229DACCC1"
+  },
+  "cGcLeveledStatTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/LEVELEDSTATSTABLE.MBIN",
+   "guid": "0x12F0C2459EF388DF"
+  },
+  "cGcNGuiLayerData": {
+   "count": 201,
+   "example": "UI/ACTION_SLOT.MBIN",
+   "guid": "0x3D3081DF1CEFC21B"
+  },
+  "cGcNGuiPreset": {
+   "count": 1,
+   "example": "METADATA/UI/PRESETDATA.MBIN",
+   "guid": "0x6AF507ED4F50569D"
+  },
+  "cGcNGuiSpecialTextImages": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESIMAGESDATA.MBIN",
+   "guid": "0x074258C82775950C"
+  },
+  "cGcNGuiSpecialTextStyles": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESDATA.MBIN",
+   "guid": "0x8231FB8008556170"
+  },
+  "cGcPaletteList": {
+   "count": 7,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENCOLOURPALETTES.MBIN",
+   "guid": "0x551E9ED28767822A"
+  },
+  "cGcPlacementGlobals": {
+   "count": 1,
+   "example": "GCPLACEMENTGLOBALS.MBIN",
+   "guid": "0x835A9EE0AC007013"
+  },
+  "cGcPlanetData": {
+   "count": 39,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/PLANETS/BARRENPLANET.MBIN",
+   "guid": "0xD6565CC993876F2D"
+  },
+  "cGcPlayerDamageTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/DAMAGETABLE.MBIN",
+   "guid": "0x4A25209698941FC0"
+  },
+  "cGcPlayerGlobals": {
+   "count": 1,
+   "example": "GCPLAYERGLOBALS.GLOBAL.MBIN",
+   "guid": "0xD79F422DE93C158B"
+  },
+  "cGcPlayerHazardTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/HAZARDTABLE.MBIN",
+   "guid": "0x234DE601620B66D9"
+  },
+  "cGcPlayerMissionProgressMapTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/PATCHPLAYERMISSIONMAPTABLE.MBIN",
+   "guid": "0x9084D1831865941F"
+  },
+  "cGcProductTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
+   "guid": "0x04383F8640B3FBCB"
+  },
+  "cGcProjectileDataTable": {
+   "count": 1,
+   "example": "METADATA/PROJECTILES/PROJECTILETABLE.MBIN",
+   "guid": "0xF25BC29B04C9847D"
+  },
+  "cGcRealityManagerData": {
+   "count": 1,
+   "example": "METADATA/REALITY/DEFAULTREALITY.MBIN",
+   "guid": "0x712FC5978A3B43C8"
+  },
+  "cGcRewardDestructTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDDESTRUCTTABLE.MBIN",
+   "guid": "0xCAF4275C40A91D9C"
+  },
+  "cGcRewardTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
+   "guid": "0xBD52A2981B1F2B53"
+  },
+  "cGcRobotGlobals": {
+   "count": 1,
+   "example": "GCROBOTGLOBALS.MBIN",
+   "guid": "0x5541D04EFE8E46A9"
+  },
+  "cGcScanEventTable": {
+   "count": 4,
+   "example": "METADATA/SIMULATION/SCANNING/SCANEVENTTABLEMISSIONS.MBIN",
+   "guid": "0x4E88634774DCDBF5"
+  },
+  "cGcScannerIcons": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/SCANNERICONS.MBIN",
+   "guid": "0x6928913E841189A3"
+  },
+  "cGcSceneOptions": {
+   "count": 1,
+   "example": "GCSCENEOPTIONS.GLOBAL.MBIN",
+   "guid": "0xE631F099F9410CAB"
+  },
+  "cGcSceneSettings": {
+   "count": 26,
+   "example": "SCENES/COMMON/DEFAULTSETTINGS.MBIN",
+   "guid": "0x8915432489F6B8CE"
+  },
+  "cGcSelectableObjectTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/SELECTABLEOBJECTTABLE.MBIN",
+   "guid": "0xF8381E156FD57AA1"
+  },
+  "cGcSimulationGlobals": {
+   "count": 1,
+   "example": "GCSIMULATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0x10334D839AE25B93"
+  },
+  "cGcSkyGlobals": {
+   "count": 1,
+   "example": "GCSKYGLOBALS.GLOBALS.MBIN",
+   "guid": "0x8E8B5355F41D4558"
+  },
+  "cGcSmokeTestOptions": {
+   "count": 1,
+   "example": "GCSMOKETESTOPTIONS.GLOBAL.MBIN",
+   "guid": "0x30EC660D3770759D"
+  },
+  "cGcSolarGenerationGlobals": {
+   "count": 1,
+   "example": "GCSOLARGENERATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0x21D3D4BAFD60D47D"
+  },
+  "cGcSolarSystemData": {
+   "count": 16,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/SOLARSYSTEMS/SOLARSYSTEM1.MBIN",
+   "guid": "0xF6D5DACB2C173A3C"
+  },
+  "cGcSpaceshipGlobals": {
+   "count": 1,
+   "example": "GCSPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF5E7738CB0A3B24E"
+  },
+  "cGcSpawnDensityList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/PLACEMENTVALUES/SPAWNDENSITYLIST.MBIN",
+   "guid": "0x05E17824EF7BAED5"
+  },
+  "cGcStatDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATDEFINITIONSTABLE.MBIN",
+   "guid": "0xD511F6F9ED3B7743"
+  },
+  "cGcStatGroupTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATGROUPSTABLE.MBIN",
+   "guid": "0xB3B6D25E12E7E323"
+  },
+  "cGcSubstanceTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCSUBSTANCETABLE.MBIN",
+   "guid": "0x965407B01A4AF304"
+  },
+  "cGcTechnologyTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCTECHNOLOGYTABLE.MBIN",
+   "guid": "0x7634A54A1DFC2081"
+  },
+  "cGcTerrainGlobals": {
+   "count": 1,
+   "example": "GCTERRAINGLOBALS.GLOBAL.MBIN",
+   "guid": "0x13964DB996CAA7E5"
+  },
+  "cGcTestMetadata": {
+   "count": 1,
+   "example": "METADATA/TESTMETADATA.MBIN",
+   "guid": "0xED9D01EDEE998FDB"
+  },
+  "cGcTextPresetTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/TEXTPRESETTABLE.MBIN",
+   "guid": "0x8BBDB1EEE1132923"
+  },
+  "cGcTexturePrefetchData": {
+   "count": 1,
+   "example": "METADATA/UI/HUDTEXTUREPREFETCH.MBIN",
+   "guid": "0x43D35B6DB970549F"
+  },
+  "cGcUIGlobals": {
+   "count": 1,
+   "example": "GCUIGLOBALS.GLOBAL.MBIN",
+   "guid": "0x8F1C2F02AD256C64"
+  },
+  "cGcUserSettingsData": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/GCUSERSETTINGSDATA.MBIN",
+   "guid": "0x56279170E3EF776E"
+  },
+  "cGcWaterGlobals": {
+   "count": 1,
+   "example": "GCWATERGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF6880107EFA641FB"
+  },
+  "cGcWeatherColourSettingList": {
+   "count": 3,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/SKYSETTINGS/DAYSKYCOLOURS.MBIN",
+   "guid": "0x6923174191E64B41"
+  },
+  "cGcWeatherProperties": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/CLEARWEATHER.MBIN",
+   "guid": "0xE61A5D21FC5FCA73"
+  },
+  "cGcWeatherTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/WEATHERLIST.MBIN",
+   "guid": "0x25C06DB4E5726AF6"
+  },
+  "cTkActionButtonLookup": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCACTIONBUTTONLOOKUP.MBIN",
+   "guid": "0xA4EF92CCCFF708EC"
+  },
+  "cTkAnimMetadata": {
+   "count": 938,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/ASTRONAUT01.ANIM.MBIN",
+   "guid": "0x9B251350AE1ABCA7"
+  },
+  "cTkAnimationDataTable": {
+   "count": 2,
+   "example": "METADATA/ANIMATION/PLAYERANIMSTABLE.MBIN",
+   "guid": "0xBE90CE789B893637"
+  },
+  "cTkAttachmentData": {
+   "count": 741,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/HELMETHUD/ENTITIES/HUDCOMPASS.ENTITY.MBIN",
+   "guid": "0xE33ABA2C954E9216"
+  },
+  "cTkControllerList": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCCONTROLLERLIST.MBIN",
+   "guid": "0xD33AC9B9ADD17756"
+  },
+  "cTkControllerSpecification": {
+   "count": 5,
+   "example": "METADATA/INPUT/GCCONTROLLERSPECKEYBOARD.MBIN",
+   "guid": "0x25CCF6A206E9514F"
+  },
+  "cTkEngineSettingsMapping": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKENGINESETTINGSMAPPING.MBIN",
+   "guid": "0x5F0D049CCD180588"
+  },
+  "cTkEntitlementList": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/TKENTITLEMENTLIST.MBIN",
+   "guid": "0x05A1524D94780AA1"
+  },
+  "cTkGameSettings": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKGAMESETTINGS.MBIN",
+   "guid": "0x8199639F3277B942"
+  },
+  "cTkGeometryData": {
+   "count": 2203,
+   "example": "MODELS/PLANETS/NPCS/NPCSPAWNER.GEOMETRY.MBIN.PC",
+   "guid": "0xF05F740FFD5C0F8D"
+  },
+  "cTkGraphicsSettings": {
+   "count": 2,
+   "example": "METADATA/ENGINESETTINGS/TKGRAPHICSSETTINGS.MBIN",
+   "guid": "0xDCC09EE66A2249D4"
+  },
+  "cTkHeavyAirData": {
+   "count": 44,
+   "example": "MODELS/EFFECTS/HEAVYAIR/ALIEN/ALIEN.HEAVYAIR.MBIN",
+   "guid": "0xB55476A1D9E0E509"
+  },
+  "cTkImGuiData": {
+   "count": 1,
+   "example": "METADATA/UI/IMGUIWINDOWDEFAULTS.MBIN",
+   "guid": "0xEAAFDE92AF042A96"
+  },
+  "cTkLSystemRulesData": {
+   "count": 39,
+   "example": "METADATA/LSYSTEMS/LSYSTEMWARRIORINTERIORTEST.MBIN",
+   "guid": "0x73B06516A6D7F9C9"
+  },
+  "cTkLanguageFontTable": {
+   "count": 2,
+   "example": "METADATA/FONTS/LANGUAGEFONTOVERRIDETABLE.MBIN",
+   "guid": "0x916CF38ECBFD69A7"
+  },
+  "cTkLanguagesAllowedData": {
+   "count": 6,
+   "example": "METADATA/LANGUAGE/ALLOWEDLANGUAGE_AS.MBIN",
+   "guid": "0xC605725DD4034B48"
+  },
+  "cTkLocalisationTable": {
+   "count": 17,
+   "example": "LANGUAGE/NMS_LOC1.MBIN",
+   "guid": "0x8B2AEC2B23D377F3"
+  },
+  "cTkMaterialData": {
+   "count": 7615,
+   "example": "MATERIALS/ATMOSPHERE.MATERIAL.MBIN",
+   "guid": "0x00F181EE3773792F"
+  },
+  "cTkModelDescriptorList": {
+   "count": 875,
+   "example": "MODELS/COMMON/DEMOS/E32015/MODELS/RESOURCEFRAGMENTSALT.DESCRIPTOR.MBIN",
+   "guid": "0xE2DD29B026B7621D"
+  },
+  "cTkNGuiEditorLayout": {
+   "count": 2,
+   "example": "METADATA/UI/LAYOUTS/EFFECTEDITLAYOUTDEFAULT.MBIN",
+   "guid": "0xFFCA41E11361EE54"
+  },
+  "cTkNGuiEditorStyleData": {
+   "count": 1,
+   "example": "UI/STYLES/EDITORDATA.MBIN",
+   "guid": "0x65F008744A106504"
+  },
+  "cTkNGuiLayoutList": {
+   "count": 1,
+   "example": "METADATA/UI/LAYOUTLIST.MBIN",
+   "guid": "0x179F467927135FE9"
+  },
+  "cTkParticleData": {
+   "count": 279,
+   "example": "MODELS/COMMON/PROJECTILES/CHARGEDENERGYBALL/EMITTERS/ENERGYBALLEMITTER.PARTICLE.MBIN",
+   "guid": "0x5241E4D5EA5F6653"
+  },
+  "cTkProceduralTextureChosenOptionList": {
+   "count": 6,
+   "example": "METADATA/REALITY/COLOURSCHEMES/FREIGHTER_EGGSHELL_PALEPURPLE.MBIN",
+   "guid": "0xD0D0081A702431FE"
+  },
+  "cTkProceduralTextureList": {
+   "count": 767,
+   "example": "TEXTURES/PLANETS/CREATURES/CATRIG/WARTHOGEARS.MBIN",
+   "guid": "0x23952CE03898DA49"
+  },
+  "cTkSceneNodeData": {
+   "count": 2391,
+   "example": "MODELS/EFFECTS/ATLASSTATION/ENTRANCESMOKE.MBIN",
+   "guid": "0x24790C9479471D5D"
+  },
+  "cTkSpeedLineData": {
+   "count": 5,
+   "example": "MODELS/EFFECTS/SPEEDLINES/MINIJUMPSPEEDLINES.SPEEDLINE.MBIN",
+   "guid": "0x5B2795E2FEF75E70"
+  },
+  "cTkTrailData": {
+   "count": 19,
+   "example": "MODELS/EFFECTS/TRAILS/DRONE/LANDDRONETRAIL.TRAIL.MBIN",
+   "guid": "0x1678FA303B8D5F1A"
+  },
+  "cTkTrophyData": {
+   "count": 1,
+   "example": "METADATA/TROPHIES/TKTROPHYDATA.MBIN",
+   "guid": "0x803971B5CD58E2DF"
+  },
+  "cTkVoxelGeneratorSettingsArray": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/VOXELGENERATORSETTINGS.MBIN",
+   "guid": "0x33E1D33A5F2401F1"
+  },
+  "rameArray": {
+   "count": 1,
+   "example": "METADATA/INPUTTEST.MBIN",
+   "guid": "0x467475706E496B54"
+  }
+ },
+ "1.13": {
+  "cGcAISpaceshipGlobals": {
+   "count": 1,
+   "example": "GCAISPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0xFE62CC527BD45211"
+  },
+  "cGcAISpaceshipManagerData": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SPACE/AISPACESHIPMANAGER.MBIN",
+   "guid": "0xE89A3BC099F3709B"
+  },
+  "cGcAISpaceshipPreloadList": {
+   "count": 12,
+   "example": "SCENES/COMMON/SHIPPRELOADDEFAULT/SHIPPRELOADFACTIONCAPITAL.MBIN",
+   "guid": "0x504F07BBF74CCC1A"
+  },
+  "cGcAlienPuzzleTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN",
+   "guid": "0x45199E51E979E398"
+  },
+  "cGcAlienSpeechTable": {
+   "count": 2,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENSPEECHTABLE.MBIN",
+   "guid": "0xFAAAC51AD599FF8B"
+  },
+  "cGcAtlasGlobals": {
+   "count": 1,
+   "example": "GCATLASGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF07A5559350356C7"
+  },
+  "cGcAudioGlobals": {
+   "count": 1,
+   "example": "GCAUDIOGLOBALS.GLOBAL.MBIN",
+   "guid": "0xE1EC4FFC7D7251A7"
+  },
+  "cGcAudioPulseDemo": {
+   "count": 1,
+   "example": "METADATA/AUDIO/PULSEDEMO.MBIN",
+   "guid": "0x267CDC1694674427"
+  },
+  "cGcBaseBuildingTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/BASEBUILDINGTABLE.MBIN",
+   "guid": "0xDE5883B5FAF01929"
+  },
+  "cGcBiomeData": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENBIOME.MBIN",
+   "guid": "0x75CDB6A6C8FE88EA"
+  },
+  "cGcBiomeFileList": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMEFILENAMES.MBIN",
+   "guid": "0x1B5C80EF3C13DA19"
+  },
+  "cGcBiomeListPerStarType": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMELISTPERSTARTYPE.MBIN",
+   "guid": "0xED6D1A4E1FB2891C"
+  },
+  "cGcBootLogoData": {
+   "count": 2,
+   "example": "METADATA/UI/BOOTLOGOPC.MBIN",
+   "guid": "0x8B913442E7E83049"
+  },
+  "cGcBuildingDefinitionTable": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/PLANETBUILDINGTABLE.MBIN",
+   "guid": "0x356B1A233FD73107"
+  },
+  "cGcBuildingGlobals": {
+   "count": 1,
+   "example": "GCBUILDINGGLOBALS.GLOBAL.MBIN",
+   "guid": "0x16C72DF9512B6478"
+  },
+  "cGcCameraGlobals": {
+   "count": 1,
+   "example": "GCCAMERAGLOBALS.GLOBAL.MBIN",
+   "guid": "0xFC201250C695CCFA"
+  },
+  "cGcCostTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/COSTTABLE.MBIN",
+   "guid": "0xFF8CD316B72DCDB1"
+  },
+  "cGcCreatureAudioTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREAUDIOTABLE.MBIN",
+   "guid": "0x7D0676974C8E6A21"
+  },
+  "cGcCreatureDataTable": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREDATATABLE.MBIN",
+   "guid": "0xB9D0A7D0894121C1"
+  },
+  "cGcCreatureFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREFILENAMETABLE.MBIN",
+   "guid": "0x8BE96E739B255AA3"
+  },
+  "cGcCreatureGlobals": {
+   "count": 1,
+   "example": "GCCREATUREGLOBALS.MBIN",
+   "guid": "0xDCADEB0CADAB3D9A"
+  },
+  "cGcCreatureRoleDescriptionTable": {
+   "count": 26,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/ROLEDESCRIPTIONTABLES/AIR/AIRTABLEBUSY.MBIN",
+   "guid": "0xD2C6B913CD1676C7"
+  },
+  "cGcCreatureRoleFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREROLEDESCRIPTIONTABLE.MBIN",
+   "guid": "0xC0A5DE8E4C44F7C6"
+  },
+  "cGcCreatureStupidNameTable": {
+   "count": 2,
+   "example": "SCENES/CREATURESTUPIDNAMETABLE.MBIN",
+   "guid": "0xC9DD036CB59D969D"
+  },
+  "cGcDebugOptions": {
+   "count": 1,
+   "example": "GCDEBUGOPTIONS.GLOBAL.MBIN",
+   "guid": "0x80B86597D680F7A2"
+  },
+  "cGcDefaultSaveData": {
+   "count": 8,
+   "example": "SCENES/SAVES/ALLMISSIONSDONE.MBIN",
+   "guid": "0xF943F8DF5DE5B896"
+  },
+  "cGcDeprecatedAssetsTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/DEPRECATEDASSETSTABLE.MBIN",
+   "guid": "0x1EC1F7697E339528"
+  },
+  "cGcEntitlementRewardsTable": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/GCENTITLEMENTREWARDTABLE.MBIN",
+   "guid": "0x39D16E15AF0CB5E2"
+  },
+  "cGcEnvironmentGlobals": {
+   "count": 1,
+   "example": "GCENVIRONMENTGLOBALS.GLOBAL.MBIN",
+   "guid": "0x921F6EE7A2F8E1F4"
+  },
+  "cGcExperienceSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SCENE/EXPERIENCESPAWNTABLE.MBIN",
+   "guid": "0x29C621C66F91C814"
+  },
+  "cGcExplosionDataTable": {
+   "count": 4,
+   "example": "METADATA/EFFECTS/EXPLOSIONTABLE.MBIN",
+   "guid": "0x2BF38BB86D9AC37E"
+  },
+  "cGcExternalObjectList": {
+   "count": 72,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENOBJECTSDEAD.MBIN",
+   "guid": "0xBC27FC0046B0A3B9"
+  },
+  "cGcFontTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/FONTTABLE.MBIN",
+   "guid": "0xB9913A609DA490D3"
+  },
+  "cGcGalaxyGlobals": {
+   "count": 1,
+   "example": "GCGALAXYGLOBALS.GLOBAL.MBIN",
+   "guid": "0x4D5BB387591A5342"
+  },
+  "cGcGameplayGlobals": {
+   "count": 1,
+   "example": "GCGAMEPLAYGLOBALS.GLOBAL.MBIN",
+   "guid": "0x1CE59011FED1A707"
+  },
+  "cGcGraphicsGlobals": {
+   "count": 1,
+   "example": "GCGRAPHICSGLOBALS.GLOBAL.MBIN",
+   "guid": "0x16440F4E140E8D2E"
+  },
+  "cGcHUDLayerData": {
+   "count": 13,
+   "example": "METADATA/UI/HUD/PLAYERHUD.MBIN",
+   "guid": "0x773E299A9E36D5F7"
+  },
+  "cGcHUDManagerData": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/GCHUDMANAGER.MBIN",
+   "guid": "0x18C90AC3ABEDC7CD"
+  },
+  "cGcHeavyAirList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/ATMOSPHERE/UNDERWATERHEAVYAIRLIST.MBIN",
+   "guid": "0xF6D68847AB6B3C0F"
+  },
+  "cGcInventoryTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/INVENTORYTABLE.MBIN",
+   "guid": "0xEED3681ED699598D"
+  },
+  "cGcJourneyMilestoneTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/JOURNEYMILESTONETABLE.MBIN",
+   "guid": "0x00A4768229DACCC1"
+  },
+  "cGcLeveledStatTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/LEVELEDSTATSTABLE.MBIN",
+   "guid": "0x12F0C2459EF388DF"
+  },
+  "cGcMissionTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/MISSIONS/MISSIONTABLE.MBIN",
+   "guid": "0x3E14AC1E4BB09000"
+  },
+  "cGcNGuiLayerData": {
+   "count": 208,
+   "example": "UI/ACTION_SLOT.MBIN",
+   "guid": "0x3D3081DF1CEFC21B"
+  },
+  "cGcNGuiPreset": {
+   "count": 1,
+   "example": "METADATA/UI/PRESETDATA.MBIN",
+   "guid": "0x6AF507ED4F50569D"
+  },
+  "cGcNGuiSpecialTextImages": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESIMAGESDATA.MBIN",
+   "guid": "0x074258C82775950C"
+  },
+  "cGcNGuiSpecialTextStyles": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESDATA.MBIN",
+   "guid": "0x8231FB8008556170"
+  },
+  "cGcNPCSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/NPCS/NPCSPAWNTABLE.MBIN",
+   "guid": "0x8A97C21A80261058"
+  },
+  "cGcPaletteList": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENCOLOURPALETTES.MBIN",
+   "guid": "0x551E9ED28767822A"
+  },
+  "cGcPlacementGlobals": {
+   "count": 1,
+   "example": "GCPLACEMENTGLOBALS.MBIN",
+   "guid": "0x835A9EE0AC007013"
+  },
+  "cGcPlanetData": {
+   "count": 39,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/PLANETS/BARRENPLANET.MBIN",
+   "guid": "0x27040DF627844CB9"
+  },
+  "cGcPlayerDamageTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/DAMAGETABLE.MBIN",
+   "guid": "0x9ED3CEF928910C42"
+  },
+  "cGcPlayerGlobals": {
+   "count": 1,
+   "example": "GCPLAYERGLOBALS.GLOBAL.MBIN",
+   "guid": "0x6F113CBDA08691C4"
+  },
+  "cGcPlayerHazardTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/HAZARDTABLE.MBIN",
+   "guid": "0x234DE601620B66D9"
+  },
+  "cGcPlayerMissionProgressMapTable": {
+   "count": 3,
+   "example": "METADATA/GAMESTATE/PATCHPLAYERMISSIONMAPTABLE.MBIN",
+   "guid": "0x9084D1831865941F"
+  },
+  "cGcProductTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
+   "guid": "0xEB92800758F9C0FD"
+  },
+  "cGcProjectileDataTable": {
+   "count": 1,
+   "example": "METADATA/PROJECTILES/PROJECTILETABLE.MBIN",
+   "guid": "0xB40DB6DCC1F31C03"
+  },
+  "cGcRealityManagerData": {
+   "count": 1,
+   "example": "METADATA/REALITY/DEFAULTREALITY.MBIN",
+   "guid": "0xDC90A2DD973847B2"
+  },
+  "cGcRewardDestructTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDDESTRUCTTABLE.MBIN",
+   "guid": "0xCAF4275C40A91D9C"
+  },
+  "cGcRewardTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
+   "guid": "0xBD52A2981B1F2B53"
+  },
+  "cGcRobotGlobals": {
+   "count": 1,
+   "example": "GCROBOTGLOBALS.MBIN",
+   "guid": "0x5541D04EFE8E46A9"
+  },
+  "cGcScanEventTable": {
+   "count": 4,
+   "example": "METADATA/SIMULATION/SCANNING/SCANEVENTTABLEMISSIONS.MBIN",
+   "guid": "0x57B7BEFA3A37213A"
+  },
+  "cGcScannerIcons": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/SCANNERICONS.MBIN",
+   "guid": "0xD1A788FCFC928A71"
+  },
+  "cGcSceneOptions": {
+   "count": 1,
+   "example": "GCSCENEOPTIONS.GLOBAL.MBIN",
+   "guid": "0xE631F099F9410CAB"
+  },
+  "cGcSceneSettings": {
+   "count": 26,
+   "example": "SCENES/COMMON/DEFAULTSETTINGS.MBIN",
+   "guid": "0x9810B5817BE31835"
+  },
+  "cGcSelectableObjectTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/SELECTABLEOBJECTTABLE.MBIN",
+   "guid": "0x57D19CE03CD1B67A"
+  },
+  "cGcSimulationGlobals": {
+   "count": 1,
+   "example": "GCSIMULATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0xA9CAD20BDEAC0C3D"
+  },
+  "cGcSkyGlobals": {
+   "count": 1,
+   "example": "GCSKYGLOBALS.GLOBALS.MBIN",
+   "guid": "0x1C34AE72152A2373"
+  },
+  "cGcSmokeTestOptions": {
+   "count": 1,
+   "example": "GCSMOKETESTOPTIONS.GLOBAL.MBIN",
+   "guid": "0x30EC660D3770759D"
+  },
+  "cGcSolarGenerationGlobals": {
+   "count": 1,
+   "example": "GCSOLARGENERATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0x792FE2736303AA71"
+  },
+  "cGcSolarSystemData": {
+   "count": 16,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/SOLARSYSTEMS/SOLARSYSTEM1.MBIN",
+   "guid": "0xA636E7C0B8605188"
+  },
+  "cGcSpaceshipGlobals": {
+   "count": 1,
+   "example": "GCSPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0xB8E9D9A83C9C6012"
+  },
+  "cGcSpawnDensityList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/PLACEMENTVALUES/SPAWNDENSITYLIST.MBIN",
+   "guid": "0x9585FA88C7E438B9"
+  },
+  "cGcStatDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATDEFINITIONSTABLE.MBIN",
+   "guid": "0xD511F6F9ED3B7743"
+  },
+  "cGcStatGroupTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATGROUPSTABLE.MBIN",
+   "guid": "0xB3B6D25E12E7E323"
+  },
+  "cGcSubstanceTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCSUBSTANCETABLE.MBIN",
+   "guid": "0x2CA277E600103D1D"
+  },
+  "cGcTechnologyTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCTECHNOLOGYTABLE.MBIN",
+   "guid": "0x2CD9F5B1CD018073"
+  },
+  "cGcTerrainGlobals": {
+   "count": 1,
+   "example": "GCTERRAINGLOBALS.GLOBAL.MBIN",
+   "guid": "0xAE411EDF5E6254BD"
+  },
+  "cGcTestMetadata": {
+   "count": 1,
+   "example": "METADATA/TESTMETADATA.MBIN",
+   "guid": "0xED9D01EDEE998FDB"
+  },
+  "cGcTextPresetTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/TEXTPRESETTABLE.MBIN",
+   "guid": "0x8BBDB1EEE1132923"
+  },
+  "cGcTexturePrefetchData": {
+   "count": 1,
+   "example": "METADATA/UI/HUDTEXTUREPREFETCH.MBIN",
+   "guid": "0x43D35B6DB970549F"
+  },
+  "cGcUIGlobals": {
+   "count": 1,
+   "example": "GCUIGLOBALS.GLOBAL.MBIN",
+   "guid": "0x67190A9091D49227"
+  },
+  "cGcUserSettingsData": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/GCUSERSETTINGSDATA.MBIN",
+   "guid": "0x0FC9F7FF9510754A"
+  },
+  "cGcWaterGlobals": {
+   "count": 1,
+   "example": "GCWATERGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF6880107EFA641FB"
+  },
+  "cGcWeatherColourSettingList": {
+   "count": 3,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/SKYSETTINGS/DAYSKYCOLOURS.MBIN",
+   "guid": "0x6923174191E64B41"
+  },
+  "cGcWeatherProperties": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/CLEARWEATHER.MBIN",
+   "guid": "0xA5D47835FD126E89"
+  },
+  "cGcWeatherTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/WEATHERLIST.MBIN",
+   "guid": "0x25C06DB4E5726AF6"
+  },
+  "cTkActionButtonLookup": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCACTIONBUTTONLOOKUP.MBIN",
+   "guid": "0x874F5BC7E66EB51F"
+  },
+  "cTkAnimMetadata": {
+   "count": 1010,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/ASTRONAUT01.ANIM.MBIN",
+   "guid": "0x9B251350AE1ABCA7"
+  },
+  "cTkAnimationDataTable": {
+   "count": 2,
+   "example": "METADATA/ANIMATION/PLAYERANIMSTABLE.MBIN",
+   "guid": "0xBE90CE789B893637"
+  },
+  "cTkAttachmentData": {
+   "count": 838,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/HELMETHUD/ENTITIES/HUDCOMPASS.ENTITY.MBIN",
+   "guid": "0xE33ABA2C954E9216"
+  },
+  "cTkControllerList": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCCONTROLLERLIST.MBIN",
+   "guid": "0xD33AC9B9ADD17756"
+  },
+  "cTkControllerSpecification": {
+   "count": 6,
+   "example": "METADATA/INPUT/GCCONTROLLERSPECKEYBOARD.MBIN",
+   "guid": "0x25CCF6A206E9514F"
+  },
+  "cTkEngineSettingsMapping": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKENGINESETTINGSMAPPING.MBIN",
+   "guid": "0x5F0D049CCD180588"
+  },
+  "cTkEntitlementList": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/TKENTITLEMENTLIST.MBIN",
+   "guid": "0x05A1524D94780AA1"
+  },
+  "cTkGameSettings": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKGAMESETTINGS.MBIN",
+   "guid": "0x8199639F3277B942"
+  },
+  "cTkGeometryData": {
+   "count": 2469,
+   "example": "MODELS/PLANETS/OCEAN/BUSHES/SEABUSH1.GEOMETRY.MBIN.PC",
+   "guid": "0xF05F740FFD5C0F8D"
+  },
+  "cTkGraphicsSettings": {
+   "count": 2,
+   "example": "METADATA/ENGINESETTINGS/TKGRAPHICSSETTINGS.MBIN",
+   "guid": "0xA0502551789C684A"
+  },
+  "cTkHeavyAirData": {
+   "count": 44,
+   "example": "MODELS/EFFECTS/HEAVYAIR/ALIEN/ALIEN.HEAVYAIR.MBIN",
+   "guid": "0xB55476A1D9E0E509"
+  },
+  "cTkImGuiData": {
+   "count": 1,
+   "example": "METADATA/UI/IMGUIWINDOWDEFAULTS.MBIN",
+   "guid": "0xEAAFDE92AF042A96"
+  },
+  "cTkLSystemRulesData": {
+   "count": 39,
+   "example": "MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/ABANDONED/ABANDONDEDSCIENTIFIC.LSYSTEM.MBIN",
+   "guid": "0x73B06516A6D7F9C9"
+  },
+  "cTkLanguageFontTable": {
+   "count": 2,
+   "example": "METADATA/FONTS/LANGUAGEFONTOVERRIDETABLE.MBIN",
+   "guid": "0x916CF38ECBFD69A7"
+  },
+  "cTkLanguagesAllowedData": {
+   "count": 6,
+   "example": "METADATA/LANGUAGE/ALLOWEDLANGUAGE_AS.MBIN",
+   "guid": "0xC605725DD4034B48"
+  },
+  "cTkLocalisationTable": {
+   "count": 17,
+   "example": "LANGUAGE/NMS_LOC1.MBIN",
+   "guid": "0x8B2AEC2B23D377F3"
+  },
+  "cTkMaterialData": {
+   "count": 8739,
+   "example": "MATERIALS/ATMOSPHERE.MATERIAL.MBIN",
+   "guid": "0x7926CC839531F757"
+  },
+  "cTkModelDescriptorList": {
+   "count": 914,
+   "example": "MODELS/COMMON/DEMOS/E32015/MODELS/RESOURCEFRAGMENTSALT.DESCRIPTOR.MBIN",
+   "guid": "0xE2DD29B026B7621D"
+  },
+  "cTkNGuiEditorLayout": {
+   "count": 2,
+   "example": "METADATA/UI/LAYOUTS/EFFECTEDITLAYOUTDEFAULT.MBIN",
+   "guid": "0xFFCA41E11361EE54"
+  },
+  "cTkNGuiEditorStyleData": {
+   "count": 1,
+   "example": "UI/STYLES/EDITORDATA.MBIN",
+   "guid": "0x65F008744A106504"
+  },
+  "cTkNGuiLayoutList": {
+   "count": 1,
+   "example": "METADATA/UI/LAYOUTLIST.MBIN",
+   "guid": "0x179F467927135FE9"
+  },
+  "cTkParticleData": {
+   "count": 288,
+   "example": "MODELS/COMMON/PROJECTILES/CHARGEDENERGYBALL/EMITTERS/ENERGYBALLEMITTER.PARTICLE.MBIN",
+   "guid": "0x5241E4D5EA5F6653"
+  },
+  "cTkProceduralTextureChosenOptionList": {
+   "count": 6,
+   "example": "METADATA/REALITY/COLOURSCHEMES/FREIGHTER_EGGSHELL_PALEPURPLE.MBIN",
+   "guid": "0x241CA4D99B860AEB"
+  },
+  "cTkProceduralTextureList": {
+   "count": 773,
+   "example": "TEXTURES/COMMON/DECALS/LETTERING/LETTERING.TEXTURE.MBIN",
+   "guid": "0xC4EF89C0C2F05119"
+  },
+  "cTkSceneNodeData": {
+   "count": 2664,
+   "example": "MODELS/EFFECTS/ATLASSTATION/ENTRANCESMOKE.MBIN",
+   "guid": "0x24790C9479471D5D"
+  },
+  "cTkSpeedLineData": {
+   "count": 5,
+   "example": "MODELS/EFFECTS/SPEEDLINES/MINIJUMPSPEEDLINES.SPEEDLINE.MBIN",
+   "guid": "0x5B2795E2FEF75E70"
+  },
+  "cTkTrailData": {
+   "count": 19,
+   "example": "MODELS/EFFECTS/TRAILS/DRONE/LANDDRONETRAIL.TRAIL.MBIN",
+   "guid": "0x1678FA303B8D5F1A"
+  },
+  "cTkTrophyData": {
+   "count": 1,
+   "example": "METADATA/TROPHIES/TKTROPHYDATA.MBIN",
+   "guid": "0x803971B5CD58E2DF"
+  },
+  "cTkVoxelGeneratorSettingsArray": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/VOXELGENERATORSETTINGS.MBIN",
+   "guid": "0x50404046F0F502E7"
+  },
+  "rameArray": {
+   "count": 1,
+   "example": "METADATA/INPUTTEST.MBIN",
+   "guid": "0x467475706E496B54"
+  }
+ },
+ "1.24": {
+  "cGcAISpaceshipGlobals": {
+   "count": 1,
+   "example": "GCAISPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0xE778CF9ABA084A1A"
+  },
+  "cGcAISpaceshipManagerData": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SPACE/AISPACESHIPMANAGER.MBIN",
+   "guid": "0xE89A3BC099F3709B"
+  },
+  "cGcAISpaceshipPreloadList": {
+   "count": 12,
+   "example": "SCENES/COMMON/SHIPPRELOADDEFAULT/SHIPPRELOADFACTIONCAPITAL.MBIN",
+   "guid": "0x504F07BBF74CCC1A"
+  },
+  "cGcAlienPuzzleTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN",
+   "guid": "0xB2B94D8B0C494445"
+  },
+  "cGcAlienSpeechTable": {
+   "count": 2,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENSPEECHTABLE.MBIN",
+   "guid": "0xFAAAC51AD599FF8B"
+  },
+  "cGcAmbientModeCameras": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/AMBIENT/AMBIENTMODECAMERAS.MBIN",
+   "guid": "0x1284E8A8B0A4B370"
+  },
+  "cGcAtlasGlobals": {
+   "count": 1,
+   "example": "GCATLASGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF07A5559350356C7"
+  },
+  "cGcAudioGlobals": {
+   "count": 1,
+   "example": "GCAUDIOGLOBALS.GLOBAL.MBIN",
+   "guid": "0xE1EC4FFC7D7251A7"
+  },
+  "cGcAudioPulseDemo": {
+   "count": 1,
+   "example": "METADATA/AUDIO/PULSEDEMO.MBIN",
+   "guid": "0x267CDC1694674427"
+  },
+  "cGcBaseBuildingTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/BASEBUILDINGTABLE.MBIN",
+   "guid": "0x3A3F641CFD4C77C7"
+  },
+  "cGcBiomeData": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENBIOME.MBIN",
+   "guid": "0x75CDB6A6C8FE88EA"
+  },
+  "cGcBiomeFileList": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMEFILENAMES.MBIN",
+   "guid": "0x1B5C80EF3C13DA19"
+  },
+  "cGcBiomeListPerStarType": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMELISTPERSTARTYPE.MBIN",
+   "guid": "0xED6D1A4E1FB2891C"
+  },
+  "cGcBootLogoData": {
+   "count": 2,
+   "example": "METADATA/UI/BOOTLOGOPC.MBIN",
+   "guid": "0x8B913442E7E83049"
+  },
+  "cGcBuildingDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/PLANETBUILDINGTABLE.MBIN",
+   "guid": "0x356B1A233FD73107"
+  },
+  "cGcBuildingGlobals": {
+   "count": 1,
+   "example": "GCBUILDINGGLOBALS.GLOBAL.MBIN",
+   "guid": "0x439672935B76B569"
+  },
+  "cGcCameraGlobals": {
+   "count": 1,
+   "example": "GCCAMERAGLOBALS.GLOBAL.MBIN",
+   "guid": "0x5B9AEAFF976C4584"
+  },
+  "cGcCostTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/COSTTABLE.MBIN",
+   "guid": "0xFF8CD316B72DCDB1"
+  },
+  "cGcCreatureAudioTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREAUDIOTABLE.MBIN",
+   "guid": "0x7D0676974C8E6A21"
+  },
+  "cGcCreatureDataTable": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREDATATABLE.MBIN",
+   "guid": "0x90CC8D85C3E8B6E8"
+  },
+  "cGcCreatureFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREFILENAMETABLE.MBIN",
+   "guid": "0x8BE96E739B255AA3"
+  },
+  "cGcCreatureGlobals": {
+   "count": 1,
+   "example": "GCCREATUREGLOBALS.MBIN",
+   "guid": "0xDCADEB0CADAB3D9A"
+  },
+  "cGcCreatureRoleDescriptionTable": {
+   "count": 26,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/ROLEDESCRIPTIONTABLES/AIR/AIRTABLEBUSY.MBIN",
+   "guid": "0xD2C6B913CD1676C7"
+  },
+  "cGcCreatureRoleFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREROLEDESCRIPTIONTABLE.MBIN",
+   "guid": "0xC0A5DE8E4C44F7C6"
+  },
+  "cGcCreatureStupidNameTable": {
+   "count": 2,
+   "example": "SCENES/CREATURESTUPIDNAMETABLE.MBIN",
+   "guid": "0xC9DD036CB59D969D"
+  },
+  "cGcDebugOptions": {
+   "count": 1,
+   "example": "GCDEBUGOPTIONS.GLOBAL.MBIN",
+   "guid": "0x7406813DF22B233D"
+  },
+  "cGcDefaultSaveData": {
+   "count": 8,
+   "example": "SCENES/SAVES/ALLMISSIONSDONE.MBIN",
+   "guid": "0x32F2954D31FDC54C"
+  },
+  "cGcDeprecatedAssetsTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/DEPRECATEDASSETSTABLE.MBIN",
+   "guid": "0x1EC1F7697E339528"
+  },
+  "cGcEntitlementRewardsTable": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/GCENTITLEMENTREWARDTABLE.MBIN",
+   "guid": "0x39D16E15AF0CB5E2"
+  },
+  "cGcEnvironmentGlobals": {
+   "count": 1,
+   "example": "GCENVIRONMENTGLOBALS.GLOBAL.MBIN",
+   "guid": "0xD3678373BD2A38F3"
+  },
+  "cGcExperienceSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SCENE/EXPERIENCESPAWNTABLE.MBIN",
+   "guid": "0x29C621C66F91C814"
+  },
+  "cGcExplosionDataTable": {
+   "count": 4,
+   "example": "METADATA/EFFECTS/EXPLOSIONTABLE.MBIN",
+   "guid": "0x62E32F745B0ABE91"
+  },
+  "cGcExternalObjectList": {
+   "count": 72,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENOBJECTSDEAD.MBIN",
+   "guid": "0xC8639E9401C1CD7A"
+  },
+  "cGcFontTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/FONTTABLE.MBIN",
+   "guid": "0xB9913A609DA490D3"
+  },
+  "cGcGalaxyGlobals": {
+   "count": 1,
+   "example": "GCGALAXYGLOBALS.GLOBAL.MBIN",
+   "guid": "0x0ACC7D6F99C3AD7B"
+  },
+  "cGcGameplayGlobals": {
+   "count": 1,
+   "example": "GCGAMEPLAYGLOBALS.GLOBAL.MBIN",
+   "guid": "0xADF14A22883BE716"
+  },
+  "cGcGraphicsGlobals": {
+   "count": 1,
+   "example": "GCGRAPHICSGLOBALS.GLOBAL.MBIN",
+   "guid": "0x54D01AD094E2F40A"
+  },
+  "cGcHUDLayerData": {
+   "count": 13,
+   "example": "METADATA/UI/HUD/PLAYERHUD.MBIN",
+   "guid": "0x773E299A9E36D5F7"
+  },
+  "cGcHUDManagerData": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/GCHUDMANAGER.MBIN",
+   "guid": "0x18C90AC3ABEDC7CD"
+  },
+  "cGcHeavyAirList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/ATMOSPHERE/UNDERWATERHEAVYAIRLIST.MBIN",
+   "guid": "0xF6D68847AB6B3C0F"
+  },
+  "cGcInventoryTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/INVENTORYTABLE.MBIN",
+   "guid": "0x90AFF2A2A3130749"
+  },
+  "cGcJourneyMilestoneTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/JOURNEYMILESTONETABLE.MBIN",
+   "guid": "0x00A4768229DACCC1"
+  },
+  "cGcLeveledStatTable": {
+   "count": 2,
+   "example": "METADATA/GAMESTATE/STATS/LEVELEDSTATSTABLE.MBIN",
+   "guid": "0x12F0C2459EF388DF"
+  },
+  "cGcMissionTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/MISSIONS/MISSIONTABLE.MBIN",
+   "guid": "0x3E14AC1E4BB09000"
+  },
+  "cGcNGuiLayerData": {
+   "count": 245,
+   "example": "UI/ACTION_SLOT.MBIN",
+   "guid": "0x2B9CB0CD8369EB0B"
+  },
+  "cGcNGuiPreset": {
+   "count": 1,
+   "example": "METADATA/UI/PRESETDATA.MBIN",
+   "guid": "0x17534DBF4959BBF9"
+  },
+  "cGcNGuiSpecialTextImages": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESIMAGESDATA.MBIN",
+   "guid": "0x074258C82775950C"
+  },
+  "cGcNGuiSpecialTextStyles": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESDATA.MBIN",
+   "guid": "0x8231FB8008556170"
+  },
+  "cGcNPCSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/NPCS/NPCSPAWNTABLE.MBIN",
+   "guid": "0xA9E8685523D6036D"
+  },
+  "cGcPaletteList": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENCOLOURPALETTES.MBIN",
+   "guid": "0x551E9ED28767822A"
+  },
+  "cGcPlacementGlobals": {
+   "count": 1,
+   "example": "GCPLACEMENTGLOBALS.MBIN",
+   "guid": "0x835A9EE0AC007013"
+  },
+  "cGcPlanetData": {
+   "count": 39,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/PLANETS/BARRENPLANET.MBIN",
+   "guid": "0x23698C8C09883B5C"
+  },
+  "cGcPlayerDamageTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/DAMAGETABLE.MBIN",
+   "guid": "0x9ED3CEF928910C42"
+  },
+  "cGcPlayerGlobals": {
+   "count": 1,
+   "example": "GCPLAYERGLOBALS.GLOBAL.MBIN",
+   "guid": "0xE4B8CC7BC32C888E"
+  },
+  "cGcPlayerHazardTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/HAZARDTABLE.MBIN",
+   "guid": "0x234DE601620B66D9"
+  },
+  "cGcPlayerMissionProgressMapTable": {
+   "count": 2,
+   "example": "METADATA/GAMESTATE/PLAYERMISSIONMAPPINGPATCH0TO1.MBIN",
+   "guid": "0x9084D1831865941F"
+  },
+  "cGcProductTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
+   "guid": "0xEB92800758F9C0FD"
+  },
+  "cGcProjectileDataTable": {
+   "count": 1,
+   "example": "METADATA/PROJECTILES/PROJECTILETABLE.MBIN",
+   "guid": "0xECA0FFBF44D567CF"
+  },
+  "cGcPurchaseableBuildingBlueprints": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/PURCHASEABLEBUILDINGBLUEPRINTS.MBIN",
+   "guid": "0x42FC2D8C396F629E"
+  },
+  "cGcRealityManagerData": {
+   "count": 1,
+   "example": "METADATA/REALITY/DEFAULTREALITY.MBIN",
+   "guid": "0x02AAF97A027AA0C7"
+  },
+  "cGcRewardDestructTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDDESTRUCTTABLE.MBIN",
+   "guid": "0xCAF4275C40A91D9C"
+  },
+  "cGcRewardTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
+   "guid": "0xBD52A2981B1F2B53"
+  },
+  "cGcRobotGlobals": {
+   "count": 1,
+   "example": "GCROBOTGLOBALS.MBIN",
+   "guid": "0xA572084687ECC050"
+  },
+  "cGcScanEventTable": {
+   "count": 6,
+   "example": "METADATA/SIMULATION/SCANNING/SCANEVENTTABLEMISSIONS.MBIN",
+   "guid": "0x6BE0AF17C86067C6"
+  },
+  "cGcScannerIcons": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/SCANNERICONS.MBIN",
+   "guid": "0xDB510653CA585324"
+  },
+  "cGcSceneOptions": {
+   "count": 1,
+   "example": "GCSCENEOPTIONS.GLOBAL.MBIN",
+   "guid": "0xE631F099F9410CAB"
+  },
+  "cGcSceneSettings": {
+   "count": 26,
+   "example": "SCENES/COMMON/DEFAULTSETTINGS.MBIN",
+   "guid": "0x9810B5817BE31835"
+  },
+  "cGcSelectableObjectTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/SELECTABLEOBJECTTABLE.MBIN",
+   "guid": "0x57D19CE03CD1B67A"
+  },
+  "cGcSimulationGlobals": {
+   "count": 1,
+   "example": "GCSIMULATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0xA9CAD20BDEAC0C3D"
+  },
+  "cGcSkyGlobals": {
+   "count": 1,
+   "example": "GCSKYGLOBALS.GLOBALS.MBIN",
+   "guid": "0xA100D16C9E137A1E"
+  },
+  "cGcSmokeTestOptions": {
+   "count": 1,
+   "example": "GCSMOKETESTOPTIONS.GLOBAL.MBIN",
+   "guid": "0x30EC660D3770759D"
+  },
+  "cGcSolarGenerationGlobals": {
+   "count": 1,
+   "example": "GCSOLARGENERATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0x306AC2206CD05E6D"
+  },
+  "cGcSolarSystemData": {
+   "count": 16,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/SOLARSYSTEMS/SOLARSYSTEM1.MBIN",
+   "guid": "0xA636E7C0B8605188"
+  },
+  "cGcSpaceshipGlobals": {
+   "count": 1,
+   "example": "GCSPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0xD9E9F08B11B55507"
+  },
+  "cGcSpawnDensityList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/PLACEMENTVALUES/SPAWNDENSITYLIST.MBIN",
+   "guid": "0x9585FA88C7E438B9"
+  },
+  "cGcStatDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATDEFINITIONSTABLE.MBIN",
+   "guid": "0xD511F6F9ED3B7743"
+  },
+  "cGcStatGroupTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATGROUPSTABLE.MBIN",
+   "guid": "0xB3B6D25E12E7E323"
+  },
+  "cGcSubstanceTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCSUBSTANCETABLE.MBIN",
+   "guid": "0x2CA277E600103D1D"
+  },
+  "cGcTechnologyTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCTECHNOLOGYTABLE.MBIN",
+   "guid": "0xD7A5D2EC2CCB0EF9"
+  },
+  "cGcTerrainGlobals": {
+   "count": 1,
+   "example": "GCTERRAINGLOBALS.GLOBAL.MBIN",
+   "guid": "0xAE411EDF5E6254BD"
+  },
+  "cGcTestMetadata": {
+   "count": 1,
+   "example": "METADATA/TESTMETADATA.MBIN",
+   "guid": "0xED9D01EDEE998FDB"
+  },
+  "cGcTextPresetTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/TEXTPRESETTABLE.MBIN",
+   "guid": "0x8BBDB1EEE1132923"
+  },
+  "cGcTexturePrefetchData": {
+   "count": 1,
+   "example": "METADATA/UI/HUDTEXTUREPREFETCH.MBIN",
+   "guid": "0x43D35B6DB970549F"
+  },
+  "cGcUIGlobals": {
+   "count": 1,
+   "example": "GCUIGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF6ECDC68DCD594FD"
+  },
+  "cGcUserSettingsData": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/GCUSERSETTINGSDATA.MBIN",
+   "guid": "0x50EB11C9A2074A4A"
+  },
+  "cGcVehicleGlobals": {
+   "count": 1,
+   "example": "GCVEHICLEGLOBALS.GLOBAL.MBIN",
+   "guid": "0x47ABCC3CA38FF2B8"
+  },
+  "cGcVehicleScanTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SCANNING/VEHICLESCANTABLE.MBIN",
+   "guid": "0x75895F9B6F7A9D70"
+  },
+  "cGcWaterGlobals": {
+   "count": 1,
+   "example": "GCWATERGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF6880107EFA641FB"
+  },
+  "cGcWeatherColourSettingList": {
+   "count": 3,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/SKYSETTINGS/DAYSKYCOLOURS.MBIN",
+   "guid": "0x6923174191E64B41"
+  },
+  "cGcWeatherProperties": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/CLEARWEATHER.MBIN",
+   "guid": "0xA5D47835FD126E89"
+  },
+  "cGcWeatherTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/WEATHERLIST.MBIN",
+   "guid": "0x25C06DB4E5726AF6"
+  },
+  "cTkActionButtonLookup": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCACTIONBUTTONLOOKUP.MBIN",
+   "guid": "0x874F5BC7E66EB51F"
+  },
+  "cTkAnimMetadata": {
+   "count": 1087,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/ASTRONAUT01.ANIM.MBIN",
+   "guid": "0x9B251350AE1ABCA7"
+  },
+  "cTkAnimationDataTable": {
+   "count": 2,
+   "example": "METADATA/ANIMATION/PLAYERANIMSTABLE.MBIN",
+   "guid": "0xBE90CE789B893637"
+  },
+  "cTkAttachmentData": {
+   "count": 889,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/HELMETHUD/ENTITIES/HUDCOMPASS.ENTITY.MBIN",
+   "guid": "0xE33ABA2C954E9216"
+  },
+  "cTkControllerList": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCCONTROLLERLIST.MBIN",
+   "guid": "0xD33AC9B9ADD17756"
+  },
+  "cTkControllerSpecification": {
+   "count": 6,
+   "example": "METADATA/INPUT/GCCONTROLLERSPECKEYBOARD.MBIN",
+   "guid": "0x25CCF6A206E9514F"
+  },
+  "cTkEngineSettingsMapping": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKENGINESETTINGSMAPPING.MBIN",
+   "guid": "0x5F0D049CCD180588"
+  },
+  "cTkEntitlementList": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/TKENTITLEMENTLIST.MBIN",
+   "guid": "0x05A1524D94780AA1"
+  },
+  "cTkGameSettings": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKGAMESETTINGS.MBIN",
+   "guid": "0x8199639F3277B942"
+  },
+  "cTkGeometryData": {
+   "count": 2589,
+   "example": "MODELS/PLANETS/OCEAN/BUSHES/SEABUSH1.GEOMETRY.MBIN.PC",
+   "guid": "0xF05F740FFD5C0F8D"
+  },
+  "cTkGraphicsSettings": {
+   "count": 2,
+   "example": "METADATA/ENGINESETTINGS/TKGRAPHICSSETTINGS.MBIN",
+   "guid": "0x6150CF41A2F67283"
+  },
+  "cTkHeavyAirData": {
+   "count": 44,
+   "example": "MODELS/EFFECTS/HEAVYAIR/ALIEN/ALIEN.HEAVYAIR.MBIN",
+   "guid": "0xB55476A1D9E0E509"
+  },
+  "cTkImGuiData": {
+   "count": 1,
+   "example": "METADATA/UI/IMGUIWINDOWDEFAULTS.MBIN",
+   "guid": "0xEAAFDE92AF042A96"
+  },
+  "cTkLSystemRulesData": {
+   "count": 39,
+   "example": "MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/ABANDONED/ABANDONDEDSCIENTIFIC.LSYSTEM.MBIN",
+   "guid": "0x73B06516A6D7F9C9"
+  },
+  "cTkLanguageFontTable": {
+   "count": 2,
+   "example": "METADATA/FONTS/LANGUAGEFONTOVERRIDETABLE.MBIN",
+   "guid": "0x916CF38ECBFD69A7"
+  },
+  "cTkLanguagesAllowedData": {
+   "count": 6,
+   "example": "METADATA/LANGUAGE/ALLOWEDLANGUAGE_AS.MBIN",
+   "guid": "0xC605725DD4034B48"
+  },
+  "cTkLocalisationTable": {
+   "count": 17,
+   "example": "LANGUAGE/NMS_LOC1.MBIN",
+   "guid": "0x8B2AEC2B23D377F3"
+  },
+  "cTkMaterialData": {
+   "count": 9339,
+   "example": "MATERIALS/ATMOSPHERE.MATERIAL.MBIN",
+   "guid": "0x515294A444AB8B79"
+  },
+  "cTkModelDescriptorList": {
+   "count": 924,
+   "example": "MODELS/COMMON/DEMOS/E32015/MODELS/RESOURCEFRAGMENTSALT.DESCRIPTOR.MBIN",
+   "guid": "0xE2DD29B026B7621D"
+  },
+  "cTkNGuiEditorLayout": {
+   "count": 4,
+   "example": "METADATA/UI/LAYOUTS/BLANKLAYOUT.MBIN",
+   "guid": "0xFFCA41E11361EE54"
+  },
+  "cTkNGuiEditorStyleData": {
+   "count": 1,
+   "example": "UI/STYLES/EDITORDATA.MBIN",
+   "guid": "0xAF6723678AF4C16A"
+  },
+  "cTkNGuiLayoutList": {
+   "count": 1,
+   "example": "METADATA/UI/LAYOUTLIST.MBIN",
+   "guid": "0x179F467927135FE9"
+  },
+  "cTkParticleData": {
+   "count": 310,
+   "example": "MODELS/COMMON/PROJECTILES/CHARGEDENERGYBALL/EMITTERS/ENERGYBALLEMITTER.PARTICLE.MBIN",
+   "guid": "0x5241E4D5EA5F6653"
+  },
+  "cTkProceduralTextureChosenOptionList": {
+   "count": 6,
+   "example": "METADATA/REALITY/COLOURSCHEMES/FREIGHTER_EGGSHELL_PALEPURPLE.MBIN",
+   "guid": "0x241CA4D99B860AEB"
+  },
+  "cTkProceduralTextureList": {
+   "count": 775,
+   "example": "TEXTURES/COMMON/DECALS/LETTERING/LETTERING.TEXTURE.MBIN",
+   "guid": "0xC4EF89C0C2F05119"
+  },
+  "cTkSceneNodeData": {
+   "count": 2785,
+   "example": "MODELS/EFFECTS/ATLASSTATION/ENTRANCESMOKE.MBIN",
+   "guid": "0x24790C9479471D5D"
+  },
+  "cTkSpeedLineData": {
+   "count": 5,
+   "example": "MODELS/EFFECTS/SPEEDLINES/MINIJUMPSPEEDLINES.SPEEDLINE.MBIN",
+   "guid": "0x5B2795E2FEF75E70"
+  },
+  "cTkTrailData": {
+   "count": 19,
+   "example": "MODELS/EFFECTS/TRAILS/DRONE/LANDDRONETRAIL.TRAIL.MBIN",
+   "guid": "0x1678FA303B8D5F1A"
+  },
+  "cTkTrophyData": {
+   "count": 1,
+   "example": "METADATA/TROPHIES/TKTROPHYDATA.MBIN",
+   "guid": "0x803971B5CD58E2DF"
+  },
+  "cTkVoxelGeneratorSettingsArray": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/VOXELGENERATORSETTINGS.MBIN",
+   "guid": "0x50404046F0F502E7"
+  },
+  "rameArray": {
+   "count": 1,
+   "example": "METADATA/INPUTTEST.MBIN",
+   "guid": "0x467475706E496B54"
+  }
+ },
+ "1.38": {
+  "cGcAISpaceshipGlobals": {
+   "count": 1,
+   "example": "GCAISPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0x2FFA5EF92872E6FC"
+  },
+  "cGcAISpaceshipManagerData": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SPACE/AISPACESHIPMANAGER.MBIN",
+   "guid": "0x2050DE2F2A1C0500"
+  },
+  "cGcAISpaceshipPreloadList": {
+   "count": 12,
+   "example": "SCENES/COMMON/SHIPPRELOADDEFAULT/SHIPPRELOADFACTIONCAPITAL.MBIN",
+   "guid": "0x0D3673977D52FC57"
+  },
+  "cGcAlienPuzzleTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN",
+   "guid": "0xA84156D8DA3F80AC"
+  },
+  "cGcAlienSpeechTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENSPEECHTABLE.MBIN",
+   "guid": "0x6F5BDF62AC518480"
+  },
+  "cGcAmbientModeCameras": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/AMBIENT/AMBIENTMODECAMERAS.MBIN",
+   "guid": "0x1284E8A8B0A4B370"
+  },
+  "cGcAtlasGlobals": {
+   "count": 1,
+   "example": "GCATLASGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF07A5559350356C7"
+  },
+  "cGcAudioGlobals": {
+   "count": 1,
+   "example": "GCAUDIOGLOBALS.GLOBAL.MBIN",
+   "guid": "0x909213CA197AC1CB"
+  },
+  "cGcAudioPulseDemo": {
+   "count": 1,
+   "example": "METADATA/AUDIO/PULSEDEMO.MBIN",
+   "guid": "0x267CDC1694674427"
+  },
+  "cGcBaseBuildingTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/BASEBUILDINGTABLE.MBIN",
+   "guid": "0x5BB1642B2A3D3D92"
+  },
+  "cGcBiomeData": {
+   "count": 17,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENBIOME.MBIN",
+   "guid": "0x5E7CB2F651A44767"
+  },
+  "cGcBiomeFileList": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMEFILENAMES.MBIN",
+   "guid": "0x92315CCA5B7B6C6D"
+  },
+  "cGcBiomeListPerStarType": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMELISTPERSTARTYPE.MBIN",
+   "guid": "0xDA003053BA5CD479"
+  },
+  "cGcBootLogoData": {
+   "count": 2,
+   "example": "METADATA/UI/BOOTLOGOPC.MBIN",
+   "guid": "0x8B913442E7E83049"
+  },
+  "cGcBuildingDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/PLANETBUILDINGTABLE.MBIN",
+   "guid": "0x164F94D6A1FF8317"
+  },
+  "cGcBuildingGlobals": {
+   "count": 1,
+   "example": "GCBUILDINGGLOBALS.GLOBAL.MBIN",
+   "guid": "0x209225682523101E"
+  },
+  "cGcCameraGlobals": {
+   "count": 1,
+   "example": "GCCAMERAGLOBALS.GLOBAL.MBIN",
+   "guid": "0x8FD6A6E0B0279B16"
+  },
+  "cGcCostTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/COSTTABLE.MBIN",
+   "guid": "0x575E9528584EBF2D"
+  },
+  "cGcCreatureAudioTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREAUDIOTABLE.MBIN",
+   "guid": "0x7D0676974C8E6A21"
+  },
+  "cGcCreatureDataTable": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREDATATABLE.MBIN",
+   "guid": "0x90CC8D85C3E8B6E8"
+  },
+  "cGcCreatureFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREFILENAMETABLE.MBIN",
+   "guid": "0x8BE96E739B255AA3"
+  },
+  "cGcCreatureGlobals": {
+   "count": 1,
+   "example": "GCCREATUREGLOBALS.MBIN",
+   "guid": "0xDCADEB0CADAB3D9A"
+  },
+  "cGcCreatureRoleDescriptionTable": {
+   "count": 26,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/ROLEDESCRIPTIONTABLES/AIR/AIRTABLEBUSY.MBIN",
+   "guid": "0xD2C6B913CD1676C7"
+  },
+  "cGcCreatureRoleFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREROLEDESCRIPTIONTABLE.MBIN",
+   "guid": "0xC0A5DE8E4C44F7C6"
+  },
+  "cGcCreatureStupidNameTable": {
+   "count": 2,
+   "example": "SCENES/CREATURESTUPIDNAMETABLE.MBIN",
+   "guid": "0xC9DD036CB59D969D"
+  },
+  "cGcDebugOptions": {
+   "count": 1,
+   "example": "GCDEBUGOPTIONS.GLOBAL.MBIN",
+   "guid": "0x548F1D2EF9845D2C"
+  },
+  "cGcDefaultSaveData": {
+   "count": 8,
+   "example": "SCENES/SAVES/ALLMISSIONSDONE.MBIN",
+   "guid": "0x0B074CDDEB794064"
+  },
+  "cGcDeprecatedAssetsTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/DEPRECATEDASSETSTABLE.MBIN",
+   "guid": "0x1EC1F7697E339528"
+  },
+  "cGcEntitlementRewardsTable": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/GCENTITLEMENTREWARDTABLE.MBIN",
+   "guid": "0x39D16E15AF0CB5E2"
+  },
+  "cGcEnvironmentGlobals": {
+   "count": 1,
+   "example": "GCENVIRONMENTGLOBALS.GLOBAL.MBIN",
+   "guid": "0x7DB5F3DF6DFEC088"
+  },
+  "cGcExperienceSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SCENE/EXPERIENCESPAWNTABLE.MBIN",
+   "guid": "0xDF310DDEB500102F"
+  },
+  "cGcExplosionDataTable": {
+   "count": 4,
+   "example": "METADATA/EFFECTS/EXPLOSIONTABLE.MBIN",
+   "guid": "0x5AC26F48D38FA5ED"
+  },
+  "cGcExternalObjectList": {
+   "count": 82,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENHQOBJECTSFULL.MBIN",
+   "guid": "0x22E0AFD5DDFAA6E5"
+  },
+  "cGcFontTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/FONTTABLE.MBIN",
+   "guid": "0xB9913A609DA490D3"
+  },
+  "cGcGalaxyGlobals": {
+   "count": 1,
+   "example": "GCGALAXYGLOBALS.GLOBAL.MBIN",
+   "guid": "0xDDD9CAFCDA3ADFF4"
+  },
+  "cGcGalaxyInfoIcons": {
+   "count": 1,
+   "example": "METADATA/UI/GALAXYINFOICONS.MBIN",
+   "guid": "0xEDDBE7AE19612B8F"
+  },
+  "cGcGameplayGlobals": {
+   "count": 1,
+   "example": "GCGAMEPLAYGLOBALS.GLOBAL.MBIN",
+   "guid": "0x667932AA90F109D7"
+  },
+  "cGcGraphicsGlobals": {
+   "count": 1,
+   "example": "GCGRAPHICSGLOBALS.GLOBAL.MBIN",
+   "guid": "0x0BFABE1AE7949C6D"
+  },
+  "cGcHUDLayerData": {
+   "count": 13,
+   "example": "METADATA/UI/HUD/PLAYERHUD.MBIN",
+   "guid": "0x773E299A9E36D5F7"
+  },
+  "cGcHUDManagerData": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/GCHUDMANAGER.MBIN",
+   "guid": "0x18C90AC3ABEDC7CD"
+  },
+  "cGcHeavyAirList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/ATMOSPHERE/UNDERWATERHEAVYAIRLIST.MBIN",
+   "guid": "0xF6D68847AB6B3C0F"
+  },
+  "cGcInventoryTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/INVENTORYTABLE.MBIN",
+   "guid": "0x2DB18A4F1A431654"
+  },
+  "cGcItemCostTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/TRADINGCOSTTABLE.MBIN",
+   "guid": "0xEC55A7DD450FE529"
+  },
+  "cGcJourney": {
+   "count": 1,
+   "example": "METADATA/REALITY/JOURNEY.MBIN",
+   "guid": "0xC7C1C04352D3F6A5"
+  },
+  "cGcJourneyMilestoneTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/JOURNEYMILESTONETABLE.MBIN",
+   "guid": "0x00A4768229DACCC1"
+  },
+  "cGcLeveledStatTable": {
+   "count": 2,
+   "example": "METADATA/GAMESTATE/STATS/LEVELEDSTATSTABLE.MBIN",
+   "guid": "0x859B675770ACFE3E"
+  },
+  "cGcMaintenanceGroupsTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/MAINTENANCEGROUPSTABLE.MBIN",
+   "guid": "0x97896CCD6D37AF95"
+  },
+  "cGcMissionTable": {
+   "count": 6,
+   "example": "METADATA/SIMULATION/MISSIONS/ATLASPATHTABLE.MBIN",
+   "guid": "0x86253332E1D30899"
+  },
+  "cGcMultiplayerGlobals": {
+   "count": 1,
+   "example": "GCMULTIPLAYERGLOBALS.GLOBAL.MBIN",
+   "guid": "0x44F5C33F09865A27"
+  },
+  "cGcNGuiLayerData": {
+   "count": 313,
+   "example": "UI/ACTION_SLOT.MBIN",
+   "guid": "0x5E9A900228C5334B"
+  },
+  "cGcNGuiPreset": {
+   "count": 1,
+   "example": "METADATA/UI/PRESETDATA.MBIN",
+   "guid": "0x62520544B545B501"
+  },
+  "cGcNGuiSpecialTextImages": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESIMAGESDATA.MBIN",
+   "guid": "0x074258C82775950C"
+  },
+  "cGcNGuiSpecialTextStyles": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESDATA.MBIN",
+   "guid": "0x8231FB8008556170"
+  },
+  "cGcNPCSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/NPCS/NPCSPAWNTABLE.MBIN",
+   "guid": "0xA264E567070A9633"
+  },
+  "cGcPaletteList": {
+   "count": 17,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENCOLOURPALETTES.MBIN",
+   "guid": "0xD30F287F6E810E96"
+  },
+  "cGcPlacementGlobals": {
+   "count": 1,
+   "example": "GCPLACEMENTGLOBALS.MBIN",
+   "guid": "0x835A9EE0AC007013"
+  },
+  "cGcPlanetData": {
+   "count": 39,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/PLANETS/BARRENPLANET.MBIN",
+   "guid": "0xDB13D3070B67EDC9"
+  },
+  "cGcPlayerDamageTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/DAMAGETABLE.MBIN",
+   "guid": "0x9ED3CEF928910C42"
+  },
+  "cGcPlayerGlobals": {
+   "count": 1,
+   "example": "GCPLAYERGLOBALS.GLOBAL.MBIN",
+   "guid": "0xE0649426886C75A6"
+  },
+  "cGcPlayerHazardTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/HAZARDTABLE.MBIN",
+   "guid": "0x234DE601620B66D9"
+  },
+  "cGcPlayerMissionProgressMapTable": {
+   "count": 2,
+   "example": "METADATA/GAMESTATE/PLAYERMISSIONMAPPINGPATCH0TO1.MBIN",
+   "guid": "0x97711ED5616C8AA0"
+  },
+  "cGcPlayerMissionUpgradeMapTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/PLAYERMISSIONUPGRADETOUPDATE1_3.MBIN",
+   "guid": "0x54511EBAE64FC462"
+  },
+  "cGcProductTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
+   "guid": "0xEB8A34F4EDC7CB42"
+  },
+  "cGcProjectileDataTable": {
+   "count": 1,
+   "example": "METADATA/PROJECTILES/PROJECTILETABLE.MBIN",
+   "guid": "0x046B5C45C0869DED"
+  },
+  "cGcPurchaseableBuildingBlueprints": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/PURCHASEABLEBUILDINGBLUEPRINTS.MBIN",
+   "guid": "0x42FC2D8C396F629E"
+  },
+  "cGcRealityManagerData": {
+   "count": 1,
+   "example": "METADATA/REALITY/DEFAULTREALITY.MBIN",
+   "guid": "0x74D0EA8A0612151E"
+  },
+  "cGcRewardDestructTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDDESTRUCTTABLE.MBIN",
+   "guid": "0xCAF4275C40A91D9C"
+  },
+  "cGcRewardTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
+   "guid": "0x0F4C1B649C112130"
+  },
+  "cGcRobotGlobals": {
+   "count": 1,
+   "example": "GCROBOTGLOBALS.MBIN",
+   "guid": "0xFE36BC36D61C6084"
+  },
+  "cGcScanEventTable": {
+   "count": 6,
+   "example": "METADATA/SIMULATION/SCANNING/SCANEVENTTABLEMISSIONS.MBIN",
+   "guid": "0x229BA24FEECE7851"
+  },
+  "cGcScannerIcons": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/SCANNERICONS.MBIN",
+   "guid": "0xA969739637BDA3A5"
+  },
+  "cGcSceneOptions": {
+   "count": 1,
+   "example": "GCSCENEOPTIONS.GLOBAL.MBIN",
+   "guid": "0xE631F099F9410CAB"
+  },
+  "cGcSceneSettings": {
+   "count": 26,
+   "example": "SCENES/COMMON/DEFAULTSETTINGS.MBIN",
+   "guid": "0x9810B5817BE31835"
+  },
+  "cGcScratchpadGlobals": {
+   "count": 1,
+   "example": "GCSCRATCHPADGLOBALS.GLOBAL.MBIN",
+   "guid": "0xC14472951E47BFF8"
+  },
+  "cGcSelectableObjectTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/SELECTABLEOBJECTTABLE.MBIN",
+   "guid": "0x7EB306AB588C39AB"
+  },
+  "cGcShipAIAttackDataTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SPACE/AISPACESHIPATTACKDATATABLE.MBIN",
+   "guid": "0xCB9FF25E38C159A1"
+  },
+  "cGcSimulationGlobals": {
+   "count": 1,
+   "example": "GCSIMULATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0xB287A5D73D55770D"
+  },
+  "cGcSkyGlobals": {
+   "count": 1,
+   "example": "GCSKYGLOBALS.GLOBALS.MBIN",
+   "guid": "0x34E3262AC99992D8"
+  },
+  "cGcSmokeTestOptions": {
+   "count": 1,
+   "example": "GCSMOKETESTOPTIONS.GLOBAL.MBIN",
+   "guid": "0x30EC660D3770759D"
+  },
+  "cGcSolarGenerationGlobals": {
+   "count": 1,
+   "example": "GCSOLARGENERATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0x94FBF84FAC8ED0CA"
+  },
+  "cGcSolarSystemData": {
+   "count": 16,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/SOLARSYSTEMS/SOLARSYSTEM1.MBIN",
+   "guid": "0xC41011F0ECC17A09"
+  },
+  "cGcSpaceSkyColourSettingList": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/SKYSETTINGS/SPACERARESKYCOLOURS.MBIN",
+   "guid": "0xE8C6C0EE1B649953"
+  },
+  "cGcSpaceshipGlobals": {
+   "count": 1,
+   "example": "GCSPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0x4043A643BBABFD9B"
+  },
+  "cGcSpawnDensityList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/PLACEMENTVALUES/SPAWNDENSITYLIST.MBIN",
+   "guid": "0x9585FA88C7E438B9"
+  },
+  "cGcStatDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATDEFINITIONSTABLE.MBIN",
+   "guid": "0xD511F6F9ED3B7743"
+  },
+  "cGcStatGroupTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATGROUPSTABLE.MBIN",
+   "guid": "0xB3B6D25E12E7E323"
+  },
+  "cGcSubstanceTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCSUBSTANCETABLE.MBIN",
+   "guid": "0xFC1F2A25C449B8A9"
+  },
+  "cGcTechnologyTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCTECHNOLOGYTABLE.MBIN",
+   "guid": "0x7405633EB8219ECA"
+  },
+  "cGcTerrainGlobals": {
+   "count": 1,
+   "example": "GCTERRAINGLOBALS.GLOBAL.MBIN",
+   "guid": "0x0B8EA4D453C549C3"
+  },
+  "cGcTestMetadata": {
+   "count": 1,
+   "example": "METADATA/TESTMETADATA.MBIN",
+   "guid": "0xED9D01EDEE998FDB"
+  },
+  "cGcTextPresetTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/TEXTPRESETTABLE.MBIN",
+   "guid": "0x8BBDB1EEE1132923"
+  },
+  "cGcTexturePrefetchData": {
+   "count": 1,
+   "example": "METADATA/UI/HUDTEXTUREPREFETCH.MBIN",
+   "guid": "0x43D35B6DB970549F"
+  },
+  "cGcTradingClassTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/TRADINGCLASSDATATABLE.MBIN",
+   "guid": "0x4BF71BB18072DE17"
+  },
+  "cGcUIGlobals": {
+   "count": 1,
+   "example": "GCUIGLOBALS.GLOBAL.MBIN",
+   "guid": "0x7F5E321A83F71D87"
+  },
+  "cGcUserSettingsData": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/GCUSERSETTINGSDATA.MBIN",
+   "guid": "0x7A30852DA8F32DDE"
+  },
+  "cGcVehicleGlobals": {
+   "count": 1,
+   "example": "GCVEHICLEGLOBALS.GLOBAL.MBIN",
+   "guid": "0x9AE7CA470654BF82"
+  },
+  "cGcVehicleScanTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SCANNING/VEHICLESCANTABLE.MBIN",
+   "guid": "0x522533AC131BE64B"
+  },
+  "cGcWaterGlobals": {
+   "count": 1,
+   "example": "GCWATERGLOBALS.GLOBAL.MBIN",
+   "guid": "0xF6880107EFA641FB"
+  },
+  "cGcWeatherColourSettingList": {
+   "count": 3,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/SKYSETTINGS/DAYSKYCOLOURS.MBIN",
+   "guid": "0x6923174191E64B41"
+  },
+  "cGcWeatherProperties": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/CLEARWEATHER.MBIN",
+   "guid": "0xA5D47835FD126E89"
+  },
+  "cGcWeatherTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/WEATHERLIST.MBIN",
+   "guid": "0x25C06DB4E5726AF6"
+  },
+  "cGcWiki": {
+   "count": 1,
+   "example": "METADATA/REALITY/WIKI.MBIN",
+   "guid": "0xD97C0E67A81D80AB"
+  },
+  "cTkActionButtonLookup": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCACTIONBUTTONLOOKUP.MBIN",
+   "guid": "0x874F5BC7E66EB51F"
+  },
+  "cTkAnimMetadata": {
+   "count": 1193,
+   "example": "MODELS/COMMON/CHARACTERS/ANIMATIONS/PLAYER_IDLE.ANIM.MBIN",
+   "guid": "0x9B251350AE1ABCA7"
+  },
+  "cTkAnimationDataTable": {
+   "count": 2,
+   "example": "METADATA/ANIMATION/PLAYERANIMSTABLE.MBIN",
+   "guid": "0xBE90CE789B893637"
+  },
+  "cTkAttachmentData": {
+   "count": 1010,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/HELMETHUD/ENTITIES/HUDCOMPASS.ENTITY.MBIN",
+   "guid": "0x87068490DC83B1C1"
+  },
+  "cTkControllerList": {
+   "count": 1,
+   "example": "METADATA/INPUT/GCCONTROLLERLIST.MBIN",
+   "guid": "0xD33AC9B9ADD17756"
+  },
+  "cTkControllerSpecification": {
+   "count": 6,
+   "example": "METADATA/INPUT/GCCONTROLLERSPECKEYBOARD.MBIN",
+   "guid": "0x25CCF6A206E9514F"
+  },
+  "cTkEngineSettingsMapping": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKENGINESETTINGSMAPPING.MBIN",
+   "guid": "0x5F0D049CCD180588"
+  },
+  "cTkEntitlementList": {
+   "count": 2,
+   "example": "METADATA/ENTITLEMENTS/TKENTITLEMENTLIST.MBIN",
+   "guid": "0x05A1524D94780AA1"
+  },
+  "cTkGameSettings": {
+   "count": 1,
+   "example": "METADATA/ENGINESETTINGS/TKGAMESETTINGS.MBIN",
+   "guid": "0x8199639F3277B942"
+  },
+  "cTkGeometryData": {
+   "count": 2859,
+   "example": "MODELS/PLANETS/OCEAN/BUSHES/SEABUSH1.GEOMETRY.MBIN.PC",
+   "guid": "0xFFCBC81EC76D8C6D"
+  },
+  "cTkGraphicsSettings": {
+   "count": 2,
+   "example": "METADATA/ENGINESETTINGS/TKGRAPHICSSETTINGS.MBIN",
+   "guid": "0x50028E2FD6F8068A"
+  },
+  "cTkHeavyAirData": {
+   "count": 45,
+   "example": "MODELS/EFFECTS/HEAVYAIR/ALIEN/ALIEN.HEAVYAIR.MBIN",
+   "guid": "0xB55476A1D9E0E509"
+  },
+  "cTkImGuiData": {
+   "count": 1,
+   "example": "METADATA/UI/IMGUIWINDOWDEFAULTS.MBIN",
+   "guid": "0xEAAFDE92AF042A96"
+  },
+  "cTkLSystemRulesData": {
+   "count": 39,
+   "example": "MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/ABANDONED/ABANDONDEDSCIENTIFIC.LSYSTEM.MBIN",
+   "guid": "0x73B06516A6D7F9C9"
+  },
+  "cTkLanguageFontTable": {
+   "count": 2,
+   "example": "METADATA/FONTS/LANGUAGEFONTOVERRIDETABLE.MBIN",
+   "guid": "0x916CF38ECBFD69A7"
+  },
+  "cTkLanguagesAllowedData": {
+   "count": 6,
+   "example": "METADATA/LANGUAGE/ALLOWEDLANGUAGE_AS.MBIN",
+   "guid": "0xC605725DD4034B48"
+  },
+  "cTkLocalisationTable": {
+   "count": 32,
+   "example": "LANGUAGE/NMS_LOC1_BRAZILIANPORTUGUESE.MBIN",
+   "guid": "0x8B2AEC2B23D377F3"
+  },
+  "cTkMaterialData": {
+   "count": 10414,
+   "example": "MATERIALS/ATMOSPHERE.MATERIAL.MBIN",
+   "guid": "0xB59A78FF93F72588"
+  },
+  "cTkModelDescriptorList": {
+   "count": 958,
+   "example": "MODELS/COMMON/DEMOS/E32015/MODELS/RESOURCEFRAGMENTSALT.DESCRIPTOR.MBIN",
+   "guid": "0xB22E1ABAB4CBE5F8"
+  },
+  "cTkNGuiEditorLayout": {
+   "count": 4,
+   "example": "METADATA/UI/LAYOUTS/BLANKLAYOUT.MBIN",
+   "guid": "0xFFCA41E11361EE54"
+  },
+  "cTkNGuiEditorStyleData": {
+   "count": 1,
+   "example": "UI/STYLES/EDITORDATA.MBIN",
+   "guid": "0x0AF2226D84D37992"
+  },
+  "cTkNGuiLayoutList": {
+   "count": 1,
+   "example": "METADATA/UI/LAYOUTLIST.MBIN",
+   "guid": "0x50BDF4B763608D81"
+  },
+  "cTkParticleData": {
+   "count": 358,
+   "example": "MODELS/COMMON/CHARACTERS/PLAYER/EMITTERS/DRONESMOKESPARKS_EMITTER.PARTICLE.MBIN",
+   "guid": "0x5241E4D5EA5F6653"
+  },
+  "cTkProceduralTextureChosenOptionList": {
+   "count": 6,
+   "example": "METADATA/REALITY/COLOURSCHEMES/FREIGHTER_EGGSHELL_PALEPURPLE.MBIN",
+   "guid": "0xB897EE30ED9FEEE9"
+  },
+  "cTkProceduralTextureList": {
+   "count": 824,
+   "example": "TEXTURES/COMMON/DECALS/LETTERING/LETTERING.TEXTURE.MBIN",
+   "guid": "0x1FC6689E82900626"
+  },
+  "cTkSceneNodeData": {
+   "count": 3066,
+   "example": "MODELS/EFFECTS/ATLASSTATION/ENTRANCESMOKE.MBIN",
+   "guid": "0xD5756F96B501B8A2"
+  },
+  "cTkSpeedLineData": {
+   "count": 5,
+   "example": "MODELS/EFFECTS/SPEEDLINES/MINIJUMPSPEEDLINES.SPEEDLINE.MBIN",
+   "guid": "0x5B2795E2FEF75E70"
+  },
+  "cTkTrailData": {
+   "count": 19,
+   "example": "MODELS/EFFECTS/TRAILS/DRONE/LANDDRONETRAIL.TRAIL.MBIN",
+   "guid": "0x1678FA303B8D5F1A"
+  },
+  "cTkTrophyData": {
+   "count": 1,
+   "example": "METADATA/TROPHIES/TKTROPHYDATA.MBIN",
+   "guid": "0x803971B5CD58E2DF"
+  },
+  "cTkVoxelGeneratorSettingsArray": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/VOXELGENERATORSETTINGS.MBIN",
+   "guid": "0x8EC43565C7F50389"
+  },
+  "rameArray": {
+   "count": 1,
+   "example": "METADATA/INPUTTEST.MBIN",
+   "guid": "0x467475706E496B54"
+  }
+ },
+ "rc1": {
+  "cGcAISpaceshipGlobals": {
+   "count": 1,
+   "example": "GCAISPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0xFAB78C00EB523874"
+  },
+  "cGcAISpaceshipManagerData": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SPACE/AISPACESHIPMANAGER.MBIN",
+   "guid": "0xFE2BB9E81A8544CE"
+  },
+  "cGcAISpaceshipPreloadList": {
+   "count": 12,
+   "example": "SCENES/COMMON/SHIPPRELOADDEFAULT/SHIPPRELOADFACTIONCAPITAL.MBIN",
+   "guid": "0x7A41875AAA65ADE8"
+  },
+  "cGcAlienPuzzleTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_DIALOG_GCALIENPUZZLETABLE.MBIN",
+   "guid": "0x96D64F02D8141D93"
+  },
+  "cGcAlienSpeechTable": {
+   "count": 2,
+   "example": "LANGUAGE/NMS_DIALOG.MBIN",
+   "guid": "0x83461F607C66E772"
+  },
+  "cGcAtlasGlobals": {
+   "count": 1,
+   "example": "GCATLASGLOBALS.GLOBAL.MBIN",
+   "guid": "0x93EC66C5DE3E5DC9"
+  },
+  "cGcAudioGlobals": {
+   "count": 1,
+   "example": "GCAUDIOGLOBALS.GLOBAL.MBIN",
+   "guid": "0x5327F10D65EC3ABD"
+  },
+  "cGcAudioPulseDemo": {
+   "count": 1,
+   "example": "METADATA/AUDIO/PULSEDEMO.MBIN",
+   "guid": "0x6063284C8D5C4C45"
+  },
+  "cGcBiomeData": {
+   "count": 7,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENBIOME.MBIN",
+   "guid": "0x3106E7C41346FEE3"
+  },
+  "cGcBiomeFileList": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMEFILENAMES.MBIN",
+   "guid": "0xEE43F130C3E760EF"
+  },
+  "cGcBiomeListPerStarType": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BIOMELISTPERSTARTYPE.MBIN",
+   "guid": "0xF626BC3DA7EFA4CB"
+  },
+  "cGcBootLogoData": {
+   "count": 2,
+   "example": "METADATA/UI/BOOTLOGOPC.MBIN",
+   "guid": "0x2A3ABF9AA4169381"
+  },
+  "cGcBuildingDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/PLANETBUILDINGTABLE.MBIN",
+   "guid": "0x09ABCA7E41AC4A5B"
+  },
+  "cGcBuildingGlobals": {
+   "count": 1,
+   "example": "GCBUILDINGGLOBALS.GLOBAL.MBIN",
+   "guid": "0x73FB7ED57ABF26F5"
+  },
+  "cGcCameraGlobals": {
+   "count": 1,
+   "example": "GCCAMERAGLOBALS.GLOBAL.MBIN",
+   "guid": "0x49977BE394978D87"
+  },
+  "cGcCostTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/COSTTABLE.MBIN",
+   "guid": "0x61E0575667B8D6B1"
+  },
+  "cGcCreatureAudioTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREAUDIOTABLE.MBIN",
+   "guid": "0x1A9FC71BB51B8E3E"
+  },
+  "cGcCreatureDataTable": {
+   "count": 2,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREDATATABLE.MBIN",
+   "guid": "0xFDE70623128913DD"
+  },
+  "cGcCreatureFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREFILENAMETABLE.MBIN",
+   "guid": "0x907EC5731CAEC383"
+  },
+  "cGcCreatureGlobals": {
+   "count": 1,
+   "example": "GCCREATUREGLOBALS.MBIN",
+   "guid": "0x782B6CFE083D2F2C"
+  },
+  "cGcCreatureRoleDescriptionTable": {
+   "count": 14,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/ROLEDESCRIPTIONTABLES/AIR/AIRTABLEBUSY.MBIN",
+   "guid": "0x004EAB19F7C7F843"
+  },
+  "cGcCreatureRoleFilenameTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ECOSYSTEM/CREATUREROLEDESCRIPTIONTABLE.MBIN",
+   "guid": "0x4D8CC0580CC0401A"
+  },
+  "cGcCreatureStupidNameTable": {
+   "count": 2,
+   "example": "SCENES/CREATURESTUPIDNAMETABLE.MBIN",
+   "guid": "0x5A2E6052F9135202"
+  },
+  "cGcDebugOptions": {
+   "count": 1,
+   "example": "GCDEBUGOPTIONS.GLOBAL.MBIN",
+   "guid": "0x3EA2C089B7E99738"
+  },
+  "cGcDefaultSaveData": {
+   "count": 7,
+   "example": "METADATA/GAMESTATE/DEFAULTSAVEDATA.MBIN",
+   "guid": "0x7ADB86BF96EA7C23"
+  },
+  "cGcEntitlementRewardsTable": {
+   "count": 1,
+   "example": "METADATA/ENTITLEMENTS/GCENTITLEMENTREWARDTABLE.MBIN",
+   "guid": "0x0D86AE4054BBC02C"
+  },
+  "cGcEnvironmentGlobals": {
+   "count": 1,
+   "example": "GCENVIRONMENTGLOBALS.GLOBAL.MBIN",
+   "guid": "0x3CA32EAA06951EB1"
+  },
+  "cGcExperienceSpawnTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SCENE/EXPERIENCESPAWNTABLE.MBIN",
+   "guid": "0x484B402C0F058FCD"
+  },
+  "cGcExplosionDataTable": {
+   "count": 4,
+   "example": "METADATA/EFFECTS/EXPLOSIONTABLE.MBIN",
+   "guid": "0x0CDC06A430D40B56"
+  },
+  "cGcExternalObjectList": {
+   "count": 59,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENOBJECTSDEAD.MBIN",
+   "guid": "0x85307D53F6AD2F78"
+  },
+  "cGcFontTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/FONTTABLE.MBIN",
+   "guid": "0x05DC9B9235C2D466"
+  },
+  "cGcGalaxyGlobals": {
+   "count": 1,
+   "example": "GCGALAXYGLOBALS.GLOBAL.MBIN",
+   "guid": "0x3DF278DB356B0307"
+  },
+  "cGcGameplayGlobals": {
+   "count": 1,
+   "example": "GCGAMEPLAYGLOBALS.GLOBAL.MBIN",
+   "guid": "0x119E5BC4BF3F2EF2"
+  },
+  "cGcGraphicsGlobals": {
+   "count": 1,
+   "example": "GCGRAPHICSGLOBALS.GLOBAL.MBIN",
+   "guid": "0xAB361B22D98B50FC"
+  },
+  "cGcHUDLayerData": {
+   "count": 13,
+   "example": "METADATA/UI/HUD/PLAYERHUD.MBIN",
+   "guid": "0x47A3A3A7C733B25E"
+  },
+  "cGcHUDManagerData": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/GCHUDMANAGER.MBIN",
+   "guid": "0x9FBECDD304164C0B"
+  },
+  "cGcHeavyAirList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/ATMOSPHERE/UNDERWATERHEAVYAIRLIST.MBIN",
+   "guid": "0x207364D4816BAFBA"
+  },
+  "cGcInventoryTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/INVENTORYTABLE.MBIN",
+   "guid": "0x267E665DC28A5EC8"
+  },
+  "cGcJourneyMilestoneTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/JOURNEYMILESTONETABLE.MBIN",
+   "guid": "0x7629F744634CAB6A"
+  },
+  "cGcLeveledStatTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/LEVELEDSTATSTABLE.MBIN",
+   "guid": "0xAB14459D676DF3CF"
+  },
+  "cGcNGuiLayerData": {
+   "count": 183,
+   "example": "UI/ACTION_SLOT.MBIN",
+   "guid": "0x39D074886F8F0CF5"
+  },
+  "cGcNGuiPreset": {
+   "count": 1,
+   "example": "METADATA/UI/PRESETDATA.MBIN",
+   "guid": "0xE8B6604C272EF42F"
+  },
+  "cGcNGuiSpecialTextImages": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESIMAGESDATA.MBIN",
+   "guid": "0x370D95D9E255EFBC"
+  },
+  "cGcNGuiSpecialTextStyles": {
+   "count": 1,
+   "example": "METADATA/UI/SPECIALSTYLESDATA.MBIN",
+   "guid": "0x3A3BE2FA79AB1F8E"
+  },
+  "cGcPaletteList": {
+   "count": 6,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/BARREN/BARRENCOLOURPALETTES.MBIN",
+   "guid": "0x804E58D76FDA00D7"
+  },
+  "cGcPlacementGlobals": {
+   "count": 1,
+   "example": "GCPLACEMENTGLOBALS.MBIN",
+   "guid": "0xCDAB26D10835DC00"
+  },
+  "cGcPlanetData": {
+   "count": 39,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/PLANETS/BARRENPLANET.MBIN",
+   "guid": "0x1EAF850135FB8B3D"
+  },
+  "cGcPlayerDamageTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/DAMAGETABLE.MBIN",
+   "guid": "0xAD5ECB67A11DC7B3"
+  },
+  "cGcPlayerGlobals": {
+   "count": 1,
+   "example": "GCPLAYERGLOBALS.GLOBAL.MBIN",
+   "guid": "0x61DE81A2977BA1FB"
+  },
+  "cGcPlayerHazardTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/HAZARDTABLE.MBIN",
+   "guid": "0xAF109591BAA6EDDF"
+  },
+  "cGcProductTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCPRODUCTTABLE.MBIN",
+   "guid": "0xF7352AB3D29C3766"
+  },
+  "cGcProjectileDataTable": {
+   "count": 1,
+   "example": "METADATA/PROJECTILES/PROJECTILETABLE.MBIN",
+   "guid": "0x689A143052EC6932"
+  },
+  "cGcRealityManagerData": {
+   "count": 1,
+   "example": "METADATA/REALITY/DEFAULTREALITY.MBIN",
+   "guid": "0x4BB5208A0688583E"
+  },
+  "cGcRewardDestructTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDDESTRUCTTABLE.MBIN",
+   "guid": "0x6318BF4BA2873C74"
+  },
+  "cGcRewardTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/REWARDTABLE.MBIN",
+   "guid": "0xDE6191BBC5E15463"
+  },
+  "cGcRobotGlobals": {
+   "count": 1,
+   "example": "GCROBOTGLOBALS.MBIN",
+   "guid": "0x1ED4628027E0FB42"
+  },
+  "cGcScanEventTable": {
+   "count": 4,
+   "example": "METADATA/SIMULATION/SCANNING/SCANEVENTTABLEMISSIONS.MBIN",
+   "guid": "0xE5CF8552B478CEA4"
+  },
+  "cGcScannerIcons": {
+   "count": 1,
+   "example": "METADATA/UI/HUD/SCANNERICONS.MBIN",
+   "guid": "0x92198D7DBF9F561D"
+  },
+  "cGcSceneOptions": {
+   "count": 1,
+   "example": "GCSCENEOPTIONS.GLOBAL.MBIN",
+   "guid": "0x68CAD1FA21916958"
+  },
+  "cGcSceneSettings": {
+   "count": 26,
+   "example": "SCENES/COMMON/DEFAULTSETTINGS.MBIN",
+   "guid": "0x3093C82E3D30346C"
+  },
+  "cGcSelectableObjectTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/ENVIRONMENT/SELECTABLEOBJECTTABLE.MBIN",
+   "guid": "0x660430E6870D390C"
+  },
+  "cGcSimulationGlobals": {
+   "count": 1,
+   "example": "GCSIMULATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0x4AA41F6297604D55"
+  },
+  "cGcSkyGlobals": {
+   "count": 1,
+   "example": "GCSKYGLOBALS.GLOBALS.MBIN",
+   "guid": "0xCBC2FD3950FF7DF8"
+  },
+  "cGcSmokeTestOptions": {
+   "count": 1,
+   "example": "GCSMOKETESTOPTIONS.GLOBAL.MBIN",
+   "guid": "0xA7F14D64963359E7"
+  },
+  "cGcSolarGenerationGlobals": {
+   "count": 1,
+   "example": "GCSOLARGENERATIONGLOBALS.GLOBAL.MBIN",
+   "guid": "0x30DD3D28398F3FB9"
+  },
+  "cGcSolarSystemData": {
+   "count": 16,
+   "example": "SCENES/DEMOS/PS4BIOMETEST/PS4BIOMETESTSETTINGS/SOLARSYSTEMS/SOLARSYSTEM1.MBIN",
+   "guid": "0x893E31A826BC21DA"
+  },
+  "cGcSpaceshipGlobals": {
+   "count": 1,
+   "example": "GCSPACESHIPGLOBALS.GLOBAL.MBIN",
+   "guid": "0x72E119A3A36E8AAF"
+  },
+  "cGcSpawnDensityList": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/BIOMES/PLACEMENTVALUES/SPAWNDENSITYLIST.MBIN",
+   "guid": "0xBFCB5FF68ABF50A6"
+  },
+  "cGcStatDefinitionTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATDEFINITIONSTABLE.MBIN",
+   "guid": "0x1904AB3923138FCC"
+  },
+  "cGcStatGroupTable": {
+   "count": 1,
+   "example": "METADATA/GAMESTATE/STATS/STATGROUPSTABLE.MBIN",
+   "guid": "0xF47727B4B3B114E3"
+  },
+  "cGcSubstanceTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCSUBSTANCETABLE.MBIN",
+   "guid": "0x01FF1C0C1A5CC43B"
+  },
+  "cGcTechnologyTable": {
+   "count": 1,
+   "example": "METADATA/REALITY/TABLES/NMS_REALITY_GCTECHNOLOGYTABLE.MBIN",
+   "guid": "0xFA0FC1EFE55836E9"
+  },
+  "cGcTerrainGlobals": {
+   "count": 1,
+   "example": "GCTERRAINGLOBALS.GLOBAL.MBIN",
+   "guid": "0x98525153C770F2BB"
+  },
+  "cGcTestMetadata": {
+   "count": 1,
+   "example": "METADATA/TESTMETADATA.MBIN",
+   "guid": "0x7CC07F67FF094528"
+  },
+  "cGcTextPresetTable": {
+   "count": 1,
+   "example": "METADATA/FONTS/TEXTPRESETTABLE.MBIN",
+   "guid": "0xE73139F8AE5EF309"
+  },
+  "cGcTexturePrefetchData": {
+   "count": 1,
+   "example": "METADATA/UI/HUDTEXTUREPREFETCH.MBIN",
+   "guid": "0xA9BFBDF339976598"
+  },
+  "cGcUIGlobals": {
+   "count": 1,
+   "example": "GCUIGLOBALS.GLOBAL.MBIN",
+   "guid": "0x5B1D33DCFE81009B"
+  },
+  "cGcWaterGlobals": {
+   "count": 1,
+   "example": "GCWATERGLOBALS.GLOBAL.MBIN",
+   "guid": "0x513D3BB6F55B48C5"
+  },
+  "cGcWeatherProperties": {
+   "count": 8,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/CLEARWEATHER.MBIN",
+   "guid": "0x6FF70F8857AC722C"
+  },
+  "cGcWeatherTable": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/WEATHER/WEATHERLIST.MBIN",
+   "guid": "0x8B6588F9B83CED60"
+  },
+  "cTkAnimMetadata": {
+   "count": 908,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/ASTRONAUT01.ANIM.MBIN",
+   "guid": "0x318D9B9AAB83444A"
+  },
+  "cTkAnimationDataTable": {
+   "count": 2,
+   "example": "METADATA/ANIMATION/PLAYERANIMSTABLE.MBIN",
+   "guid": "0xDBDADEB070F9F5F4"
+  },
+  "cTkAttachmentData": {
+   "count": 697,
+   "example": "MODELS/COMMON/CHARACTERS/ASTRONAUT/HELMETHUD/ENTITIES/HUDCOMPASS.ENTITY.MBIN",
+   "guid": "0xEA248560FF8F1109"
+  },
+  "cTkEntitlementList": {
+   "count": 1,
+   "example": "METADATA/ENTITLEMENTS/TKENTITLEMENTLIST.MBIN",
+   "guid": "0x06D20C5497F32E3A"
+  },
+  "cTkGeometryData": {
+   "count": 4226,
+   "example": "MODELS/COMMON/CHARACTERS/BACKPACK.GEOMETRY.MBIN",
+   "guid": "0x84FB6523A87A9F39"
+  },
+  "cTkHeavyAirData": {
+   "count": 44,
+   "example": "MODELS/EFFECTS/HEAVYAIR/ALIEN/ALIEN.HEAVYAIR.MBIN",
+   "guid": "0x711C399892BF97C8"
+  },
+  "cTkImGuiData": {
+   "count": 1,
+   "example": "METADATA/UI/IMGUIWINDOWDEFAULTS.MBIN",
+   "guid": "0x0D0641D1F0F33ED7"
+  },
+  "cTkLSystemRulesData": {
+   "count": 39,
+   "example": "MODELS/PLANETS/BIOMES/COMMON/BUILDINGS/MONOLITH/MONOLITH.MBIN",
+   "guid": "0xCF65854EB579E911"
+  },
+  "cTkLanguageFontTable": {
+   "count": 2,
+   "example": "METADATA/FONTS/LANGUAGEFONTOVERRIDETABLE.MBIN",
+   "guid": "0xED12290AE5A5811D"
+  },
+  "cTkLanguagesAllowedData": {
+   "count": 6,
+   "example": "METADATA/LANGUAGE/ALLOWEDLANGUAGE_AS.MBIN",
+   "guid": "0x4C6D47542A356569"
+  },
+  "cTkLocalisationTable": {
+   "count": 17,
+   "example": "LANGUAGE/NMS_LOC1.MBIN",
+   "guid": "0x290D4ABFA7A5E38F"
+  },
+  "cTkMaterialData": {
+   "count": 7101,
+   "example": "MATERIALS/ATMOSPHERE.MATERIAL.MBIN",
+   "guid": "0xA52C13BB987D6334"
+  },
+  "cTkModelDescriptorList": {
+   "count": 780,
+   "example": "MODELS/COMMON/DEMOS/E32015/MODELS/RESOURCEFRAGMENTSALT.DESCRIPTOR.MBIN",
+   "guid": "0xA52F72C0B5373AC4"
+  },
+  "cTkNGuiEditorLayout": {
+   "count": 2,
+   "example": "METADATA/UI/LAYOUTS/EFFECTEDITLAYOUTDEFAULT.MBIN",
+   "guid": "0x13ABB20BB51B0B8A"
+  },
+  "cTkNGuiEditorStyleData": {
+   "count": 1,
+   "example": "UI/STYLES/EDITORDATA.MBIN",
+   "guid": "0xDD8EAA469E59607D"
+  },
+  "cTkNGuiLayoutList": {
+   "count": 1,
+   "example": "METADATA/UI/LAYOUTLIST.MBIN",
+   "guid": "0x83B0DC26C6AD83DA"
+  },
+  "cTkParticleData": {
+   "count": 272,
+   "example": "MODELS/COMMON/PROJECTILES/CHARGEDENERGYBALL/EMITTERS/ENERGYBALLEMITTER.PARTICLE.MBIN",
+   "guid": "0xC20D13BFD2013A00"
+  },
+  "cTkProceduralTextureChosenOptionList": {
+   "count": 6,
+   "example": "METADATA/REALITY/COLOURSCHEMES/FREIGHTER_EGGSHELL_PALEPURPLE.MBIN",
+   "guid": "0x902D50C1C9E77995"
+  },
+  "cTkProceduralTextureList": {
+   "count": 757,
+   "example": "TEXTURES/COMMON/DECALS/LETTERING/LETTERING.TEXTURE.MBIN",
+   "guid": "0xCE3FAEBC4A7CB3D1"
+  },
+  "cTkSceneNodeData": {
+   "count": 2301,
+   "example": "MODELS/COMMON/CHARACTERS/BACKPACK.SCENE.MBIN",
+   "guid": "0x6D147118A3D9AB8C"
+  },
+  "cTkSpeedLineData": {
+   "count": 5,
+   "example": "MODELS/EFFECTS/SPEEDLINES/MINIJUMPSPEEDLINES.SPEEDLINE.MBIN",
+   "guid": "0x1C917A3565260DAF"
+  },
+  "cTkTrailData": {
+   "count": 19,
+   "example": "MODELS/EFFECTS/TRAILS/DRONE/LANDDRONETRAIL.TRAIL.MBIN",
+   "guid": "0xA144B37B237760DA"
+  },
+  "cTkTrophyData": {
+   "count": 1,
+   "example": "METADATA/TROPHIES/TKTROPHYDATA.MBIN",
+   "guid": "0x7F04E146B590CF27"
+  },
+  "cTkVoxelGeneratorSettingsArray": {
+   "count": 1,
+   "example": "METADATA/SIMULATION/SOLARSYSTEM/VOXELGENERATORSETTINGS.MBIN",
+   "guid": "0x9FC0F8C9FF867D5D"
+  },
+  "rameArray": {
+   "count": 1,
+   "example": "METADATA/INPUTTEST.MBIN",
+   "guid": "0x467475706E496B54"
+  }
+ }
+}

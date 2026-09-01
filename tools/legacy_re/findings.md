@@ -420,3 +420,25 @@ Honest negatives (not stored / inlined, recorded so they are not re-hunted blind
   (mode moves to `+0x44`). `mbPaused`: no dedicated pause bool found on the singleton.
 - `GetGravity`, `UpdateGravityPoint`, `cGcMarkerPoint::IsEqual`,
   `cGcInteractionComponent::GetPuzzle`: **inlined**, no standalone function start in any build.
+
+### Round 3 — GUID-anchor mining
+
+`mine_guid_anchors.py` resolves each MBIN root-template GUID (from `tools/mbin/guid_census.json`)
+to its owning function via the `handles.py` imm64 index, giving ~90-106 unique metadata-loader
+anchors per build (`out/guid_anchors.json`). They are off the upstream hook surface (metadata
+loaders, not gameplay), so they serve as call-graph seeds. A GUID-seeded hunt over 12 curated
+unmapped targets located:
+
+- `cGcRewardManager::GiveGenericReward` (all four builds): the shared reward primitive behind
+  the located `cGcInteractionComponent::GiveReward`, pinned by the `INTRCT_EMPTY`/`INTRCT_NOROOM`
+  strings and the reward-shuffle RNG `0x5A76F899`.
+- `cGcRealityManager::cGcRealityManager` (all four builds): the first in-place sub-object ctor
+  of the app-data block (reality manager at `cGcApplicationData+0x48`), reached from the located
+  `cGcRealityManager::Construct`.
+
+Confirmed inlined (recorded as blockers, not re-hunted): `cGcPlanet::UpdateGravity` (per-planet
+gravity is not driven through `cTkDynamicGravityControl` by any distinct cGcPlanet function),
+`cGcPlanet::UpdateWeather`/`UpdateClouds` (folded into the planet update path), and
+`cGcDiscoveryManager::SubmitDiscoveryData` (a 62-byte forwarder folded into callers). The
+managers with a GetInstance/ctor shape port cleanly; the per-frame `Update*` verbs are the
+inlining ceiling again.

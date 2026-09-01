@@ -39,3 +39,6 @@ tools/mbin/bin/
 tools/mbin/out/
 tools/mbin/structdump/bin/
 tools/mbin/structdump/obj/
+
+# GUID-anchor mining derived output (regenerate: python tools/legacy_re/mine_guid_anchors.py)
+tools/legacy_re/out/guid_anchors.json

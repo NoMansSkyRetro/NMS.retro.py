@@ -343,7 +343,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "Propagation mislabeled cGcSky::Update as this (same addresses); real UpdateWeather unlocated. See find_planet_terrain."
+      "_note": "Inlined into the planet update path: gcplanet.cpp is source-ordered (Construct<Generate<SetupRegionMap) and no separable void(float) start exists between them; weather stats are read inline by cGcEnvironment::UpdatePlayerEnvironmentState. No standalone start."
     },
     "cGcPlayer::Update": {
       "1.09.1": "0x1409D5070",
@@ -951,7 +951,7 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "62-byte wrapper over Data::SubmitDiscoveryData + cTkUnixTimestamp::Now; neither callee nor caller (cGcSimpleInteractionComponent::DoAction) is mapped in any legacy build."
+      "_note": "Inlined forwarder: the 4.13 symbol is a 62-byte wrapper that tail-calls mData->SubmitDiscoveryData(disc, Now(), out); folded into callers, no separable start."
     },
     "cGcEnvironment::Update": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1392,14 +1392,14 @@
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "unique caller cGcPlanet::UpdateWeather is mislabelled in propagated (that address is really cGcSky::Update), so the weather-leaf cluster has no valid anchor; no distinctive tokens."
+      "_note": "Inlined/folded (and the 4.13 storm-driven cloud sim body is absent); no separable start in any legacy build."
     },
     "cGcPlanet::UpdateGravity": {
       "1.09.1": "NOT_YET_FOUND",
       "1.13": "NOT_YET_FOUND",
       "1.24": "NOT_YET_FOUND",
       "1.38": "NOT_YET_FOUND",
-      "_unresolved": "same as UpdateClouds: true cGcPlanet::UpdateWeather anchor unavailable; the gravity leaf (calls cTkDynamicGravityControl) has no mapped callee to pin it."
+      "_note": "Inlined/folded: per-planet gravity is not driven through cTkDynamicGravityControl by any distinct cGcPlanet function (the control is a cGcSimulation sub-object; no cGcPlanet.cpp function references it). No separable start in any build."
     },
     "cGcPlanetGenerationInputData::SetDefaults": {
       "1.09.1": "0x1401E5020",
@@ -1773,11 +1773,11 @@
       "1.38": "0x140C7BFA0"
     },
     "cGcRealityManager::cGcRealityManager": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "Sole modern caller is cGcApplication::Data::Data (unresolved). Reality unit identified but no mapped anchor isolates the ctor; imm64 anchor absent from legacy .text."
+      "1.09.1": "0x1403D5410",
+      "1.13": "0x1404AE3A0",
+      "1.24": "0x140562000",
+      "1.38": "0x140675C80",
+      "_note": "Reality-manager ctor; the first in-place sub-object ctor of the app-data block (reality mgr sits at cGcApplicationData+0x48, invariant-container ctor shape)."
     },
     "cGcResourceCustomisation::CreateGenerationTask": {
       "1.09.1": "NOT_YET_FOUND",
@@ -1787,11 +1787,11 @@
       "_unresolved": "16 callers, only 1 mapped callee (cGcProceduralTextureManager::CreateGenerationTask, itself unmapped); call-graph votes tie across many same-size candidates."
     },
     "cGcRewardManager::GiveGenericReward": {
-      "1.09.1": "NOT_YET_FOUND",
-      "1.13": "NOT_YET_FOUND",
-      "1.24": "NOT_YET_FOUND",
-      "1.38": "NOT_YET_FOUND",
-      "_unresolved": "only 1 resolved caller and 0 resolved non-utility callee(s); anchors too weak to disambiguate (>=2 signals needed)"
+      "1.09.1": "0x140862E10",
+      "1.13": "0x1409A66A0",
+      "1.24": "0x140B124A0",
+      "1.38": "0x140C88E80",
+      "_note": "The shared reward primitive (references INTRCT_EMPTY/INTRCT_NOROOM + reward-shuffle RNG 0x5A76F899); the by-id resolver behind the located cGcInteractionComponent::GiveReward funnels into it."
     },
     "cGcScanEvent::CalculateMarkerPosition": {
       "1.09.1": "0x140969A20",
